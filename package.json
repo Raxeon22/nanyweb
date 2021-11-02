@@ -2,7 +2,7 @@
   "name": "nanny",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://simra123.github.io/Nanny-frontEnd",
+  "homepage": "http://simra123.github.io/nanny-frontend",
   "dependencies": {
     "bootstrap": "^5.1.3",
     "cra-template": "1.1.2",
