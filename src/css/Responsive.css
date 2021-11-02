@@ -1,0 +1,200 @@
+@media only screen and (min-width: 990px) and (max-width: 1100px) {
+    .navbar-nav .nav-link{
+        font-size: 10px !important;
+    }
+    .node {
+        left: -5px !important;
+    }
+  
+ }
+@media only screen and (min-width: 766px) and (max-width: 990px) {
+
+    .navbar-nav button{
+        margin-top: 10px !important;
+    }
+    .number{
+     margin-top: 5px;
+    }
+    .certified-job img {
+       height: 150px !important;
+       width: 150px !important;
+    }
+    .certified-job p{
+        font-size: 14px;
+    }
+    .slider-banner .carousel-inner  {
+        height: 600px;
+        position: relative;
+    }
+    .services .each-slide{
+        margin: 4rem 20px !important;
+        padding: 1rem 0px;
+    }
+    .mob-app .tab-text{
+        padding-left: 30px;
+    }
+    .mob-app .tab-text button .icon-button{
+       padding-top: 15px !important;
+    }
+    .node {
+        left: -5px !important;
+    }
+   
+}
+@media only screen and (min-width: 575px) and (max-width: 765px){
+    .certified-job {
+        display: none !important;
+    }
+    .slider-banner .carousel-inner  {
+        height: 300px !important;
+    }
+    .header-top .smol {
+        text-align: center !important;
+    }
+    .navbar-nav button{
+        margin-top: 10px !important;
+    }
+    .number{
+        margin-top: 5px;
+    }
+    .abous-us {
+        background-image:none !important;
+    }
+    .how-it-works .each-step{
+        margin: 1rem 0px !important;
+    }
+    .services .each-slide{
+        margin: 4rem 0px !important;
+        padding: 1rem 0px;
+    }
+    .mob-app .tab-text{
+        margin-left: 10px;
+        margin-right: 40px !important;
+    }
+    .mob-app .tab-text .list-bar{
+        padding-left: 15% !important;
+    }
+    .node {
+        left: 7px !important;
+    }
+    .mob-app .tab-text button .icon-button{
+        padding-top: 6px !important;
+     }
+    h5{
+        font-size: 15px !important;
+    }
+  
+
+
+
+ 
+}   
+@media only screen and (min-width: 360px) and (max-width: 576px){
+    .header-top .smol {
+        text-align: center !important;
+    }
+    .navbar-nav button{
+        margin-top: 10px !important;
+    }
+    .number{
+        margin-top: 5px;
+    }
+    .certified-job {
+        display: none !important;
+    }
+    .slider-banner .carousel-inner  {
+        height: 300px !important;
+    }
+    .abous-us {
+        background-image:none !important;
+    }
+    .how-it-works .each-step{
+        margin: 1rem 0px !important;
+    }
+    .services .each-slide{
+        margin: 4rem 0px !important;
+        padding: 1rem 0px;
+    }
+    .mob-app .tab-text{
+        margin-left: 10px;
+        margin-right: 40px !important;
+    }
+    .mob-app .tab-text .list-bar{
+        padding-left: 15% !important;
+    }
+    .mob-app .tab-text button .icon-button{
+       padding-top: 15px !important;
+    }
+    .node {
+        left: -8px !important;
+        font-size: 13px !important;
+    }
+    h5{
+        font-size: 15px !important;
+    }
+ 
+ 
+}
+@media screen and (max-width: 359px){
+    .header-top .smol {
+        text-align: center !important;
+    }
+    .navbar-nav button{
+        margin-top: 10px !important;
+    }
+    .number{
+        margin-top: 5px;
+    }
+    .certified-job {
+        display: none !important;
+    }
+    .slider-banner .carousel-inner  {
+        height: 210px !important;
+    }
+    .abous-us {
+        background-image:none !important;
+    }
+    h1{
+        font-size: 25px !important;
+    }
+    h2{
+        font-size: 20px !important;
+    }
+    h5{
+        font-size: 15px !important;
+    }
+    p{
+        font-size: 14px;
+    }
+    .how-it-works .each-step{
+        margin: 1rem 0px !important;
+    }
+    .services .each-slide img {
+        margin-left: 0 !important;
+    }
+    .services .each-slide{
+        margin: 4rem 0px !important;
+        padding: 1rem 0px;
+    }
+    .abous-us .about-cards {
+        margin-right: 0 !important;
+    }
+    .mob-app .tab-text{
+        margin-left: 10px;
+        margin-right: 40px !important;
+    }
+    .mob-app .tab-text .list-bar{
+        padding-left: 15% !important;
+    }
+    .mob-app .tab-text button .icon-button{
+       padding-top: 15px !important;
+    }
+    .node {
+        left: -8px !important;
+        font-size: 13px !important;
+    }
+   .tab-img {
+       display: none !important;
+   }
+ 
+}

@@ -1,0 +1,446 @@
+/* main colors */
+:root {
+    --main-color:  rgb(255 91 154);
+    --secondary-color :rgb(52 163 255);
+}
+/* top close bar section */
+.header-top {
+   
+    background-color: var(--secondary-color);
+ }
+
+.header-top span {
+
+    color: rgba(0, 0, 0, 0.555);
+    padding: 0;
+    font-weight: 600 !important;
+    font-size: 25px;
+    cursor: pointer;
+
+}
+.header-top span:hover{
+    color: black;
+}
+.header-top button{
+    background-color: var(--main-color);
+    color: white;
+    font-size: 14px;
+    text-align: left !important;
+    
+}
+.header-top .smol {
+    text-align: left;
+}
+
+/* navbar css starts here */
+.navbar {
+    padding: 10px 30px;
+    background-color: white !important;
+    font-weight: 600;
+}
+ .navbar-nav .nav-item{
+    padding: 0px 5px;
+
+}
+html {
+    scroll-behavior: smooth;
+  }
+.navbar-nav button{
+    background-color: var(--main-color);
+    color: white;
+    font-size: 13px;
+    
+}
+/* navbar phone number */
+.number a {
+    color:var(--main-color) !important;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 13px;
+}
+.navbar-nav .nav-link{
+   color:var(--main-color) !important;
+   font-size: 13px;
+   text-transform: uppercase;
+  
+
+}
+.navbar-nav .nav-link:hover{
+    border-bottom: 2px solid var(--secondary-color);
+
+}
+.navbar-light .navbar-nav  .active  {
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+/* banner slider css starts */
+.slidercaption{
+    text-align: right;
+    margin-bottom: 5rem;
+    margin-top: 30px;
+}
+.certified-job {
+    margin-top: 13rem;
+    padding: 10px 0px;
+    background-color: var(--main-color);
+}
+.certified-job img{
+    height: 200px;
+    width: 200px;
+}
+.certified-job .user-img {
+    margin-top: -30% !important;
+    border: 10px solid var(--main-color);
+}
+.carousel-caption {
+    position: absolute;
+    top: 0;
+    bottom: 1.25rem;
+     padding-bottom: 1.25rem;
+    color: #fff;
+    text-align: center;
+}
+.slider-banner .carousel-inner  {
+    height: 600px;
+    position: relative;
+}
+.slider-banner{
+    margin-bottom: 5rem;
+}
+
+/* About us section css */
+.abous-us {
+    background-image: url('../assets/bg-plane.jpg');
+    background-repeat: no-repeat;
+    position: relative;
+    background-position: right;
+    
+    background-size: 160px 600px;
+    margin: 5rem 0px;
+ 
+}
+.abous-us svg {
+    color: var(--main-color);
+}
+.abous-us h3  {
+    font-weight: 600;
+    color: var(--main-color);
+    margin: 20px 0px ;
+}
+.abous-us  p {
+    font-size: 15px ;
+    margin: 10px 0px ;
+}
+.abous-us .see-our-video {
+    cursor: pointer;
+    margin: 30px 5px;
+     border: 1px solid rgba(128, 128, 128, 0.123);
+     background-color: white;
+}
+.abous-us .video-icon:hover{
+    transform: scale(1.1);
+    transition: all .2s;
+} 
+
+.abous-us .video-text {
+    padding-top: 4%;
+    font-size: 14px;
+    color: var(--main-color);
+}
+.abous-us .video-icon {
+    padding: 10px 0px;
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+    border: 1px solid var(--secondary-color)
+}   
+
+.abous-us .about-cards {
+    margin-top: 20px;
+    margin-right: 2rem;
+   
+   
+}
+.abous-us .about-cards .each-card {
+    margin: 10px 5px;
+    background-color: white;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+.abous-us .about-cards .each-card:hover{
+    transform: scale(1.1);
+    transition: all .2s;
+}
+.abous-us  .each-card p {
+     line-height: 1px;
+     font-size: 10px;
+     color: var(--main-color);
+ }
+ .abous-us  .each-card  h2 {
+     
+    color: var(--secondary-color);
+    margin-top: 1rem;
+    font-weight: 600;
+ 
+ }
+
+/* Services slider css starts */
+.services{
+    background-color: var(--main-color);
+    margin-top: 4rem ;
+    padding: 4rem 0px;
+}
+.services h2{
+    color: white;
+    font-weight: 600;
+    text-align: center;
+}
+.services .each-slide{
+    background-color: white;
+    margin: 4rem 40px;
+    border-radius: 3px;
+    padding: 1rem 0px;
+}
+.services .each-slide img {
+    margin-left: -12%;
+    border-radius: 3px;
+    margin-top: 5px;
+}
+.services .each-slide .service-slider-text  {
+  padding-top: 3rem ;
+}
+.services .each-slide .service-slider-text h5 {
+    color: var(--main-color);
+    font-weight: 600;
+}
+.services .each-slide .service-slider-text p{
+    font-size: 15px;
+    padding-top: 10px ;
+    padding-right: 20px;
+}
+.services .each-slide .service-slider-text button{
+    background-color: white;
+    border: 1px var(--secondary-color) solid;
+    color: var(--main-color);
+    font-size: 13px;
+    font-weight: 600;
+}
+.services .each-slide .service-slider-text button:focus{
+    outline: none !important;
+    box-shadow: none;
+}
+.services .each-slide .service-slider-text button:hover{
+    background-color: var(--secondary-color);
+}
+.carousel-indicators .active {
+    opacity: 1;
+    background-color: var(--secondary-color);
+}
+
+/* How it works css starts */
+.how-it-works {
+    /* background-image: url('../assets/how-it-works-bg.webp'); */
+    background-color: black;
+    background-repeat: no-repeat;
+    position: relative;
+    background-position: center center;
+    background-size: cover; 
+    padding: 5rem 0px;
+}
+.how-it-works h1{
+    color: white;
+    text-align: center;
+    font-weight: 900;
+}
+.how-it-works .each-step img{
+    background-color: white;
+    border-radius: 50%;
+    padding: 10px 10px;
+    margin-bottom: 40px;
+  
+}
+.how-it-works .each-step {
+    margin: 5rem 0px;
+    position: relative;
+    z-index: 2;
+}
+.how-it-works .each-step h5{
+    color: white;
+    font-weight: 600;
+    margin-top: 10px;
+
+}
+.how-it-works .each-step p{
+    font-size: 14px;
+    margin-top: 20px;
+    color: white;
+}
+
+.badge {
+    position: absolute;
+    top: 39%;
+    left: 43%;
+    padding: 15px 16px;
+    border-radius: 50%;
+    background-color: var(--main-color);
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+}
+  .step1{
+    width: 59%;
+    left: 20%;
+
+    position: absolute;
+    bottom: 56%;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.514);
+    display: block;
+    border-style: dashed;
+    color: transparent;
+    z-index: 1;
+  }
+
+/* customer and employee tabs css */
+
+.mob-app .nav-tabs {
+    justify-content: center;
+    border:none;
+    background-color: var(--secondary-color);
+}
+.mob-app .nav-tabs .nav-link {
+    border-radius: 5px !important;
+    color: white;
+    font-weight: 600;
+    padding: 15px 20px !important; 
+}
+
+.mob-app .nav-tabs .nav-link.active {
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+    color: white;
+    font-weight: 600;
+}
+/* Tab text section */
+.mob-app .tab-text{
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+   
+    padding-right: 40px;
+
+}
+.mob-app .tab-text .meet{
+    color: white;
+    background-color: var(--secondary-color);
+    padding: 10px 20px;
+    border-radius: 15px 3px 4px 5px;
+    text-transform: uppercase;
+    margin: 20px 0px !important;
+    font-weight: 600;
+
+}
+.mob-app .tab-text h1{
+    color: var(--main-color);
+    font-weight: 900;
+    margin: 30px 0px;
+    padding-right: 60px;
+}
+.mob-app .tab-text h6{
+    color: var(--main-color);
+    font-weight: bolder;
+    margin: 20px 0px;
+}
+.mob-app .tab-text p{
+    font-size: 13px;
+  
+}
+.mob-app img{
+    width: 100%;
+    height: 660px;
+}
+.mob-app .tab-text button{
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+}
+.mob-app .tab-text button span{
+    font-size: 12px;
+}
+.mob-app .tab-text button h5{
+  font-weight: 600;
+}
+.mob-app .tab-text button .icon-button{
+    text-align: end;
+}
+.list-bar {
+    position: relative;
+    padding-left: 15%;
+}
+.node {
+    margin: 9px;
+    padding: 8px 10px;
+    border-radius: 50%;
+    display: inline-block;
+    transition: all 1000ms ease;
+    position: absolute;
+    left: 1px;
+    background-color: var(--secondary-color);
+    font-size: 17px;
+    font-weight: 600;
+    color: white;
+ }
+
+ .divider {
+    height: 52px;
+    width: 2px;
+    position: absolute;
+    left: 5%;
+    /* transition: all 800ms ease; */
+    top: 68%;
+    border-style: dashed;
+    
+    color: rgba(204, 201, 201, 0.459);
+ }
+
+ 
+ /* FAQ css starts  */
+ .faq{
+   
+    margin: 1rem 0px;
+ }
+ .faq .Qsection{
+    margin-top: 2rem;
+    
+ }
+ .faq .heading{
+    margin-top:33px;
+
+ }
+ .faq .heading strong {
+     font-weight: 600;
+     border-bottom: 5px solid var(--main-color);
+     border-bottom-left-radius: 7px;
+     font-size: 40px;
+
+ }
+.faq .heading .eachQ{
+    border-bottom: 1px solid rgba(107, 106, 106, 0.322);
+}
+.faq .heading .eachQ h6{
+    font-weight: 500;
+    color: black;
+    padding:16px 3px;
+
+}
+.faq .heading .eachQ p{
+    font-size: 13px;
+}
+.faq .heading .eachQ svg{
+    color: var(--main-color);
+}
+ 
+/* fancy border css */
+.custom-shape-divider-top-1635422766 {
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    background-color: white;
+    
+}
