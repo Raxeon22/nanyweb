@@ -39,7 +39,9 @@
     .node {
         left: -5px !important;
     }
-   
+    .contact-us .contact-form{
+        position: relative  !important ;
+    }
 }
 @media only screen and (min-width: 575px) and (max-width: 765px){
     .certified-job {
@@ -57,7 +59,7 @@
     .number{
         margin-top: 5px;
     }
-    .abous-us {
+    .about-us {
         background-image:none !important;
     }
     .how-it-works .each-step{
@@ -83,6 +85,9 @@
     h5{
         font-size: 15px !important;
     }
+    .contact-us .contact-form{
+        position: relative  !important ;
+    }
   
 
 
@@ -105,7 +110,7 @@
     .slider-banner .carousel-inner  {
         height: 300px !important;
     }
-    .abous-us {
+    .about-us {
         background-image:none !important;
     }
     .how-it-works .each-step{
@@ -132,7 +137,16 @@
     h5{
         font-size: 15px !important;
     }
- 
+    .contact-us .contact-form {
+        margin: 0 !important;
+    }
+    .contact-us .contact-form .contact-details{
+        margin-left: 6px;
+        margin-bottom: 20px;
+    }
+    .contact-us .contact-form{
+        position: relative  !important ;
+    }
  
 }
 @media screen and (max-width: 359px){
@@ -151,7 +165,7 @@
     .slider-banner .carousel-inner  {
         height: 210px !important;
     }
-    .abous-us {
+    .about-us {
         background-image:none !important;
     }
     h1{
@@ -176,7 +190,7 @@
         margin: 4rem 0px !important;
         padding: 1rem 0px;
     }
-    .abous-us .about-cards {
+    .about-us .about-cards {
         margin-right: 0 !important;
     }
     .mob-app .tab-text{
@@ -196,5 +210,20 @@
    .tab-img {
        display: none !important;
    }
- 
+   .faq .heading .eachQ p{
+    font-size: 10px;
+    }
+    .faq  .eachQ h6{
+        font-size: 14px;
+    }
+    .contact-us .contact-form {
+        margin: 0 !important;
+    }
+    .contact-us .contact-form .contact-details{
+        margin-left: 6px;
+        margin-bottom: 20px;
+    }
+    .contact-us .contact-form{
+        position: relative  !important ;
+    }
 }

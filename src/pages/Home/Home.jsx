@@ -1,8 +1,7 @@
 import React , {useState} from 'react';
-import {Button , Row , Col , Nav , Container , Carousel , Tabs , Tab , Collapse  } from 'react-bootstrap';
+import {Button , Row , Col , Nav , Container , Carousel , Tabs , Tab , Collapse , Form } from 'react-bootstrap';
 import BabyIcon from '../../assets/baby-icon.png';
-import {Link} from 'react-router-dom'
-import Logo from '../../assets/logo.jpg';
+import Logo from '../../assets/logo.png';
 import Banner1 from '../../assets/banner-one.jpg'
 import Banner2 from '../../assets/banner-two.jpg'
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -13,18 +12,23 @@ import '../../css/Home.css'
 import FAQ from '../../assets/faq-bg.jpg';
 import { GiEarthAfricaEurope } from "react-icons/gi";
 import { MdOutlineSlowMotionVideo } from "react-icons/md";
-import { FaHeartbeat , FaPrayingHands, FaPeopleCarry , FaApple, FaGooglePlay} from "react-icons/fa";
-import {FiPhoneCall} from "react-icons/fi";
+import {HiOutlineLocationMarker } from "react-icons/hi";
+import { FaHeartbeat , FaPrayingHands, FaPeopleCarry , FaApple, FaGooglePlay , FaLinkedinIn, FaFacebook, FaInstagram, FaTwitter} from "react-icons/fa";
+import {FiPhoneCall  , FiMail ,  FiFacebook , FiInstagram , FiTwitter, FiLinkedin} from "react-icons/fi";
 import {AiOutlineMinus , AiOutlinePlus} from "react-icons/ai";
 import ServicesImg1 from '../../assets/services-img1.jpg'
 import Step1 from '../../assets/step1.png'
 import Step2 from '../../assets/step2.png'
 import Step3 from '../../assets/step3.png'
 import Step4 from '../../assets/step4.png'
+import Map from '../../components/GoogleMap'
+import Scroll from 'react-scroll'
+let ScrollLink = Scroll.Link;
 
 
 
 const Home = () => {
+
  const [showNav , setShowNav] = useState(false);    
  const [faqOpen , setFaqOpen] = useState(false);
  const [faqOpen2 , setFaqOpen2] = useState(false);
@@ -64,6 +68,7 @@ const Home = () => {
 ]
     return(
         <div id="navBanner" > 
+         
            
             <div className="header-top text-center" id="">
             
@@ -113,7 +118,8 @@ const Home = () => {
                 <div className="collapse navbar-collapse justify-content-end " id="navbarSupportedContent">
                     <ul className="navbar-nav ">
                         <li className="nav-item ">
-                            <NavLink to="/"  className="nav-link" exact activeClassName="active" >Home </NavLink>
+                            <ScrollLink  
+                            className="nav-link cursor-pointer" exact activeClassName="active" to="about-us" href="#" spy={false} smooth={false} offset={50} duration={500} > Home </ScrollLink>
                         </li>
                         <li className="nav-item ">
                           <NavLink to="/abous-us" id="sec-1" className="nav-link" exact activeClassName="active" >About </NavLink>
@@ -220,9 +226,9 @@ const Home = () => {
                 </Carousel.Item>
             </Carousel>
 
-            <div id="about-us" data-scroll-index="1">
+            <Scroll.Element id="about-us" >
                 <Container>
-                    <div className="abous-us">
+                    <div className="about-us">
                         <Row>
                             <Col xs="12" md="6">
                                 <h3>
@@ -276,7 +282,7 @@ const Home = () => {
                     </div>
                 </Container>
 
-            </div>
+            </Scroll.Element>
 
             <div id="services" className="services">
                 <Container>
@@ -628,7 +634,180 @@ const Home = () => {
                     </Row>
                 </Container>
             </div>
+            <Scroll.Element id="contact-us" >
+                <div className="contact-us">
+                    <Container>
+                    <Row className="contact-form justify-content-end">
+                        <Col md="12" lg="8" xs="12" className=" text-light">
+                            <Row>
+                                <Col xs="12" md="5" className="contact-details">
+                                    <h4>Contact Information</h4>
+                                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos, expedita quam laboriosam minima enim officia.</p>
+                                    <b className="d-flex"> <span className="mb-1" ><FiPhoneCall size={23}/>  </span>02232613728 </b>
+                                    <b className="d-flex"> <span className="mb-1"><FiMail size={23}/>  </span>helloworld@gmail.com</b>
+                                    <b className="d-flex"> <span className="mb-1"><HiOutlineLocationMarker size={23}/>  </span>103 street new york </b>
 
+                                    <div className="contact-footer-icon d-flex">
+                                        <span ><FiFacebook size={22} />  </span>
+                                        <span ><FiInstagram size={22} />  </span>
+                                        <span ><FiTwitter size={22} />  </span>
+                                        <span ><FaLinkedinIn size={22} />  </span>
+                                    </div>
+                                </Col>
+                                <Col xs="12"md="7" className="contact-inputs ">
+                                    <Form>
+                                        <Row>
+                                            <Col xs="12" md="6">
+                                                <Form.Group className="mb-3" controlId="formBasicEmail">
+                                                    <Form.Label>First Name</Form.Label>
+                                                    <Form.Control className="custom-input" type="text" placeholder="Joe" />
+                                                </Form.Group>
+                                            </Col>
+                                            <Col xs="12" md="6">
+                                                <Form.Group className="mb-3" controlId="formBasicPassword">
+                                                    <Form.Label>Last Name</Form.Label>
+                                                    <Form.Control className="custom-input" type="text" placeholder="Doe" />
+                                                </Form.Group>
+                                            </Col>
+                                            <Col xs="12" md="6">
+                                                <Form.Group className="mb-3" >
+                                                    <Form.Label>Email </Form.Label>
+                                                    <Form.Control className="custom-input" type="email" placeholder="Enter email" />
+                                                </Form.Group>
+                                            </Col>
+                                            <Col xs="12" md="6">
+                                                <Form.Group className="mb-3" controlId="formBasicPassword">
+                                                    <Form.Label>Phone</Form.Label>
+                                                    <Form.Control className="custom-input" type="number" placeholder="0000000" />
+                                                </Form.Group>
+                                            </Col>
+                                            <Col xs="12">
+                                            <Form.Group className="mb-3" >
+                                             <h6>What web do you use?</h6>
+                                             <Row className="my-4 check-custom">
+                                                <Col  xs="12" sm="6" md="4">
+                                                <Form.Check type="checkbox" label="web design" />
+                                                </Col>
+                                                <Col  xs="12" sm="6" md="4">
+                                                <Form.Check type="checkbox" label="web design" />
+                                                </Col>
+                                                <Col  xs="12" sm="6" md="4">
+                                                <Form.Check type="checkbox" label="web design" />
+                                                </Col>
+                                            
+                                            
+                                             </Row>
+                                            
+                                            </Form.Group>
+                                            </Col>
+                                            <Col xs="12">
+                                               <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                                                <Form.Label>Message</Form.Label>
+                                                <Form.Control as="textarea" rows={3} className="custom-input" />
+                                                </Form.Group>
+                                            </Col>
+                                            <Col xs="12" style={{textAlign:"end"}}>
+                                                <Button variant="primary" type="submit">
+                                                   Send message
+                                                </Button>
+                                            </Col>
+                                        </Row>
+                                        
+
+                                       
+                                      
+                                        
+                                    </Form>
+
+                                </Col>
+                            </Row>
+                        </Col>
+                    </Row>
+                    </Container>
+                    <div className="map d-none d-lg-block">
+                      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10203.369712058646!2d-109.1695167545078!3d51.46931049245444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x530e4005679914b5%3A0x794e319962187ba9!2sTravelodge%20by%20Wyndham%20Kindersley!5e0!3m2!1sen!2s!4v1635936099584!5m2!1sen!2s" width="100%" height="100%"  allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    
+                </div>
+            </Scroll.Element >
+            <Scroll.Element id="footer" >
+                <footer>
+                    <Container>
+                        <Row>
+                            <Col xs="12" md="6" lg="3" className="each-row-f">
+                                <img src={Logo} alt="logo" width="180" height="130"  />
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem architecto repellat ab Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                            </Col>
+                            <Col xs="12" md="6" lg="3" className="each-row-f">
+                                <h6>Support</h6>
+                                <ul>
+                                    <li>
+                                      <NavLink to="#">Privacy policy</NavLink>
+                                    </li>
+                                    <li>
+                                     <NavLink to="#">Terms and Conditions</NavLink>
+                                    </li>
+
+                                </ul>
+                            </Col>
+                            <Col xs="12" md="6" lg="3" className="each-row-f">
+                                <h6>About</h6>
+                                <ul>
+                                    <li>
+                                      <NavLink to="#">About us</NavLink>
+                                    </li>
+                                    <li>
+                                     <NavLink to="#">How it works</NavLink>
+                                    </li>
+                                    <li>
+                                     <NavLink to="#">Services</NavLink>
+                                    </li>
+                                </ul>
+                            </Col>
+                            <Col xs="12" md="6" lg="3" className="each-row-f">
+                               <Form.Group className="mb-3" controlId="formBasicEmail">
+                                    <Form.Control className="custom-input" type="text" placeholder="Your Email" />
+                                   
+                                </Form.Group>
+                                <div style={{textAlign:"end"}}>
+                                    <Button>
+                                        Submit
+                                    </Button>
+                                </div>
+                                <Row>
+                                    <Col xs="6" className="my-3 footer-button"  >
+                                        <Button className=" d-flex w-100 ">
+                                            <FaApple size={22}/>
+                                            <span>Apple Store</span>
+                                        </Button>
+                                    </Col>
+                                    <Col xs="6" className="my-3 footer-button"  >
+                                        <Button className=" d-flex w-100 ">
+                                            <FaGooglePlay size={22}/>
+                                            <span>Google Store</span>
+                                        </Button>
+                                    </Col>
+                                </Row>
+                                       
+                                        
+                                    
+                                    
+                                       
+                                   
+                                {/* <div className="d-flex footer-icons">
+                                  <span> <FaFacebook size={22} /> </span>
+                                  <span> <FaInstagram size={22} /> </span>
+                                  <span> <FaTwitter size={22} /> </span>
+                                  <span> <FiLinkedin size={22} /> </span>
+                                </div> */}
+                            </Col>
+                            <Col xs="12" className="footer-widget">
+                               Copyright © 2021 All rights reserved | Raxeon 
+                            </Col>
+                        </Row>
+                    </Container>
+                </footer>
+            </Scroll.Element>
        
     
         </div>

@@ -1,7 +1,7 @@
 /* main colors */
 :root {
-    --main-color:  rgb(255 91 154);
-    --secondary-color :rgb(52 163 255);
+    --main-color:  rgb(14 42 151);
+    --secondary-color :rgb(255 91 154);
 }
 /* top close bar section */
 .header-top {
@@ -109,7 +109,7 @@ html {
 }
 
 /* About us section css */
-.abous-us {
+.about-us {
     background-image: url('../assets/bg-plane.jpg');
     background-repeat: no-repeat;
     position: relative;
@@ -119,62 +119,62 @@ html {
     margin: 5rem 0px;
  
 }
-.abous-us svg {
+.about-us svg {
     color: var(--main-color);
 }
-.abous-us h3  {
+.about-us h3  {
     font-weight: 600;
     color: var(--main-color);
     margin: 20px 0px ;
 }
-.abous-us  p {
+.about-us  p {
     font-size: 15px ;
     margin: 10px 0px ;
 }
-.abous-us .see-our-video {
+.about-us .see-our-video {
     cursor: pointer;
     margin: 30px 5px;
      border: 1px solid rgba(128, 128, 128, 0.123);
      background-color: white;
 }
-.abous-us .video-icon:hover{
+.about-us .video-icon:hover{
     transform: scale(1.1);
     transition: all .2s;
 } 
 
-.abous-us .video-text {
+.about-us .video-text {
     padding-top: 4%;
     font-size: 14px;
     color: var(--main-color);
 }
-.abous-us .video-icon {
+.about-us .video-icon {
     padding: 10px 0px;
     background-color: var(--secondary-color);
     border-radius: 5px;
     border: 1px solid var(--secondary-color)
 }   
 
-.abous-us .about-cards {
+.about-us .about-cards {
     margin-top: 20px;
     margin-right: 2rem;
    
    
 }
-.abous-us .about-cards .each-card {
+.about-us .about-cards .each-card {
     margin: 10px 5px;
     background-color: white;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
-.abous-us .about-cards .each-card:hover{
+.about-us .about-cards .each-card:hover{
     transform: scale(1.1);
     transition: all .2s;
 }
-.abous-us  .each-card p {
+.about-us  .each-card p {
      line-height: 1px;
      font-size: 10px;
      color: var(--main-color);
  }
- .abous-us  .each-card  h2 {
+ .about-us  .each-card  h2 {
      
     color: var(--secondary-color);
     margin-top: 1rem;
@@ -402,7 +402,7 @@ html {
  /* FAQ css starts  */
  .faq{
    
-    margin: 1rem 0px;
+    margin: 4rem 0px;
  }
  .faq .Qsection{
     margin-top: 2rem;
@@ -435,6 +435,175 @@ html {
     color: var(--main-color);
 }
  
+/* contact from css here */
+.contact-us .map{
+    position: relative;
+    height: 640px;
+
+}
+.contact-us .contact-form{
+    position: absolute;
+    padding: 3rem 0px;
+    z-index: 4;
+    right: 5%;
+    margin-left: 30px ;
+   
+}
+.contact-us .contact-form .contact-details{
+    background-color: var(--main-color);
+    border-radius: 10px;
+    padding: 30px;
+    color: white;
+    
+}
+.contact-us .contact-form .contact-details h4{
+   font-weight: 600;
+}
+.contact-us .contact-form .contact-details p{
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.712);
+}
+.contact-us .contact-form .contact-details b{
+    margin-top: 30px;
+    font-weight: normal;
+}
+.contact-us .contact-form .contact-details span {
+    margin-right: 7px;
+    color: var(--secondary-color);
+}
+.contact-us .contact-form .contact-details .contact-footer-icon{
+    margin-top: 10rem !important;
+}
+.contact-us .contact-form .contact-details .contact-footer-icon span {
+    padding-right: 15px;
+}
+
+.contact-us .contact-form .contact-details .contact-footer-icon span svg:hover{
+    color: white;
+}
+.contact-us .contact-form .contact-inputs{
+    color: black;
+    background-color: white;
+    padding: 30px;
+    border: 1px solid rgba(190, 186, 186, 0.199);
+
+}
+.contact-us .contact-form .contact-inputs button{
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+    font-size: 13px;
+    padding: 10px 20px;
+}
+.contact-us .contact-form .contact-inputs label{
+    font-size: 13px;
+    color: black;
+}
+.contact-us .contact-form .contact-inputs .custom-input {
+    border: none ;
+    border-bottom: 1px solid var(--main-color);
+    border-radius: 0;
+    padding: 0;
+    font-size: 14px;
+    padding: 10px 0px;
+    outline: none !important;
+    box-shadow: none !important;
+}
+.contact-us .contact-form .contact-inputs .check-custom input{
+    outline: none !important;
+    box-shadow: none !important;
+}
+.contact-us .contact-form .contact-inputs .check-custom input:checked {
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+}
+.contact-us .contact-form .contact-inputs h6{
+    font-size: 15px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+/* footer css */
+footer{
+    background-color: black;
+    color: white;
+    padding: 50px 0px;
+}
+footer p {
+    font-size: 13px;
+    padding-right: 10px;
+}
+footer .each-row-f h6 {
+   font-size: 20px;
+   font-weight: 400;
+   margin-top: 10px;
+   margin-bottom: 30px;
+   color: var(--secondary-color);
+   font-weight: 600;
+}
+footer .each-row-f li{
+    list-style: none;
+    padding: 0;
+    font-size: 14px;
+    margin-top: 10px;
+}
+footer .each-row-f a{
+    text-decoration: none;
+    color: white;
+}
+footer .each-row-f a:hover{
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+footer .each-row-f ul{
+    padding: 0;
+}
+footer .each-row-f .custom-input {
+    border: none ;
+    border-bottom: 1px solid var(--secondary-color);
+    border-radius: 0;
+    padding: 0;
+    font-size: 14px;
+    padding: 10px 0px;
+    outline: none !important;
+    box-shadow: none !important;
+    background-color: transparent;
+    margin: 20px 0px;
+    color: white;
+}
+footer .each-row-f button{
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    font-size: 13px;
+}
+footer .each-row-f button:hover{
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+   
+}
+footer .each-row-f .footer-icons {
+    text-align: center;
+}
+footer .each-row-f .footer-icons span{
+    margin: 40px 8px;
+    color: var(--secondary-color);
+}
+footer  .footer-widget{
+    margin-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.185);
+    text-align: center;
+    padding-top: 15px;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.692);
+    font-weight: 100;
+}
+footer .footer-button button {
+    padding: 5px 3px;
+    text-align: center;
+    margin-top: 30px;
+    justify-content: center;
+}
+footer .footer-button button svg{
+    padding-right: 5px;
+}
 /* fancy border css */
 .custom-shape-divider-top-1635422766 {
     left: 0;
