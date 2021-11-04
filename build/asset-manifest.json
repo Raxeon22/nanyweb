@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/nanny-frontend/static/css/main.d15185f2.chunk.css",
-    "main.js": "/nanny-frontend/static/js/main.3d56f278.chunk.js",
-    "main.js.map": "/nanny-frontend/static/js/main.3d56f278.chunk.js.map",
+    "main.css": "/nanny-frontend/static/css/main.7c26cbeb.chunk.css",
+    "main.js": "/nanny-frontend/static/js/main.bd07805b.chunk.js",
+    "main.js.map": "/nanny-frontend/static/js/main.bd07805b.chunk.js.map",
     "runtime-main.js": "/nanny-frontend/static/js/runtime-main.338772f9.js",
     "runtime-main.js.map": "/nanny-frontend/static/js/runtime-main.338772f9.js.map",
     "static/css/2.0a9ec390.chunk.css": "/nanny-frontend/static/css/2.0a9ec390.chunk.css",
-    "static/js/2.67b17845.chunk.js": "/nanny-frontend/static/js/2.67b17845.chunk.js",
-    "static/js/2.67b17845.chunk.js.map": "/nanny-frontend/static/js/2.67b17845.chunk.js.map",
+    "static/js/2.bf19a25c.chunk.js": "/nanny-frontend/static/js/2.bf19a25c.chunk.js",
+    "static/js/2.bf19a25c.chunk.js.map": "/nanny-frontend/static/js/2.bf19a25c.chunk.js.map",
     "index.html": "/nanny-frontend/index.html",
     "static/css/2.0a9ec390.chunk.css.map": "/nanny-frontend/static/css/2.0a9ec390.chunk.css.map",
-    "static/css/main.d15185f2.chunk.css.map": "/nanny-frontend/static/css/main.d15185f2.chunk.css.map",
-    "static/js/2.67b17845.chunk.js.LICENSE.txt": "/nanny-frontend/static/js/2.67b17845.chunk.js.LICENSE.txt",
+    "static/css/main.7c26cbeb.chunk.css.map": "/nanny-frontend/static/css/main.7c26cbeb.chunk.css.map",
+    "static/js/2.bf19a25c.chunk.js.LICENSE.txt": "/nanny-frontend/static/js/2.bf19a25c.chunk.js.LICENSE.txt",
     "static/media/app-thumb.b697cac1.png": "/nanny-frontend/static/media/app-thumb.b697cac1.png",
     "static/media/baby-icon.06b14fb2.png": "/nanny-frontend/static/media/baby-icon.06b14fb2.png",
     "static/media/banner-one.42a52c94.jpg": "/nanny-frontend/static/media/banner-one.42a52c94.jpg",
@@ -19,7 +19,7 @@
     "static/media/Home.css": "/nanny-frontend/static/media/bg-plane.24314bbc.jpg",
     "static/media/certified-user.a7082859.jpg": "/nanny-frontend/static/media/certified-user.a7082859.jpg",
     "static/media/faq-bg.e5cdfd4c.jpg": "/nanny-frontend/static/media/faq-bg.e5cdfd4c.jpg",
-    "static/media/logo.63d2abee.jpg": "/nanny-frontend/static/media/logo.63d2abee.jpg",
+    "static/media/logo.ee239660.png": "/nanny-frontend/static/media/logo.ee239660.png",
     "static/media/services-img1.508bf063.jpg": "/nanny-frontend/static/media/services-img1.508bf063.jpg",
     "static/media/step1.bd10ab3f.png": "/nanny-frontend/static/media/step1.bd10ab3f.png",
     "static/media/step2.7fb5a3ea.png": "/nanny-frontend/static/media/step2.7fb5a3ea.png",
@@ -29,8 +29,8 @@
   "entrypoints": [
     "static/js/runtime-main.338772f9.js",
     "static/css/2.0a9ec390.chunk.css",
-    "static/js/2.67b17845.chunk.js",
-    "static/css/main.d15185f2.chunk.css",
-    "static/js/main.3d56f278.chunk.js"
+    "static/js/2.bf19a25c.chunk.js",
+    "static/css/main.7c26cbeb.chunk.css",
+    "static/js/main.bd07805b.chunk.js"
   ]
 }
