@@ -31,7 +31,7 @@
     text-align: left;
 }
 .header-top p {
-    color: white;
+    color: var(--main-color);
 }
 
 /* navbar css starts here */
@@ -309,7 +309,7 @@ html {
 }
 .mob-app .nav-tabs .nav-link {
     border-radius: 5px !important;
-    color: white;
+    color: var(--main-color);
     font-weight: 600;
     padding: 15px 20px !important; 
 }
@@ -329,7 +329,7 @@ html {
 
 }
 .mob-app .tab-text .meet{
-    color: white;
+    color: var(--main-color);
     background-color: var(--secondary-color);
     padding: 10px 20px;
     border-radius: 15px 3px 4px 5px;
@@ -385,7 +385,7 @@ html {
     background-color: var(--secondary-color);
     font-size: 17px;
     font-weight: 600;
-    color: white;
+    color: var(--main-color);
  }
 
  .divider {
@@ -575,6 +575,7 @@ footer .each-row-f button{
     background-color: var(--secondary-color);
     border-color: var(--secondary-color);
     font-size: 13px;
+    color: var(--main-color);
 }
 footer .each-row-f button:hover{
     background-color: var(--secondary-color);
