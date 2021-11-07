@@ -1,11 +1,10 @@
-/* main colors */
 :root {
-    --main-color:  rgb(14 42 151);
-    --secondary-color :rgb(255 91 154);
+    --main-color: #03204c;
+    --secondary-color: rgb(176 204 224);
 }
 /* top close bar section */
 .header-top {
-   
+
     background-color: var(--secondary-color);
  }
 
@@ -26,15 +25,18 @@
     color: white;
     font-size: 14px;
     text-align: left !important;
-    
+
 }
 .header-top .smol {
     text-align: left;
 }
+.header-top p {
+    color: white;
+}
 
 /* navbar css starts here */
 .navbar {
-    padding: 10px 30px;
+    padding: 5px 30px;
     background-color: white !important;
     font-weight: 600;
 }
@@ -49,7 +51,7 @@ html {
     background-color: var(--main-color);
     color: white;
     font-size: 13px;
-    
+
 }
 /* navbar phone number */
 .number a {
@@ -62,11 +64,11 @@ html {
    color:var(--main-color) !important;
    font-size: 13px;
    text-transform: uppercase;
-  
+
 
 }
 .navbar-nav .nav-link:hover{
-    border-bottom: 2px solid var(--secondary-color);
+    color: var(--secondary-color ) !important;
 
 }
 .navbar-light .navbar-nav  .active  {
@@ -114,10 +116,10 @@ html {
     background-repeat: no-repeat;
     position: relative;
     background-position: right;
-    
+
     background-size: 160px 600px;
     margin: 5rem 0px;
- 
+
 }
 .about-us svg {
     color: var(--main-color);
@@ -157,8 +159,8 @@ html {
 .about-us .about-cards {
     margin-top: 20px;
     margin-right: 2rem;
-   
-   
+
+
 }
 .about-us .about-cards .each-card {
     margin: 10px 5px;
@@ -175,11 +177,11 @@ html {
      color: var(--main-color);
  }
  .about-us  .each-card  h2 {
-     
+
     color: var(--secondary-color);
     margin-top: 1rem;
     font-weight: 600;
- 
+
  }
 
 /* Services slider css starts */
@@ -255,7 +257,7 @@ html {
     border-radius: 50%;
     padding: 10px 10px;
     margin-bottom: 40px;
-  
+
 }
 .how-it-works .each-step {
     margin: 5rem 0px;
@@ -322,7 +324,7 @@ html {
 .mob-app .tab-text{
     margin-top: 3rem;
     margin-bottom: 3rem;
-   
+
     padding-right: 40px;
 
 }
@@ -349,7 +351,7 @@ html {
 }
 .mob-app .tab-text p{
     font-size: 13px;
-  
+
 }
 .mob-app img{
     width: 100%;
@@ -394,19 +396,19 @@ html {
     /* transition: all 800ms ease; */
     top: 68%;
     border-style: dashed;
-    
+
     color: rgba(204, 201, 201, 0.459);
  }
 
- 
+
  /* FAQ css starts  */
  .faq{
-   
+
     margin: 4rem 0px;
  }
  .faq .Qsection{
     margin-top: 2rem;
-    
+
  }
  .faq .heading{
     margin-top:33px;
@@ -434,7 +436,7 @@ html {
 .faq .heading .eachQ svg{
     color: var(--main-color);
 }
- 
+
 /* contact from css here */
 .contact-us .map{
     position: relative;
@@ -447,14 +449,14 @@ html {
     z-index: 4;
     right: 5%;
     margin-left: 30px ;
-   
+
 }
 .contact-us .contact-form .contact-details{
     background-color: var(--main-color);
     border-radius: 10px;
     padding: 30px;
     color: white;
-    
+
 }
 .contact-us .contact-form .contact-details h4{
    font-weight: 600;
@@ -577,7 +579,7 @@ footer .each-row-f button{
 footer .each-row-f button:hover{
     background-color: var(--secondary-color);
     border-color: var(--secondary-color);
-   
+
 }
 footer .each-row-f .footer-icons {
     text-align: center;
@@ -611,5 +613,5 @@ footer .footer-button button svg{
     overflow: hidden;
     line-height: 0;
     background-color: white;
-    
-}
+
+} 

@@ -1,17 +1,18 @@
 import React , {useState} from 'react';
+import Navbar from '../../components/Navbar';
+import Banner from '../../components/Banner';
+import AboutUs from '../../components/AboutUs'
+
 import {Button , Row , Col , Nav , Container , Carousel , Tabs , Tab , Collapse , Form } from 'react-bootstrap';
 import BabyIcon from '../../assets/baby-icon.png';
-import Logo from '../../assets/logo.png';
+import Logo from '../../assets/logo2.png';
 import Banner1 from '../../assets/banner-one.jpg'
 import Banner2 from '../../assets/banner-two.jpg'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import CertifiedUser from '../../assets/certified-user.jpg'
 import {NavLink} from 'react-router-dom';
 import AppThumb from '../../assets/app-thumb.png'
 import '../../css/Home.css'
 import FAQ from '../../assets/faq-bg.jpg';
-import { GiEarthAfricaEurope } from "react-icons/gi";
-import { MdOutlineSlowMotionVideo } from "react-icons/md";
 import {HiOutlineLocationMarker } from "react-icons/hi";
 import { FaHeartbeat , FaPrayingHands, FaPeopleCarry , FaApple, FaGooglePlay , FaLinkedinIn, FaFacebook, FaInstagram, FaTwitter} from "react-icons/fa";
 import {FiPhoneCall  , FiMail ,  FiFacebook , FiInstagram , FiTwitter, FiLinkedin} from "react-icons/fi";
@@ -22,7 +23,7 @@ import Step2 from '../../assets/step2.png'
 import Step3 from '../../assets/step3.png'
 import Step4 from '../../assets/step4.png'
 import Map from '../../components/GoogleMap'
-import Scroll from 'react-scroll'
+import Scroll from 'react-scroll';
 let ScrollLink = Scroll.Link;
 
 
@@ -67,231 +68,25 @@ const Home = () => {
  }
 ]
     return(
-        <div id="navBanner" > 
-         
-           
-            <div className="header-top text-center" id="">
-            
-                <span aria-hidden="true " className="float-end px-2 "onClick={()=>{
-                    document.querySelector('.header-top').classList.add("d-none")
-                }} >&times;</span>
-            
-                <Container>
-                    <Row className="justify-content-center py-2">
-                        <Col sm="1" xs="1" className="p-0 " style={{textAlign:'right'}}>
-                         <img className="" src={BabyIcon} alt="" height="35" width="35" />
+        <div id="navBanner" >
 
-                        </Col>
-                        <Col sm="3" xs="6" className="p-0">
-                          <p className=" pt-2 ">Looking for a babysitting job?</p>
+          <Navbar/>
 
-                        </Col>
-                        <Col sm="2" xs="8" className="p-0 smol">
-                         <Button  variant="light" class="btn  mt-1" type="button" >Book a Nanny</Button>
+          <Banner/>
 
-                        </Col>
-                    </Row>
-                    
-                </Container>
-            </div>
-     
-            <Nav className="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top">
-                
-                <a className="navbar-brand" href="#">
-                  <img src={Logo} width="100%" height="90" alt="" />
-                </a>
-                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
-                 onClick={()=>{
-                    const Collapse = document.getElementById('navbarSupportedContent')
-                    if(showNav){
-                        Collapse.classList.remove('show')
-                        setShowNav(false)
-                    }else {
-                        Collapse.classList.add('show')
-                        setShowNav(true)
-                    }
+          <AboutUs/>
 
-                 }} >
-                    <span className="navbar-toggler-icon"></span>
-                </button>
 
-                <div className="collapse navbar-collapse justify-content-end " id="navbarSupportedContent">
-                    <ul className="navbar-nav ">
-                        <li className="nav-item ">
-                            <ScrollLink  
-                            className="nav-link cursor-pointer" exact activeClassName="active" to="about-us" href="#" spy={false} smooth={false} offset={50} duration={500} > Home </ScrollLink>
-                        </li>
-                        <li className="nav-item ">
-                          <NavLink to="/abous-us" id="sec-1" className="nav-link" exact activeClassName="active" >About </NavLink>
-                        </li>
-                        <li className="nav-item ">
-                            <NavLink to="/." className="nav-link" exact activeClassName="active" >Services </NavLink>
-                        </li>
-                        <li className="nav-item ">
-                          <NavLink to="/." className="nav-link" exact activeClassName="active" >Pricing </NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink to="/." className="nav-link" exact activeClassName="active" >For Customers</NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink to="/." className="nav-link" exact activeClassName="active" >For Employees</NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink to="/." className="nav-link" exact activeClassName="active" >Contact Us</NavLink>
-                        </li>
-                        <li className="nav-item pt-1 text-muted d-none d-lg-block">
-                            |
-                        </li>
-                       <li className="nav-item pt-1 number ">
-                       <span className="mx-2"><FiPhoneCall/> <a href="" className="mx-2">2051983247</a></span> 
 
-                       </li>
-                       <li className="nav-item  ">
-                        <Button className="btn mb-4 my-sm-0" >Book a Nanny</Button>
-
-                       </li>
-                        
-                   
-                    </ul>
-                   <div className="ml-auto d-inline-flex">
-                   
-                   </div>
-                </div>
-            </Nav>
-       
-
-            <Carousel className="slider-banner" indicators={false} interval={2000} >
-                <Carousel.Item>
-                    
-                    <img src={Banner2} alt="First Slide" className="first-slide"  width="100%" height="auto"  />
-                    <Carousel.Caption>
-                        <Row className = "slidercaption" >
-                            <Col xs="12">
-                                <p className="text-uppercase text-right">here in your neighborehood</p>
-                                <h1 className = "font-weight-bold" >Connecteing families <br/> Careing for the child</h1>
-                            </Col>
-                        </Row>
-                        <Row className = "certified-job " >
-                            <Col xs="3" className="mt-n5 text-left">
-                               <img src={CertifiedUser} className="rounded-circle user-img " width=""  height="" alt="" />
-                            </Col>
-                            <Col xs="4" className="pt-4">
-                                <h2 className="font-weight-bold ">Cerified Babysitter</h2>
-                                <p className = "headingl" >Jone | 30 years old | 10+ exp | 30$</p>
-                            </Col>
-                            <Col xs="5"  className="pt-4">
-                                <p className="">" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam dolorem id ullam harum, ipsa quam modi quo omnis ducimus" </p>
-                            </Col>
-                           
-                           
-                        </Row>  
-                       
-                    </Carousel.Caption>
-                </Carousel.Item>
-                
-                
-                <Carousel.Item>
-                    
-                    <img src='https://images.pexels.com/photos/6974315/pexels-photo-6974315.jpeg?cs=srgb&dl=pexels-cottonbro-6974315.jpg&fm=jpg' alt="First Slide" className="first-slide" width="100%" height="auto"  />
-                    <Carousel.Caption>
-                        <Row className = "slidercaption" >
-                            <Col xs="12">
-                                <p className="text-uppercase text-right">here in your neighborehood</p>
-                                <h1 className = "headingl" >Connecteing families <br/> cvareing for your child</h1>
-                            </Col>
-                        </Row>
-                       
-                        <Row className = "certified-job  " >
-                            <Col xs="3" className="mt-n5 text-left">
-                               <img src={CertifiedUser} className="rounded-circle user-img " width="200"  height="200" alt="" />
-                            </Col>
-                            <Col xs="4" className="pt-4">
-                                <h2 className="font-weight-bolder ">Cerified Babysitter</h2>
-                                <p className = "headingl" >Jone | 30 years old | 10+ exp | 30$</p>
-                            </Col>
-                            <Col xs="5"  className="pt-4">
-                                <p className="">" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam dolorem id ullam harum, ipsa quam modi quo omnis ducimus" </p>
-                            </Col>
-                           
-                           
-                        </Row>    
-                    </Carousel.Caption>
-                    {/* border curved
-                    <div class="custom-shape-divider-top-1635422766">
-                        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                            <path d="M649.97 0L550.03 0 599.91 54.12 649.97 0z" class="shape-fill"></path>
-                        </svg>
-                    </div> */}
-                 
-                </Carousel.Item>
-            </Carousel>
-
-            <Scroll.Element id="about-us" >
-                <Container>
-                    <div className="about-us">
-                        <Row>
-                            <Col xs="12" md="6">
-                                <h3>
-                                    Professional senior care, <br/>
-                                    whenever you need it.
-                                </h3>
-                                <h6>
-                                    we this is perhaps the single biggest obstacle that <br/>
-                                    all of us must overcome successful.
-                                </h6>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                    Molestiae corporis, recusandae nobis qui repudiandae nam sint hic? Minus sed doloremque neque aspernatur ad ut
-                                    accusantium consectetur maxime unde aliquid hic illum tenetur blanditiis non, voluptatem repellat eum veritatis velit 
-                                    corporis provident doloribus voluptate repellendus eaque? Nostrum distinctio veniam sit expedita.
-                                </p>
-                                <Row className="see-our-video">
-                                    <Col xs="2" className="video-icon text-center">
-                                        <MdOutlineSlowMotionVideo size={35}/>
-                                    </Col>
-                                    <Col xs="9" className="video-text">see our video</Col>
-                                </Row>
-                                
-
-                            </Col>
-                            <Col xs="12" md="6">
-                                <Row className="text-center about-cards justify-content-center">
-                                    <Col xs="5" md="5" className=" each-card py-4 "> 
-                                       <GiEarthAfricaEurope size={45} />
-                                       <h2>100</h2>
-                                       <p>Local Partners</p>
-                                    </Col>
-                                    <Col xs="5" md="5" className=" each-card py-4"> 
-                                       <FaHeartbeat size={45} />
-                                       <h2>100</h2>
-                                       <p>Local Partners</p>
-                                    </Col>
-                                    <Col xs="5" md="5" className=" each-card py-4"> 
-                                       <FaPeopleCarry size={45} />
-                                       <h2>100</h2>
-                                       <p>Local Partners</p>
-                                    </Col>
-                                    <Col xs="5" md="5" className=" each-card py-4"> 
-                                       <FaPrayingHands size={45} />
-                                       <h2>100</h2>
-                                       <p>Local Partners</p>
-                                    </Col>
-                                </Row>
-                            </Col>
-                        </Row>
-                    </div>
-                </Container>
-
-            </Scroll.Element>
 
             <div id="services" className="services">
                 <Container>
                     <h2>Explore different types of sitters who provide services for your requirements </h2>
                     <div className="d-none d-lg-block">
- 
+
                     <Carousel className="services-slider" controls={false}>
                         <Carousel.Item >
-                            
+
                             <Row>
                                 <Col xs="12" lg="5" className=" each-slide">
                                     <Row>
@@ -318,14 +113,14 @@ const Home = () => {
                                     </Row>
                                 </Col>
                             </Row>
-                            
+
                         </Carousel.Item>
-                   
+
 
                         <Carousel.Item >
 
                             <Row>
-                                
+
                                 <Col xs="12" lg="5" className=" each-slide">
                                     <Row>
                                         <Col xs="5" className="">
@@ -350,9 +145,9 @@ const Home = () => {
                                         </Col>
                                     </Row>
                                 </Col>
-                               
+
                             </Row>
-                        
+
                         </Carousel.Item>
                         </Carousel>
                     </div>   
@@ -373,9 +168,9 @@ const Home = () => {
                                         </Col>
                                     </Row>
                                 </Col>
-                               
+
                             </Row>
-                            
+
                         </Carousel.Item>
                         <Carousel.Item>
                             <Row>
@@ -425,9 +220,9 @@ const Home = () => {
                                 </Col>
                             </Row>
                         </Carousel.Item>
-                   
-                        
-                 
+
+
+
                     </Carousel>
                     </div>
                 </Container>
@@ -437,10 +232,10 @@ const Home = () => {
               <Container>
                   <h1>How it Works</h1>
                   <div className="step1 d-none d-lg-block">
-                      
+
                   </div>
                     <Row className="text-center">
-                      
+
                       <Col className="each-step" xs="12" lg="3" md="6" >
                           <img src={Step1}  alt="" height="130" width="130" />
                           <span className="badge">01</span>
@@ -471,10 +266,10 @@ const Home = () => {
                     </Row>
               </Container>
             </div>
-            
+
             <div id="mob-app" className="mob-app overflow-hidden">
-                
-            
+
+
                 <Tabs defaultActiveKey="for-customer" >
                     <Tab eventKey="for-customer" title="For Customer">
                         <Row >
@@ -488,7 +283,7 @@ const Home = () => {
                                     <h6>easy searching</h6>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia eum, quaerat omnis doloribus ipsa eaque fuga molestiae ex voluptatibus nam.</p>
                                 </div>
-                                
+
                                 <div className="list-bar">
                                     <div class="divider grey"></div>
                                     <div class="node green">02</div>
@@ -514,7 +309,7 @@ const Home = () => {
                                                </Col>
                                            </Row>
                                         </Button>
-                                        
+
                                     </Col>
                                     <Col xs='6'>
                                         <Button className="w-100">
@@ -548,7 +343,7 @@ const Home = () => {
                                     <h6>easy searching</h6>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia eum, quaerat omnis doloribus ipsa eaque fuga molestiae ex voluptatibus nam.</p>
                                 </div>
-                                
+
                                 <div className="list-bar">
                                     <div class="divider grey"></div>
                                     <div class="node green">02</div>
@@ -574,7 +369,7 @@ const Home = () => {
                                                </Col>
                                            </Row>
                                         </Button>
-                                        
+
                                     </Col>
                                     <Col xs='6'>
                                         <Button className="w-100">
@@ -598,7 +393,7 @@ const Home = () => {
                     </Tab>
                 </Tabs>
 
-                
+
             </div>
 
             <div id="faq" className="faq">
@@ -609,26 +404,26 @@ const Home = () => {
                         </Col>
                         <Col xs="12" md="6" className="heading" >
                             <strong >FAQ</strong>
-                            
+
                             <div className="Qsection">
                                 {FaqContent.map(( val , index)=>{
                                 return (
                                  <div className="eachQ " onClick={()=> val.setState(!val.state)} aria-expanded={val.state}>
                                  <h6 className="font-bolder"> {val.question} <span className="float-end">{ val.state ? <AiOutlineMinus size={23}/> : <AiOutlinePlus size={23}/> } </span></h6> 
-                             
+
                                     <Collapse in={val.state} >
                                         <div className="">
                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium odio obcaecati placeat ut enim, et alias officia officiis expedita veritatin.</p>
                                         </div>
                                     </Collapse>
-                             
+
                                 </div>)
                                 })}
-                               
-                               
-                           
-                            
-                               
+
+
+
+
+
                             </div>
                         </Col>
                     </Row>
@@ -694,10 +489,10 @@ const Home = () => {
                                                 <Col  xs="12" sm="6" md="4">
                                                 <Form.Check type="checkbox" label="web design" />
                                                 </Col>
-                                            
-                                            
+
+
                                              </Row>
-                                            
+
                                             </Form.Group>
                                             </Col>
                                             <Col xs="12">
@@ -712,11 +507,11 @@ const Home = () => {
                                                 </Button>
                                             </Col>
                                         </Row>
-                                        
 
-                                       
-                                      
-                                        
+
+
+
+
                                     </Form>
 
                                 </Col>
@@ -727,7 +522,7 @@ const Home = () => {
                     <div className="map d-none d-lg-block">
                       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10203.369712058646!2d-109.1695167545078!3d51.46931049245444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x530e4005679914b5%3A0x794e319962187ba9!2sTravelodge%20by%20Wyndham%20Kindersley!5e0!3m2!1sen!2s!4v1635936099584!5m2!1sen!2s" width="100%" height="100%"  allowfullscreen="" loading="lazy"></iframe>
                     </div>
-                    
+
                 </div>
             </Scroll.Element >
             <Scroll.Element id="footer" >
@@ -735,7 +530,7 @@ const Home = () => {
                     <Container>
                         <Row>
                             <Col xs="12" md="6" lg="3" className="each-row-f">
-                                <img src={Logo} alt="logo" width="180" height="130"  />
+                                <img src={Logo} alt="logo" width="180" height="160"  />
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem architecto repellat ab Lorem ipsum dolor sit amet consectetur adipisicing.</p>
                             </Col>
                             <Col xs="12" md="6" lg="3" className="each-row-f">
@@ -767,7 +562,7 @@ const Home = () => {
                             <Col xs="12" md="6" lg="3" className="each-row-f">
                                <Form.Group className="mb-3" controlId="formBasicEmail">
                                     <Form.Control className="custom-input" type="text" placeholder="Your Email" />
-                                   
+
                                 </Form.Group>
                                 <div style={{textAlign:"end"}}>
                                     <Button>
@@ -788,12 +583,12 @@ const Home = () => {
                                         </Button>
                                     </Col>
                                 </Row>
-                                       
-                                        
-                                    
-                                    
-                                       
-                                   
+
+
+
+
+
+
                                 {/* <div className="d-flex footer-icons">
                                   <span> <FaFacebook size={22} /> </span>
                                   <span> <FaInstagram size={22} /> </span>
@@ -808,9 +603,9 @@ const Home = () => {
                     </Container>
                 </footer>
             </Scroll.Element>
-       
-    
+
+
         </div>
     )
 }
-export default Home
+export default Home 
