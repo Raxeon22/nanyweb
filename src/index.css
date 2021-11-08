@@ -14,3 +14,30 @@ button{
   outline: none !important;
   box-shadow: none !important;
 }
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+ height: 100vh;
+  padding:50px 0px;
+
+  background-color: rgba(128, 128, 128, 0.397);
+  
+}
+.center label{
+  font-size: 20px;
+  font-weight: 600;
+  color: black;
+}
+.center p{
+  font-size: 14px;
+}
+.center h5{
+  color: blue;
+  font-weight: 500;
+}
+.center .card-title{
+  font-weight: 600;
+  font-size: 23px;
+}
