@@ -18,18 +18,18 @@ const Task = () => {
          setEmpty(res.data.results)
         
         }
-     getData()
-     async function getDataInWookie(){
-        const resInWookie = await axios.get(`https://swapi.dev/api/films/?search=${search}&format=wookiee`);
+        getData()
+        // async function getDataInWookie(){
+        //  const resInWookie = await axios.get(`https://swapi.dev/api/films/?search=${search}&format=wookiee`);
        
-        setInWookie(resInWookie.data.oaoohuwhao)
-        //console.log(res.data.results)
+        //   setInWookie(resInWookie.data.oaoohuwhao)
+        //   //console.log(res.data.results)
        
-       
-       }
-    getDataInWookie()
+            
+        // }
+        //     getDataInWookie()
 
-    }, [search2]) 
+    }, [search]) 
 
     const handleName = (e) =>{
     
@@ -83,7 +83,7 @@ const Task = () => {
             }
            
             {
-              empty.length == 0 ?  <h3 className="text-center mt-5 "> error Movie not found </h3> : null
+              title.length == 0 ?  <h3 className="text-center mt-5 "> error Movie not found </h3> : null
             }
             </Row>
         </Container>
