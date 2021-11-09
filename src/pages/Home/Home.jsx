@@ -2,6 +2,7 @@ import React , {useState} from 'react';
 import Navbar from '../../components/Navbar';
 import Banner from '../../components/Banner';
 import AboutUs from '../../components/AboutUs'
+import Services from '../../components/Services'
 
 import {Button , Row , Col , Nav , Container , Carousel , Tabs , Tab , Collapse , Form } from 'react-bootstrap';
 import BabyIcon from '../../assets/baby-icon.png';
@@ -68,6 +69,7 @@ const Home = () => {
  }
 ]
     return(
+        
         <div id="navBanner" >
 
           <Navbar/>
@@ -75,159 +77,8 @@ const Home = () => {
           <Banner/>
 
           <AboutUs/>
-
-
-
-
-            <div id="services" className="services">
-                <Container>
-                    <h2>Explore different types of sitters who provide services for your requirements </h2>
-                    <div className="d-none d-lg-block">
-
-                    <Carousel className="services-slider" controls={false}>
-                        <Carousel.Item >
-
-                            <Row>
-                                <Col xs="12" lg="5" className=" each-slide">
-                                    <Row>
-                                        <Col xs="5" className="">
-                                            <img src={ServicesImg1} alt="" height="270" width="100%" />
-                                        </Col>
-                                        <Col xs="7" className="service-slider-text">
-                                            <h5>Babies and Nannies duo</h5>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero et nulla delectus natus perferendis enim eligendi tempore.</p>
-                                            <Button>view details</Button>
-                                        </Col>
-                                    </Row>
-                                </Col>
-                                <Col xs="12" lg="5" className=" each-slide">
-                                    <Row>
-                                        <Col  xs="5" className="">
-                                            <img src={ServicesImg1} alt="" height="270" width="100%" />
-                                        </Col>
-                                        <Col xs="7"className="service-slider-text">
-                                            <h5>Personal Care</h5>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero et nulla delectus natus perferendis enim eligendi tempore.</p>
-                                            <Button>view details</Button>
-                                        </Col>
-                                    </Row>
-                                </Col>
-                            </Row>
-
-                        </Carousel.Item>
-
-
-                        <Carousel.Item >
-
-                            <Row>
-
-                                <Col xs="12" lg="5" className=" each-slide">
-                                    <Row>
-                                        <Col xs="5" className="">
-                                            <img src={Banner1} alt="" height="270" width="100%" />
-                                        </Col>
-                                        <Col xs="7" className="service-slider-text">
-                                            <h5>Babies and Nannies duo</h5>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero et nulla delectus natus perferendis enim eligendi tempore.</p>
-                                            <Button>view details</Button>
-                                        </Col>
-                                    </Row>
-                                </Col>
-                                <Col xs="12" lg="5" className=" each-slide">
-                                    <Row>
-                                        <Col xs="5" className="">
-                                            <img src={Banner1} alt="" height="270" width="100%" />
-                                        </Col>
-                                        <Col xs="7" className="service-slider-text">
-                                            <h5>Babies and Nannies duo</h5>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero et nulla delectus natus perferendis enim eligendi tempore.</p>
-                                            <Button>view details</Button>
-                                        </Col>
-                                    </Row>
-                                </Col>
-
-                            </Row>
-
-                        </Carousel.Item>
-                        </Carousel>
-                    </div>   
-                    <div className="d-block d-lg-none">
-                    <Carousel className="services-slider" controls={true}>
-
-                        <Carousel.Item >
-                            <Row>
-                                <Col xs="12" lg="5" className=" each-slide">
-                                    <Row>
-                                        <Col xs="5" className="">
-                                            <img src={ServicesImg1} alt="" height="270" width="100%" />
-                                        </Col>
-                                        <Col xs="7" className="service-slider-text">
-                                            <h5>Babies and Nannies duo</h5>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero et nulla delectus natus perferendis enim eligendi tempore.</p>
-                                            <Button>view details</Button>
-                                        </Col>
-                                    </Row>
-                                </Col>
-
-                            </Row>
-
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <Row>
-                               <Col xs="12" lg="5" className=" each-slide">
-                                    <Row>
-                                        <Col xs="5" className="">
-                                            <img src={Banner1} alt="" height="270" width="100%" />
-                                        </Col>
-                                        <Col xs="7"className="service-slider-text">
-                                            <h5>Personal Care</h5>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero et nulla delectus natus perferendis enim eligendi tempore.</p>
-                                            <Button>view details</Button>
-                                        </Col>
-                                    </Row>
-                                </Col>
-                            </Row>
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <Row>
-                               <Col xs="12" lg="5" className=" each-slide">
-                                    <Row>
-                                        <Col xs="5" className="">
-                                            <img src={Banner1} alt="" height="270" width="100%" />
-                                        </Col>
-                                        <Col xs="7"className="service-slider-text">
-                                            <h5>Personal Care</h5>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero et nulla delectus natus perferendis enim eligendi tempore.</p>
-                                            <Button>view details</Button>
-                                        </Col>
-                                    </Row>
-                                </Col>
-                            </Row>
-                        </Carousel.Item>
-                        <Carousel.Item>
-                            <Row>
-                               <Col xs="12" lg="5" className=" each-slide">
-                                    <Row>
-                                        <Col xs="5" className="">
-                                            <img src={Banner1} alt="" height="270" width="100%" />
-                                        </Col>
-                                        <Col xs="7"className="service-slider-text">
-                                            <h5>Personal Care</h5>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero et nulla delectus natus perferendis enim eligendi tempore.</p>
-                                            <Button>view details</Button>
-                                        </Col>
-                                    </Row>
-                                </Col>
-                            </Row>
-                        </Carousel.Item>
-
-
-
-                    </Carousel>
-                    </div>
-                </Container>
-            </div>
-
+        
+          <Services/>
             <div id="how-it-works" className="how-it-works">
               <Container>
                   <h1>How it Works</h1>
@@ -571,30 +422,19 @@ const Home = () => {
                                 </div>
                                 <Row>
                                     <Col xs="6" className="my-3 footer-button"  >
-                                        <Button className=" d-flex w-100 ">
+                                        <Button variant="light" className=" d-flex w-100 ">
                                             <FaApple size={22}/>
                                             <span>Apple Store</span>
                                         </Button>
                                     </Col>
                                     <Col xs="6" className="my-3 footer-button"  >
-                                        <Button className=" d-flex w-100 ">
+                                        <Button className=" d-flex w-100 "  variant="light">
                                             <FaGooglePlay size={22}/>
                                             <span>Google Store</span>
                                         </Button>
                                     </Col>
                                 </Row>
 
-
-
-
-
-
-                                {/* <div className="d-flex footer-icons">
-                                  <span> <FaFacebook size={22} /> </span>
-                                  <span> <FaInstagram size={22} /> </span>
-                                  <span> <FaTwitter size={22} /> </span>
-                                  <span> <FiLinkedin size={22} /> </span>
-                                </div> */}
                             </Col>
                             <Col xs="12" className="footer-widget">
                                Copyright © 2021 All rights reserved | Raxeon 

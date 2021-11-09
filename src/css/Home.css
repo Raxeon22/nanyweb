@@ -580,6 +580,7 @@ footer .each-row-f button{
 footer .each-row-f button:hover{
     background-color: var(--secondary-color);
     border-color: var(--secondary-color);
+    color: var(--main-color) ;
 
 }
 footer .each-row-f .footer-icons {
