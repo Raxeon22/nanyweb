@@ -5,6 +5,7 @@ import {Button , Row , Col , Nav , Container } from 'react-bootstrap';
 import BabyIcon from '../assets/baby-icon.png';
 import Logo from '../assets/vdvd-01.png';
 import Scroll from 'react-scroll';
+import Scrollspy from 'react-scrollspy'
 let ScrollLink = Scroll.Link;
 
 
@@ -12,9 +13,9 @@ const NavLinks = [
     {item : 'Home' , link : 'home'},
     {item : 'About' , link : 'about-us'},
     {item : 'Services' , link : 'services'},
-    {item : 'Pricing' , link : 'pricing'},
-    {item : 'For Customer' , link : 'mob-app'},
-    {item : 'For Employee' , link : 'mob-app'},
+    {item : 'How it Works' , link : 'how-it-works'},
+    {item : 'Mobile Aplication' , link : 'mob-app'},
+    {item : 'FAQ' , link : 'faq'},
     {item : 'Contact Us' , link : 'contact-us'}
 ]
 
@@ -69,11 +70,15 @@ const Navbar = () => {
             </button>
 
             <div className="collapse navbar-collapse justify-content-end " id="navbarSupportedContent">
-                <ul className="navbar-nav ">
+            
+                <div className="navbar-nav ">
+                <Scrollspy 
+                className="scrollspy" items={ ['home', 'about-us', 'services', 'how-it-works',  'mob-app', 'faq' , 'contact-us'] } 
+                currentClassName="isCurrent">
                     {
                         NavLinks.map((value, index)=>{
                             return(
-                            <li className="nav-item " key={index}>
+                             <li className="nav-item">
                                 <ScrollLink  
                                 className="nav-link cursor-pointer" 
                                 exact 
@@ -82,14 +87,15 @@ const Navbar = () => {
                                 spy={false} 
                                 smooth={false} 
                                 offset={50} 
-                                duration={500}> 
+                                duration={500}
+                                spyThrottle={500}> 
                                 {value.item} 
                                 </ScrollLink>
-                            </li> 
+                            </li>
                             )
                         })
                     }
-
+                   
                    <li className="nav-item pt-1 number ">
                    <span className="mx-2"><FiPhoneCall/> <a href="" className="mx-2">2051983247</a></span> 
 
@@ -99,8 +105,9 @@ const Navbar = () => {
 
                    </li>
 
-
-                </ul>
+                </Scrollspy>
+                </div>
+                
 
             </div>
         </Nav>
