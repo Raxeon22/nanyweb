@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button , Row , Col , Container , Carousel , Tabs  } from 'react-bootstrap';
+import {Button , Row , Col , Container , Carousel} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import ServicesImg1 from '../assets/services-img1.jpg'
 

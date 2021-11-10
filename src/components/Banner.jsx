@@ -1,6 +1,5 @@
 import React from 'react';
 import {Row , Col , Carousel } from 'react-bootstrap';
-import Banner1 from '../assets/banner-one.jpg'
 import Banner2 from '../assets/banner-two.jpg'
 import CertifiedUser from '../assets/certified-user.jpg'
 
@@ -36,7 +35,7 @@ const Banner =()=>{
                     return(
                         <Carousel.Item key={index}>
 
-                            <img src={val.img} alt="First Slide" className="first-slide"  width="100%" height="auto"  />
+                            <img src={val.img} alt="First Slide" className="first-slide"  width="100%" height="550"  />
                             <Carousel.Caption>
                                 <Row className = "slidercaption" >
                                     <Col xs="12">

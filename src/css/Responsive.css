@@ -8,8 +8,13 @@
 
  }
 @media only screen and (min-width: 766px) and (max-width: 990px) {
-
-    .navbar-nav button{
+    .scrollspy {
+    
+        display: block !important;
+    
+    
+    }
+    .scrollspy button{
         margin-top: 10px !important;
     }
     .number{
@@ -44,6 +49,13 @@
     }
 }
 @media only screen and (min-width: 575px) and (max-width: 765px){
+    .scrollspy {
+        display: block !important;
+    
+   }
+    .scrollspy button{
+        margin-top: 10px !important;
+    }
     .certified-job {
         display: none !important;
     }
@@ -98,7 +110,11 @@
     .header-top .smol {
         text-align: center !important;
     }
-    .navbar-nav button{
+    .scrollspy {
+        display: block !important;
+    
+   }
+    .scrollspy button{
         margin-top: 10px !important;
     }
     .number{
@@ -153,7 +169,11 @@
     .header-top .smol {
         text-align: center !important;
     }
-    .navbar-nav button{
+    .scrollspy {
+        display: block !important;
+    
+   }
+    .scrollspy button{
         margin-top: 10px !important;
     }
     .number{

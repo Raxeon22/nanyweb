@@ -1,6 +1,5 @@
 import React from 'react';
-import {Row , Col , Carousel , Container } from 'react-bootstrap';
-import { FaHeartbeat , FaPrayingHands, FaPeopleCarry , FaApple, FaGooglePlay , FaLinkedinIn, FaFacebook, FaInstagram, FaTwitter} from "react-icons/fa";
+import {Row , Col , Container } from 'react-bootstrap';
 import Step1 from '../assets/step1.png'
 import Step2 from '../assets/step2.png'
 import Step3 from '../assets/step3.png'

@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css';
-import {HashRouter ,Route ,BrowserRouter, Switch ,} from "react-router-dom";
+import {HashRouter ,Route , Switch ,} from "react-router-dom";
 import Home from './pages/Home/Home'
 import Task from './components/Task'
   
