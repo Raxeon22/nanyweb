@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {Button , Row , Col , Container , Carousel} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import ServicesImg1 from '../assets/services-img1.jpg'
+import Modal from './ServicesModal'
 
 
 
 
 const Navbar =()=>{
+    const [showModal , setShowModal] = useState(false)
     const servicesArrayDesktop =[
         {
             image : ServicesImg1,
@@ -49,6 +51,7 @@ const Navbar =()=>{
     ]
     return (
         <div id="services" className="services">
+        <Modal showModal={showModal} setShowModal={setShowModal}/>
         <Container> 
             <h2>Explore different types of sitters who provide services for your requirements. </h2>
             <div className="d-none d-lg-block">
@@ -69,7 +72,9 @@ const Navbar =()=>{
                                             <h5>{value.heading}</h5>
                                             <p>{value.paragraph}</p>
                                             <Link to={value.btnLink}>
-                                            <Button>view details</Button>
+                                            <Button  onClick={()=>{
+                                                setShowModal(prev => !prev)
+                                            }}>view details</Button>
                                             </Link>
                                         </Col>
                                     </Row>
@@ -83,7 +88,9 @@ const Navbar =()=>{
                                             <h5>{value.heading}</h5>
                                             <p>{value.paragraph}</p>
                                             <Link to={value.btnLink}>
-                                            <Button>view details</Button>
+                                            <Button  onClick={()=>{
+                                                setShowModal(prev => !prev)
+                                            }}>view details</Button>
                                             </Link>
                                         </Col>
                                     </Row>
@@ -117,7 +124,10 @@ const Navbar =()=>{
                                                 <h5>{value.heading}</h5>
                                                 <p>{value.paragraph}</p>
                                                 <Link to={value.btnLink}>
-                                                    <Button>view details</Button>
+                                                    <Button
+                                                      onClick={()=>{
+                                                        setShowModal(prev => !prev)
+                                                    }}>view details</Button>
                                                 </Link>
                                             </Col>
                                         </Row>

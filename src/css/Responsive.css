@@ -1,9 +1,18 @@
+
+@media only screen and (min-width: 1100px) and (max-width: 1400px) {
+    .certified-job {
+        margin-top: 13rem !important;
+    }
+}
 @media only screen and (min-width: 990px) and (max-width: 1100px) {
     .navbar-nav .nav-link{
         font-size: 10px !important;
     }
     .node {
         left: -5px !important;
+    }
+    .certified-job {
+        margin-top: 11rem !important;
     }
 
  }
@@ -19,6 +28,9 @@
     }
     .number{
      margin-top: 5px;
+    }
+    .certified-job {
+        margin-top: 12rem !important;
     }
     .certified-job img {
        height: 150px !important;
@@ -94,6 +106,15 @@
     .mob-app .tab-text button .icon-button{
         padding-top: 6px !important;
      }
+     .modal .modal-services{
+         width: 98% !important;
+     }
+     .modal .modal-video{
+        width: 98% !important;
+    }
+    .modal .modal-popup{
+        width: 98% !important;
+    }
     h5{
         font-size: 15px !important;
     }
@@ -163,6 +184,23 @@
     .contact-us .contact-form{
         position: relative  !important ;
     }
+    .modal .modal-services{
+        width: 98% !important;
+       height: 400px !important;
+
+    }
+    .modal .modal-video{
+       width: 98% !important;
+       height: 400px !important;
+   }
+   .modal .modal-popup{
+       width: 98% !important;
+       height: 470px !important;
+
+   }
+   .modal .modal-video .video {
+    padding: 10px 20px !important;
+   } 
 
 }
 @media screen and (max-width: 359px){
@@ -246,4 +284,19 @@
     .contact-us .contact-form{
         position: relative  !important ;
     }
+    .modal .modal-services{
+        width: 98% !important;
+       height: 400px !important;
+
+    }
+    .modal .modal-video{
+       width: 98% !important;
+       height: 400px !important;
+   }
+   .modal .modal-popup{
+       width: 98% !important;
+       height: 470px !important;
+
+   }
+
 } 

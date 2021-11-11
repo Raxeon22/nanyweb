@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaHeartbeat , FaPrayingHands, FaPeopleCarry } from "react-icons/fa";
 import { Row , Col , Container } from 'react-bootstrap';
 import { MdOutlineSlowMotionVideo } from "react-icons/md";
+import Modal from './VideoModal'
 
 import { GiEarthAfricaEurope } from "react-icons/gi";
 
@@ -29,10 +30,12 @@ const AboutCards = [
 ]
 
 const Navbar =()=>{
+    const [showModal , setShowModal] = useState(false)
     return (
 
         <Container id="about-us">
             <div className="about-us">
+                <Modal showModal={showModal} setShowModal={setShowModal}  />
                 <Row>
                     <Col xs="12" md="6">
                         <h3>
@@ -50,7 +53,10 @@ const Navbar =()=>{
                             corporis provident doloribus voluptate repellendus eaque? Nostrum distinctio veniam sit expedita.
                         </p>
                         <Row className="see-our-video">
-                            <Col xs="2" className="video-icon text-center">
+                            <Col xs="2" className="video-icon text-center"
+                             onClick={()=>{
+                                 setShowModal(prev => !prev)
+                             }}>
                                 <MdOutlineSlowMotionVideo size={35}/>
                             </Col>
                             <Col xs="9" className="video-text">see our video</Col>

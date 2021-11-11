@@ -102,7 +102,7 @@ html {
     margin-top: 30px;
 }
 .certified-job {
-    margin-top: 13rem;
+    margin-top: 13.7rem;
     padding: 8px 0px;
     background-color: var(--main-color);
 
@@ -122,6 +122,9 @@ html {
      padding-bottom: 1.25rem;
     color: #fff;
     text-align: center;
+}
+.slider-banner .carousel-indicators [data-bs-target] {
+    background-color: rgba(0, 0, 0, 0.404) !important;
 }
 .slider-banner .carousel-inner  {
     height: 600px;
@@ -254,8 +257,8 @@ html {
     background-color: var(--secondary-color);
 }
 .carousel-indicators .active {
-    opacity: 1;
-    background-color: var(--secondary-color);
+    opacity: 1 !important;
+    background-color: var(--secondary-color) !important;
 }
 
 /* How it works css starts */

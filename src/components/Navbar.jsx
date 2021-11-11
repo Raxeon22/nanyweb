@@ -56,7 +56,7 @@ const Navbar = () => {
             <Container>
 
                 <a className="navbar-brand" href="#">
-                <img src={Logo} width="100%" height="70" alt="" />
+                <img src={Logo} width="220" height="90" alt="" />
                 </a>
                 <button  className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
                 onClick={()=>{
