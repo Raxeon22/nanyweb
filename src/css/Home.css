@@ -6,6 +6,7 @@
 .header-top {
 
     background-color: var(--secondary-color);
+    z-index: 900;
  }
 
 .header-top span {
@@ -35,7 +36,7 @@
 }
 
 /* navbar css starts here */
-.navbar {
+.top-f-nav {
     
     background-color: white !important;
     font-weight: 600;
@@ -75,7 +76,7 @@ html {
     font-size: 13px;
 }
 .scrollspy .nav-link{
-   color:var(--main-color) !important ;
+   color:var(--main-color) !important;
    font-size: 13px;
    text-transform: uppercase;
 
@@ -88,12 +89,10 @@ html {
   
 }
 .scrollspy .nav-link:hover{
-    color: var(--secondary-color ) !important;
+    background-color: var(--secondary-color ) !important;
 
 }
-.navbar-light .scrollspy  .active  {
-    border-bottom: 2px solid var(--secondary-color);
-}
+
 
 /* banner slider css starts */
 .slidercaption{
@@ -211,7 +210,6 @@ html {
 /* Services slider css starts */
 .services{
     background-color: var(--main-color);
-    margin-top: 4rem ;
     padding: 4rem 0px;
 }
 .services h2{
@@ -641,3 +639,51 @@ footer .footer-button button svg{
     background-color: white;
 
 } 
+.shop {
+    background-color: var(--secondary-color);
+}
+.shop:hover {
+    color: var(--main-color);
+}
+.product-cards {
+    padding: 20px 0px;
+}
+.product-cards .each-product:hover {
+    transform: scale(1.1);
+    transition: all .2s;
+}
+.product-cards .card {
+    border: none;
+}
+.product-cards .card .card-title  {
+    font-size: 18px;
+    text-align: center;
+    font-weight: 500;
+    color: black;
+    letter-spacing: 1px;
+}
+
+.categories {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary-color);
+}
+.categories h2 {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+.categories a {
+    text-align: center;
+    text-decoration: none;
+    color: var(--main-color);
+    font-weight: 600;
+}
+.categories .card-title {
+    font-weight: 600;
+}
+.categories  .carousel-item{
+    margin: 50px 0px;
+}

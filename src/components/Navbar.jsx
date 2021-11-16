@@ -1,16 +1,21 @@
-import React , {useState , useRef} from 'react';
+import React , {useState , useRef , useEffect} from 'react';
 import {FiPhoneCall} from "react-icons/fi";
+import {RiArrowDownSLine} from 'react-icons/ri'
+import HeadPhones from '../assets/headphones.jpg'
+import SelfieStick from '../assets/selfie-stick.jpg'
+import HomeApplic from '../assets/home-applic.jpg'
+import Speakers from '../assets/speakers.jpg'
 
-import {Button , Row , Col , Nav , Container } from 'react-bootstrap';
+import {Button , Row , Col , Nav , Container , Card} from 'react-bootstrap';
 import BabyIcon from '../assets/baby-icon.png';
 import Logo from '../assets/logo2.png';
 import Scroll from 'react-scroll';
 import Scrollspy from 'react-scrollspy'
+import {NavLink, Link} from 'react-router-dom'
 let ScrollLink = Scroll.Link;
 
 
 const NavLinks = [
-    {item : 'Home' , link : 'home'},
     {item : 'About' , link : 'about-us'},
     {item : 'Services' , link : 'services'},
     {item : 'Mobile Aplication' , link : 'mob-app'},
@@ -18,12 +23,45 @@ const NavLinks = [
     {item : 'Contact Us' , link : 'contact-us'}
 ]
 
+ export const ProductDetails = [
+    {
+        title : 'Head Phones' , image : HeadPhones
+    },
+    {
+        title : 'Electrons' , image : SelfieStick
+    },
+    {
+        title : 'Speakers' , image : Speakers
+    },
+]
+
 const Navbar = () => {
-    const [showNav , setShowNav] = useState(false);   
+    const [showNav , setShowNav] = useState(false);  
+    const [showProducts , setShowProducts] = useState(false) 
     const menuMobile = useRef() 
     const topHeader = useRef()
     const navbar = useRef()
- 
+    const products = useRef(null)
+    const shop = useRef()
+
+    useEffect(() => {
+        const handleEvent = (e) => {
+            if (products.current && !products.current.contains(e.target)) {
+              setShowProducts(false);
+              shop.current.classList.remove('shop')
+            }
+          };
+          document.addEventListener("mousedown", handleEvent);
+      
+          return () => {
+            document.removeEventListener("mousedown", handleEvent);
+          };
+    } )
+
+    if(showProducts){
+        shop.current.classList.add('shop')
+
+    }
 
     return(
     <>
@@ -51,7 +89,7 @@ const Navbar = () => {
 
             </Container>
         </div>
-
+         <div className="top-f-nav">
         <Nav ref={navbar}  className="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top">
             <Container>
 
@@ -76,9 +114,13 @@ const Navbar = () => {
                 <div ref={menuMobile} className="collapse navbar-collapse justify-content-end " id="navbarSupportedContent">
                 
                     <div className="navbar-nav ">
+                   
                     <Scrollspy 
                     className="scrollspy" items={ ['home', 'about-us', 'services', 'how-it-works',  'mob-app', 'faq' , 'contact-us'] } 
-                    currentClassName="isCurrent">
+                    currentClassName="isCurrent"> 
+                    <li className="nav-item"    >
+                        <NavLink to="/"  className="nav-link "   > Home </NavLink>
+                    </li> 
                         {
                             NavLinks.map((value, index)=>{
                                 return(
@@ -86,7 +128,7 @@ const Navbar = () => {
                                     <ScrollLink  
                                     className="nav-link cursor-pointer" 
                                     exact 
-                                    to={value.link} href="#" 
+                                    to={value.link} href="/" 
                                     spy={false} 
                                     smooth={false} 
                                     offset={50} 
@@ -98,6 +140,10 @@ const Navbar = () => {
                                 )
                             })
                         }
+                    
+                    <li className="nav-item"    >
+                        <NavLink to="/shop" className="nav-link " ref={shop} onMouseEnter={()=> setShowProducts(true)}  > Shop <span> <RiArrowDownSLine size={20} /> </span> </NavLink>
+                    </li>    
                     
                     <li className="nav-item pt-1 number ">
                     <span className="mx-2"><FiPhoneCall/> <a href="" className="mx-2">2051983247</a></span> 
@@ -113,8 +159,37 @@ const Navbar = () => {
                     
 
                 </div>
+             
             </Container>
         </Nav>
+       {showProducts ?
+       <div className="product-cards animate__animated animate__fadeInDown animate__fast	" ref={products}>
+        <Container>
+            <Row>
+                {
+                    ProductDetails.map((val, index)=>{
+                        return(
+                            <Col xs="12" md="4" key={index}>
+                                <Link to="/shop">
+                                    <Card className="each-product">
+                                        <Card.Img variant="top" />
+                                        <img src={val.image} width="100%" height="280" />
+                                        <Card.Body>
+                                            <Card.Title> {val.title} </Card.Title>
+                                        </Card.Body>
+                                    </Card> 
+                                </Link>
+                            </Col>
+                        )
+                    })
+                }
+                
+            </Row>
+           
+        </Container>
+        </div>
+        : null}
+         </div>
 
     </>)
 }
