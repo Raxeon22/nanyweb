@@ -7,6 +7,20 @@ import Video from '../videos/video.mp4'
 const VideoModal = ({showModal , setShowModal }) =>{
     
     const video =  useRef()
+  
+
+  useEffect(() => {
+    const handleEvent = (e) => {
+      if (video.current && !video.current.contains(e.target)) {
+        setShowModal(false);
+      }
+    };
+    document.addEventListener("mousedown", handleEvent);
+
+    return () => {
+      document.removeEventListener("mousedown", handleEvent);
+    };
+  });
 
     // useEffect(() => {
     //     const handleEvent = (event) =>{

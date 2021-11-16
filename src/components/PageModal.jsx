@@ -6,20 +6,22 @@ import Duck from '../assets/banner-two.jpg'
 
 const PageModal = ({showModal , setShowModal }) =>{
     
-    const popup =  useRef()
+   
 
-    // useEffect(() => {
-    //     const handleEvent = (event) =>{
-    //         if(!popup.current.contains(event.target)){
-    //         setShowModal(false)
-        
-    //     } 
-    //     }
-    //      document.addEventListener('mousedown' , handleEvent)
-    //      return () => { document.removeEventListener('mousedown' , handleEvent) }
-        
-        
-    // }, [])
+    const popup = useRef(null);
+
+    useEffect(() => {
+      const handleEvent = (e) => {
+        if (popup.current && !popup.current.contains(e.target)) {
+          setShowModal(false);
+        }
+      };
+      document.addEventListener("mousedown", handleEvent);
+  
+      return () => {
+        document.removeEventListener("mousedown", handleEvent);
+      };
+    });
 
    
     return(
