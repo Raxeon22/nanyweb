@@ -2,7 +2,6 @@
   "name": "nanny",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://simra123.github.io/nanny_app2",
   "dependencies": {
     "animate.css": "^4.1.1",
     "axios": "^0.24.0",
