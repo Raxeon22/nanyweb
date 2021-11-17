@@ -1,0 +1,66 @@
+
+.products{
+    margin: 3rem 20px;
+}
+.products .sort {
+   width: 15%;
+   text-align: center;
+   margin-left: auto;
+   background-color: rgba(168, 161, 161, 0.301);
+   padding: 10px;
+   margin-bottom: 20px;
+   border-radius: 5px;
+}
+.products .each-card{
+    margin-bottom: 20px;
+}
+.products .each-card:hover {
+    transform: scale(1.1);
+    transition: all .2s;
+}
+.products .shop-cards a{
+    text-decoration: none !important;
+}
+
+.products .shop-cards .card .card-title span {
+    color: var(--main-color);
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.products .shop-cards .card .card-title p {
+    font-size: 17px;
+    margin-top: 10px;
+    color: black;
+} 
+.products .filter-by{
+    border: 1px solid rgba(85, 74, 74, 0.568);
+    padding-bottom: 20px ;
+    
+    background-color: rgba(168, 161, 161, 0.301);
+}
+
+.products .filter-by h6{
+    border: 1px solid rgba(0, 0, 0, 0.486);
+    padding: 10px 10px;
+}
+.products .filter-by a {
+    text-decoration: none;
+} 
+.products .filter-by a::hover {
+    font-weight: 600;
+}
+.products .filter-by p::before{
+    content: ">>";
+    padding: 0;
+    margin-top: 10px;
+    font-weight: 600;
+}
+.products .filter-by p{
+    padding: 0;
+    margin-top: 5px;
+    margin-bottom: 0 ;
+    color: var(--main-color);
+    padding-left: 20px;
+
+}

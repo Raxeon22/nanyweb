@@ -6,7 +6,7 @@ import HeadPhones from '../assets/headphones.jpg'
 import SelfieStick from '../assets/selfie-stick.jpg'
 import Speakers from '../assets/speakers.jpg'
 
-export const ProductDetails = [
+ const ProductDetails = [
     {
         title : 'Head Phones' , image : HeadPhones
     },

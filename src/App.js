@@ -12,10 +12,7 @@ function App() {
   return (
    <>
     <HashRouter basename="/">
-   <Navbar/>
-
-
-      <Switch>
+       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/task" component={Task} />
         <Route exact path="/shop" component={Shop} />

@@ -3,7 +3,6 @@ import {FiPhoneCall} from "react-icons/fi";
 import {RiArrowDownSLine} from 'react-icons/ri'
 import HeadPhones from '../assets/headphones.jpg'
 import SelfieStick from '../assets/selfie-stick.jpg'
-import HomeApplic from '../assets/home-applic.jpg'
 import Speakers from '../assets/speakers.jpg'
 
 import {Button , Row , Col , Nav , Container , Card} from 'react-bootstrap';
@@ -35,7 +34,7 @@ const NavLinks = [
     },
 ]
 
-const Navbar = () => {
+const Navbar = (props) => {
     const [showNav , setShowNav] = useState(false);  
     const [showProducts , setShowProducts] = useState(false) 
     const menuMobile = useRef() 
@@ -65,7 +64,7 @@ const Navbar = () => {
 
     return(
     <>
-        <div ref={topHeader} className="header-top text-center"  id="">
+       {  props.header ?  <div ref={topHeader} className="header-top text-center"  id="">
 
             <span aria-hidden={true} className="float-end px-2 "onClick={()=>{
                topHeader.current.classList.add("d-none")
@@ -88,7 +87,7 @@ const Navbar = () => {
                 </Row>
 
             </Container>
-        </div>
+        </div> : null}
          <div className="top-f-nav">
         <Nav ref={navbar}  className="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top">
             <Container>
@@ -142,7 +141,10 @@ const Navbar = () => {
                         }
                     
                     <li className="nav-item"    >
-                        <NavLink to="/shop" className="nav-link " ref={shop} onMouseEnter={()=> setShowProducts(true)}  > Shop <span> <RiArrowDownSLine size={20} /> </span> </NavLink>
+                        <NavLink to="/shop" className="nav-link " ref={shop} onMouseEnter={()=> {
+                            if(props.shop){
+                            setShowProducts(true)}
+                            }}  > Shop   { props.shop ? <span> <RiArrowDownSLine size={20} /> </span> : null} </NavLink>
                     </li>    
                     
                     <li className="nav-item pt-1 number ">

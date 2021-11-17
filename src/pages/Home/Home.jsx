@@ -1,4 +1,5 @@
 import React , {useEffect , useState}  from 'react';
+import Navbar from '../../components/Navbar';
 import Banner from '../../components/Banner';
 import AboutUs from '../../components/AboutUs'
 import Services from '../../components/Services'
@@ -27,7 +28,7 @@ const Home = () => {
         
         <div id="navBanner" >
             <Popup showModal={showModal} setShowModal={setShowModal}/>
-            
+            <Navbar  header={true} shop={true} />
   
             <Banner/>
 
