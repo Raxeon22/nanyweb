@@ -6,6 +6,7 @@ import Footer from './components/Footer'
 import Home from './pages/Home/Home'
 import Shop from './pages/Shop/Shop'
 import Task from './components/Task'
+import ProductPage from './pages/ProductPage/ProductPage';
   
 function App() {
  // const Home = React.lazy(()=> import('./pages/Home/Home'))
@@ -16,6 +17,7 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route exact path="/task" component={Task} />
         <Route exact path="/shop" component={Shop} />
+        <Route exact path="/shop/product" component={ProductPage} />
       </Switch>  
       <Footer/>
  

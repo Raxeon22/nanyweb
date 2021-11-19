@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {Button , Row , Col , Container , Carousel} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
-import ServicesImg1 from '../assets/services-img1.jpg'
+import ServicesImg1 from '../../assets/services-img1.jpg'
 import Modal from './ServicesModal'
 
 

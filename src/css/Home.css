@@ -664,26 +664,53 @@ footer .footer-button button svg{
 }
 
 .categories {
-    height: 100vh;
+    padding: 5rem 0px;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: var(--secondary-color);
+}
+.categories .each-img {
+   
+    position: relative;
+}
+.categories .each-img  h4{
+    font-weight: 600;
+}
+.categories .each-img p{
+    font-size: 15px;
+}
+.categories  .img-text{
+    position: absolute;  
+    top: 6%;
+    left: 10%;
+    right: 10%;
+    z-index: 5;
+}
+.categories .each-img{
+    overflow: hidden;
+}
+.categories img{
+    transition: transform .5s ease;
+
+}
+.categories img:hover{
+    transform: scale(1.2);
+}
+.categories .each-img .img-text-smol{
+    position: absolute;
+    left: 9%;
+    top: 14%;
+    right: 30%;
+    z-index: 5;
 }
 .categories h2 {
     text-align: center;
     font-weight: 600;
     margin-bottom: 2rem;
 }
-.categories a {
-    text-align: center;
-    text-decoration: none;
-    color: var(--main-color);
-    font-weight: 600;
-}
-.categories .card-title {
-    font-weight: 600;
-}
+
 .categories  .carousel-item{
     margin: 50px 0px;
 }

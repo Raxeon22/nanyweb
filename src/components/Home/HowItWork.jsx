@@ -1,9 +1,9 @@
 import React from 'react';
 import {Row , Col , Container } from 'react-bootstrap';
-import Step1 from '../assets/step1.png'
-import Step2 from '../assets/step2.png'
-import Step3 from '../assets/step3.png'
-import Step4 from '../assets/step4.png'
+import Step1 from '../../assets/step1.png'
+import Step2 from '../../assets/step2.png'
+import Step3 from '../../assets/step3.png'
+import Step4 from '../../assets/step4.png'
 
 
 const HowItWork =()=>{

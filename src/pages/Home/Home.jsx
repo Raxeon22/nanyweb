@@ -1,14 +1,17 @@
 import React , {useEffect , useState}  from 'react';
 import Navbar from '../../components/Navbar';
-import Banner from '../../components/Banner';
-import AboutUs from '../../components/AboutUs'
-import Services from '../../components/Services'
-import HowItWork from '../../components/HowItWork'
-import MobileApp from '../../components/MobileApp';
-import FAQ from '../../components/FAQ';
-import ContactUs from '../../components/ContactUs';
-import Popup from '../../components/PageModal'
-import Categories from '../../components/Categories'
+import Banner from '../../components/Home/Banner';
+import AboutUs from '../../components/Home/AboutUs'
+import Services from '../../components/Home/Services'
+import HowItWork from '../../components/Home/HowItWork'
+import MobileApp from '../../components/Home/MobileApp';
+import FAQ from '../../components/Home/FAQ';
+import ContactUs from '../../components/Home/ContactUs';
+import Popup from '../../components/Home/PageModal'
+import Categories from '../../components/Home/Categories'
+import ProductSlider from '../../components/Shop/ProductSlider'
+
+
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -33,8 +36,8 @@ const Home = () => {
             <Banner/>
 
             <AboutUs/>
-            <Categories/>
             <Services/>
+            <Categories/>
             
             <HowItWork/>
 

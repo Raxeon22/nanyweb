@@ -1,7 +1,7 @@
 import React  , {useEffect, useRef} from 'react';
 import { Card, Container } from 'react-bootstrap';
-import '../css/Modals.css'
-import Video from '../videos/video.mp4'
+import '../../css/Modals.css'
+import Video from '../../videos/video.mp4'
 
 
 const VideoModal = ({showModal , setShowModal }) =>{

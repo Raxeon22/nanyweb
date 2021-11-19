@@ -1,7 +1,7 @@
 import React  , {useEffect, useRef} from 'react';
 import { Card, Container , Button } from 'react-bootstrap';
-import '../css/Modals.css'
-import Duck from '../assets/banner-two.jpg'
+import '../../css/Modals.css'
+import Duck from '../../assets/banner-two.jpg'
 
 
 const PageModal = ({showModal , setShowModal }) =>{

@@ -1,7 +1,7 @@
 import React from 'react';
 import {Row , Col , Carousel } from 'react-bootstrap';
-import Banner2 from '../assets/banner-two.jpg'
-import CertifiedUser from '../assets/certified-user.jpg'
+import Banner2 from '../../assets/banner-two.jpg'
+import CertifiedUser from '../../assets/certified-user.jpg'
 
 const SliderData = [
     {

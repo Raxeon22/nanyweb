@@ -1,13 +1,14 @@
 import React , {useState} from 'react';
 import Navbar from '../../components/Navbar';
-import {Button , Row , Col ,Form, Container , Card} from 'react-bootstrap';
+import { Row , Col ,Form, Container , Card} from 'react-bootstrap';
 import {Link} from 'react-router-dom'
 import HeadPhones from '../../assets/headphones.jpg'
 import SelfieStick from '../../assets/selfie-stick.jpg'
 import Speakers from '../../assets/speakers.jpg'
 import '../../css/Shop.css'
+import ProductSlider from '../../components/Shop/ProductSlider'
 
-const Products = [
+export const Products = [
     {
         title : 'Head Phones' , image : HeadPhones , price : "44$"
     },
@@ -18,16 +19,16 @@ const Products = [
         title : 'Speakers' , image : Speakers , price : "49$"
     },
     {
-        title : 'Speakers' , image : Speakers , price : "49$"
+        title : 'Speakers' , image : HeadPhones , price : "49$"
+    },
+    {
+        title : 'Speakers' , image : SelfieStick , price : "49$"
     },
     {
         title : 'Speakers' , image : Speakers , price : "49$"
     },
     {
-        title : 'Speakers' , image : Speakers , price : "49$"
-    },
-    {
-        title : 'Speakers' , image : Speakers , price : "49$"
+        title : 'Speakers' , image : HeadPhones , price : "49$"
     },
 ]
 const categories = [
@@ -84,7 +85,7 @@ const Shop = () =>{
                         Products.map((val, index)=>{
                             return(
                                 <Col xs="12" md="4" key={index}>
-                                    <Link to="/shop">
+                                    <Link to="/shop/product">
                                         <Card className="each-card">
                                             <Card.Img variant="top" />
                                             <img src={val.image} width="100%" height="280" />
@@ -110,6 +111,7 @@ const Shop = () =>{
             
             </Container>
         </div>
+        <ProductSlider heading="new arrivals" />
         </>
     )
 }

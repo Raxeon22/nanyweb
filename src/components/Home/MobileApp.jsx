@@ -1,6 +1,6 @@
 import React from 'react';
 import {Button , Row , Col , Tabs , Tab  } from 'react-bootstrap';
-import AppThumb from '../assets/app-thumb.png'
+import AppThumb from '../../assets/app-thumb.png'
 import {  FaApple, FaGooglePlay } from "react-icons/fa";
 
 

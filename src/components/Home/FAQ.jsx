@@ -1,6 +1,6 @@
 import React , {useState} from 'react';
 import { Row , Col , Container , Collapse } from 'react-bootstrap';
-import FAQImg from '../assets/faq-bg.jpg';
+import FAQImg from '../../assets/faq-bg.jpg';
 import {AiOutlineMinus , AiOutlinePlus} from "react-icons/ai";
 
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Container } from 'react-bootstrap';
-import '../css/Modals.css'
+import '../../css/Modals.css'
 
 
 const ServicesModal = ({showModal , setShowModal }) =>{
