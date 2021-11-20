@@ -662,6 +662,70 @@ footer .footer-button button svg{
     color: black;
     letter-spacing: 1px;
 }
+.prod-tabs .nav-tabs{
+    justify-content: center !important;
+    border: none;
+}
+.prod-tabs .nav-tabs .nav-item{
+    margin-right: 20px;
+}
+.prod-tabs .nav-tabs .nav-item .nav-link {
+    color: black;
+    transition: width 0.4s cubic-bezier(.175,.885,.32,1.15);
+}
+.prod-tabs .nav-tabs .nav-item #react-aria1396955469-2-tab-T-shirts:after {
+    content: 'T Shirts';
+    display: block;
+    font-size: 14px;
+}
+.prod-tabs .nav-tabs .nav-item #react-aria4207743177-2-tab-sweat-shirts::after {
+    content: 'Sweat Shirts';
+    display: block;
+    font-size: 14px;
+}
+.prod-tabs .nav-tabs .nav-item #react-aria4207743177-2-tab-head-wear::after {
+    content: 'Head Wear';
+    display: block;
+    font-size: 14px;
+}
+.prod-tabs .nav-tabs .nav-item #react-aria4207743177-2-tab-polos::after {
+    content: 'Polos';
+    display: block;
+    font-size: 14px;
+}
+.prod-tabs .nav-tabs .nav-item #react-aria4207743177-2-tab-accessories::after {
+    content: 'Accessories';
+    display: block;
+    font-size: 14px;
+}
+.prod-tabs .nav-tabs .nav-link.active {
+    border-bottom: 3px solid black;
+   background-color: var(--secondary-color);
+   border-top: none;
+   border-left: none;
+   border-right: none;
+ }
+
+ /* .prod-tabs .nav-tabs .nav-link.active::after{
+     content: '';
+     width: 20%;
+     display: none;
+     background-color: violet;
+ } */
+.prod-tabs .nav-tabs .nav-item svg {
+    font-size: 28px;
+    color: var(--main-color);
+    display: flex;
+}
+
+.our-products {
+    padding: 5rem 0px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary-color);
+}
 
 .categories {
     padding: 5rem 0px;
@@ -671,6 +735,7 @@ footer .footer-button button svg{
     align-items: center;
     background-color: var(--secondary-color);
 }
+
 .categories .each-img {
    
     position: relative;

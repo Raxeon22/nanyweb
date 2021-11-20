@@ -1,10 +1,12 @@
 import React , {useState} from 'react';
-import {Row , Col , Carousel  , Card , Container} from 'react-bootstrap';
+import {Row , Col , Carousel  , Tabs , Tab , Container} from 'react-bootstrap';
 import {Link} from 'react-router-dom'
 import HomeApplic from '../../assets/home-applic.jpg'
 import HeadPhones from '../../assets/headphones.jpg'
 import SelfieStick from '../../assets/selfie-stick.jpg'
 import Speakers from '../../assets/speakers.jpg'
+import {RiTShirt2Line} from 'react-icons/ri'
+import {GiMonclerJacket , GiBilledCap, GiPoloShirt, GiJewelCrown} from 'react-icons/gi'
 
  const ProductDetails = [
     {
@@ -18,53 +20,88 @@ import Speakers from '../../assets/speakers.jpg'
     },
    
 ]
+const bleh = <b><RiTShirt2Line size="30"/>T Shirts</b> 
+
 const Shop = () =>{
     return(
        <div className="categories">
             <Container > 
             <h2>Categories </h2>
             <div className="">
-
-            <Carousel  controls={false}>
+            <div className="cate-tabs">
+               
+                    <Carousel interval={2000} >
                 <Carousel.Item >
                     <Row >
-                       <Col className="each-img" md="5">
+                       <Col className="each-img" md="3">
                            <div className="img-text">
                            <h4> T-shirts  </h4>
                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
                            </div>
-                           <img  width="100%" height="520" src={ProductDetails[0].image} alt="" />
+                           <img  width="100%" height="400" src={ProductDetails[0].image} alt="" />
                        </Col>
-                       <Col className="each-img" md="4">
+                       <Col className="each-img" md="3">
                        <div className="img-text">
                            <h4> Sweat Shirts </h4>
                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
                            </div>
-                           <img  width="100%" height="520" src={ProductDetails[1].image} alt="" />
+                           <img  width="100%" height="400" src={ProductDetails[1].image} alt="" />
                        </Col>
                        <Col className="each-img" md="3">
-                           <Row>
-                               <Col className="each-img" md="12">
-                               <div className="img-text-smol">
-                           <h4> Caps </h4>
-                           <p>Lorem ipsum dolor sit amet . </p>
+                       <div className="img-text">
+                           <h4> Sweat Shirts </h4>
+                           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
                            </div>
-                           <img  width="100%" height="250"  src={ProductDetails[2].image} alt="" />
-                               </Col>
-                               <Col className="each-img" md="12">
-                               <div className="img-text-smol">
-                           <h4> Others </h4>
-                           <p>Lorem ipsum dolor sit amet . </p>
+                           <img  width="100%" height="400" src={ProductDetails[1].image} alt="" />
+                       </Col>
+                       <Col className="each-img" md="3">
+                       <div className="img-text">
+                           <h4> Sweat Shirts </h4>
+                           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
                            </div>
-                           <img  width="100%" height="250"  className="mt-3" src={ProductDetails[2].image} alt="" />
-                               </Col>
-                           </Row>
+                           <img  width="100%" height="400" src={ProductDetails[1].image} alt="" />
+                       </Col>
+                    </Row>
+                </Carousel.Item>
+                <Carousel.Item >
+                    <Row >
+                       <Col className="each-img" md="3">
+                           <div className="img-text">
+                           <h4> T-shirts  </h4>
+                           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                           </div>
+                           <img  width="100%" height="400" src={ProductDetails[0].image} alt="" />
+                       </Col>
+                       <Col className="each-img" md="3">
+                       <div className="img-text">
+                           <h4> Sweat Shirts </h4>
+                           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                           </div>
+                           <img  width="100%" height="400" src={ProductDetails[1].image} alt="" />
+                       </Col>
+                       <Col className="each-img" md="3">
+                       <div className="img-text">
+                           <h4> Sweat Shirts </h4>
+                           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                           </div>
+                           <img  width="100%" height="400" src={ProductDetails[1].image} alt="" />
+                       </Col>
+                       <Col className="each-img" md="3">
+                       <div className="img-text">
+                           <h4> Sweat Shirts </h4>
+                           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                           </div>
+                           <img  width="100%" height="400" src={ProductDetails[1].image} alt="" />
                        </Col>
                     </Row>
                 </Carousel.Item>
 
                
             </Carousel>
+                   
+            </div>
+
+           
             </div>   
             {/* <div className="d-block d-lg-none">
             <Carousel  className="services-slider" controls={false}>

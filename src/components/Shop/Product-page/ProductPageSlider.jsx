@@ -14,8 +14,8 @@ const ProductPageSlider = (props) => {
             
                console.log(Products[i].image)
                 return (
-                    <a>
-                      <img src={Products[i].image} width="50" height="50" />
+                    <a >
+                      <img src={Products[i].image} />
                     </a>
                   );
             
@@ -38,7 +38,7 @@ const ProductPageSlider = (props) => {
          {
              Products.map((val) => {
                  return(
-                     <div  className="each-slid">
+                     <div  className="each-slid overflow-hidden">
                          <img src={val.image} width="100%" height="400" alt="" className="p-1" />
                         
                      </div>

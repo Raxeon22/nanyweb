@@ -8,6 +8,7 @@ import { Row , Col , Container , Button ,Tabs , Tab} from 'react-bootstrap';
 import ProductPageSlider from '../../components/Shop/Product-page/ProductPageSlider';
 import ProductSlider from '../../components/Shop/ProductSlider';
 import { FaFacebook  , FaStar , FaShoppingCart, FaTwitter, FaLinkedin, FaInstagram} from 'react-icons/fa';
+import { RiAccountPinCircleFill } from 'react-icons/ri';
 
 
 const ProductPage = () => {
@@ -51,7 +52,6 @@ const ProductPage = () => {
                         <FaStar/>
                     </span>
                   
-                    <b className="m-1">reviews(1)</b> 
                 </div>
                 <p className="price mt-2">price: <b>44$</b></p>
                 <div className="color d-flex">
@@ -85,15 +85,11 @@ const ProductPage = () => {
                     <Tab eventKey="description" title="Description">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A neque voluptatibus impedit nemo, porro totam. Vel blanditiis adipisci commodi facere deleniti rerum molestias consectetur?</p>
                     </Tab>
-                    <Tab eventKey="reviews" title="Reviews">
-                        <p>reviews</p>
-                    </Tab>
+                
                     <Tab eventKey="policy" title="Return Policy">
                         <p>return policy</p>
                     </Tab>
-                    <Tab eventKey="comments" title="Comments">
-                        <p>Comments</p>
-                    </Tab>
+                 
                 </Tabs>
             </div>
         </Container>

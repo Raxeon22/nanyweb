@@ -9,8 +9,7 @@ import FAQ from '../../components/Home/FAQ';
 import ContactUs from '../../components/Home/ContactUs';
 import Popup from '../../components/Home/PageModal'
 import Categories from '../../components/Home/Categories'
-import ProductSlider from '../../components/Shop/ProductSlider'
-
+import OurProducts from '../../components/Home/OurProducts'
 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -34,11 +33,11 @@ const Home = () => {
             <Navbar  header={true} shop={true} />
   
             <Banner/>
-
+            <OurProducts/>
+  
             <AboutUs/>
             <Services/>
             <Categories/>
-            
             <HowItWork/>
 
 
