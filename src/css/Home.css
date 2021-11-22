@@ -647,6 +647,7 @@ footer .footer-button button svg{
 }
 .product-cards {
     padding: 20px 0px;
+    animation-delay: -1000 !important;
 }
 .product-cards .each-product:hover {
     transform: scale(1.1);
@@ -713,7 +714,7 @@ footer .footer-button button svg{
      background-color: violet;
  } */
 .prod-tabs .nav-tabs .nav-item svg {
-    font-size: 28px;
+    font-size: 35px;
     color: var(--main-color);
     display: flex;
 }
@@ -725,8 +726,27 @@ footer .footer-button button svg{
     justify-content: center;
     align-items: center;
     background-color: var(--secondary-color);
+    text-align: center;
 }
-
+.our-products h1 {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+.our-products .each-slide {
+    text-align: center;
+    margin-top: 20px;
+}
+.our-products .each-slide p{
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+.our-products span {
+    font-weight: 600;
+    color: var(--main-color);
+    text-align: center;
+}
 .categories {
     padding: 5rem 0px;
     height: auto;

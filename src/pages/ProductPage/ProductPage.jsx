@@ -2,6 +2,7 @@ import React , {useState} from 'react';
 import Navbar from '../../components/Navbar'; 
 import {AiOutlineMinus ,AiOutlinePlus} from 'react-icons/ai'
 import Footer from '../../components/Footer';
+import {Link} from 'react-router-dom';
 
 import { Row , Col , Container , Button ,Tabs , Tab} from 'react-bootstrap';
 
@@ -71,7 +72,9 @@ const ProductPage = () => {
                     <p className="p-2">  {quantity} </p>
                     <span onClick={()=> setQuantity( quantity - 1)}><AiOutlineMinus/> </span>
                 </div> <br/>
+                <Link to="/order/step1">
             <Button> <FaShoppingCart className="m-1"/> Order Now</Button> 
+            </Link>
             <div className="social-icons mt-5">
                 <FaFacebook size="25"color="blue" className="m-1"/>
                 <FaTwitter size="25"color="primary" className="m-1"/>

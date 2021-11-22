@@ -219,3 +219,107 @@
     color: var(--main-color);
   
 }
+.order-now{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    padding: 20px 0px !important;
+}
+.order-now .forms {
+    width: 40%;
+    padding: 2rem;
+    background-color: var(--secondary-color);
+    border-radius: 5PX;
+}
+.stepper-wrapper {
+    font-family: Arial;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+  }
+  .stepper-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+  
+    
+  }
+  
+  .stepper-item::before {
+    position: absolute;
+    content: "";
+    border-bottom: 2px solid #ccc;
+    width: 100%;
+    top: 20px;
+    left: -50%;
+    z-index: 2;
+  }
+  
+  .stepper-item::after {
+    position: absolute;
+    content: "";
+    border-bottom: 2px solid #ccc;
+    width: 100%;
+    top: 20px;
+    left: 50%;
+    right: 50%;
+    z-index: 2;
+  }
+  
+  .stepper-item .step-counter {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #ccc;
+    margin-bottom: 6px;
+  }
+  
+    
+  .stepper-item.completed .step-counter {
+    background-color: var(--main-color);
+    font-weight: bold;
+    color: white;
+
+  }
+  .stepper-item.completed::before{
+    position: absolute;
+    content: "";
+    border-bottom: 2px solid transparent;
+    width: 100%;
+    top: 20px;
+    right: 50%;
+    left: 50%;
+    z-index: 3;
+  }
+  
+  
+  .stepper-item.completed::after {
+    position: absolute;
+    content: "";
+    border-bottom: 2px solid var(--main-color);
+    width: 100%;
+    top: 20px;
+    left: 50%;
+    z-index: 3;
+  }
+  
+  .stepper-item:first-child::before {
+    content: none;
+  }
+  .stepper-item:last-child::after {
+    content: none;
+  }
+  .order-now button{
+      background-color: var(--main-color);
+      color: white;
+  }

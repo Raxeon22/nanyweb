@@ -23,8 +23,8 @@ var settings = {
     initialSlide: 0,
     autoplay: true,
     speed: 500,
+    arrows : false,
     autoplaySpeed: 2000,
-    arrows : true,
     cssEase: "linear",
     responsive: [
       {
@@ -57,7 +57,8 @@ const Shop = (props) =>{
     return(
        <div className="our-products">
             <Container > 
-            <h2>Our Products</h2>
+            <h1>Our Products</h1>
+            <p>There is something perfect for every business, brand, or event.</p>
             <div className="">
             <div className="prod-tabs">
                 <Tabs defaultActiveKey="T-shirts">
@@ -68,7 +69,7 @@ const Shop = (props) =>{
          {
              Products.map((val) => {
                  return(
-                     <div  className="each-slid">
+                     <div  className="each-slide">
                          <img src={val.image} width="100%" height="300" alt="" className="p-1" />
                          <p> {val.title} </p>
                          <span> {val.price} </span>

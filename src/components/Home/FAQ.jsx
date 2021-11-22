@@ -57,7 +57,7 @@ const FAQ =()=>{
                         {FaqContent.map(( val , index)=>{
                         return (
                          <div className="eachQ " onClick={()=> val.setState(!val.state)} aria-expanded={val.state}>
-                         <h6 className="font-bolder"> {val.question} <span className="float-end">{ val.state ? <AiOutlineMinus size={23}/> : <AiOutlinePlus size={23}/> } </span></h6> 
+                         <h6 className="font-bolder"> {val.question} <span className="float-end" style={{cursor : "pointer"}}>{ val.state ? <AiOutlineMinus size={23}/> : <AiOutlinePlus size={23}/> } </span></h6> 
 
                             <Collapse in={val.state} >
                                 <div className="">
