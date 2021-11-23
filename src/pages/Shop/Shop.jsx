@@ -18,9 +18,7 @@ export const Products = [
     {
         title : 'Speakers' , image : Speakers , price : "49$"
     },
-    {
-        title : 'Speakers' , image : HeadPhones , price : "49$"
-    },
+  
     {
         title : 'Speakers' , image : SelfieStick , price : "49$"
     },
@@ -62,7 +60,7 @@ const Shop = () =>{
                 </div>
            
                 <Row>
-                    <Col md="3" xs="12" className="text-right" >
+                    <Col md="3" xs="12" className="text-right mb-4" >
                         <div className="filter-by">
                             <h6>Filter Results By</h6>
                             {  
@@ -84,7 +82,7 @@ const Shop = () =>{
                     {
                         Products.map((val, index)=>{
                             return(
-                                <Col xs="12" md="4" key={index}>
+                                <Col xs="12" md="4" sm="6" key={index}>
                                     <Link to="/shop/product">
                                         <Card className="each-card">
                                             <Card.Img variant="top" />

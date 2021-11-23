@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import 'animate.css';
 import './css/Responsive.css';
+import './css/Shop.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
 

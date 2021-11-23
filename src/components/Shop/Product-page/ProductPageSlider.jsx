@@ -12,12 +12,12 @@ const ProductPageSlider = (props) => {
     const settings = {
         customPaging: function(i) {
             
-               console.log(Products[i].image)
-                return (
-                    <a >
-                      <img src={Products[i].image} />
-                    </a>
-                  );
+          console.log(Products[i].image)
+          return (
+            <a >
+              <img src={Products[i].image} />
+            </a>
+          );
             
          
         },
@@ -29,8 +29,33 @@ const ProductPageSlider = (props) => {
         slidesToScroll: 1,
         autoplaySpeed: 2000,
         cssEase: "linear",
-
-        autoPlay : true
+        autoPlay : true,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              infinite: true,
+              dots: true
+            }
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2,
+              initialSlide: 2
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+        ]
       };
     return (
       <div className="indiv-showcase">

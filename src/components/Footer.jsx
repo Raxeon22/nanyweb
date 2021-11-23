@@ -28,7 +28,7 @@ const ContactUs =()=>{
                         <h6>Support</h6>
                         <ul>
                             <li>
-                              <NavLink to="#">Privacy policy</NavLink>
+                              <NavLink to="/policy">Privacy policy</NavLink>
                             </li>
                             <li>
                              <NavLink to="#">Terms and Conditions</NavLink>

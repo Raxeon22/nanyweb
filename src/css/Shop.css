@@ -3,7 +3,7 @@
     margin: 3rem 20px;
 }
 .products .sort {
-   width: 15%;
+   width: 170px;
    text-align: center;
    margin-left: auto;
    background-color: rgba(168, 161, 161, 0.301);
@@ -109,6 +109,7 @@
 }
 .indiv-product{
     margin: 3rem 0px;
+    padding-top: 3rem;
 }
 .indiv-showcase {
     margin-bottom: 4rem;
@@ -323,3 +324,21 @@
       background-color: var(--main-color);
       color: white;
   }
+ .policy {
+     margin: 5rem 0px;
+ }
+ .policy h1 {
+     text-align: center;
+     font-weight: 600;
+     color: var(--main-color);
+ }
+ .policy h5{
+     font-weight: 600;
+     margin: 3rem 0px;
+     color: var(--main-color);
+ }
+ .policy p{
+     color: rgba(0, 0, 0, 0.74);
+     font-weight: 500;
+     line-height: 2.7;
+ }

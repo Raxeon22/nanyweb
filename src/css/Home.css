@@ -647,7 +647,7 @@ footer .footer-button button svg{
 }
 .product-cards {
     padding: 20px 0px;
-    animation-delay: -1000 !important;
+    animation-delay: -250ms !important;
 }
 .product-cards .each-product:hover {
     transform: scale(1.1);

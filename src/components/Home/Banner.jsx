@@ -43,7 +43,7 @@ const Banner =()=>{
                                         <h1 className = "font-weight-bold" > {val.heading2} <br/> {val.heading3} </h1>
                                     </Col>
                                 </Row>
-                                <Row className = "certified-job " >
+                                {/* <Row className = "certified-job " >
                                     <Col xs="3" className="mt-n5 text-left">
                                     <img src={CertifiedUser} className="rounded-circle user-img " width=""  height="" alt="" />
                                     </Col>
@@ -56,7 +56,7 @@ const Banner =()=>{
                                     </Col>
 
 
-                                </Row>  
+                                </Row>   */}
 
                             </Carousel.Caption>
                         </Carousel.Item>

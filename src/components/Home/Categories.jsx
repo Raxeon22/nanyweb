@@ -1,5 +1,5 @@
 import React , {useState} from 'react';
-import {Row , Col , Carousel  , Tabs , Tab , Container} from 'react-bootstrap';
+import {Row , Col , Carousel  , Card , Container} from 'react-bootstrap';
 import {Link} from 'react-router-dom'
 import HomeApplic from '../../assets/home-applic.jpg'
 import HeadPhones from '../../assets/headphones.jpg'
@@ -28,9 +28,9 @@ const Shop = () =>{
             <Container > 
             <h2>Categories </h2>
             <div className="">
-            <div className="cate-tabs">
+            <div className="cate-tabs d-none d-lg-block">
                
-                    <Carousel interval={2000} >
+                <Carousel interval={2000} >
                 <Carousel.Item >
                     <Row >
                        <Col className="each-img" md="3">
@@ -102,27 +102,25 @@ const Shop = () =>{
             </div>
 
            
-            </div>   
-            {/* <div className="d-block d-lg-none">
-            <Carousel  className="services-slider" controls={false}>
+            </div>
+            {/* categories for mobile   */}
+            <div className="d-block d-lg-none">
+            <Carousel  className="cate-tabs" >
                 {
                     ProductDetails.map((val , index)=>{
                       return(
                         <Carousel.Item >
 
-                           <Col xs="12" md="4" key={index}>
-                                <Link to="/shop">
-                                    <Card className="each-product">
-                                        <Card.Img variant="top" />
-                                        <img src={val.image} width="100%" height="280" />
-                                        <Card.Body>
-                                            <Card.Title> {val.title} </Card.Title>
-                                        </Card.Body>
-                                    </Card> 
-                                </Link>
-                            </Col>
-
-                            
+                            <Row >
+                                <Col className="each-img" md="3">
+                                    <div className="img-text">
+                                    <h4> T-shirts  </h4>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                                    </div>
+                                    <img  width="100%" height="500" src={val.image} alt="" />
+                                </Col>
+                            </Row>
+                                
     
                         </Carousel.Item>
      
@@ -133,7 +131,7 @@ const Shop = () =>{
 
                
             </Carousel>
-            </div> */}
+            </div>
             </Container>
        </div>
     )

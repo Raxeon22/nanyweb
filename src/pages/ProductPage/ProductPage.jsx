@@ -35,11 +35,11 @@ const ProductPage = () => {
         <Navbar header={false} shop={false}/>
         <Container>
             <Row className="indiv-product">
-            <Col xs="12" md="5">
+            <Col xs="12" lg="5" md="6">
                 <ProductPageSlider/>
 
             </Col>
-            <Col xs="12" md="7" className="product-about">
+            <Col xs="12" lg="7" md="6" className="product-about">
                 <h4 className="product-name">Lorem ipsum dolor sit amet consectetur.</h4>
                 <p  className="instock">in Stock</p>
 
