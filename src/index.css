@@ -1,6 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;800&display=swap');
 
 
+::-webkit-scrollbar{
+  width: 5px;
+  cursor: pointer;
+  /*background-color: rgba(229, 231, 235, var(--bg-opacity));*/
+
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  cursor: pointer;
+  /*background: red;*/
+}
+::-webkit-scrollbar-thumb {
+  cursor: pointer;
+  background-color: var(--main-color);
+  /*outline: 1px solid slategrey;*/
+}
+
 body {
   overflow-x: hidden;
   width: 100%;

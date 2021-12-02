@@ -1,7 +1,7 @@
 import React from 'react';
 import {Row , Col , Carousel } from 'react-bootstrap';
-import Banner2 from '../../assets/banner-two.jpg'
-import CertifiedUser from '../../assets/certified-user.jpg'
+import Banner2 from '../../assets/banner-three.jpg'
+import Banner3 from '../../assets/banner-one.jpg'
 
 const SliderData = [
     {
@@ -12,7 +12,7 @@ const SliderData = [
 
     },
     {
-        img: "https://images.pexels.com/photos/6974315/pexels-photo-6974315.jpeg?cs=srgb&dl=pexels-cottonbro-6974315.jpg&fm=jpg",
+        img: Banner3,
         heading1 : 'here in your neighborehood',
         heading2 : 'Connecteing families ',
         heading3 : 'Careing for the child'
@@ -36,7 +36,7 @@ const Banner =()=>{
                         <Carousel.Item key={index}>
 
                             <img src={val.img} alt="First Slide" className="first-slide"  width="100%" height="550"  />
-                            <Carousel.Caption>
+                            {/* <Carousel.Caption>
                                 <Row className = "slidercaption" >
                                     <Col xs="12">
                                         <p className="text-uppercase text-right">{val.heading1}</p>
@@ -56,9 +56,9 @@ const Banner =()=>{
                                     </Col>
 
 
-                                </Row>   */}
+                                </Row>   
 
-                            </Carousel.Caption>
+                            </Carousel.Caption> */}
                         </Carousel.Item>
                     )
                 })

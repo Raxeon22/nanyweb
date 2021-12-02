@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import {Button , Row , Col , Container , Carousel} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
-import ServicesImg1 from '../../assets/services-img1.jpg'
+import ServicesImg1 from '../../assets/support People.jpg'
+import ServicesImg2 from '../../assets/Help in meal.jpg'
 import Modal from './ServicesModal'
 
 
@@ -17,7 +18,7 @@ const Navbar =()=>{
             btnLink : '/'
         },
         {
-            image : ServicesImg1,
+            image : ServicesImg2,
             heading : 'Babies and Nannies duo',
             paragraph : ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo expedita facere praesentium.',
             btnLink : '/'
@@ -31,7 +32,7 @@ const Navbar =()=>{
             btnLink : '/'
         },
         {
-            image : ServicesImg1,
+            image : ServicesImg2,
             heading : 'Babies and Nannies duo',
             paragraph : ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo expedita facere praesentium.',
             btnLink : '/'
@@ -43,7 +44,7 @@ const Navbar =()=>{
             btnLink : '/'
         },
         {
-            image : ServicesImg1,
+            image : ServicesImg2,
             heading : 'Babies and Nannies duo',
             paragraph : ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo expedita facere praesentium.',
             btnLink : '/'

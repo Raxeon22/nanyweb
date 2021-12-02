@@ -1,12 +1,11 @@
 import React , {useState , useRef , useEffect} from 'react';
-import {FiPhoneCall} from "react-icons/fi";
+import Cart from './CartDropdown';
 import {RiArrowDownSLine} from 'react-icons/ri'
 import HeadPhones from '../assets/headphones.jpg'
 import SelfieStick from '../assets/selfie-stick.jpg'
 import Speakers from '../assets/speakers.jpg'
-
 import {Button , Row , Col , Nav , Container , Card} from 'react-bootstrap';
-import BabyIcon from '../assets/baby-icon.png';
+import BabyIcon from '../assets/topimg.jpg';
 import Logo from '../assets/logo2.png';
 import Scroll from 'react-scroll';
 import Scrollspy from 'react-scrollspy'
@@ -95,6 +94,10 @@ const Navbar = (props) => {
                 <a className="navbar-brand" href="#">
                 <img src={Logo} width="220" height="90" alt="" />
                 </a>
+                <li className="nav-item pt-1 number d-lg-none d-block ">
+                    <Cart/>
+
+                    </li>
                 <button  className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
                 onClick={()=>{
                     const Collapse = menuMobile.current
@@ -107,6 +110,7 @@ const Navbar = (props) => {
                     }
 
                 }} >
+                    
                     <span className="navbar-toggler-icon"></span>
                 </button>
 
@@ -145,10 +149,11 @@ const Navbar = (props) => {
                             if(props.shop){
                             setShowProducts(true)}
                             }}  > Shop   { props.shop ? <span> <RiArrowDownSLine size={20} /> </span> : null} </NavLink>
-                    </li>    
-                    
-                    <li className="nav-item pt-1 number ">
-                    <span className="mx-2"><FiPhoneCall/> <a href="" className="mx-2">2051983247</a></span> 
+                    </li> 
+
+                    {/* shopping cart  */}
+                    <li className="nav-item pt-1 number d-none d-lg-block ">
+                    <Cart/>
 
                     </li>
                     <li className="nav-item  ">

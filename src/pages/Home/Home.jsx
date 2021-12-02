@@ -10,21 +10,20 @@ import ContactUs from '../../components/Home/ContactUs';
 import Popup from '../../components/Home/PageModal'
 import Categories from '../../components/Home/Categories'
 import OurProducts from '../../components/Home/OurProducts'
-
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import '../../css/Home.css'
 
-
-
-
 const Home = () => {
     const [showModal , setShowModal] = useState(false)
 
-    // useEffect(() => {
-       
-    // }, [input])
+    useEffect(() => {
+        setTimeout(()=>{
+            setShowModal(true)
+        
+           },3000)
+    }, [])
+ 
 
     return(
         
