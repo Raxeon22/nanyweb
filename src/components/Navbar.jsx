@@ -94,10 +94,7 @@ const Navbar = (props) => {
                 <a className="navbar-brand" href="#">
                 <img src={Logo} width="220" height="90" alt="" />
                 </a>
-                <li className="nav-item pt-1 number d-lg-none d-block ">
-                    <Cart/>
-
-                    </li>
+                
                 <button  className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
                 onClick={()=>{
                     const Collapse = menuMobile.current
@@ -152,7 +149,7 @@ const Navbar = (props) => {
                     </li> 
 
                     {/* shopping cart  */}
-                    <li className="nav-item pt-1 number d-none d-lg-block ">
+                    <li className="nav-item pt-1 number ">
                     <Cart/>
 
                     </li>

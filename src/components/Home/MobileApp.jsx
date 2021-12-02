@@ -41,10 +41,10 @@ const MobileApp =()=>{
                                     <Col xs='6'>
                                         <Button className="w-100">
                                            <Row className="g-0">
-                                               <Col xs="3" className="icon-button">
+                                               <Col xs="12" sm="3" className="icon-button">
                                                    <FaApple size={35}/>
                                                </Col>
-                                               <Col xs="8">
+                                               <Col sm="8" xs="12">
                                                    <span>Download from</span>
                                                    <h5>Apple Store</h5>
                                                </Col>
@@ -55,10 +55,10 @@ const MobileApp =()=>{
                                     <Col xs='6'>
                                         <Button className="w-100">
                                             <Row className="g-0">
-                                               <Col xs="3" className="icon-button pt-1">
+                                               <Col xs="12" sm="3" className="icon-button pt-1">
                                                    <FaGooglePlay size={33}/>
                                                </Col>
-                                               <Col xs="8">
+                                               <Col sm="8" xs="12">
                                                    <span>Download from</span>
                                                    <h5>Apple Store</h5>
                                                </Col>
@@ -101,10 +101,10 @@ const MobileApp =()=>{
                                     <Col xs='6'>
                                         <Button className="w-100">
                                            <Row className="g-0">
-                                               <Col xs="3" className="icon-button">
+                                               <Col xs="12" sm="4" className="icon-button">
                                                    <FaApple size={35}/>
                                                </Col>
-                                               <Col xs="8">
+                                               <Col xs="12" sm="8">
                                                    <span>Download from</span>
                                                    <h5>Apple Store</h5>
                                                </Col>
@@ -115,10 +115,10 @@ const MobileApp =()=>{
                                     <Col xs='6'>
                                         <Button className="w-100">
                                             <Row className="g-0">
-                                               <Col xs="3" className="icon-button pt-1">
+                                               <Col xs="3" sm="4" className="icon-button pt-1">
                                                    <FaGooglePlay size={33}/>
                                                </Col>
-                                               <Col xs="8">
+                                               <Col xs="12" sm="8"> 
                                                    <span>Download from</span>
                                                    <h5>Apple Store</h5>
                                                </Col>

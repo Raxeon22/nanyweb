@@ -25,7 +25,7 @@ const Cart = () => {
     return(
       <div className="cart">
           <span onClick={()=> setDropdownOpen(prev => !prev)}> <AiOutlineShoppingCart size={26}/>
-           <span className="items" >{items}</span> </span>
+           <span className="items d-none d-lg-block" >{items}</span> </span>
 
        { dropdownOpen? <Card  ref={cartDropdown} className="cart-dropdown animate__animated animate__fadeInUp animate__fast">
             <Card.Header>

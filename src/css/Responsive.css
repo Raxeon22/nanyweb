@@ -75,6 +75,9 @@
     width: 30px !important;
     height: 30px !important;
     }
+    .order-now .forms  {
+        width: 65% !important;
+    }
 }
 @media only screen and (min-width: 575px) and (max-width: 765px){
     .scrollspy {
@@ -139,6 +142,9 @@
     }
     .new-arrivals .slick-prev {
         left: 80% !important;
+    }
+    .order-now .forms  {
+        width: 75% !important;
     }
 
 
@@ -229,7 +235,15 @@
 .new-arrivals h3 {
     margin-bottom: 3rem !important;
 }
-
+.shopping-cart .each-item p{
+    margin-top: 10px !important;
+}
+.order-now .forms  {
+    width: 95% !important;
+}
+.mob-app .tab-text button .icon-button {
+    text-align: center !important;
+}
 }
 @media screen and (max-width: 359px){
     .header-top .smol {
@@ -334,6 +348,15 @@
 }
 .new-arrivals h3 {
     margin-bottom: 3rem !important;
+}
+.shopping-cart .each-item p{
+    margin-top: 0 !important;
+}
+.order-now .forms  {
+    width: 95% !important;
+}
+.mob-app .tab-text button .icon-button {
+    text-align: center !important;
 }
 
 } 

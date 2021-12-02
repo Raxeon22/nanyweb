@@ -31,28 +31,15 @@ const Home = () => {
             <Popup showModal={showModal} setShowModal={setShowModal}/>
             <Navbar  header={true} shop={true} />
   
-            <Banner/>
-            <OurProducts/>
-  
+            <Banner/>  
             <AboutUs/>
             <Services/>
-            <Categories/>
             <HowItWork/>
-
-
+            <Categories/>
+            <OurProducts/>
             <MobileApp/>
-
             <FAQ/>
-
             <ContactUs/>
-
-
-            
-
-           
-
-          
-         
         </div>
     )
 }
