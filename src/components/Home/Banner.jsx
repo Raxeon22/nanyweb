@@ -29,7 +29,7 @@ const SliderData = [
 
 const Banner =()=>{
     return (
-        <Carousel fade className="slider-banner" indicators={true} controls={false} interval={2000} >
+        <Carousel fade className="slider-banner" indicators={true} controls={false} interval={3000} >
             {
                 SliderData.map((val , index)=>{
                     return(
