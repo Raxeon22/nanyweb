@@ -52,7 +52,7 @@ const Cart = () => {
                       price:  {Products[2].price} 
                    </Col>
                </Row>
-               <Link to='/order/step1s'>
+               <Link to='/order/step1'>
                   <Button className="mt-3" variant ="light">CHECK OUT</Button> 
                   </Link>
                <Link to='/cart'>

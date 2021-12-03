@@ -337,7 +337,6 @@ html {
 .mob-app .nav-tabs {
     justify-content: center;
     border:none;
-    background-color: var(--secondary-color);
 }
 .mob-app .nav-tabs .nav-link {
     border-radius: 5px !important;

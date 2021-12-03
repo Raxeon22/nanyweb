@@ -393,6 +393,7 @@
 }
 .cart{
     margin-right: 10px;
+
 }
 .cart .cart-dropdown {
     position: absolute;
@@ -401,6 +402,9 @@
     width: 300px;
     border: none;
     animation-delay: -300ms !important;
+}
+.cart span {
+    cursor: pointer !important;
 }
 .cart .cart-dropdown button {
     width: 100%;

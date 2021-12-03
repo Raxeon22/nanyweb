@@ -6,7 +6,7 @@ import SelfieStick from '../assets/selfie-stick.jpg'
 import Speakers from '../assets/speakers.jpg'
 import {Button , Row , Col , Nav , Container , Card} from 'react-bootstrap';
 import BabyIcon from '../assets/topimg.jpg';
-import Logo from '../assets/logo2.png';
+import Logo from '../assets/LOGO 90-01.jpg';
 import Scroll from 'react-scroll';
 import Scrollspy from 'react-scrollspy'
 import {NavLink, Link} from 'react-router-dom'
@@ -92,7 +92,7 @@ const Navbar = (props) => {
             <Container>
 
                 <a className="navbar-brand" href="#">
-                <img src={Logo} width="220" height="90" alt="" />
+                <img src={Logo} width="100%" height="auto" alt="" />
                 </a>
                 
                 <button  className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
