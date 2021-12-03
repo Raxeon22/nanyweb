@@ -21,7 +21,7 @@ const Home = () => {
         setTimeout(()=>{
             setShowModal(true)
         
-           },3000)
+           },6000)
     }, [])
  
 

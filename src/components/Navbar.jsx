@@ -167,14 +167,14 @@ const Navbar = (props) => {
             </Container>
         </Nav>
        {showProducts ?
-       <div className="product-cards animate__animated animate__fadeInDown animate__fast	" ref={products}>
+       <div className="product-cards animate__animated animate__fadeInUp animate__fast	" ref={products}>
         <Container>
             <Row>
                 {
                     ProductDetails.map((val, index)=>{
                         return(
                             <Col xs="12" md="4" key={index}>
-                                <Link to="/shop">
+                                <Link to="/shop/product">
                                     <Card className="each-product">
                                         <Card.Img variant="top" />
                                         <img src={val.image} width="100%" height="280" />

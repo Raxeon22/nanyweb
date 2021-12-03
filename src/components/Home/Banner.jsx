@@ -2,33 +2,45 @@ import React from 'react';
 import {Row , Col , Carousel } from 'react-bootstrap';
 import Banner2 from '../../assets/banner-three.jpg'
 import Banner3 from '../../assets/banner-one.jpg'
+import Banner4 from '../../assets/banner-two.jpg'
+import BannerMobile1 from '../../assets/Mobile Responsive 1-01.jpg'
+import BannerMobile2 from '../../assets/Mobile Responsive 2-01.jpg'
+import BannerMobile3 from '../../assets/Mobile Responsive 3-01.jpg'
 
 const SliderData = [
     {
-        img: Banner2,
-        heading1 : 'here in your neighborehood',
-        heading2 : 'Connecteing families ',
-        heading3 : 'Careing for the child'
+        img: Banner2
 
     },
     {
-        img: Banner3,
-        heading1 : 'here in your neighborehood',
-        heading2 : 'Connecteing families ',
-        heading3 : 'Careing for the child'
+        img: Banner3
 
     },
     {
-        img: Banner2,
-        heading1 : 'here in your neighborehood',
-        heading2 : 'Connecteing families ',
-        heading3 : 'Careing for the child'
+        img: Banner4
+
+    },
+]
+
+const SliderDataMobile = [
+    {
+        img: BannerMobile1
+
+    },
+    {
+        img: BannerMobile2
+
+    },
+    {
+        img: BannerMobile3
 
     },
 ]
 
 const Banner =()=>{
     return (
+        <>
+        <div className="d-none d-md-block">
         <Carousel fade className="slider-banner" indicators={true} controls={false} interval={3000} >
             {
                 SliderData.map((val , index)=>{
@@ -65,6 +77,24 @@ const Banner =()=>{
             }
 
     </Carousel>
+    </div>
+    <div className="d-block d-md-none">
+        <Carousel fade className="slider-banner" indicators={true} controls={false} interval={3000} >
+            {
+                SliderDataMobile.map((val , index)=>{
+                    return(
+                        <Carousel.Item key={index}>
+
+                            <img src={val.img} alt="First Slide" className="first-slide"  width="100%" height="400"  />
+                            </Carousel.Item>
+                    )
+                })
+            }
+        </Carousel>
+
+    </div>
+
+    </>
     )
 }
 export default Banner; 

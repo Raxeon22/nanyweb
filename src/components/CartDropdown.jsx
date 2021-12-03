@@ -6,28 +6,29 @@ import {Products} from '../pages/Shop/Shop'
 const items = 2;
 
 const Cart = () => {
-    const [dropdownOpen, setDropdownOpen] = useState(false)
+    const [isOpen, setisOpen] = useState(false)
   
     const cartDropdown = useRef()
 
-    useEffect(() => {
-        const handleEvent = (e) => {
-          if (cartDropdown.current && !cartDropdown.current.contains(e.target)) {
-            setDropdownOpen(false);
-          }
-        };
-        document.addEventListener("mousedown", handleEvent);
+    // useEffect(() => {
+    //     const handleEvent = (e) => {
+    //       if (cartDropdown.current && !cartDropdown.current.contains(e.target)) {
+    //         setisOpen(false);
+    //       }
+    //     };
+    //     document.addEventListener("mousedown", handleEvent);
     
-        return () => {
-          document.removeEventListener("mousedown", handleEvent);
-        };
-      });
+    //     return () => {
+    //       document.removeEventListener("mousedown", handleEvent);
+    //     };
+    //   });
     return(
       <div className="cart">
-          <span onClick={()=> setDropdownOpen(prev => !prev)}> <AiOutlineShoppingCart size={26}/>
+          <span onClick={()=> setisOpen(prev => !prev)}> <AiOutlineShoppingCart size={26}/>
            <span className="items d-none d-lg-block" >{items}</span> </span>
 
-       { dropdownOpen? <Card  ref={cartDropdown} className="cart-dropdown animate__animated animate__fadeInUp animate__fast">
+       { isOpen? 
+         <Card  ref={cartDropdown} className="cart-dropdown animate__animated animate__fadeInUp animate__fast">
             <Card.Header>
                 <h5>My Cart <span>  total items: {items}</span></h5>
               
@@ -51,7 +52,9 @@ const Cart = () => {
                       price:  {Products[2].price} 
                    </Col>
                </Row>
-               <Button className="mt-3" variant ="light">CHECK OUT</Button> 
+               <Link to='/order/step1s'>
+                  <Button className="mt-3" variant ="light">CHECK OUT</Button> 
+                  </Link>
                <Link to='/cart'>
                 <Button variant ="light">VIEW ALL CART</Button>
                 </Link>

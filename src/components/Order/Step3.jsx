@@ -1,9 +1,12 @@
 import React from 'react';
 import { Form , Button } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
+import Navbar from '../Navbar'
 
 const Step3 = () => {
     return(
+        <>
+        <Navbar/>
                 <div className="order-now">
                 
                 <div className="forms">
@@ -39,11 +42,12 @@ const Step3 = () => {
               <Link to="/order/step2">
               <Button >previous</Button>
               </Link>
-               <Link to="/"> 
+               <Link to="/thankyou"> 
               <Button className="float-end">Submit</Button>
               </Link>
           </div>  
         </div>
+        </>
     )
 }
 export default Step3;

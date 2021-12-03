@@ -56,7 +56,6 @@
     position: sticky;
     top: 0;
     z-index: 999;
-    border-bottom: 1px rgba(0, 0, 0, 0.486) solid;
 }
 .scrollspy .isCurrent .nav-link {
     color: var(--secondary-color ) !important; 
@@ -658,11 +657,14 @@ footer .footer-button button svg{
 }
 .product-cards {
     padding: 20px 0px;
-    animation-delay: -250ms !important;
+    animation-delay: -350ms !important;
 }
 .product-cards .each-product:hover {
     transform: scale(1.1);
     transition: all .2s;
+}
+.product-cards  a {
+    text-decoration: none;
 }
 .product-cards .card {
     border: none;
@@ -736,7 +738,6 @@ footer .footer-button button svg{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--secondary-color);
     text-align: center;
 }
 .our-products h1 {
@@ -764,7 +765,6 @@ footer .footer-button button svg{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--secondary-color);
 }
 
 .categories .each-img {

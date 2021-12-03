@@ -1,10 +1,13 @@
 import React from 'react';
 import { Form , Button } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
+import Navbar from '../Navbar'
 
 const Step1 = () => {
     return(
-                <div className="order-now">
+        <>
+        <Navbar/>
+            <div className="order-now">
                 
                 <div className="forms">
                 <div class="stepper-wrapper">
@@ -42,6 +45,7 @@ const Step1 = () => {
               </Link>
           </div>  
         </div>
+        </>
     )
 }
 export default Step1;

@@ -1,7 +1,7 @@
 import React  , {useEffect, useRef} from 'react';
 import { Card, Container , Button } from 'react-bootstrap';
 import '../../css/Modals.css'
-import Duck from '../../assets/banner-two.jpg'
+import PopupImg from '../../assets/topimg.jpg'
 
 
 const PageModal = ({showModal , setShowModal }) =>{
@@ -36,12 +36,13 @@ const PageModal = ({showModal , setShowModal }) =>{
                       setShowModal(prev => !prev)
                   }} >&times;</span>
                 </div>
-                <div className="popup">
-                 <img src={Duck} alt="" width="100%" height="360" />
+                <div className="popup text-center">
+                 <img src={PopupImg} alt="" width="300" height="360" /><br/>
                  <div className="float-end mt-3">
                      <Button>get a clue</Button>
                  </div>
                 </div>
+              
               
             </div>
         </div>  : null
