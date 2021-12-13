@@ -2,7 +2,7 @@ import React , { Suspense } from 'react'
 import './App.css';
 import './css/Home.css';
 import {Spinner} from 'react-bootstrap'
-import Logo from './assets/logo.png'
+import Logo from './assets/logoFinal.png'
 import {HashRouter ,Route , Switch ,} from "react-router-dom";
 import Loading from './components/Preloader'
 import { HiHand } from 'react-icons/hi';
@@ -22,12 +22,12 @@ const loading = () => {
     <Spinner variant='dark' animation="grow" />
 
 } 
-  const hh = <div className="loader"> < img src={Logo} /> <Spinner variant='info' animation="border" /> </div>
+  const loader = <div className="loader"> < img src={Logo} /> <Spinner variant='info' animation="border" /> </div>
 function App() {
  // const Home = React.lazy(()=> import('./pages/Home/Home'))
   return (
    <>
-   <Suspense fallback={hh}>
+   <Suspense fallback={loader}>
     <HashRouter basename="/">
        <Switch>
         <Route exact path="/" component={Home} />

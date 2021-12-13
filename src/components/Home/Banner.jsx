@@ -49,7 +49,7 @@ const Banner = () => {
 
   return (
     <>
-      <div className="d-none d-md-block">
+      <div className="d-none d-md-block"  id="home">
         <Carousel
           fade
           className="slider-banner"

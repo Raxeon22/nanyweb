@@ -11,8 +11,8 @@
     height: 100vh;
 }
 .loader img {
-    height: 100px;
-    width: 90px;
+    width: 200px;
+    height: auto;
     margin-bottom: 20px;
 }
 /* top close bar section */
@@ -58,7 +58,7 @@
     z-index: 999;
 }
 .scrollspy .isCurrent .nav-link {
-    color: var(--secondary-color ) !important; 
+    background-color: var(--secondary-color ) !important; 
   }
 
  .scrollspy {

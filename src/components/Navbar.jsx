@@ -6,7 +6,7 @@ import SelfieStick from "../assets/selfie-stick.jpg";
 import Speakers from "../assets/speakers.jpg";
 import { Button, Row, Col, Nav, Container, Card } from "react-bootstrap";
 import BabyIcon from "../assets/topimg.jpg";
-import Logo from "../assets/LOGO 90-01.jpg";
+import Logo from "../assets/logoFinal.png";
 import Scroll from "react-scroll";
 import Scrollspy from "react-scrollspy";
 import { NavLink, Link } from "react-router-dom";
@@ -180,12 +180,21 @@ const Navbar = (props) => {
                     "contact-us",
                   ]}
                   currentClassName="isCurrent"
-                >
+                >   
                   <li className="nav-item">
-                    <NavLink to="/" className="nav-link ">
-                      {" "}
-                      Home{" "}
-                    </NavLink>
+                  <ScrollLink
+                    className="nav-link cursor-pointer"
+                    exact
+                    to={props.Homelink}
+                    href="#"
+                    spy={false}
+                    smooth={false}
+                    offset={50}
+                    duration={500}
+                    spyThrottle={500}
+                  >
+                    Home
+                  </ScrollLink>
                   </li>
                   {NavLinks.map((value, index) => {
                     return (

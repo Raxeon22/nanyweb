@@ -32,7 +32,7 @@ const cartDetails = [
 const AddToCart = () => {
     return(
         <>
-        <Navbar/>
+        <Navbar homeLink="/"/>
         <Container>
             <div className="shopping-cart">
                 <h1>shopping cart</h1>

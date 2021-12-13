@@ -30,7 +30,7 @@ const Cart = () => {
        { isOpen? 
          <Card  ref={cartDropdown} className="cart-dropdown animate__animated animate__fadeInUp animate__fast">
             <Card.Header>
-                <h5>My Cart <span>  total items: {items}</span></h5>
+                <h5>My Cart <span onClick={()=> setisOpen((prev)=>!prev)}> &times;</span></h5>
               
             </Card.Header>
             <Card.Body>
