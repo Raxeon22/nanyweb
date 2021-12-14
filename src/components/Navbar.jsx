@@ -180,9 +180,9 @@ const Navbar = (props) => {
                     "contact-us",
                   ]}
                   currentClassName="isCurrent"
-                >   
+                >
                   <li className="nav-item">
-                  <ScrollLink
+                  {/* <ScrollLink
                     className="nav-link cursor-pointer"
                     exact
                     to={props.Homelink}
@@ -194,7 +194,10 @@ const Navbar = (props) => {
                     spyThrottle={500}
                   >
                     Home
-                  </ScrollLink>
+                  </ScrollLink> */}
+                   <NavLink to="/" className="nav-link ">
+                     Home
+                   </NavLink>
                   </li>
                   {NavLinks.map((value, index) => {
                     return (

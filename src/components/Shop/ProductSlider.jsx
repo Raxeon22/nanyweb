@@ -8,7 +8,7 @@ import {Products} from '../../pages/Shop/Shop'
 const ProductSlider = (props) => {  
   
     var settings = {
-      dots: true,
+      dots: false,
       infinite: false,
       speed: 500,
       slidesToShow: 4,

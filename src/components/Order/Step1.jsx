@@ -24,18 +24,19 @@ const Step1 = () => {
                 <div class="step-name">step 3</div>
             </div>
             </div>
+              <h5>Personal Information</h5>
               <Form>
                 <Form.Group className="mb-3" >
-                    <Form.Label>First Name</Form.Label>
+                    <Form.Label>Name</Form.Label>
                     <Form.Control type="text" placeholder="Joe" />
                 </Form.Group>
                 <Form.Group className="mb-3" >
-                    <Form.Label>Last Name</Form.Label>
-                    <Form.Control type="text" placeholder="Wash" />
+                    <Form.Label>Email</Form.Label>
+                    <Form.Control type="email" placeholder="joe@email.com" />
                 </Form.Group>
                 <Form.Group className="mb-3" >
-                    <Form.Label>Email</Form.Label>
-                    <Form.Control type="email" placeholder="@" />
+                    <Form.Label>Phone Number</Form.Label>
+                    <Form.Control type="number" placeholder="XXXXXXXXXX" />
                 </Form.Group>
               
               </Form>

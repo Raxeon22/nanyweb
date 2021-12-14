@@ -15,7 +15,7 @@ import {Products} from '../../pages/Shop/Shop'
 
 const bleh = <b><RiTShirt2Line size="30"/>T Shirts</b> 
 var settings = {
-    dots: true,
+    dots: false,
     infinite: false,
     speed: 500,
     slidesToShow: 4,
@@ -23,7 +23,7 @@ var settings = {
     initialSlide: 0,
     autoplay: true,
     speed: 500,
-    arrows : false,
+    arrows : true,
     autoplaySpeed: 2000,
     cssEase: "linear",
     responsive: [
@@ -65,7 +65,7 @@ const Shop = (props) =>{
                     <Tab id="dhniowedhji" eventKey="T-shirts" title={<RiTShirt2Line className="title1"  /> } >
                     <div className="">
         <h3> {props.heading} </h3>
-        <Slider className="" {...settings}>
+        <Slider className="new-arrivals" {...settings}>
          {
              Products.map((val) => {
                  return(

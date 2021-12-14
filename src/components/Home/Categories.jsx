@@ -30,7 +30,7 @@ const Shop = () =>{
             <div className="">
             <div className="cate-tabs d-none d-lg-block">
                
-                <Carousel interval={2000} >
+                <Carousel  indicators={false} controls={false} interval={2000} >
                 <Carousel.Item >
                     <Row >
                        <Col className="each-img" md="3">

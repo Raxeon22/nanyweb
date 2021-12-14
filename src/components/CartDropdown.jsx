@@ -54,9 +54,9 @@ const Cart = () => {
                </Row>
                <Link to='/order/step1'>
                   <Button className="mt-3" variant ="light">CHECK OUT</Button> 
-                  </Link>
+                </Link>
                <Link to='/cart'>
-                <Button variant ="light">VIEW ALL CART</Button>
+                <Button  className="mt-1" variant ="light">VIEW ALL CART</Button>
                 </Link>
             </Card.Body>
            

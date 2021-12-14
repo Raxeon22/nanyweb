@@ -12,7 +12,7 @@ const Thankyou = () => {
             <img src={Gif} alt="" height="300" width="300" />
             <h1>THANK YOU, ENJOY!</h1>
             <Link to="/">
-            <Button variant="light"> {'<'}Back Home </Button>
+            <Button variant="light"> {'<   '}Back Home </Button>
             </Link>
             <span>if you have any issues <a href="/"> contact us</a> </span>
         </div>

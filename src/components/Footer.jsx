@@ -51,7 +51,7 @@ const ContactUs =()=>{
                         </ul>
                     </Col>
                     <Col xs="12" md="6" lg="3" className="each-row-f">
-                       <Form.Group className="mb-3" controlId="formBasicEmail">
+                       {/* <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Control className="custom-input" type="text" placeholder="Your Email" />
 
                         </Form.Group>
@@ -59,15 +59,15 @@ const ContactUs =()=>{
                             <Button>
                                 Submit
                             </Button>
-                        </div>
+                        </div> */}
                         <Row>
-                            <Col xs="6" className="my-3 footer-button"  >
+                            <Col xs="6" className="my-1 footer-button"  >
                                 <Button variant="light" className=" d-flex w-100 ">
                                     <FaApple size={22}/>
                                     <span>Apple Store</span>
                                 </Button>
                             </Col>
-                            <Col xs="6" className="my-3 footer-button"  >
+                            <Col xs="6" className="my-1 footer-button"  >
                                 <Button className=" d-flex w-100 "  variant="light">
                                     <FaGooglePlay size={22}/>
                                     <span>Google Store</span>

@@ -54,10 +54,17 @@
 }
 .modal .modal-popup .popup {
     padding: 40px;
+ 
+   
 }
 .modal-popup .popup button {
     background-color: var(--main-color);
     color: white;
     font-size: 14px;
     text-align: left !important;
+}
+.modal-popup .popup button:focus{
+    background-color: var(--secondary-color) ;
+    border-color: var(--secondary-color);
+    color: var(--main-color);
 }

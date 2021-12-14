@@ -16,6 +16,7 @@ const ProductPage = () => {
     const [quantity , setQuantity ] = useState(1)
     if(quantity < 1){
         alert('quantity cannot be in minus')
+        setQuantity(1)
     }
 
     const variants = [
@@ -41,7 +42,7 @@ const ProductPage = () => {
             </Col>
             <Col xs="12" lg="7" md="6" className="product-about">
                 <h4 className="product-name">Lorem ipsum dolor sit amet consectetur.</h4>
-                <p  className="instock">in Stock</p>
+                {/* <p  className="instock">in Stock</p>
 
                 <div className="d-flex mt-2">
                     <span className="mt-1 ratings">  
@@ -53,7 +54,7 @@ const ProductPage = () => {
                         <FaStar/>
                     </span>
                   
-                </div>
+                </div> */}
                 <p className="price mt-2">price: <b>44$</b></p>
                 <div className="color d-flex">
                   <p className="mt-2 mb-0 p-0"> color :</p>

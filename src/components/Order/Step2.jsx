@@ -23,18 +23,23 @@ const Step2 = () => {
                 <div class="step-name">step 3</div>
             </div>
             </div>
+              <h5>Shipping Details</h5>
               <Form>
                 <Form.Group className="mb-3" >
-                    <Form.Label>First Name</Form.Label>
-                    <Form.Control type="text" placeholder="Joe" />
+                    <Form.Label>Address</Form.Label>
+                    <Form.Control type="text" placeholder="Enter your Address" />
                 </Form.Group>
                 <Form.Group className="mb-3" >
-                    <Form.Label>Last Name</Form.Label>
-                    <Form.Control type="text" placeholder="Wash" />
+                    <Form.Label>Country</Form.Label>
+                    <Form.Control type="text" placeholder="Enter your Country" />
                 </Form.Group>
                 <Form.Group className="mb-3" >
-                    <Form.Label>Email</Form.Label>
-                    <Form.Control type="email" placeholder="@" />
+                    <Form.Label>City</Form.Label>
+                    <Form.Control type="text" placeholder="Enter your City" />
+                </Form.Group>
+                <Form.Group className="mb-3" >
+                    <Form.Label>Postal Code</Form.Label>
+                    <Form.Control type="text" placeholder="Enter your Postal Code" />
                 </Form.Group>
               
               </Form>
