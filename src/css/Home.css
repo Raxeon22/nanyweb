@@ -549,6 +549,9 @@ html {
     font-size: 13px;
     color: black;
 }
+.contact-us .contact-form .contact-inputs  .form-check-label{
+    font-size: 11px !important;
+}
 .contact-us .contact-form .contact-inputs .custom-input {
     border: none ;
     border-bottom: 1px solid var(--main-color);
@@ -797,7 +800,10 @@ footer .footer-button button svg{
     justify-content: center;
     align-items: center;
 }
-
+.categories a{
+    text-decoration: none !important;
+    color: black;
+}
 .categories .each-img {
    
     position: relative;

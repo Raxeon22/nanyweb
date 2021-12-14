@@ -1,27 +1,20 @@
 import React from 'react';
 import { Row , Col , Container , Form , Button } from 'react-bootstrap';
-import Logo from '../assets/logo2.png';
+import Logo2 from '../assets/logoFinal.png';
 import {NavLink} from 'react-router-dom';
 import { FaApple, FaGooglePlay } from "react-icons/fa";
 
 import Scroll from 'react-scroll';
 
-
-
-
-
-
 const ContactUs =()=>{
  
-
     return (
-  
         <Scroll.Element id="footer" >
         <footer>
             <Container>
                 <Row>
                     <Col xs="12" md="6" lg="3" className="each-row-f">
-                        <img src={Logo} alt="logo" width="100%" height="130"  />
+                        <img src={Logo2} alt="logo" width="160" height="auto"  />
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem architecto repellat ab Lorem ipsum dolor sit amet consectetur adipisicing.</p>
                     </Col>
                     <Col xs="12" md="6" lg="3" className="each-row-f">
@@ -31,7 +24,7 @@ const ContactUs =()=>{
                               <NavLink to="/policy">Privacy policy</NavLink>
                             </li>
                             <li>
-                             <NavLink to="#">Terms and Conditions</NavLink>
+                             <NavLink to="/terms">Terms and Conditions</NavLink>
                             </li>
 
                         </ul>
@@ -60,6 +53,7 @@ const ContactUs =()=>{
                                 Submit
                             </Button>
                         </div> */}
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque minus perspiciatis neque odio iste eius rerum molestias voluptate, eaque veritatis ipsa debitis.</p>
                         <Row>
                             <Col xs="6" className="my-1 footer-button"  >
                                 <Button variant="light" className=" d-flex w-100 ">

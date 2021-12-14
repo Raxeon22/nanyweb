@@ -33,33 +33,42 @@ const Shop = () =>{
                 <Carousel  indicators={false} controls={false} interval={2000} >
                 <Carousel.Item >
                     <Row >
+                        <Col className="each-img" md="3">
+                            <Link to='/shop/product'>
+                            <div className="img-text">
+                            <h4> T-shirts  </h4>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                            </div>
+                            <img  width="100%" height="400" src={ProductDetails[0].image} alt="" />
+                            </Link>
+                        </Col>
+                       
                        <Col className="each-img" md="3">
+                           <Link to='/shop/product'>
+                          <div className="img-text">
+                           <h4> Sweat Shirts </h4>
+                           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                           </div>
+                           <img  width="100%" height="400" src={ProductDetails[1].image} alt="" />
+                           </Link>
+                       </Col>
+                       <Col className="each-img" md="3">
+                           <Link to='/shop/product'>
+                       <div className="img-text">
+                           <h4> Sweat Shirts </h4>
+                           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                           </div>
+                           <img  width="100%" height="400" src={ProductDetails[1].image} alt="" />
+                           </Link>
+                       </Col>
+                       <Col className="each-img" md="3">
+                           <Link to='/shop/product'>
                            <div className="img-text">
-                           <h4> T-shirts  </h4>
-                           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
-                           </div>
-                           <img  width="100%" height="400" src={ProductDetails[0].image} alt="" />
-                       </Col>
-                       <Col className="each-img" md="3">
-                       <div className="img-text">
                            <h4> Sweat Shirts </h4>
                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
                            </div>
                            <img  width="100%" height="400" src={ProductDetails[1].image} alt="" />
-                       </Col>
-                       <Col className="each-img" md="3">
-                       <div className="img-text">
-                           <h4> Sweat Shirts </h4>
-                           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
-                           </div>
-                           <img  width="100%" height="400" src={ProductDetails[1].image} alt="" />
-                       </Col>
-                       <Col className="each-img" md="3">
-                       <div className="img-text">
-                           <h4> Sweat Shirts </h4>
-                           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
-                           </div>
-                           <img  width="100%" height="400" src={ProductDetails[1].image} alt="" />
+                           </Link>
                        </Col>
                     </Row>
                 </Carousel.Item>

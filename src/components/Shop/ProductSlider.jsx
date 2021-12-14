@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import {Products} from '../../pages/Shop/Shop'
+import {Link} from 'react-router-dom'
  
 
 const ProductSlider = (props) => {  
@@ -53,11 +54,13 @@ const ProductSlider = (props) => {
          {
              Products.map((val) => {
                  return(
+                  <Link to='/shop/product'>
                      <div  className="each-slid">
                          <img src={val.image} width="100%" height="300" alt="" className="p-1" />
                          <p> {val.title} </p>
                          <span> {val.price} </span>
                      </div>
+                     </Link>
                  )
              })
          }

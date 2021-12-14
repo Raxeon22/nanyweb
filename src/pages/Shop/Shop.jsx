@@ -45,8 +45,8 @@ const categories = [
 
 const Shop = () =>{
     return(
-        <>
-        <Navbar/>
+      <>
+        <Navbar header={true} shop={true} />
         <div className=" products animate__animated animate__fadeInUp animate__fast">
             <Container fluid>
                 <div className="sort" >

@@ -7,7 +7,7 @@ import { Button} from 'react-bootstrap';
 const Thankyou = () => {
     return(
         <>
-        <Navbar/>
+        <Navbar header={true} shop={true}/>
         <div className="thank-you">
             <img src={Gif} alt="" height="300" width="300" />
             <h1>THANK YOU, ENJOY!</h1>

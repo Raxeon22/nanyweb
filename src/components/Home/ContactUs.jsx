@@ -1,5 +1,5 @@
-import React from 'react';
-import { Row , Col , Container ,Form , Button } from 'react-bootstrap';
+import React, {useState} from 'react';
+import { Row , Col , Container ,Form , Button, Spinner } from 'react-bootstrap';
 import {HiOutlineLocationMarker } from "react-icons/hi";
 
 
@@ -7,13 +7,10 @@ import {  FaLinkedinIn} from "react-icons/fa";
 import {FiPhoneCall  , FiMail ,  FiFacebook , FiInstagram , FiTwitter} from "react-icons/fi";
 import Scroll from 'react-scroll';
 
-
-
-
-
-
 const ContactUs =()=>{
- 
+    const [alert, setAlert] = useState('')
+    const [spin, setSpin] =  useState('Send Message' )
+
 
     return (
         <Scroll.Element id="contact-us" >
@@ -68,13 +65,13 @@ const ContactUs =()=>{
                                      <h6>What web do you use?</h6>
                                      <Row className="my-4 check-custom">
                                         <Col  xs="12" sm="6" md="4">
-                                        <Form.Check type="checkbox" label="web design" />
+                                        <Form.Check type="checkbox" label="Schedule a Meeting" />
                                         </Col>
                                         <Col  xs="12" sm="6" md="4">
-                                        <Form.Check type="checkbox" label="web design" />
+                                        <Form.Check type="checkbox" label="Schedule a Call" />
                                         </Col>
                                         <Col  xs="12" sm="6" md="4">
-                                        <Form.Check type="checkbox" label="web design" />
+                                        <Form.Check type="checkbox" label="Come to the Office" />
                                         </Col>
 
 
@@ -88,10 +85,23 @@ const ContactUs =()=>{
                                         <Form.Control as="textarea" rows={3} className="custom-input" />
                                         </Form.Group>
                                     </Col>
-                                    <Col xs="12" style={{textAlign:"end"}}>
-                                        <Button variant="primary" type="submit">
-                                           Send message
+                                    <Col xs="12">
+                                        <Button className="d-flex" variant="primary" type="submit" onClick={(e)=>{ 
+                                            setSpin( <Spinner as="span" animation="border" size="sm" role="status" className='mx-4'/>)
+                                            e.preventDefault()
+                                            setTimeout(()=> {
+                                                setSpin( 'Send Message') 
+                                                setAlert('Message Sent Successfully...')
+                                            }, 2000 )
+                                            setTimeout(()=>{
+                                                setAlert('')
+                                            }, 3000)
+                                        }
+                                        }>
+                                           {spin}
+                                          
                                         </Button>
+                                        <small className='text-success mt-2'> {alert} </small>
                                     </Col>
                                 </Row>
                             </Form>
@@ -109,4 +119,4 @@ const ContactUs =()=>{
     </Scroll.Element >
     )
 }
-export default ContactUs; 
+export default ContactUs;

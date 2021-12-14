@@ -2,14 +2,14 @@ import React from 'react';
 import { Container } from 'react-bootstrap';
 import Navbar from '../../components/Navbar'
 
-const PrivacyPolicy  = () => {
+const TermsConditions  = () => {
     return(
         <>
-            <Navbar header={true} shop={true} Homelink="home"/>
+           <Navbar header={true} shop={true} />
 
            <Container>
                 <div className="policy">
-                    <h1>Privacy Policy</h1>
+                    <h1>Terms and Conditions</h1>
 
                     <h5>1. General</h5>
                     <p>Subject to stock availability. We try to maintain accurate stock counts on our website but from time-to-time there may be a stock discrepancy and we will not be able to fulfill all your items at time of purchase. In this instance, we will fulfill the available products to you, and contact you about whether you would prefer to await restocking of the backordered item or if you would prefer for us to process a refund.</p>
@@ -47,4 +47,4 @@ const PrivacyPolicy  = () => {
         </>
     )
 }
-export default PrivacyPolicy
+export default TermsConditions

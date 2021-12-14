@@ -6,6 +6,7 @@ import Logo from './assets/logoFinal.png'
 import {HashRouter ,Route , Switch ,} from "react-router-dom";
 import Loading from './components/Preloader'
 import { HiHand } from 'react-icons/hi';
+import TermsConditions from './pages/Terms-Conditions/TermsConditions';
 const Footer = React.lazy(()=> import('./components/Footer')) 
 const Home = React.lazy(()=> import('./pages/Home/Home')) 
 const Shop = React.lazy(()=> import('./pages/Shop/Shop')) 
@@ -37,6 +38,7 @@ function App() {
         <Route exact path="/order/step2" component={Step2} />
         <Route exact path="/order/step3" component={Step3} />
         <Route exact path="/policy" component={PrivacyPolicy} />
+        <Route exact path="/terms" component={TermsConditions} />
         <Route exact path="/Cart" component={Cart} />
         <Route exact path="/thankyou" component={Thankyou} />
       </Switch>  

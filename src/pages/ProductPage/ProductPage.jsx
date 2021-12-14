@@ -33,7 +33,8 @@ const ProductPage = () => {
     ]
  return(
      <>
-        <Navbar header={false} shop={false}/>
+        <Navbar header={true} shop={true} Homelink="home"/>
+
         <Container>
             <Row className="indiv-product">
             <Col xs="12" lg="5" md="6">

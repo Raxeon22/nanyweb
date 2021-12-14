@@ -69,11 +69,13 @@ const Shop = (props) =>{
          {
              Products.map((val) => {
                  return(
+                     <Link to='/shop/product'>
                      <div  className="each-slide">
                          <img src={val.image} width="100%" height="300" alt="" className="p-1" />
                          <p> {val.title} </p>
                          <span> {val.price} </span>
                      </div>
+                     </Link>
                  )
              })
          }
