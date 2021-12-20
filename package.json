@@ -2,7 +2,7 @@
   "name": "nanny",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/simra123/nanny_app2.git",
+  
   "dependencies": {
     "animate.css": "^4.1.1",
     "axios": "^0.24.0",
@@ -23,8 +23,7 @@
   },
   "scripts": {
     "start": "npm start",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
