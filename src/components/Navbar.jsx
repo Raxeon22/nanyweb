@@ -76,7 +76,7 @@ const Navbar = (props) => {
     return () => {
       document.removeEventListener("mousedown", handleEvent);
     };
-  });
+  }, [1]);
 
   if (showProducts) {
     shop.current.classList.add("shop");

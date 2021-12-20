@@ -13,7 +13,7 @@ import baseURL from "../../middleware/BaseURL";
 const Navbar = () => {
   const [showModal, setShowModal] = useState(false);
   const [service, setservice] = useState([]);
-  const [text, settext] = useState();
+
   const servicesArrayDesktopSlide1 = [
     {
       image: ServicesImg1,
@@ -97,12 +97,10 @@ const Navbar = () => {
     const response = await Action.get("/service", {});
     if (response.data.success == true) {
       setservice(response.data.data);
-      //   settext(service[0].text);
     } else {
       setservice(servicesArrayDesktopSlide1);
     }
   }
-  //   console.log(text);
   useEffect(async () => {
     fetchservicedata();
   });
