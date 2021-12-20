@@ -63,6 +63,7 @@ const Shop = () => {
 
   async function fetchcategorydata() {
     const response = await Action.get("/category", {});
+    console.log(response.data.data);
     if (response.data.success == true) {
       setcategory(response.data.data);
     } else {

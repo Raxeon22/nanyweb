@@ -32,7 +32,8 @@ const cartDetails = [
 const AddToCart = () => {
     return(
         <>
-        <Navbar/>
+        <Navbar header={true} shop={true} Homelink="home"/>
+
         <Container>
             <div className="shopping-cart">
                 <h1>shopping cart</h1>

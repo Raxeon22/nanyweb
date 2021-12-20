@@ -30,7 +30,7 @@ const Cart = () => {
        { isOpen? 
          <Card  ref={cartDropdown} className="cart-dropdown animate__animated animate__fadeInUp animate__fast">
             <Card.Header>
-                <h5>My Cart <span>  total items: {items}</span></h5>
+                <h5>My Cart <span onClick={()=> setisOpen((prev)=>!prev)}> &times;</span></h5>
               
             </Card.Header>
             <Card.Body>
@@ -54,9 +54,9 @@ const Cart = () => {
                </Row>
                <Link to='/order/step1'>
                   <Button className="mt-3" variant ="light">CHECK OUT</Button> 
-                  </Link>
+                </Link>
                <Link to='/cart'>
-                <Button variant ="light">VIEW ALL CART</Button>
+                <Button  className="mt-1" variant ="light">VIEW ALL CART</Button>
                 </Link>
             </Card.Body>
            

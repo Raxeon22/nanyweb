@@ -67,23 +67,33 @@
 .new-arrivals {
     margin: 3rem 2rem;
 }
+.new-arrivals a{
+    text-decoration: none !important;
+    color: black !important;
+}
 .new-arrivals h3 {
     text-align: center;
     text-transform: uppercase;
 }
 .new-arrivals .slick-prev:before{
-    color: white !important;
+    color: var(--main-color) !important;
     content: 'Prev';
-    background-color:var(--main-color);
+    background-color:var(--secondary-color);
     padding: 5px 10px;
+    opacity: 100;
     
 
 }
-.new-arrivals .slick-next:before{
+.new-arrivals .slick-prev:before:hover , .new-arrivals .slick-next:before:hover {
     color: white !important;
+    background-color: var(--main-color) !important;
+}
+.new-arrivals .slick-next:before{
+    color: var(--main-color) !important;
     content: 'Next';
-    background-color:var(--main-color);
+    background-color:var(--secondary-color);
     padding: 5px 10px;
+    opacity: 100;
 
 }
 .new-arrivals .slick-prev {
@@ -184,6 +194,7 @@
 }
 .indiv-product .product-about button{
     background-color: var(--main-color);
+    border-color: var(--main-color);
 }
 .indiv-product .product-about button:hover{
     transform: scale(1.1);
@@ -228,6 +239,10 @@
     height: 100vh;
     flex-direction: column;
     padding: 20px 0px !important;
+}
+.order-now h5{
+   text-align: center;
+   margin-bottom: 20px;
 }
 .order-now .forms {
     width: 40%;
@@ -323,7 +338,18 @@
   .order-now button{
       background-color: var(--main-color);
       color: white;
+      border-color: var(--main-color);
   }
+  .order-now button:hover{
+    background-color: var(--secondary-color) !important;
+    border-color: var(--main-color);
+    color: var(--main-color);
+}
+.order-now button:focus{
+    background-color: var(--secondary-color) !important ;
+    border-color: var(--main-color) !important;
+    color: var(--main-color);
+}
  .policy {
      margin: 5rem 0px;
  }
@@ -397,8 +423,8 @@
 }
 .cart .cart-dropdown {
     position: absolute;
-    right: 80px;
-    top: 90%;
+    right: 10%;
+    top: 98%;
     width: 300px;
     border: none;
     animation-delay: -300ms !important;
@@ -408,7 +434,18 @@
 }
 .cart .cart-dropdown button {
     width: 100%;
+
 }
+.cart .cart-dropdown button:focus{
+    background-color: var(--secondary-color) ;
+    border-color: var(--secondary-color);
+    color: var(--main-color);
+  }
+  .cart .cart-dropdown button:hover{
+    background-color: var(--secondary-color) ;
+    border-color: var(--secondary-color);
+    color: var(--main-color);
+ }
 .cart .cart-dropdown .each-item{
     margin-top: 10px;
 }
@@ -424,7 +461,6 @@
     font-weight: 600;
 }
 .cart .card-header span {
-    font-size: 15px;
+    font-size: 25px;
     float: right;
-    margin-top: 5px;
 }

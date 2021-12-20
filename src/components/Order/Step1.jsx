@@ -7,9 +7,9 @@ import Action from "../../middleware/API";
 const Step1 = (props) => {
   const [product, setproduct] = useState(props.location.state.product);
   const [order, setorder] = useState({
-    fname: "",
+    name: "",
     email: "",
-    lname: "",
+    mobile: 0,
     product: props.location.state.product._id,
     quantity: props.location.state.quantity,
     color: props.location.state.color,
@@ -54,30 +54,17 @@ const Step1 = (props) => {
           </div>
           <Form>
             <Form.Group className="mb-3">
-              <Form.Label>First Name</Form.Label>
+              <Form.Label> Name</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Joe"
-                value={order.fname}
+                value={order.name}
                 onChange={(e) => {
-                  setorder({ ...order, fname: e.target.value });
+                  setorder({ ...order, name: e.target.value });
                 }}
               />
             </Form.Group>
-            <Form.Group className="mb-3">
-              <Form.Label>Last Name</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Wash"
-                value={order.lname}
-                onChange={(e) => {
-                  setorder({
-                    ...order,
-                    lname: e.target.value,
-                  });
-                }}
-              />
-            </Form.Group>
+
             <Form.Group className="mb-3">
               <Form.Label>Email</Form.Label>
               <Form.Control
@@ -86,6 +73,17 @@ const Step1 = (props) => {
                 value={order.email}
                 onChange={(e) => {
                   setorder({ ...order, email: e.target.value });
+                }}
+              />
+            </Form.Group>
+            <Form.Group>
+              <Form.Label>Phone No</Form.Label>
+              <Form.Control
+                type="Number"
+                placeholder="@"
+                value={order.mobile}
+                onChange={(e) => {
+                  setorder({ ...order, mobile: e.target.value });
                 }}
               />
             </Form.Group>

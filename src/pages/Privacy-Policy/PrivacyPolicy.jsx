@@ -5,7 +5,8 @@ import Navbar from '../../components/Navbar'
 const PrivacyPolicy  = () => {
     return(
         <>
-           <Navbar/>
+            <Navbar header={true} shop={true} Homelink="home"/>
+
            <Container>
                 <div className="policy">
                     <h1>Privacy Policy</h1>

@@ -24,6 +24,8 @@ const ProductPage = (props) => {
 
   if (quantity < 1) {
     alert("quantity cannot be in minus");
+  } else if (quantity > product.quantity) {
+    alert("Quantity Exceed");
   }
 
   const variants = [

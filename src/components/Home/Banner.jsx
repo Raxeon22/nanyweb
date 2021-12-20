@@ -38,6 +38,7 @@ const Banner = () => {
   const fetchbannerdata = async () => {
     const response = await Action.get("/banner", {});
     if (response.data.success == true) {
+      console.log(response.data.data);
       setbanner(response.data.data);
     } else {
       setbanner(SliderData);
@@ -49,7 +50,7 @@ const Banner = () => {
 
   return (
     <>
-      <div className="d-none d-md-block">
+      <div className="d-none d-md-block" id="home">
         <Carousel
           fade
           className="slider-banner"

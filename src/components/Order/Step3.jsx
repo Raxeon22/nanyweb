@@ -7,11 +7,12 @@ import { useHistory } from "react-router-dom";
 const Step3 = (props) => {
   let history = useHistory();
   const [order, setorder] = useState({
-    mobile: "",
-    postalCode: 0,
+    order_note: "",
   });
 
   const postorder = async (data) => {
+    console.log(data);
+
     const response = await Action.post("/order", data);
     console.log(response);
     if (response.data.success == true) {
@@ -39,24 +40,14 @@ const Step3 = (props) => {
           </div>
           <Form>
             <Form.Group className="mb-3">
-              <Form.Label>Mobile</Form.Label>
+              <Form.Label>Order Note(Optional)</Form.Label>
               <Form.Control
-                type="text"
-                value={order.mobile}
+                as="textarea"
+                rows={3}
+                placeholder=""
                 onChange={(e) => {
-                  setorder({ ...order, mobile: e.target.value });
+                  setorder({ ...order, order_note: e.target.value });
                 }}
-                placeholder="Joe"
-              />
-            </Form.Group>
-            <Form.Group className="mb-3">
-              <Form.Label>Postal code</Form.Label>
-              <Form.Control
-                type="Number"
-                onChange={(e) => {
-                  setorder({ ...order, postalCode: e.target.value });
-                }}
-                placeholder="Joe"
               />
             </Form.Group>
             {/* <Form.Group className="mb-3">

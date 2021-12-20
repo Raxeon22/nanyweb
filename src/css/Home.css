@@ -11,8 +11,8 @@
     height: 100vh;
 }
 .loader img {
-    height: 100px;
-    width: 90px;
+    width: 200px;
+    height: auto;
     margin-bottom: 20px;
 }
 /* top close bar section */
@@ -39,8 +39,8 @@
     color: white;
     font-size: 14px;
     text-align: left !important;
-
 }
+
 .header-top .smol {
     text-align: left;
 }
@@ -58,7 +58,7 @@
     z-index: 999;
 }
 .scrollspy .isCurrent .nav-link {
-    color: var(--secondary-color ) !important; 
+    background-color: var(--secondary-color ) !important; 
   }
 
  .scrollspy {
@@ -75,9 +75,23 @@ html {
   }
 .scrollspy button{
     background-color: var(--main-color) ;
+    border-color: var(--main-color);
     color: white;
     font-size: 13px;
 
+}
+.scrollspy button:hover{
+    background-color: var(--secondary-color) ;
+    border-color: var(--secondary-color);
+    color: var(--main-color);
+   
+
+}
+.scrollspy button:focus{
+    background-color: var(--secondary-color) ;
+    border-color: var(--secondary-color);
+    color: var(--main-color);
+   
 }
 /* navbar phone number */
 .number a {
@@ -263,6 +277,10 @@ html {
 }
 .services .each-slide .service-slider-text button:hover{
     background-color: var(--secondary-color);
+}
+.services .each-slide .service-slider-text button:focus{
+    background-color: var(--main-color) !important;
+    border-color: var(--main-color) !important;
 }
 .carousel-indicators .active {
     opacity: 1 !important;
@@ -531,6 +549,9 @@ html {
     font-size: 13px;
     color: black;
 }
+.contact-us .contact-form .contact-inputs  .form-check-label{
+    font-size: 11px !important;
+}
 .contact-us .contact-form .contact-inputs .custom-input {
     border: none ;
     border-bottom: 1px solid var(--main-color);
@@ -603,10 +624,9 @@ footer .each-row-f .custom-input {
     color: white;
 }
 footer .each-row-f button{
-    background-color: var(--secondary-color);
-    border-color: var(--secondary-color);
+
     font-size: 13px;
-    color: var(--main-color);
+;
 }
 footer .each-row-f button:hover{
     background-color: var(--secondary-color);
@@ -633,8 +653,23 @@ footer  .footer-widget{
 footer .footer-button button {
     padding: 5px 3px;
     text-align: center;
-    margin-top: 30px;
+    margin-top: 10px;
     justify-content: center;
+    background-color: var(--main-color) !important;
+    border-color: var(--main-color) !important;
+    color: white;
+}
+footer .footer-button button:focus{
+    background-color: var(--secondary-color) ;
+    border-color: var(--secondary-color);
+    color: var(--main-color);
+   
+}
+footer .footer-button button:hover{
+    background-color: var(--secondary-color) !important ;
+    border-color: var(--secondary-color);
+    color: var(--main-color) !important;
+   
 }
 footer .footer-button button svg{
     padding-right: 5px;
@@ -765,7 +800,10 @@ footer .footer-button button svg{
     justify-content: center;
     align-items: center;
 }
-
+.categories a{
+    text-decoration: none !important;
+    color: black;
+}
 .categories .each-img {
    
     position: relative;
@@ -782,6 +820,20 @@ footer .footer-button button svg{
     left: 10%;
     right: 10%;
     z-index: 5;
+}
+.categories .carousel-control-next {
+    right: -10%;
+}
+.categories .carousel-control-prev {
+    left: -10%;
+}
+
+
+.categories .carousel-control-next-icon {
+    background-color: var(--main-color);
+}
+.categories .carousel-control-prev-icon {
+    background-color: var(--main-color);
 }
 .categories .each-img{
     overflow: hidden;
@@ -827,6 +879,18 @@ footer .footer-button button svg{
     background-color: var(--main-color);
     color:white;
     margin-top: 10px;
+}
+.thank-you button:hover {
+    background-color: var(--secondary-color) ;
+    border-color: var(--secondary-color);
+    color: var(--main-color);
+   
+}
+.thank-you button:focus {
+    background-color: var(--secondary-color) ;
+    border-color: var(--secondary-color);
+    color: var(--main-color);
+   
 }
 .thank-you span{
     font-size: 15px;
