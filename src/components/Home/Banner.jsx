@@ -67,7 +67,7 @@ const Banner = () => {
                   width="100%"
                   height="550"
                 />
-                <Carousel.Caption>
+                {/* <Carousel.Caption>
                   <Row className="slidercaption">
                     <Col xs="12">
                       <p className="text-uppercase text-right">{val.Bt1}</p>
@@ -92,7 +92,7 @@ const Banner = () => {
                       <p className="">{val.Pt2}</p>
                     </Col>
                   </Row>
-                </Carousel.Caption>
+                </Carousel.Caption> */}
               </Carousel.Item>
             );
           })}
