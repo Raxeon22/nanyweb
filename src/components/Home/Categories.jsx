@@ -86,11 +86,11 @@ const Shop = () => {
         </div>
         {/* categories for mobile   */}
         <div className="d-block d-lg-none">
-          <Carousel className="cate-tabs">
-            <Carousel.Item>
-              <Row>
-                {category.map((item) => {
-                  return (
+          <Carousel className="cate-tabs" interval={2000}>
+            {category.map((item) => {
+              return (
+                <Carousel.Item>
+                  <Row>
                     <Col className="each-img" md="3">
                       <div className="img-text">
                         <h4> {item.heading} </h4>
@@ -103,10 +103,10 @@ const Shop = () => {
                         alt=""
                       />
                     </Col>
-                  );
-                })}
-              </Row>
-            </Carousel.Item>
+                  </Row>
+                </Carousel.Item>
+              );
+            })}
           </Carousel>
         </div>
       </Container>
