@@ -89,17 +89,19 @@ const Shop = () => {
           <Carousel className="cate-tabs">
             <Carousel.Item>
               <Row>
-                {ProductDetails.map((val, index) => {
+                {category.map((item) => {
                   return (
                     <Col className="each-img" md="3">
                       <div className="img-text">
-                        <h4> T-shirts </h4>
-                        <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          elit.{" "}
-                        </p>
+                        <h4> {item.heading} </h4>
+                        <p>{item.etxt}</p>
                       </div>
-                      <img width="100%" height="500" src={val.image} alt="" />
+                      <img
+                        width="100%"
+                        height="400"
+                        src={baseURL + item.image}
+                        alt=""
+                      />
                     </Col>
                   );
                 })}
