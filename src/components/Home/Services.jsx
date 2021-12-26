@@ -103,7 +103,7 @@ const Navbar = () => {
   }
   useEffect(async () => {
     fetchservicedata();
-  });
+  },[]);
 
   return (
     <div id="services" className="services">

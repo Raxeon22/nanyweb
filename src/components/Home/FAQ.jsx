@@ -50,12 +50,17 @@ const FAQ = () => {
   ];
 
   const [faq, setfaq] = useState([]);
+  const [count, setcount] = useState(1);
 
   async function fetchfaqdata() {
-    const action = await Action.get("/faq", {});
+    const response = await Action.get("/faq", {});
 
-    if (action.data.success == true) {
-      setfaq(action.data.data);
+    if (response.data.success == true) {
+      setfaq(response.data.data);
+      faq.map((item, index) => {
+        item.state = false;
+      });
+      // console.log(faq);
     } else {
       // setfaq([]);
     }
@@ -63,8 +68,11 @@ const FAQ = () => {
 
   useEffect(async () => {
     fetchfaqdata();
-  });
-
+  }, []);
+  async function showanswer(parent, answer) {
+    const container = document.createElement("div");
+    container.append("<h1> </h1>");
+  }
   return (
     <div id="faq" className="faq">
       <Container>
@@ -80,8 +88,9 @@ const FAQ = () => {
                 return (
                   <div
                     className="eachQ "
-                    onClick={() => {
-                      val.state = !val.state;
+                    onClick={(e) => {
+                      // val.state = !val.state;
+                      faq[index].state = !faq[index].state;
                     }}
                     aria-expanded={val.state}
                   >
@@ -89,11 +98,14 @@ const FAQ = () => {
                       {" "}
                       {val.question}{" "}
                       <span className="float-end" style={{ cursor: "pointer" }}>
-                        {val.state ? (
-                          <AiOutlineMinus size={23} />
-                        ) : (
-                          <AiOutlinePlus size={23} />
-                        )}{" "}
+                        {
+                          // console.log(val)
+                          val.state ? (
+                            <AiOutlineMinus size={23} />
+                          ) : (
+                            <AiOutlinePlus size={23} />
+                          )
+                        }{" "}
                       </span>
                     </h6>
 

@@ -25,7 +25,7 @@ import baseURL from "../../middleware/BaseURL";
 //   </b>
 // );
 var settings = {
-  dots: true,
+  dots: false,
   infinite: false,
   speed: 500,
   slidesToShow: 4,
@@ -79,16 +79,18 @@ const Shop = (props) => {
     }
   }
   async function getproduct(k) {
-    const response = await Action.get("/product?id=" + k, {});
+    console.log(k);
+    const response = await Action.get("/product?category=" + k, {});
     if (response.data.success == true) {
       setproduct(response.data.data);
+      console.log(product);
     } else {
     }
   }
 
   useEffect(async () => {
     fetchproductdata();
-  });
+  }, []);
 
   return (
     <div className="our-products">
@@ -137,17 +139,17 @@ const Shop = (props) => {
               })}
             </Tabs>
             {/* <Tab eventKey="sweat-shirts" title={<GiMonclerJacket />}>
-                <p>return policy</p>
-              </Tab>
-              <Tab eventKey="head-wear" title={<GiBilledCap />}>
-                <p>return policy</p>
-              </Tab>
-              <Tab eventKey="polos" title={<GiPoloShirt />}>
-                <p>return policy</p>
-              </Tab>
-              <Tab eventKey="accessories" title={<GiJewelCrown />}>
-                <p>return policy</p>
-              </Tab> */}
+              <p>return policy</p>
+            </Tab>
+            <Tab eventKey="head-wear" title={<GiBilledCap />}>
+              <p>return policy</p>
+            </Tab>
+            <Tab eventKey="polos" title={<GiPoloShirt />}>
+              <p>return policy</p>
+            </Tab>
+            <Tab eventKey="accessories" title={<GiJewelCrown />}>
+              <p>return policy</p>
+            </Tab> */}
           </div>
         </div>
         {/* <div className="d-block d-lg-none">

@@ -23,7 +23,7 @@ const HowItWork = () => {
 
   useEffect(async () => {
     fetchworkdata();
-  });
+  }, []);
 
   return (
     <div id="how-it-works" className="how-it-works">

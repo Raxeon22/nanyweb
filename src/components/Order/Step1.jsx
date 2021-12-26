@@ -57,7 +57,7 @@ const Step1 = (props) => {
               <Form.Label> Name</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Joe"
+                placeholder="name"
                 value={order.name}
                 onChange={(e) => {
                   setorder({ ...order, name: e.target.value });
@@ -69,7 +69,7 @@ const Step1 = (props) => {
               <Form.Label>Email</Form.Label>
               <Form.Control
                 type="email"
-                placeholder="@"
+                placeholder="email"
                 value={order.email}
                 onChange={(e) => {
                   setorder({ ...order, email: e.target.value });
@@ -80,7 +80,7 @@ const Step1 = (props) => {
               <Form.Label>Phone No</Form.Label>
               <Form.Control
                 type="Number"
-                placeholder="@"
+                placeholder="Mobile"
                 value={order.mobile}
                 onChange={(e) => {
                   setorder({ ...order, mobile: e.target.value });

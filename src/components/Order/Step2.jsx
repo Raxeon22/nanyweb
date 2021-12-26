@@ -10,7 +10,7 @@ const Step2 = (props) => {
     address: "",
     city: "",
     country: "",
-    postalCode: "",
+    postalCode: 0,
   });
 
   return (
@@ -41,7 +41,7 @@ const Step2 = (props) => {
                 onChange={(e) => {
                   setorder({ ...order, address: e.target.value });
                 }}
-                placeholder="Wash"
+                placeholder="Address"
               />
             </Form.Group>
             <Form.Group className="mb-3">
@@ -74,7 +74,7 @@ const Step2 = (props) => {
                 onChange={(e) => {
                   setorder({ ...order, postalCode: e.target.value });
                 }}
-                placeholder="Country"
+                placeholder="Postal code"
               />
             </Form.Group>
           </Form>

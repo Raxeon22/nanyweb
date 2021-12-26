@@ -45,7 +45,7 @@ const Navbar = () => {
 
   useEffect(async () => {
     fetchaboutdata();
-  });
+  }, []);
 
   return (
     <Container id="about-us">

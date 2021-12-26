@@ -26,7 +26,7 @@ const Home = () => {
   return (
     <div id="navBanner">
       <Popup showModal={showModal} setShowModal={setShowModal} />
-      <Navbar header={true} shop={true} Homelink="home"/>
+      <Navbar header={true} shop={true} Homelink="home" />
 
       <Banner />
       <AboutUs />

@@ -71,6 +71,7 @@ const Navbar = (props) => {
         link: "",
       };
       settopheader(TopHeader);
+      console.log(topheader);
     }
 
     return () => {
@@ -182,7 +183,7 @@ const Navbar = (props) => {
                   currentClassName="isCurrent"
                 >
                   <li className="nav-item">
-                  {/* <ScrollLink
+                    {/* <ScrollLink
                     className="nav-link cursor-pointer"
                     exact
                     to={props.Homelink}
@@ -195,9 +196,9 @@ const Navbar = (props) => {
                   >
                     Home
                   </ScrollLink> */}
-                   <NavLink to="/" className="nav-link ">
-                     Home
-                   </NavLink>
+                    <NavLink to="/" className="nav-link ">
+                      Home
+                    </NavLink>
                   </li>
                   {NavLinks.map((value, index) => {
                     return (
