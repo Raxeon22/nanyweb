@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Row, Col, Container, Button } from "react-bootstrap";
 import Navbar from "../../components/Navbar";
 import HeadPhones from "../../assets/headphones.jpg";
@@ -35,6 +35,23 @@ const cartDetails = [
 ];
 const AddToCart = () => {
   const [total, settotal] = useState(0);
+  const [data, setdata] = useState([]);
+
+  useEffect(() => {
+    setdata(JSON.parse(localStorage.getItem("order")));
+  }, [data]);
+  function renderElemet() {
+    data.map((item) => {
+      settotal(total + item.price * item.quantity);
+    });
+    return <h4>{total}</h4>;
+  }
+  const getcart = (value, index) => {
+    value.splice(index, 1);
+
+    localStorage.setItem("order", JSON.stringify(value));
+  };
+
   return (
     <>
       <Navbar header={true} shop={true} Homelink="home" />
@@ -60,13 +77,18 @@ const AddToCart = () => {
           </div>
           <hr />
 
-          {localStorage.getItem("order").map((value, index) => {
-            settotal(total + value.price * value.quantity);
+          {data.map((value, index) => {
             return (
               <>
                 <Row className="each-item">
                   <Col lg="1" md="1" xs="12" className="mt-4">
-                    <span>&times;</span>
+                    <span
+                      onClick={() => {
+                        getcart(data, index);
+                      }}
+                    >
+                      &times;
+                    </span>
                   </Col>
                   <Col lg="2" md="2" xs="6">
                     <img src={baseURL + value.image} alt="" />
@@ -93,8 +115,13 @@ const AddToCart = () => {
           })}
           <Row className="justify-content-end text-center subtotal">
             <Col lg="3">
-              <h4>Subtotal : ${total}</h4>
-              <Link to="/order/step1">
+              <h4>
+                Subtotal: ${" "}
+                {() => {
+                  return total;
+                }}
+              </h4>
+              <Link to={{ pathname: "/order/step1", state: { order: data } }}>
                 <Button variant="dark" className="w-100">
                   CHECK OUT
                 </Button>

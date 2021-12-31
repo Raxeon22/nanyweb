@@ -4,13 +4,18 @@ import { Card, Row, Col, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { Products } from "../pages/Shop/Shop";
 import baseURL from "../middleware/BaseURL";
+import "../css/Shop.css";
 const items = 2;
 
 const Cart = () => {
   const [isOpen, setisOpen] = useState(false);
+  const data = JSON.parse(localStorage.getItem("order"))
+    ? JSON.parse(localStorage.getItem("order"))
+    : [];
 
   const cartDropdown = useRef();
-  console.log(JSON.parse(localStorage.getItem("order")));
+  // console.log(JSON.parse(localStorage.getItem("order")));
+  // console.log(JSON.parse(localStorage.getItem("order")));
   // useEffect(() => {
   //     const handleEvent = (e) => {
   //       if (cartDropdown.current && !cartDropdown.current.contains(e.target)) {
@@ -42,9 +47,9 @@ const Cart = () => {
               <span onClick={() => setisOpen((prev) => !prev)}> &times;</span>
             </h5>
           </Card.Header>
-          <Card.Body>
+          <Card.Body className="dropdown">
             <Row className="each-item">
-              {localStorage.getItem("order").map((item) => {
+              {(data.length > 0 ? data : []).map((item) => {
                 return (
                   <>
                     <Col xs="3">
@@ -64,7 +69,7 @@ const Cart = () => {
               })}
             </Row>
 
-            <Link to="/order/step1">
+            <Link to={{ pathname: "/order/step1", state: { order: data } }}>
               <Button className="mt-3" variant="light">
                 CHECK OUT
               </Button>

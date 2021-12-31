@@ -11,8 +11,18 @@ const Step3 = (props) => {
   });
 
   const postorder = async (data) => {
-    const content = localStorage.getItem("order") + data;
-    localStorage.setItem("order", content);
+    if (
+      localStorage.getItem("order")
+        ? localStorage.getItem("order").length
+        : -1 > 0
+    ) {
+      const content = JSON.parse(localStorage.getItem("order"));
+      content.push(data);
+      localStorage.setItem("order", JSON.stringify(content));
+    } else {
+      localStorage.setItem("order", JSON.stringify([data]));
+    }
+
     const response = await Action.post("/order", data);
 
     if (response.data.success == true) {

@@ -164,6 +164,9 @@
   padding: 1px;
   color: gold;
 }
+.dropdown {
+  overflow-y: scroll;
+}
 .indiv-product .product-about .price b {
   font-size: 18px;
   color: var(--main-color);

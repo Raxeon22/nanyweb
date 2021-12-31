@@ -1,5 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Row, Col, Carousel, Tabs, Tab, Container } from "react-bootstrap";
+import {
+  Row,
+  Col,
+  Carousel,
+  Tabs,
+  Tab,
+  Container,
+  Button,
+} from "react-bootstrap";
 import { Link } from "react-router-dom";
 import HomeApplic from "../../assets/home-applic.jpg";
 import HeadPhones from "../../assets/headphones.jpg";
@@ -96,7 +104,7 @@ const Shop = (props) => {
   return (
     <div className="our-products">
       <Container>
-        <h1>Our Prod ucts</h1>
+        <h1>Our Products</h1>
         <p>There is something perfect for every business, brand, or event.</p>
         <div className="">
           <div className="prod-tabs">
@@ -120,24 +128,43 @@ const Shop = (props) => {
                       <Slider className="" {...settings}>
                         {product.map((val) => {
                           return (
-                            <Link
-                              to={{
-                                pathname: "/shop/product",
-                                state: { val },
-                              }}
-                            >
-                              <div className="each-slide">
-                                <img
-                                  src={baseURL + val.image}
-                                  width="100%"
-                                  height="300"
-                                  alt=""
-                                  className="p-1"
-                                />
-                                <p> {val.name} </p>
-                                <span> {val.price} </span>
-                              </div>
-                            </Link>
+                            <div className="each-slide">
+                              <img
+                                src={baseURL + val.image}
+                                width="100%"
+                                height="300"
+                                alt=""
+                                className="p-1"
+                              />
+                              <p> {val.name} </p>
+                              <span> {val.price} </span>
+                              <br></br>
+                              <Button
+                                onClick={() => {
+                                  if (
+                                    localStorage.getItem("order")
+                                      ? localStorage.getItem("order").length
+                                      : -1 > 0
+                                  ) {
+                                    const content = JSON.parse(
+                                      localStorage.getItem("order")
+                                    );
+                                    content.push(val);
+                                    localStorage.setItem(
+                                      "order",
+                                      JSON.stringify(content)
+                                    );
+                                  } else {
+                                    localStorage.setItem(
+                                      "order",
+                                      JSON.stringify([val])
+                                    );
+                                  }
+                                }}
+                              >
+                                Add to cart
+                              </Button>
+                            </div>
                           );
                         })}
                       </Slider>

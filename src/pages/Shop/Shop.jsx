@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../../components/Navbar";
-import { Row, Col, Form, Container, Card } from "react-bootstrap";
+import { Row, Col, Form, Container, Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import HeadPhones from "../../assets/headphones.jpg";
 import SelfieStick from "../../assets/selfie-stick.jpg";
@@ -128,33 +128,49 @@ const Shop = (props) => {
                 {product.map((val, index) => {
                   return (
                     <Col xs="12" md="4" sm="6" key={index}>
-                      <Link
-                        to={{
-                          pathname: "/shop/product",
-                          state: { val },
-                        }}
-                        // onClick={() => {
-                        //   localStorage.setItem("data", JSON.stringify(val));
-                        // }}
-                      >
-                        <Card className="each-card">
-                          <Card.Img variant="top" />
-                          <img
-                            src={baseURL + val.image}
-                            width="100%"
-                            height="280"
-                          />
-                          <Card.Body>
-                            <Card.Title>
-                              <div className="text-center">
-                                <span className="price"> {val.price} </span>
+                      <Card className="each-card">
+                        <Card.Img variant="top" />
+                        <img
+                          src={baseURL + val.image}
+                          width="100%"
+                          height="280"
+                        />
+                        <Card.Body>
+                          <Card.Title>
+                            <div className="text-center">
+                              <span className="price"> {val.price} </span>
 
-                                <p>{val.name} </p>
-                              </div>
-                            </Card.Title>
-                          </Card.Body>
-                        </Card>
-                      </Link>
+                              <p>{val.name} </p>
+                              <br></br>
+                              <Button
+                                onClick={() => {
+                                  if (
+                                    localStorage.getItem("order")
+                                      ? localStorage.getItem("order").length
+                                      : -1 > 0
+                                  ) {
+                                    const content = JSON.parse(
+                                      localStorage.getItem("order")
+                                    );
+                                    content.push(val);
+                                    localStorage.setItem(
+                                      "order",
+                                      JSON.stringify(content)
+                                    );
+                                  } else {
+                                    localStorage.setItem(
+                                      "order",
+                                      JSON.stringify([val])
+                                    );
+                                  }
+                                }}
+                              >
+                                Add to cart
+                              </Button>
+                            </div>
+                          </Card.Title>
+                        </Card.Body>
+                      </Card>
                     </Col>
                   );
                 })}

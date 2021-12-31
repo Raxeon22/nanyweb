@@ -5,7 +5,16 @@ import Navbar from "../Navbar";
 import baseURL from "../../middleware/BaseURL";
 import Action from "../../middleware/API";
 const Step1 = (props) => {
+  console.log(props.location.state);
+  console.log(props.location.state.data);
   const [product, setproduct] = useState(props.location.state.product);
+  const content = [];
+  if (props.location.state.data) {
+    props.location.state.data.map((item) => {
+      content.push({});
+    });
+  }
+
   const [order, setorder] = useState({
     name: "",
     email: "",
@@ -13,6 +22,7 @@ const Step1 = (props) => {
     product: props.location.state.product._id,
     quantity: props.location.state.quantity,
     color: props.location.state.color,
+    price: props.location.state.product.price,
   });
 
   // async function getproduct() {

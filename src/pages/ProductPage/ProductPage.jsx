@@ -125,6 +125,34 @@ const ProductPage = (props) => {
                 <FaShoppingCart className="m-1" /> Order Now
               </Button>
             </Link>
+            <br />
+            <br />
+            <Button
+              onClick={() => {
+                if (
+                  localStorage.getItem("order")
+                    ? localStorage.getItem("order").length
+                    : -1 > 0
+                ) {
+                  const content = JSON.parse(localStorage.getItem("order"));
+                  product = Object.assign(product, {
+                    quantity: quantity,
+                    color: color,
+                  });
+                  content.push(product);
+                  localStorage.setItem("order", JSON.stringify(content));
+                } else {
+                  product = Object.assign(product, {
+                    quantity: quantity,
+                    color: color,
+                  });
+
+                  localStorage.setItem("order", JSON.stringify([product]));
+                }
+              }}
+            >
+              Add to cart
+            </Button>
             <div className="social-icons mt-5">
               <FaFacebook size="25" color="blue" className="m-1" />
               <FaTwitter size="25" color="primary" className="m-1" />
