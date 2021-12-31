@@ -51,6 +51,15 @@ const Navbar = (props) => {
   const navbar = useRef();
   const products = useRef(null);
   const shop = useRef();
+  const [product, setproduct] = useState([]);
+  async function getproduct() {
+    const response = await Action.get("/product", {});
+    if (response.data.success == true) {
+      setproduct(response.data.data);
+      console.log(product);
+    } else {
+    }
+  }
 
   useEffect(async () => {
     const handleEvent = (e) => {
@@ -261,15 +270,19 @@ const Navbar = (props) => {
           >
             <Container>
               <Row>
-                {ProductDetails.map((val, index) => {
+                {product.map((val, index) => {
                   return (
                     <Col xs="12" md="4" key={index}>
                       <Link to="/shop/product">
                         <Card className="each-product">
                           <Card.Img variant="top" />
-                          <img src={val.image} width="100%" height="280" />
+                          <img
+                            src={baseURL + val.image}
+                            width="100%"
+                            height="280"
+                          />
                           <Card.Body>
-                            <Card.Title> {val.title} </Card.Title>
+                            <Card.Title> {val.name} </Card.Title>
                           </Card.Body>
                         </Card>
                       </Link>

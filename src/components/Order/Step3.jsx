@@ -8,10 +8,11 @@ const Step3 = (props) => {
   let history = useHistory();
   const [order, setorder] = useState({
     order_note: "",
-    user: "61c8c444e2b5061d36ab7734",
   });
 
   const postorder = async (data) => {
+    const content = localStorage.getItem("order") + data;
+    localStorage.setItem("order", content);
     const response = await Action.post("/order", data);
 
     if (response.data.success == true) {

@@ -40,7 +40,7 @@ const Banner = () => {
     if (response.data.success == true) {
       setbanner(response.data.data);
     } else {
-      setbanner(SliderData);
+      // setbanner(SliderData);
     }
   };
   useEffect(async () => {
@@ -106,11 +106,11 @@ const Banner = () => {
           controls={false}
           interval={3000}
         >
-          {SliderDataMobile.map((val, index) => {
+          {banner.map((val, index) => {
             return (
               <Carousel.Item key={index}>
                 <img
-                  src={val.img}
+                  src={baseURL + val.img}
                   alt="First Slide"
                   className="first-slide"
                   width="100%"

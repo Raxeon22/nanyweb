@@ -66,16 +66,23 @@ const Shop = () => {
                   {category.map((item) => {
                     return (
                       <Col className="each-img" md="3">
-                        <div className="img-text">
-                          <h4> {item.heading} </h4>
-                          <p>{item.etxt}</p>
-                        </div>
-                        <img
-                          width="100%"
-                          height="400"
-                          src={baseURL + item.image}
-                          alt=""
-                        />
+                        <Link
+                          to={{
+                            pathname: "/shop",
+                            state: { item },
+                          }}
+                        >
+                          <div className="img-text">
+                            <h4> {item.heading} </h4>
+                            <p>{item.etxt}</p>
+                          </div>
+                          <img
+                            width="100%"
+                            height="400"
+                            src={baseURL + item.image}
+                            alt=""
+                          />
+                        </Link>
                       </Col>
                     );
                   })}
@@ -92,16 +99,23 @@ const Shop = () => {
                 <Carousel.Item>
                   <Row>
                     <Col className="each-img" md="3">
-                      <div className="img-text">
-                        <h4> {item.heading} </h4>
-                        <p>{item.etxt}</p>
-                      </div>
-                      <img
-                        width="100%"
-                        height="400"
-                        src={baseURL + item.image}
-                        alt=""
-                      />
+                      <Link
+                        to={{
+                          pathname: "/shop",
+                          state: { item },
+                        }}
+                      >
+                        <div className="img-text">
+                          <h4> {item.heading} </h4>
+                          <p>{item.etxt}</p>
+                        </div>
+                        <img
+                          width="100%"
+                          height="400"
+                          src={baseURL + item.image}
+                          alt=""
+                        />
+                      </Link>
                     </Col>
                   </Row>
                 </Carousel.Item>

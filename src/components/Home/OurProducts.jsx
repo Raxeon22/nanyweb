@@ -65,10 +65,10 @@ var settings = {
 };
 
 const Shop = (props) => {
-  const [product, setproduct] = useState([]);
   const [category, setcategory] = useState([]);
   const [key, setKey] = useState("");
 
+  const [product, setproduct] = useState([]);
   async function fetchproductdata() {
     const action = await Action.get("/category", {});
 
@@ -78,6 +78,7 @@ const Shop = (props) => {
       // setcategory([]);
     }
   }
+
   async function getproduct(k) {
     console.log(k);
     const response = await Action.get("/product?category=" + k, {});
@@ -119,17 +120,24 @@ const Shop = (props) => {
                       <Slider className="" {...settings}>
                         {product.map((val) => {
                           return (
-                            <div className="each-slide">
-                              <img
-                                src={baseURL + val.image}
-                                width="100%"
-                                height="300"
-                                alt=""
-                                className="p-1"
-                              />
-                              <p> {val.name} </p>
-                              <span> {val.price} </span>
-                            </div>
+                            <Link
+                              to={{
+                                pathname: "/shop/product",
+                                state: { val },
+                              }}
+                            >
+                              <div className="each-slide">
+                                <img
+                                  src={baseURL + val.image}
+                                  width="100%"
+                                  height="300"
+                                  alt=""
+                                  className="p-1"
+                                />
+                                <p> {val.name} </p>
+                                <span> {val.price} </span>
+                              </div>
+                            </Link>
                           );
                         })}
                       </Slider>

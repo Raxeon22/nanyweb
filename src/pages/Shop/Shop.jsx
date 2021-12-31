@@ -57,7 +57,8 @@ const categories = [
   { cate: "weeb flowers" },
 ];
 
-const Shop = () => {
+const Shop = (props) => {
+  const [heading, setheading] = useState("");
   const [category, setcategory] = useState([]);
   const [product, setproduct] = useState([]);
 
@@ -80,13 +81,17 @@ const Shop = () => {
 
   useEffect(async () => {
     fetchcategorydata();
+    if (props.location.state) {
+      getproduct(props.location.state.item._id);
+      setheading(props.location.state.item.heading);
+    }
   }, [1]);
   return (
     <>
       <Navbar />
       <div className=" products animate__animated animate__fadeInUp animate__fast">
         <Container fluid>
-          <div className="sort">
+          {/* <div className="sort">
             <h6>sort by</h6>
             <Form.Select aria-label="Default select example" size="sm">
               <option>Oldest</option>
@@ -94,7 +99,7 @@ const Shop = () => {
               <option value="2">Two</option>
               <option value="3">Three</option>
             </Form.Select>
-          </div>
+          </div> */}
 
           <Row>
             <Col md="3" xs="12" className="text-right mb-4">
@@ -106,6 +111,7 @@ const Shop = () => {
                       to="/shop"
                       key={index}
                       onClick={() => {
+                        setheading(val.heading);
                         getproduct(val._id);
                       }}
                     >
@@ -117,6 +123,7 @@ const Shop = () => {
               </div>
             </Col>
             <Col md="9" xs="12" className="shop-cards">
+              <h1 className="heading">{heading}</h1>
               <Row>
                 {product.map((val, index) => {
                   return (
