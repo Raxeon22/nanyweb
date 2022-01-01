@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Navbar from "../Navbar";
 
 const Step2 = (props) => {
+  console.log(props.location.state);
   const [product, setproduct] = useState([]);
 
   const [order, setorder] = useState({
@@ -84,7 +85,10 @@ const Step2 = (props) => {
           <Link
             to={{
               pathname: "/order/step3",
-              state: { ...Object.assign(props.location.state.order, order) },
+              state: {
+                order: Object.assign(props.location.state.order, order),
+                product: props.location.state.product,
+              },
             }}
             // onClick={() => {
             //   localStorage.setItem(

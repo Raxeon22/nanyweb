@@ -20,7 +20,7 @@ const ProductPage = (props) => {
   const [product, setproduct] = useState(props.location.state.val);
 
   const [quantity, setQuantity] = useState(1);
-  const [color, setColor] = useState();
+  const [color, setColor] = useState("");
 
   if (quantity < 1) {
     alert("quantity cannot be in minus");
@@ -82,6 +82,7 @@ const ProductPage = (props) => {
                         " background-color:" +
                         value +
                         "; border: 5px solid black;";
+
                       setColor(value);
                     }}
                   ></span>
@@ -100,12 +101,14 @@ const ProductPage = (props) => {
             </div>{" "}
             <br />
             <Link
+              onClick={() => {
+                product.quantity = quantity;
+                product.color = color;
+              }}
               to={{
                 pathname: "/order/step1",
                 state: {
-                  product,
-                  color,
-                  quantity,
+                  product: [product],
                 },
               }}
             >
@@ -135,10 +138,10 @@ const ProductPage = (props) => {
                     : -1 > 0
                 ) {
                   const content = JSON.parse(localStorage.getItem("order"));
-                  product = Object.assign(product, {
-                    quantity: quantity,
-                    color: color,
-                  });
+                  // product = Object.assign(product, {
+                  //   quantity: quantity,
+                  //   color: color,
+                  // });
                   content.push(product);
                   localStorage.setItem("order", JSON.stringify(content));
                 } else {

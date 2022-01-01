@@ -6,6 +6,8 @@ import SelfieStick from "../../assets/selfie-stick.jpg";
 import Speakers from "../../assets/speakers.jpg";
 import { Link } from "react-router-dom";
 import baseURL from "../../middleware/BaseURL";
+import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
+
 const total = 40.0;
 const cartDetails = [
   {
@@ -34,10 +36,13 @@ const cartDetails = [
   },
 ];
 const AddToCart = () => {
-  const [total, settotal] = useState(0);
+  const [total, settotal] = useState([]);
   const [data, setdata] = useState([]);
 
-  useEffect(() => {
+  const [Quantity, setQuantity] = useState([]);
+  const [payload, setpayload] = useState(data);
+
+  useEffect(async () => {
     setdata(JSON.parse(localStorage.getItem("order")));
   }, [data]);
   function renderElemet() {
@@ -61,7 +66,7 @@ const AddToCart = () => {
           <h1>shopping cart</h1>
           <div className="d-none d-md-block">
             <Row className="items-heading ">
-              <Col lg="9" md="9">
+              <Col lg="8" md="8">
                 <p>Products</p>
               </Col>
               <Col lg="1" md="1">
@@ -69,6 +74,9 @@ const AddToCart = () => {
               </Col>
               <Col lg="1" md="1">
                 <p>Quantity</p>
+              </Col>
+              <Col lg="1" md="1">
+                <p>Color</p>
               </Col>
               <Col lg="1" md="1">
                 <p>Total</p>
@@ -93,7 +101,7 @@ const AddToCart = () => {
                   <Col lg="2" md="2" xs="6">
                     <img src={baseURL + value.image} alt="" />
                   </Col>
-                  <Col lg="6" md="6" xs="6">
+                  <Col lg="5" md="5" xs="5">
                     {" "}
                     <p>{value.name}</p>{" "}
                   </Col>
@@ -102,7 +110,42 @@ const AddToCart = () => {
                     <p>{value.price}</p>
                   </Col>
                   <Col lg="1" md="1" xs="4">
-                    <p>{value.quantity}</p>{" "}
+                    <div className="quantity d-flex">
+                      <span
+                        onClick={() => {
+                          console.log(index);
+
+                          Quantity[index] =
+                            Quantity[index] > 0
+                              ? Quantity[index] + 1
+                              : (Quantity[index] = 2);
+
+                          console.log(Quantity[index]);
+                        }}
+                      >
+                        {" "}
+                        <AiOutlinePlus />{" "}
+                      </span>
+                      <p className="p-2">
+                        {" "}
+                        {Quantity[index] > 0 ? Quantity[index] : 1}{" "}
+                      </p>
+                      <span
+                        onClick={() => {
+                          Quantity[index] =
+                            Quantity[index] > 0
+                              ? Quantity[index] - 1
+                              : (Quantity[index] = 1);
+
+                          console.log(Quantity[index]);
+                        }}
+                      >
+                        <AiOutlineMinus />{" "}
+                      </span>
+                    </div>
+                  </Col>
+                  <Col lg="1" md="1" xs="4">
+                    Blue
                   </Col>
                   <Col lg="1" md="1" xs="4">
                     {" "}
@@ -121,7 +164,15 @@ const AddToCart = () => {
                   return total;
                 }}
               </h4>
-              <Link to={{ pathname: "/order/step1", state: { order: data } }}>
+              <Link
+                onClick={() => {
+                  data.map((item, index) => {
+                    data[index].quantity =
+                      Quantity[index] > 0 ? Quantity[index] : 1;
+                  });
+                }}
+                to={{ pathname: "/order/step1", state: { product: data } }}
+              >
                 <Button variant="dark" className="w-100">
                   CHECK OUT
                 </Button>

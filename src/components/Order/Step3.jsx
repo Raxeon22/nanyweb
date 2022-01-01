@@ -5,25 +5,19 @@ import Navbar from "../Navbar";
 import Action from "../../middleware/API";
 import { useHistory } from "react-router-dom";
 const Step3 = (props) => {
+  console.log(props.location.state);
   let history = useHistory();
   const [order, setorder] = useState({
     order_note: "",
   });
 
   const postorder = async (data) => {
-    if (
-      localStorage.getItem("order")
-        ? localStorage.getItem("order").length
-        : -1 > 0
-    ) {
-      const content = JSON.parse(localStorage.getItem("order"));
-      content.push(data);
-      localStorage.setItem("order", JSON.stringify(content));
-    } else {
-      localStorage.setItem("order", JSON.stringify([data]));
-    }
-
-    const response = await Action.post("/order", data);
+    const payload = {
+      order: Object.assign(props.location.state.order, order),
+      product: props.location.state.product,
+    };
+    console.log(payload);
+    const response = await Action.post("/order", payload);
 
     if (response.data.success == true) {
       history.push("/thankyou");
@@ -76,7 +70,7 @@ const Step3 = (props) => {
           <Button
             className="float-end"
             onClick={() => {
-              postorder(Object.assign(props.location.state, order));
+              postorder();
             }}
           >
             Submit

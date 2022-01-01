@@ -56,7 +56,6 @@ const Navbar = (props) => {
     const response = await Action.get("/product", {});
     if (response.data.success == true) {
       setproduct(response.data.data);
-      console.log(product);
     } else {
     }
   }
@@ -273,7 +272,7 @@ const Navbar = (props) => {
                 {product.map((val, index) => {
                   return (
                     <Col xs="12" md="4" key={index}>
-                      <Link to="/shop/product">
+                      <Link to={{ path: "/shop/product", state: { val } }}>
                         <Card className="each-product">
                           <Card.Img variant="top" />
                           <img

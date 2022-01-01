@@ -103,6 +103,17 @@ const ProductSlider = (props) => {
                       >
                         Add to cart
                       </Button>
+                      <br></br>
+                      <br></br>
+
+                      <Link
+                        to={{
+                          pathname: "/shop/product",
+                          state: { val },
+                        }}
+                      >
+                        <Button>View Details</Button>
+                      </Link>
                     </div>
                   </Card.Title>
                 </Card.Body>

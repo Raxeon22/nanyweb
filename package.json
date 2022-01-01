@@ -2,7 +2,6 @@
   "name": "nanny",
   "version": "0.1.0",
   "private": true,
-  
   "dependencies": {
     "animate.css": "^4.1.1",
     "axios": "^0.24.0",
@@ -20,6 +19,7 @@
     "react-scrollspy": "^3.4.3",
     "react-slick": "^0.28.1",
     "slick-carousel": "^1.8.1"
+    
   },
   "scripts": {
     "start": "react-scripts start",

@@ -17,6 +17,9 @@
   transform: scale(1.1);
   transition: all 0.2s;
 }
+.cartdropdown {
+  margin-top: 10px;
+}
 .products .shop-cards a {
   text-decoration: none !important;
 }

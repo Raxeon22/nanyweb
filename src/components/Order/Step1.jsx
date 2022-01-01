@@ -6,9 +6,22 @@ import baseURL from "../../middleware/BaseURL";
 import Action from "../../middleware/API";
 const Step1 = (props) => {
   console.log(props.location.state);
-  console.log(props.location.state.data);
+
   const [product, setproduct] = useState(props.location.state.product);
   const content = [];
+  product.map((val) => {
+    content.push({
+      product: val._id,
+      quantity: val.quantity,
+      color: props.location.state.color
+        ? props.location.state.color
+        : val.color[0],
+      price: props.location.state.price
+        ? props.location.state.price
+        : val.price,
+    });
+  });
+  console.log(content);
   if (props.location.state.data) {
     props.location.state.data.map((item) => {
       content.push({});
@@ -19,10 +32,10 @@ const Step1 = (props) => {
     name: "",
     email: "",
     mobile: 0,
-    product: props.location.state.product._id,
-    quantity: props.location.state.quantity,
-    color: props.location.state.color,
-    price: props.location.state.product.price,
+    // product: props.location.state.product._id,
+    // quantity: props.location.state.quantity,
+    // color: props.location.state.color,
+    // price: props.location.state.product.price,
   });
 
   // async function getproduct() {
@@ -104,7 +117,8 @@ const Step1 = (props) => {
             to={{
               pathname: "/order/step2",
               state: {
-                order,
+                order: order,
+                product: product,
               },
             }}
             // onClick={() => {

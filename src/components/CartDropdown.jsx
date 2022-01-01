@@ -14,7 +14,7 @@ const Cart = () => {
     : [];
 
   const cartDropdown = useRef();
-  const height = data.length > 0 ? '400px' : 'auto'
+  const height = data.length > 0 ? "400px" : "auto";
   // console.log(JSON.parse(localStorage.getItem("order")));
   // console.log(JSON.parse(localStorage.getItem("order")));
   // useEffect(() => {
@@ -31,47 +31,56 @@ const Cart = () => {
   //   });
   return (
     <div className="cart">
-      <span onClick={ () => setisOpen((prev) => !prev) }>
-        { " " }
-        <AiOutlineShoppingCart size={ 26 } />
-        <span className="items d-none d-lg-block">{ items }</span>{ " " }
+      <span onClick={() => setisOpen((prev) => !prev)}>
+        {" "}
+        <AiOutlineShoppingCart size={26} />
+        <span className="items d-none d-lg-block">{items}</span>{" "}
       </span>
 
-      { isOpen ? (
+      {isOpen ? (
         <Card
-          ref={ cartDropdown }
+          ref={cartDropdown}
           className="cart-dropdown animate__animated animate__fadeInUp animate__fast"
-          style={ { height: height } }
+          style={{ height: height }}
         >
           <Card.Header>
             <h5>
-              My Cart{ " " }
-              <span onClick={ () => setisOpen((prev) => !prev) }> &times;</span>
+              My Cart{" "}
+              <span onClick={() => setisOpen((prev) => !prev)}> &times;</span>
             </h5>
           </Card.Header>
           <Card.Body className="dropdown">
             <Row className="each-item">
-              { (data.length > 0 ? data : []).map((item) => {
+              {(data.length > 0 ? data : []).map((item) => {
                 return (
                   <>
-                    <Col xs="3">
+                    <Col xs="3" className="cartdropdown">
                       <img
-                        src={ baseURL + item.image }
+                        src={baseURL + item.image}
                         height="60"
                         width="60"
                         alt=""
                       />
                     </Col>
                     <Col xs="9">
-                      <h6> { item.name } </h6>
-                      price: { item.price }
+                      <h6> {item.name} </h6>
+                      price: {item.price}
                     </Col>
                   </>
                 );
-              }) }
+              })}
             </Row>
 
-            <Link to={ { pathname: "/order/step1", state: { order: data } } }>
+            <Link
+              onClick={() => {
+                data.map((item, index) => {
+                  // console.log(data[index].color[0]);
+                  data[index].quantity = 1;
+                  data[index].color = [data[index].color[0]];
+                });
+              }}
+              to={{ pathname: "/order/step1", state: { product: data } }}
+            >
               <Button className="mt-3" variant="light">
                 CHECK OUT
               </Button>
@@ -83,7 +92,7 @@ const Cart = () => {
             </Link>
           </Card.Body>
         </Card>
-      ) : null }
+      ) : null}
     </div>
   );
 };
