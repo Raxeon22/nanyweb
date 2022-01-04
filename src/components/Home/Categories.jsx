@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Row, Col, Carousel, Card, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import HomeApplic from "../../assets/home-applic.jpg";
@@ -40,7 +40,6 @@ const bleh = (
 
 const Shop = () => {
   const [category, setcategory] = useState([]);
-
   async function fetchcategorydata() {
     const response = await Action.get("/category", {});
     if (response.data.success == true) {
@@ -53,6 +52,8 @@ const Shop = () => {
   useEffect(async () => {
     fetchcategorydata();
   }, []);
+  const arrows = category.length > 4 ? true : false
+  console.log(arrows)
 
   return (
     <div className="categories">
@@ -60,59 +61,59 @@ const Shop = () => {
         <h2>Categories </h2>
         <div className="">
           <div className="cate-tabs d-none d-lg-block">
-            <Carousel interval={2000}>
+            <Carousel controls={ arrows } interval={ 2000 }>
               <Carousel.Item>
                 <Row>
-                  {category.map((item) => {
+                  { category.map((item) => {
                     return (
                       <Col className="each-img" md="3">
                         <Link
-                          to={{
+                          to={ {
                             pathname: "/shop",
                             state: { item },
-                          }}
+                          } }
                         >
                           <div className="img-text">
-                            <h4> {item.heading} </h4>
-                            <p>{item.etxt}</p>
+                            <h4> { item.heading } </h4>
+                            <p>{ item.etxt }</p>
                           </div>
                           <img
                             width="100%"
                             height="400"
-                            src={baseURL + item.image}
+                            src={ baseURL + item.image }
                             alt=""
                           />
                         </Link>
                       </Col>
                     );
-                  })}
+                  }) }
                 </Row>
               </Carousel.Item>
             </Carousel>
           </div>
         </div>
-        {/* categories for mobile   */}
+        {/* categories for mobile   */ }
         <div className="d-block d-lg-none">
-          <Carousel className="cate-tabs" interval={2000}>
-            {category.map((item) => {
+          <Carousel className="cate-tabs" interval={ 2000 }>
+            { category.map((item) => {
               return (
                 <Carousel.Item>
                   <Row>
                     <Col className="each-img" md="3">
                       <Link
-                        to={{
+                        to={ {
                           pathname: "/shop",
                           state: { item },
-                        }}
+                        } }
                       >
                         <div className="img-text">
-                          <h4> {item.heading} </h4>
-                          <p>{item.etxt}</p>
+                          <h4> { item.heading } </h4>
+                          <p>{ item.etxt }</p>
                         </div>
                         <img
                           width="100%"
                           height="400"
-                          src={baseURL + item.image}
+                          src={ baseURL + item.image }
                           alt=""
                         />
                       </Link>
@@ -120,7 +121,7 @@ const Shop = () => {
                   </Row>
                 </Carousel.Item>
               );
-            })}
+            }) }
           </Carousel>
         </div>
       </Container>

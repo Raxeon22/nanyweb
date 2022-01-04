@@ -11,7 +11,7 @@ import { Button, Card } from "react-bootstrap";
 
 const ProductSlider = (props) => {
   var settings = {
-    dots: true,
+    dots: false,
     infinite: false,
     speed: 500,
     slidesToShow: 4,
@@ -63,23 +63,23 @@ const ProductSlider = (props) => {
   });
   return (
     <div className="new-arrivals">
-      <h3> {props.heading} </h3>
-      <Slider className="react-slider" {...settings}>
-        {product.map((val) => {
+      <h3> { props.heading } </h3>
+      <Slider className="react-slider" { ...settings }>
+        { product.map((val) => {
           return (
             <div className="each-slid">
               <Card className="each-card">
                 <Card.Img variant="top" />
-                <img src={baseURL + val.image} width="100%" height="280" />
+                <img src={ baseURL + val.image } width="100%" height="280" />
                 <Card.Body>
                   <Card.Title>
                     <div className="text-center">
-                      <span className="price"> {val.price} </span>
+                      <span className="price"> { val.price } </span>
 
-                      <p>{val.name} </p>
+                      <p>{ val.name } </p>
                       <br></br>
                       <Button
-                        onClick={() => {
+                        onClick={ () => {
                           if (
                             localStorage.getItem("order")
                               ? localStorage.getItem("order").length
@@ -99,7 +99,7 @@ const ProductSlider = (props) => {
                               JSON.stringify([val])
                             );
                           }
-                        }}
+                        } }
                       >
                         Add to cart
                       </Button>
@@ -107,10 +107,10 @@ const ProductSlider = (props) => {
                       <br></br>
 
                       <Link
-                        to={{
+                        to={ {
                           pathname: "/shop/product",
                           state: { val },
-                        }}
+                        } }
                       >
                         <Button>View Details</Button>
                       </Link>
@@ -120,7 +120,7 @@ const ProductSlider = (props) => {
               </Card>
             </div>
           );
-        })}
+        }) }
       </Slider>
     </div>
   );
