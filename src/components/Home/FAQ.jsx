@@ -21,11 +21,11 @@ const FAQ = () => {
       // setfaq([]);
     }
   }
-  
+
   useEffect(async () => {
     fetchfaqdata();
     console.log(faq);
-    
+
   }, []);
 
 
@@ -34,45 +34,44 @@ const FAQ = () => {
       <Container>
         <Row>
           <Col xs="12" md="6">
-            <img src={FAQImg} alt="" width="100%" height="500" />
+            <img src={ FAQImg } alt="" width="100%" height="500" />
           </Col>
           <Col xs="12" md="6" className="heading">
             <strong>FAQ</strong>
 
             <div className="Qsection">
-              {faq.map((val, index) => {
+              { faq.map((val, index) => {
                 return (
                   <div
                     className="eachQ "
-                    onClick={(e) => {
+                    onClick={ (e) => {
                       count[index] = !count[index];
                       console.log(count[index]);
-                    }}
-                    aria-expanded={count[index]}
+                    } }
+                    aria-expanded={ count[index] }
                   >
                     <h6 className="font-bolder">
-                      {" "}
-                      {val.question}{" "}
-                      <span className="float-end" style={{ cursor: "pointer" }}>
+                      { " " }
+                      { val.question }{ " " }
+                      <span className="float-end" style={ { cursor: "pointer" } }>
                         {
-                           console.log(count[index])
-                          // count[index] ? (
-                          //   <AiOutlineMinus size={23} />
-                          // ) : (
-                          //   <AiOutlinePlus size={23} />
-                          // )
-                        }{" "}
+                          count[index] ? (
+                            <AiOutlineMinus size={ 23 } />
+                          ) : (
+                            <AiOutlinePlus size={ 23 } />
+                          )
+                        }{ " " }
                       </span>
                     </h6>
 
-                    <Collapse in={count[index]}>
+                    <Collapse in={ count[index] }>
                       <div className="">
-                        <p>{val.answer}</p>
+                        <p>fwehfwey7ye78</p>
                       </div>
                     </Collapse>
                   </div>
                 );
-              })}
+              }) }
             </div>
           </Col>
         </Row>
