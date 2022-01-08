@@ -7,7 +7,7 @@ import { useHistory } from "react-router-dom";
 
 
 const Step3 = (props) => {
-  console.log(props.location.state.product);  
+  
   let history = useHistory();
   
   if(!props.location.state){
@@ -23,7 +23,7 @@ const Step3 = (props) => {
       order: Object.assign(props.location.state.order, order),
       product: props.location.state.product,
     };
-    console.log(payload);
+    
     const response = await Action.post("/order", payload);
 
     if (response.data.success == true) {

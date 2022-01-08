@@ -28,20 +28,20 @@ const ContactUs = () => {
   const getcontact = async () => {
     const response = await Action.get("/contact", {});
     if (response.data.success == true) {
-      console.log(response.data.data);
+      
       setcontact(response.data.data);
     } else {
     }
   };
   const postquery = async () => {
-    console.log(data);
+    
     const response = await Action.post("/query", data, {});
-    console.log(response);
+    
     // if (response.data.success == true) {
     // } else {
     // }
   };
-  // console.log(contact);
+
 
   useEffect(async () => {
     await getcontact();
@@ -162,7 +162,7 @@ const ContactUs = () => {
                             type="number"
                             placeholder="0000000"
                             onChange={(e) => {
-                              console.log(typeof e.target.value);
+                              
                               setdata({ ...data, mobile: e.target.value });
                             }}
                           />
@@ -236,7 +236,7 @@ const ContactUs = () => {
                           variant="primary"
                           type="submit"
                           onClick={(e) => {
-                            console.log(data);
+                            
                             postquery();
                             setSpin(
                               <Spinner

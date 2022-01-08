@@ -14,13 +14,14 @@ const PageModal = ({ showModal, setShowModal }) => {
       const action = await Action.get("/splashscreen", {});
 
       if (action.data.success == true) {
+        
         setpopimg(action.data.data[0].image);
       } else {
         // setcategory([]);
       }
     } catch (e) {}
   };
-  console.log(baseURL + popimg);
+  
   useEffect(() => {
     const handleEvent = (e) => {
       if (popup.current && !popup.current.contains(e.target)) {

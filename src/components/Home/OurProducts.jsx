@@ -88,11 +88,11 @@ const Shop = (props) => {
   }
 
   async function getproduct(k) {
-    console.log(k);
+    
     const response = await Action.get("/product?category=" + k, {});
     if (response.data.success == true) {
       setproduct(response.data.data);
-      console.log(product);
+      
     } else {
     }
   }

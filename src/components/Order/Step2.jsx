@@ -6,7 +6,6 @@ import { useHistory } from "react-router-dom";
 
 const Step2 = (props) => {
 
-console.log(props.location.state.product);
 
   let history = useHistory();
   const [product, setproduct] = useState([]);

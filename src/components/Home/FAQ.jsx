@@ -24,8 +24,8 @@ const FAQ = () => {
 
   useEffect(async () => {
     fetchfaqdata();
-    console.log(faq);
 
+    
   }, []);
 
 
@@ -46,21 +46,22 @@ const FAQ = () => {
                     className="eachQ "
                     onClick={ (e) => {
                       count[index] = !count[index];
-                      console.log(count[index]);
-                    } }
-                    aria-expanded={ count[index] }
+                      
+                    }}
+                    aria-expanded={count[index]}
                   >
                     <h6 className="font-bolder">
                       { " " }
                       { val.question }{ " " }
                       <span className="float-end" style={ { cursor: "pointer" } }>
                         {
+                           
                           count[index] ? (
-                            <AiOutlineMinus size={ 23 } />
+                            <AiOutlineMinus size={23} />
                           ) : (
-                            <AiOutlinePlus size={ 23 } />
+                            <AiOutlinePlus size={23} />
                           )
-                        }{ " " }
+                        }{" "}
                       </span>
                     </h6>
 

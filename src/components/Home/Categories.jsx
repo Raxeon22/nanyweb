@@ -53,7 +53,7 @@ const Shop = () => {
     fetchcategorydata();
   }, []);
   const arrows = category.length > 4 ? true : false
-  console.log(arrows)
+  
 
   return (
     <div className="categories">
@@ -61,12 +61,12 @@ const Shop = () => {
         <h2>Categories </h2>
         <div className="">
           <div className="cate-tabs d-none d-lg-block">
-            <Carousel controls={ arrows } interval={ 2000 }>
+                      <Carousel controls={ arrows } interval={ 2000 }>
               <Carousel.Item>
-                <Row>
                   { category.map((item) => {
                     return (
-                      <Col className="each-img" md="3">
+                <Row>
+              <Col className="each-img" md="3">
                         <Link
                           to={ {
                             pathname: "/shop",
@@ -85,9 +85,9 @@ const Shop = () => {
                           />
                         </Link>
                       </Col>
-                    );
-                  }) }
                 </Row>
+                );
+              }) }
               </Carousel.Item>
             </Carousel>
           </div>

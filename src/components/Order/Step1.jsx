@@ -8,7 +8,7 @@ import { useHistory } from "react-router-dom";
 
 const Step1 = (props) => {
 
-  console.log(props.location.state);  
+  
   let history = useHistory();
   if(!props.location.state){
     
@@ -31,34 +31,18 @@ const Step1 = (props) => {
     });
   });
   
-  if (props.location.state.data) {
-    props.location.state.data.map((item) => {
-      content.push({});
-    });
-  }
+  // if (props.location.state.data) {
+  //   props.location.state.data.map((item) => {
+  //     content.push({});
+  //   });
+  // }
 
   const [order, setorder] = useState({
     name: "",
     email: "",
     mobile: 0,
-    // product: props.location.state.product._id,
-    // quantity: props.location.state.quantity,
-    // color: props.location.state.color,
-    // price: props.location.state.product.price,
+
   });
-
-  // async function getproduct() {
-  //   const response = await Action.get(
-  //     "/product?id=" + localStorage.getItem("data"),
-  //     {}
-  //   );
-
-  //   if (response.data.success == true) {
-  //     // console.log(response.data.data);
-  //     setproduct(response.data.data);
-  //   } else {
-  //   }
-  // }
 
   useEffect(async () => {
     // await setorder({ ...order, product: product.data._id });
@@ -130,10 +114,7 @@ const Step1 = (props) => {
                 product: product,
               },
             }}
-            // onClick={() => {
-            //   console.log(order);
-            //   localStorage.setItem("data", JSON.stringify(order));
-            // }}
+            
           >
             <Button className="float-end">next</Button>
           </Link>
