@@ -4,8 +4,17 @@ import { Link } from "react-router-dom";
 import Navbar from "../Navbar";
 import baseURL from "../../middleware/BaseURL";
 import Action from "../../middleware/API";
+import { useHistory } from "react-router-dom";
+
 const Step1 = (props) => {
-  console.log(props.location.state);
+
+  console.log(props.location.state);  
+  let history = useHistory();
+  if(!props.location.state){
+    
+    history.push('/shop')
+  }
+  
 
   const [product, setproduct] = useState(props.location.state.product);
   const content = [];
@@ -15,13 +24,13 @@ const Step1 = (props) => {
       quantity: val.quantity,
       color: props.location.state.color
         ? props.location.state.color
-        : val.color[0],
+        : val.color,
       price: props.location.state.price
         ? props.location.state.price
         : val.price,
     });
   });
-  console.log(content);
+  
   if (props.location.state.data) {
     props.location.state.data.map((item) => {
       content.push({});

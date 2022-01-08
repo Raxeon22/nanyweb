@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Row, Col, Container, Button } from "react-bootstrap";
+import { Row, Col, Container, Button, Dropdown, DropdownButton, ButtonGroup } from "react-bootstrap";
 import Navbar from "../../components/Navbar";
 import HeadPhones from "../../assets/headphones.jpg";
 import SelfieStick from "../../assets/selfie-stick.jpg";
@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import baseURL from "../../middleware/BaseURL";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 
-const total = 40.0;
+
 const cartDetails = [
   {
     image: HeadPhones,
@@ -37,20 +37,18 @@ const cartDetails = [
 ];
 const AddToCart = () => {
   const [total, settotal] = useState([]);
-  const [data, setdata] = useState([]);
-
+  const [data, setdata] = useState([]);  
   const [Quantity, setQuantity] = useState([]);
   const [payload, setpayload] = useState(data);
+let color= [];
+  let netamount = 0 
 
   useEffect(async () => {
     setdata(JSON.parse(localStorage.getItem("order")));
+    
   }, [data]);
-  function renderElemet() {
-    data.map((item) => {
-      settotal(total + item.price * item.quantity);
-    });
-    return <h4>{total}</h4>;
-  }
+  
+  
   const getcart = (value, index) => {
     value.splice(index, 1);
 
@@ -86,6 +84,10 @@ const AddToCart = () => {
           <hr />
 
           {data.map((value, index) => {
+            
+      
+              netamount+=(value.price * (Quantity[index]?Quantity[index]:1))
+            
             return (
               <>
                 <Row className="each-item">
@@ -113,14 +115,14 @@ const AddToCart = () => {
                     <div className="quantity d-flex">
                       <span
                         onClick={() => {
-                          console.log(index);
+
 
                           Quantity[index] =
                             Quantity[index] > 0
                               ? Quantity[index] + 1
                               : (Quantity[index] = 2);
 
-                          console.log(Quantity[index]);
+
                         }}
                       >
                         {" "}
@@ -137,7 +139,7 @@ const AddToCart = () => {
                               ? Quantity[index] - 1
                               : (Quantity[index] = 1);
 
-                          console.log(Quantity[index]);
+                          
                         }}
                       >
                         <AiOutlineMinus />{" "}
@@ -145,11 +147,23 @@ const AddToCart = () => {
                     </div>
                   </Col>
                   <Col lg="1" md="1" xs="4">
-                    Blue
+                  <>
+  
+                  <div>
+
+                    <select name="cars" id="cars">
+{value.color.map((item)=>{
+return <option onSelect={color[index] = item}> {item}</option>
+  
+})}                    
+                    
+                  </select> 
+                  </div>
+                  </>
                   </Col>
                   <Col lg="1" md="1" xs="4">
                     {" "}
-                    <p>{value.price * value.quantity}</p>{" "}
+                    <p>{Quantity[index]?value.price * Quantity[index] :value.price }</p>{" "}
                   </Col>
                 </Row>
                 <hr />
@@ -160,18 +174,21 @@ const AddToCart = () => {
             <Col lg="3">
               <h4>
                 Subtotal: ${" "}
-                {() => {
-                  return total;
-                }}
+                {
+  netamount
+                }
               </h4>
               <Link
                 onClick={() => {
                   data.map((item, index) => {
                     data[index].quantity =
                       Quantity[index] > 0 ? Quantity[index] : 1;
+                      
+                       data[index].color = color[index] ?  color[index] :data[index].color[0]
+
                   });
                 }}
-                to={{ pathname: "/order/step1", state: { product: data } }}
+                to={{ pathname: "/order/step1", state: { product: data, total:netamount } }}
               >
                 <Button variant="dark" className="w-100">
                   CHECK OUT

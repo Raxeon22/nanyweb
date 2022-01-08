@@ -4,8 +4,17 @@ import './css/Home.css';
 import { Spinner } from 'react-bootstrap'
 import Logo from './assets/logo.png'
 import { HashRouter, Route, Switch, } from "react-router-dom";
-import Loading from './components/Preloader'
-import { HiHand } from 'react-icons/hi';
+// import Loading from './components/Preloader'
+// import { HiHand } from 'react-icons/hi';
+// import Select from "react-select";
+// import {
+//   useLazyTranslate,
+//   getLanguages,
+//   setConfig
+// } from "react-google-translate";
+// import { Form, FormGroup, Label, Input, Col, Row, Jumbotron } from "reactstrap";
+// import { debounce } from "lodash";
+
 const Footer = React.lazy(() => import('./components/Footer'))
 const Home = React.lazy(() => import('./pages/Home/Home'))
 const Shop = React.lazy(() => import('./pages/Shop/Shop'))
@@ -16,6 +25,8 @@ const Step3 = React.lazy(() => import('./components/Order/Step3'))
 const PrivacyPolicy = React.lazy(() => import('./pages/Privacy-Policy/PrivacyPolicy'))
 const Cart = React.lazy(() => import('./pages/Cart/AddToCart'))
 const Thankyou = React.lazy(() => import('./pages/Thank-you/Thankyou'))
+
+
 
 const loading = () => {
 

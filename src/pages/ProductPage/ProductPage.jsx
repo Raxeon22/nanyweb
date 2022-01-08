@@ -16,7 +16,13 @@ import {
 } from "react-icons/fa";
 import { RiAccountPinCircleFill } from "react-icons/ri";
 
+import { useHistory } from "react-router-dom";
 const ProductPage = (props) => {
+  
+  let history = useHistory();
+  if(!props.location.state){
+    history.push('/shop')
+  }  
   const [product, setproduct] = useState(props.location.state.val);
 
   const [quantity, setQuantity] = useState(1);
@@ -103,7 +109,7 @@ const ProductPage = (props) => {
             <Link
               onClick={() => {
                 product.quantity = quantity;
-                product.color = color;
+                product.color = color ?color : product.color[0];
               }}
               to={{
                 pathname: "/order/step1",

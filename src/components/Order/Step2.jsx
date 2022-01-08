@@ -2,19 +2,26 @@ import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Navbar from "../Navbar";
+import { useHistory } from "react-router-dom";
 
 const Step2 = (props) => {
-  console.log(props.location.state);
-  const [product, setproduct] = useState([]);
 
+console.log(props.location.state.product);
+
+  let history = useHistory();
+  const [product, setproduct] = useState([]);
+  
   const [order, setorder] = useState({
     address: "",
     city: "",
     country: "",
     postalCode: 0,
   });
-
-  return (
+  
+if(!props.location.state){
+  history.push('/shop')
+}    
+    return (
     <>
       <Navbar />
       <div className="order-now">
@@ -65,7 +72,7 @@ const Step2 = (props) => {
                   setorder({ ...order, country: e.target.value });
                 }}
                 placeholder="Country"
-              />
+                />
             </Form.Group>
             <Form.Group className="mb-3">
               <Form.Label>postal Code</Form.Label>
@@ -76,7 +83,7 @@ const Step2 = (props) => {
                   setorder({ ...order, postalCode: e.target.value });
                 }}
                 placeholder="Postal code"
-              />
+                />
             </Form.Group>
           </Form>
           <Link to="/order/step1">
@@ -91,11 +98,11 @@ const Step2 = (props) => {
               },
             }}
             // onClick={() => {
-            //   localStorage.setItem(
-            //     "data",
-            //     Object.assign(JSON.parse(localStorage.getItem("data")), order)
-            //   );
-            // }}
+              //   localStorage.setItem(
+                //     "data",
+                //     Object.assign(JSON.parse(localStorage.getItem("data")), order)
+                //   );
+                // }}
           >
             <Button className="float-end">next</Button>
           </Link>
@@ -103,5 +110,6 @@ const Step2 = (props) => {
       </div>
     </>
   );
+  
 };
 export default Step2;

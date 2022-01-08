@@ -5,6 +5,7 @@ import Gif from '../../assets/giphy.gif'
 import { Button} from 'react-bootstrap';
 
 const Thankyou = () => {
+    localStorage.clear()
     return(
         <>
         <Navbar header={true} shop={true}/>

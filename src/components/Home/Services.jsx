@@ -111,46 +111,80 @@ const Navbar = () => {
       <Container>
         <div className="d-none d-lg-block">
           <Carousel className="services-slider" controls={false}>
-            {service.map((item) => {
-              //   settext(item.text);
+            
+            
+                    {service.map((value, index) => {
+                      if(index%2!=0 || !service[index+1]){
 
-              return (
-                <Carousel.Item>
-                  <Row>
-                    <h2>{item.text}</h2>
-                    {item.Service.map((value, index) => {
-                      return (
-                        <Col xs="12" lg="5" className=" each-slide">
-                          <Row>
-                            <Col xs="5" className="">
-                              <img
-                                src={baseURL + value.image}
-                                alt=""
-                                height="270"
-                                width="100%"
-                              />
-                            </Col>
-                            <Col xs="7" className="service-slider-text">
-                              <h5>{value.heading}</h5>
-                              <p>{value.paragraph}</p>
-                              <Link to={value.btnLink}>
-                                <Button
-                                  onClick={() => {
-                                    setShowModal((prev) => !prev);
-                                  }}
-                                >
-                                  view details
-                                </Button>
-                              </Link>
-                            </Col>
-                          </Row>
-                        </Col>
-                      );
+                        return (
+                  <Carousel.Item>
+                    <Row>
+                      <h2>Our Service</h2>
+                          <Col xs="12" lg="5" className=" each-slide">
+                            <Row>
+                              <Col xs="5" className="">
+                                <img
+                                  src={baseURL + value.image}
+                                  alt=""
+                                  height="270"
+                                  width="100%"
+                                />
+                              </Col>
+                              <Col xs="7" className="service-slider-text">
+                                <h5>{value.heading}</h5>
+                                <p>{value.paragraph}</p>
+                                <Link to={value.btnLink}>
+                                  <Button
+                                    onClick={() => {
+                                      setShowModal((prev) => !prev);
+                                    }}
+                                  >
+                                    view details
+                                  </Button>
+                                </Link>
+                              </Col>
+                            </Row>
+                          </Col>
+                          <>
+                          {
+                          (service[index+1]?(
+
+                          <Col xs="12" lg="5" className=" each-slide">
+                            <Row>
+                              <Col xs="5" className="">
+                                <img
+                                  src={baseURL + service[index+1].image}
+                                  alt=""
+                                  height="270"
+                                  width="100%"
+                                />
+                              </Col>
+                              <Col xs="7" className="service-slider-text">
+                                <h5>{service[index+1].heading}</h5>
+                                <p>{service[index+1].paragraph}</p>
+                                <Link to={service[index+1].btnLink}>
+                                  <Button
+                                    onClick={() => {
+                                      setShowModal((prev) => !prev);
+                                    }}
+                                  >
+                                    view details
+                                  </Button>
+                                </Link>
+                              </Col>
+                            </Row>
+                          </Col>
+                          ):null
+                          )
+                        }
+                        </>
+                    </Row>
+                  </Carousel.Item>
+                    );
+                      }
                     })}
-                  </Row>
-                </Carousel.Item>
-              );
-            })}
+              
+            
           </Carousel>
         </div>
         <div className="d-block d-lg-none">

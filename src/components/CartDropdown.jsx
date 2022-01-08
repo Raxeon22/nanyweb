@@ -9,9 +9,7 @@ const items = 2;
 
 const Cart = () => {
   const [isOpen, setisOpen] = useState(false);
-  const data = JSON.parse(localStorage.getItem("order"))
-    ? JSON.parse(localStorage.getItem("order"))
-    : [];
+  const data = JSON.parse(localStorage.getItem("order"))? JSON.parse(localStorage.getItem("order")): [];
 
   const cartDropdown = useRef();
   const height = data.length > 0 ? "400px" : "auto";
@@ -70,14 +68,19 @@ const Cart = () => {
                 );
               })}
             </Row>
+            
 
             <Link
               onClick={() => {
                 data.map((item, index) => {
-                  // console.log(data[index].color[0]);
+                  
                   data[index].quantity = 1;
-                  data[index].color = [data[index].color[0]];
+              
+                  data[index].color = data[index].color[0]?data[index].color[0]:" "
+
+              
                 });
+              console.log(data)
               }}
               to={{ pathname: "/order/step1", state: { product: data } }}
             >

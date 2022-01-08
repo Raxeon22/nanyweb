@@ -4,9 +4,16 @@ import { Link } from "react-router-dom";
 import Navbar from "../Navbar";
 import Action from "../../middleware/API";
 import { useHistory } from "react-router-dom";
+
+
 const Step3 = (props) => {
-  console.log(props.location.state);
+  console.log(props.location.state.product);  
   let history = useHistory();
+  
+  if(!props.location.state){
+    history.push('/shop')
+  }
+  
   const [order, setorder] = useState({
     order_note: "",
   });
@@ -20,6 +27,7 @@ const Step3 = (props) => {
     const response = await Action.post("/order", payload);
 
     if (response.data.success == true) {
+      
       history.push("/thankyou");
     }
   };
