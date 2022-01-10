@@ -3,7 +3,7 @@ import Navbar from "../../components/Navbar";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import baseURL from "../../middleware/BaseURL";
-import { Row, Col, Container, Button, Tabs, Tab } from "react-bootstrap";
+import { Row, Col, Container, Button, Tabs, Tab, Form } from "react-bootstrap";
 // import ProductPageSlider from "../../components/Shop/Product-page/ProductPageSlider";
 import ProductSlider from "../../components/Shop/ProductSlider";
 import {
@@ -18,11 +18,11 @@ import { RiAccountPinCircleFill } from "react-icons/ri";
 
 import { useHistory } from "react-router-dom";
 const ProductPage = (props) => {
-  
+
   let history = useHistory();
-  if(!props.location.state){
+  if (!props.location.state) {
     history.push('/shop')
-  }  
+  }
   const [product, setproduct] = useState(props.location.state.val);
 
   const [quantity, setQuantity] = useState(1);
@@ -34,17 +34,7 @@ const ProductPage = (props) => {
     alert("Quantity Exceed");
   }
 
-  const variants = [
-    {
-      color: "red",
-    },
-    {
-      color: "blue",
-    },
-    {
-      color: "green",
-    },
-  ];
+
 
   const star = (num) => {
     const rating = [];
@@ -55,68 +45,75 @@ const ProductPage = (props) => {
   };
   return (
     <>
-      <Navbar header={false} shop={false} />
+      <Navbar header={ false } shop={ false } />
       <Container>
         <Row className="indiv-product">
           <Col xs="12" lg="5" md="6">
-            <img src={baseURL + product.image} width="100%" height="280" />
+            <img src={ baseURL + product.image } width="100%" height="400" />
           </Col>
           <Col xs="12" lg="7" md="6" className="product-about">
-            <h4 className="product-name">{product.name}</h4>
+            <h4 className="product-name">{ product.name }</h4>
             <p className="instock">
-              {product.quantity > 0 ? "In Stock" : "Out Of Stock"}
+              { product.quantity > 0 ? "In Stock" : "Out Of Stock" }
             </p>
             <div className="d-flex mt-2">
-              <span className="mt-1 ratings">{star(product.star)}</span>
+              <span className="mt-1 ratings">{ star(product.star) }</span>
             </div>
             <p className="price mt-2">
-              price: <b>{product.price + "$"}</b>
+              price: <b>{ product.price + "$" }</b>
             </p>
-            <div className="color d-flex">
-              <p className="mt-2 mb-0 p-0"> color :</p>
-              {product.color.map((value) => {
+            <div className="color">
+              <p className="mt-2 mb-2 p-0"> color: </p>
+              <Form.Select size="sm" style={ { width: ' auto ' } }>
+                { product.color.map((value) => {
+                  return (
+                    <option>{ value }</option>
+                  );
+                }) }
+              </Form.Select>
+              {/* { product.color.map((value) => {
                 return (
                   <span
                     id="color"
-                    style={{
+                    style={ {
                       backgroundColor: value,
                       border: "black 2px solid",
-                    }}
+                    } }
                     className=" rounded-circle m-1"
-                    onClick={(e) => {
+                    onClick={ (e) => {
                       e.target.style =
                         " background-color:" +
                         value +
                         "; border: 5px solid black;";
 
                       setColor(value);
-                    }}
+                    } }
                   ></span>
                 );
-              })}
+              }) } */}
             </div>
             <div className="quantity d-flex">
-              <span onClick={() => setQuantity(quantity + 1)}>
-                {" "}
-                <AiOutlinePlus />{" "}
+              <span onClick={ () => setQuantity(quantity + 1) }>
+                { " " }
+                <AiOutlinePlus />{ " " }
               </span>
-              <p className="p-2"> {quantity} </p>
-              <span onClick={() => setQuantity(quantity - 1)}>
-                <AiOutlineMinus />{" "}
+              <p className="p-2"> { quantity } </p>
+              <span onClick={ () => setQuantity(quantity - 1) }>
+                <AiOutlineMinus />{ " " }
               </span>
-            </div>{" "}
+            </div>{ " " }
             <br />
             <Link
-              onClick={() => {
+              onClick={ () => {
                 product.quantity = quantity;
-                product.color = color ?color : product.color[0];
-              }}
-              to={{
+                product.color = color ? color : product.color[0];
+              } }
+              to={ {
                 pathname: "/order/step1",
                 state: {
                   product: [product],
                 },
-              }}
+              } }
             >
               <Button
               // onClick={() => {
@@ -130,14 +127,14 @@ const ProductPage = (props) => {
               //   );
               // }}
               >
-                {" "}
-                <FaShoppingCart className="m-1" /> Order Now
+                { " " }
+                Order Now
               </Button>
             </Link>
             <br />
             <br />
             <Button
-              onClick={() => {
+              onClick={ () => {
                 if (
                   localStorage.getItem("order")
                     ? localStorage.getItem("order").length
@@ -158,9 +155,9 @@ const ProductPage = (props) => {
 
                   localStorage.setItem("order", JSON.stringify([product]));
                 }
-              }}
+              } }
             >
-              Add to cart
+              <FaShoppingCart className="m-1" /> Add to cart
             </Button>
             <div className="social-icons mt-5">
               <FaFacebook size="25" color="blue" className="m-1" />

@@ -20,6 +20,13 @@
     .new-arrivals .slick-prev {
         left: 86% !important;
     }
+    .language {
+        position: fixed;
+        right: 29px;
+        top: 10% !important;
+        z-index: 1000;
+        text-align: left !important;
+      }
  }
 @media only screen and (min-width: 766px) and (max-width: 990px) {
     .scrollspy {

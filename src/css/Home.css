@@ -800,6 +800,11 @@ footer .footer-button button svg{
     justify-content: center;
     align-items: center;
 }
+.categories .slick-prev:before, .categories  .slick-next:before {
+    font-size: 25px;
+    opacity: .85;
+    color: var(--main-color);
+}
 .categories a{
     text-decoration: none !important;
     color: black;

@@ -412,7 +412,7 @@
   margin-top: 10px;
 }
 .cart {
-  margin-right: 10px;
+  margin-right: 100px;
 }
 .cart .cart-dropdown {
   position: absolute;
@@ -447,7 +447,7 @@
 .cart .items {
   position: absolute;
   top: 30px;
-  right: 18%;
+  right: 13.5%;
   padding: 2px 6px;
   border-radius: 50%;
   background-color: var(--main-color);
