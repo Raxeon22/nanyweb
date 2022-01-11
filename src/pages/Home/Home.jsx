@@ -27,11 +27,9 @@ const Home = () => {
     <div id="navBanner">
       <Popup showModal={showModal} setShowModal={setShowModal} />
       <Navbar header={true} shop={true} Homelink="home" />
-
       <Banner />
       <AboutUs />
       <Services />
-
       <HowItWork />
       <Categories />
       <OurProducts />

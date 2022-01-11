@@ -27,12 +27,13 @@ const Cart = () => {
   //       document.removeEventListener("mousedown", handleEvent);
   //     };
   //   });
+  console.log(localStorage.getItem('order'));
   return (
     <div className="cart">
       <span onClick={() => setisOpen((prev) => !prev)}>
         {" "}
         <AiOutlineShoppingCart size={26} />
-        <span className="items d-none d-lg-block">{items}</span>{" "}
+        <span className="items d-none d-lg-block">{localStorage.getItem('order')?JSON.parse(localStorage.getItem('order')).length:0}</span>{" "}
       </span>
 
       {isOpen ? (

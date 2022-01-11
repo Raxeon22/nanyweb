@@ -115,7 +115,7 @@ const Navbar = (props) => {
               >
                 <img
                   className=""
-                  src={baseURL + topheader.image}
+                  src={baseURL+ topheader.image}
                   alt=""
                   height="35"
                   width="35"
