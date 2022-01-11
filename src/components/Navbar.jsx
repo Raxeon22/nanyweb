@@ -48,6 +48,7 @@ const Navbar = (props) => {
   });
   const menuMobile = useRef();
   const topHeader = useRef();
+  const lanTop = document.querySelector('.language')
   const navbar = useRef();
   const products = useRef(null);
   const shop = useRef();
@@ -61,6 +62,17 @@ const Navbar = (props) => {
   }
 
   useEffect(async () => {
+    const handleEventLanguage = (e) => {
+      // if (video.current && !video.current.contains(e.target)) {
+      //   setShowModal(false);
+      // }
+      lanTop.style.top = "10px"
+    };
+    document.addEventListener("scroll", handleEventLanguage);
+
+    return () => {
+      document.removeEventListener("scroll", handleEventLanguage);
+    };
     const handleEvent = (e) => {
       if (products.current && !products.current.contains(e.target)) {
         setShowProducts(false);
@@ -93,14 +105,16 @@ const Navbar = (props) => {
 
   return (
     <>
-      {props.header ? (
-        <div ref={topHeader} className="header-top text-center" id="">
+      { props.header ? (
+        <div ref={ topHeader } className="header-top text-center" style={ { display: 'block' } }>
           <span
-            aria-hidden={true}
+            aria-hidden={ true }
             className="float-end px-2 "
-            onClick={() => {
-              topHeader.current.classList.add("d-none");
-            }}
+            onClick={ () => {
+              topHeader.current.style.display = "none";
+              lanTop.style.top = "10px"
+
+            } }
           >
             &times;
           </span>
@@ -111,42 +125,42 @@ const Navbar = (props) => {
                 sm="1"
                 xs="1"
                 className="p-0 "
-                style={{ textAlign: "right" }}
+                style={ { textAlign: "right" } }
               >
                 <img
                   className=""
-                  src={baseURL+ topheader.image}
+                  src={ baseURL + topheader.image }
                   alt=""
                   height="35"
                   width="35"
                 />
               </Col>
               <Col sm="3" xs="6" className="p-0">
-                <p className=" pt-2 ">{topheader.text}</p>
+                <p className=" pt-2 ">{ topheader.text }</p>
               </Col>
               <Col sm="2" xs="8" className="p-0 smol">
                 <Button
                   variant="light"
                   class="btn  mt-1"
                   type="button"
-                  href={topheader.link}
+                  href={ topheader.link }
                   target="_blank"
                 >
-                  {topheader.button_text}
+                  { topheader.button_text }
                 </Button>
               </Col>
             </Row>
           </Container>
         </div>
-      ) : null}
+      ) : null }
       <div className="top-f-nav">
         <Nav
-          ref={navbar}
+          ref={ navbar }
           className="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top"
         >
           <Container>
             <a className="navbar-brand" href="#">
-              <img src={Logo} width="100%" height="auto" alt="" />
+              <img src={ Logo } width="100%" height="auto" alt="" />
             </a>
 
             <button
@@ -157,7 +171,7 @@ const Navbar = (props) => {
               aria-controls="navbarSupportedContent"
               aria-expanded="false"
               aria-label="Toggle navigation"
-              onClick={() => {
+              onClick={ () => {
                 const Collapse = menuMobile.current;
                 if (showNav) {
                   Collapse.classList.remove("show");
@@ -166,20 +180,20 @@ const Navbar = (props) => {
                   Collapse.classList.add("show");
                   setShowNav(true);
                 }
-              }}
+              } }
             >
               <span className="navbar-toggler-icon"></span>
             </button>
 
             <div
-              ref={menuMobile}
+              ref={ menuMobile }
               className="collapse navbar-collapse justify-content-end "
               id="navbarSupportedContent"
             >
               <div className="navbar-nav ">
                 <Scrollspy
                   className="scrollspy"
-                  items={[
+                  items={ [
                     "home",
                     "about-us",
                     "services",
@@ -187,7 +201,7 @@ const Navbar = (props) => {
                     "mob-app",
                     "faq",
                     "contact-us",
-                  ]}
+                  ] }
                   currentClassName="isCurrent"
                 >
                   <li className="nav-item">
@@ -208,90 +222,90 @@ const Navbar = (props) => {
                       Home
                     </NavLink>
                   </li>
-                  {NavLinks.map((value, index) => {
+                  { NavLinks.map((value, index) => {
                     return (
-                      <li className="nav-item" key={index}>
+                      <li className="nav-item" key={ index }>
                         <ScrollLink
                           className="nav-link cursor-pointer"
                           exact
-                          to={value.link}
+                          to={ value.link }
                           href="/"
-                          spy={false}
-                          smooth={false}
-                          offset={50}
-                          duration={500}
-                          spyThrottle={500}
+                          spy={ false }
+                          smooth={ false }
+                          offset={ 50 }
+                          duration={ 500 }
+                          spyThrottle={ 500 }
                         >
-                          {value.item}
+                          { value.item }
                         </ScrollLink>
                       </li>
                     );
-                  })}
+                  }) }
 
                   <li className="nav-item">
                     <NavLink
                       to="/shop"
                       className="nav-link "
-                      ref={shop}
-                      onMouseEnter={() => {
+                      ref={ shop }
+                      onMouseEnter={ () => {
                         if (props.shop) {
                           setShowProducts(true);
                         }
-                      }}
+                      } }
                     >
-                      {" "}
-                      Shop{" "}
-                      {props.shop ? (
+                      { " " }
+                      Shop{ " " }
+                      { props.shop ? (
                         <span>
-                          {" "}
-                          <RiArrowDownSLine size={20} />{" "}
+                          { " " }
+                          <RiArrowDownSLine size={ 20 } />{ " " }
                         </span>
-                      ) : null}{" "}
+                      ) : null }{ " " }
                     </NavLink>
                   </li>
 
-                  {/* shopping cart  */}
+                  {/* shopping cart  */ }
                   <li className="nav-item pt-1 number ">
                     <Cart />
                   </li>
-                  <li className="nav-item  ">
+                  {/* <li className="nav-item  ">
                     <Button className="btn mb-4 my-sm-0">Book a Nanny</Button>
-                  </li>
+                  </li> */}
                 </Scrollspy>
               </div>
             </div>
           </Container>
         </Nav>
-        {showProducts ? (
+        { showProducts ? (
           <div
             className="product-cards animate__animated animate__fadeInUp animate__fast	"
-            ref={products}
+            ref={ products }
           >
             <Container>
               <Row>
-                {product.map((val, index) => {
+                { product.map((val, index) => {
                   return (
-                    <Col xs="12" md="4" key={index}>
-                      <Link to={{ path: "/shop/product", state: { val } }}>
+                    <Col xs="12" md="4" key={ index }>
+                      <Link to={ { path: "/shop/product", state: { val } } }>
                         <Card className="each-product">
                           <Card.Img variant="top" />
                           <img
-                            src={baseURL + val.image}
+                            src={ baseURL + val.image }
                             width="100%"
                             height="280"
                           />
                           <Card.Body>
-                            <Card.Title> {val.name} </Card.Title>
+                            <Card.Title> { val.name } </Card.Title>
                           </Card.Body>
                         </Card>
                       </Link>
                     </Col>
                   );
-                })}
+                }) }
               </Row>
             </Container>
           </div>
-        ) : null}
+        ) : null }
       </div>
     </>
   );

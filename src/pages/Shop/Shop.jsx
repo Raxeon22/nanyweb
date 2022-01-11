@@ -105,45 +105,45 @@ const Shop = (props) => {
             <Col md="3" xs="12" className="text-right mb-4">
               <div className="filter-by">
                 <h6>Filter Results By</h6>
-                {category.map((val, index) => {
+                { category.map((val, index) => {
                   return (
                     <Link
                       to="/shop"
-                      key={index}
-                      onClick={() => {
+                      key={ index }
+                      onClick={ () => {
                         setheading(val.heading);
                         getproduct(val._id);
-                      }}
+                      } }
                     >
-                      {" "}
-                      <p> {val.heading} </p>{" "}
+                      { " " }
+                      <p> { val.heading } </p>{ " " }
                     </Link>
                   );
-                })}
+                }) }
               </div>
             </Col>
             <Col md="9" xs="12" className="shop-cards">
-              <h1 className="heading">{heading}</h1>
+              <h1 className="heading">{ heading }</h1>
               <Row>
-                {product.map((val, index) => {
+                { product.map((val, index) => {
                   return (
-                    <Col xs="12" md="4" sm="6" key={index}>
+                    <Col xs="12" md="4" sm="6" key={ index }>
                       <Card className="each-card">
                         <Card.Img variant="top" />
                         <img
-                          src={baseURL + val.image}
+                          src={ baseURL + val.image }
                           width="100%"
                           height="280"
                         />
                         <Card.Body>
                           <Card.Title>
-                            <div className="text-center">
-                              <span className="price"> {val.price} </span>
+                            <div className="text-center m-0">
+                              <span className="price"> { val.price } </span>
 
-                              <p>{val.name} </p>
-                              <br></br>
-                              <Button
-                                onClick={() => {
+                              <p>{ val.name } </p>
+
+                              <Button size="sm"
+                                onClick={ () => {
                                   if (
                                     localStorage.getItem("order")
                                       ? localStorage.getItem("order").length
@@ -163,20 +163,19 @@ const Shop = (props) => {
                                       JSON.stringify([val])
                                     );
                                   }
-                                }}
+                                } }
                               >
                                 Add to cart
                               </Button>
                               <br></br>
-                              <br></br>
 
                               <Link
-                                to={{
+                                to={ {
                                   pathname: "/shop/product",
                                   state: { val },
-                                }}
+                                } }
                               >
-                                <Button>View Details</Button>
+                                <Button size="sm" className="mt-2">View Details</Button>
                               </Link>
                             </div>
                           </Card.Title>
@@ -184,7 +183,7 @@ const Shop = (props) => {
                       </Card>
                     </Col>
                   );
-                })}
+                }) }
               </Row>
             </Col>
           </Row>

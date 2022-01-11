@@ -2,43 +2,55 @@ import React, { useEffect, useState, useRef } from "react";
 import { Row, Col, Carousel, Card, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import HomeApplic from "../../assets/home-applic.jpg";
-import HeadPhones from "../../assets/headphones.jpg";
-import SelfieStick from "../../assets/selfie-stick.jpg";
-import Speakers from "../../assets/speakers.jpg";
-import { RiTShirt2Line } from "react-icons/ri";
-import {
-  GiMonclerJacket,
-  GiBilledCap,
-  GiPoloShirt,
-  GiJewelCrown,
-} from "react-icons/gi";
+
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 import Action from "../../middleware/API";
 import baseURL from "../../middleware/BaseURL";
 
-const ProductDetails = [
-  {
-    title: "Head Phones",
-    image:
-      "https://images.pexels.com/photos/1475418/pexels-photo-1475418.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-  },
-  {
-    title: "Electrons",
-    image:
-      "https://images.pexels.com/photos/4417768/pexels-photo-4417768.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-  },
-  {
-    title: "Speakers",
-    image:
-      "https://images.pexels.com/photos/1124465/pexels-photo-1124465.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-  },
-];
-const bleh = (
-  <b>
-    <RiTShirt2Line size="30" />T Shirts
-  </b>
-);
 
-const Shop = () => {
+const Categories = () => {
+  var settings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    initialSlide: 0,
+    autoplay: true,
+    speed: 500,
+    autoplaySpeed: 2000,
+    arrows: true,
+    cssEase: "linear",
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
   const [category, setcategory] = useState([]);
   async function fetchcategorydata() {
     const response = await Action.get("/category", {});
@@ -59,9 +71,33 @@ const Shop = () => {
     <div className="categories">
       <Container>
         <h2>Categories </h2>
-        <div className="">
-          <div className="cate-tabs d-none d-lg-block">
-                      <Carousel controls={ arrows } interval={ 2000 }>
+        <div className="cate-tabs">
+          <Slider className="react-slider" { ...settings }>
+            { category.map((item) => {
+              return (
+                <div className="each-img">
+                  <Link
+                    to={ {
+                      pathname: "/shop",
+                      state: { item },
+                    } }
+                  >
+                    <div className="img-text">
+                      <h4> { item.heading } </h4>
+                      <p>{ item.etxt }</p>
+                    </div>
+                    <img
+                      width="100%"
+                      height="400"
+                      src={ baseURL + item.image }
+                      alt=""
+                    />
+                  </Link>
+                </div>
+              );
+            }) }
+          </Slider>
+          {/* <Carousel controls={ arrows } interval={ 2000 }>
               <Carousel.Item>
                   { category.map((item) => {
                     return (
@@ -92,7 +128,6 @@ const Shop = () => {
             </Carousel>
           </div>
         </div>
-        {/* categories for mobile   */ }
         <div className="d-block d-lg-none">
           <Carousel className="cate-tabs" interval={ 2000 }>
             { category.map((item) => {
@@ -122,10 +157,10 @@ const Shop = () => {
                 </Carousel.Item>
               );
             }) }
-          </Carousel>
+          </Carousel>*/}
         </div>
       </Container>
     </div>
   );
 };
-export default Shop;
+export default Categories;
