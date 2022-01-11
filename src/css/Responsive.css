@@ -21,11 +21,14 @@
         left: 86% !important;
     }
     .language {
-        position: fixed;
-        right: 29px;
-        top: 10% !important;
-        z-index: 1000;
-        text-align: left !important;
+        position: relative !important;
+        right: auto!important;
+        top: 0 !important;
+        text-align: center !important;
+        margin: 6px 0px;
+      }
+      .language select{
+          margin: auto !important;
       }
  }
 @media only screen and (min-width: 766px) and (max-width: 990px) {
@@ -85,6 +88,16 @@
     .order-now .forms  {
         width: 65% !important;
     }
+    .language {
+        position: relative !important;
+        right: auto!important;
+        top: 0 !important;
+        text-align: center !important;
+        margin: 6px 0px;
+      }
+      .language select{
+          margin: auto !important;
+      }
 }
 @media only screen and (min-width: 575px) and (max-width: 765px){
     .scrollspy {
@@ -153,11 +166,19 @@
     .order-now .forms  {
         width: 75% !important;
     }
-
-
-
-
-
+    .language {
+        position: relative !important;
+        right: auto!important;
+        top: 0 !important;
+        text-align: center !important;
+        margin: 6px 0px;
+    }
+    .language select{
+        margin: auto !important;
+    }
+    .how-it-works  .badge{
+        left: 46% !important;
+    }
 }   
 @media only screen and (min-width: 360px) and (max-width: 576px){
     .header-top .smol {
@@ -250,6 +271,19 @@
 }
 .mob-app .tab-text button .icon-button {
     text-align: center !important;
+}
+.language {
+    position: relative !important;
+    right: auto!important;
+    top: 0 !important;
+    text-align: center !important;
+    margin: 6px 0px;
+  }
+  .language select{
+      margin: auto !important;
+  }
+  .how-it-works  .badge{
+    left: 46% !important;
 }
 }
 @media screen and (max-width: 359px){
@@ -365,5 +399,17 @@
 .mob-app .tab-text button .icon-button {
     text-align: center !important;
 }
-
+.language {
+    position: relative !important;
+    right: auto!important;
+    top: 0 !important;
+    text-align: center !important;
+    margin: 6px 0px;
+  }
+  .language select{
+      margin: auto !important;
+  }
+  .how-it-works  .badge{
+    left: 43% !important;
+}
 } 

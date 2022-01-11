@@ -15,7 +15,7 @@
         alt="English" /></a><a href="#" onclick="doGTranslate('en|fr');return false;" title="French" class="gflag nturl"
       style="background-position:-200px -100px;"><img src="//gtranslate.net/flags/blank.png" height="auto" width="30"
         alt="French" /></a>
-    <br /><select class="form-select form-select-sm m-0" aria-label="Default select example"
+    <br /><select class="form-select form-select-sm " aria-label="Default select example"
       onchange="doGTranslate(this);">
       <option value="">Select Language</option>
       <option value="en|en">English</option>
@@ -42,6 +42,10 @@
       top: 9%;
       z-index: 1000;
       text-align: right;
+    }
+
+    .language select {
+      width: auto;
     }
 
     a.gflag {
