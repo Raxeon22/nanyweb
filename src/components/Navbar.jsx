@@ -60,29 +60,13 @@ const Navbar = (props) => {
     } else {
     }
   }
-
-  useEffect(async () => {
-    const handleEventLanguage = (e) => {
-      // if (video.current && !video.current.contains(e.target)) {
-      //   setShowModal(false);
-      // }
-      lanTop.style.top = "10px"
-    };
-    document.addEventListener("scroll", handleEventLanguage);
-
-    return () => {
-      document.removeEventListener("scroll", handleEventLanguage);
-    };
-    const handleEvent = (e) => {
-      if (products.current && !products.current.contains(e.target)) {
-        setShowProducts(false);
-        shop.current.classList.remove("shop");
-      }
-    };
-    document.addEventListener("mousedown", handleEvent);
+  const fetchtopheader = async () =>{
     const response = await Action.get("/topheader", {});
     if (response.data.success == true) {
       settopheader(response.data.data[0]);
+      
+      console.log(response.data.data);
+      
     } else {
       const TopHeader = {
         image: BabyIcon,
@@ -93,11 +77,33 @@ const Navbar = (props) => {
       settopheader(TopHeader);
       console.log(topheader);
     }
+  }
+  useEffect(() => {
+    const handleEventLanguage = (e) => {
+      // if (video.current && !video.current.contains(e.target)) {
+      //   setShowModal(false);
+      // }
+      lanTop.style.top = "10px"
+    };
+    document.addEventListener("scroll", handleEventLanguage);
 
+    fetchtopheader()
+    const handleEvent = async (e) => {
+      if (products.current && !products.current.contains(e.target)) {
+        setShowProducts(false);
+        shop.current.classList.remove("shop");
+      }
+    };
+    document.addEventListener("mousedown", handleEvent);
+    
     return () => {
+      document.removeEventListener("scroll", handleEventLanguage);
       document.removeEventListener("mousedown", handleEvent);
     };
-  }, [1]);
+
+    
+  
+  }, []);
 
   if (showProducts) {
     shop.current.classList.add("shop");
