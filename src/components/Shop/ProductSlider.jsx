@@ -77,8 +77,7 @@ const ProductSlider = (props) => {
                       <span className="price"> { val.price } </span>
 
                       <p>{ val.name } </p>
-                      <br></br>
-                      <Button
+                      <Button size="sm"
                         onClick={ () => {
                           if (
                             localStorage.getItem("order")
@@ -104,7 +103,6 @@ const ProductSlider = (props) => {
                         Add to cart
                       </Button>
                       <br></br>
-                      <br></br>
 
                       <Link
                         to={ {
@@ -112,7 +110,7 @@ const ProductSlider = (props) => {
                           state: { val },
                         } }
                       >
-                        <Button>View Details</Button>
+                        <Button size="sm" className="mt-2">View Details</Button>
                       </Link>
                     </div>
                   </Card.Title>
