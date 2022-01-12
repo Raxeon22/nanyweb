@@ -456,8 +456,7 @@
 .cart .items {
   position: absolute;
   top: 30px;
-  right: 13.5%;
-  padding: 2px 6px;
+  padding: 2px 7px;
   border-radius: 50%;
   background-color: var(--main-color);
   color: white;
