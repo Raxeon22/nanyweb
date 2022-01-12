@@ -13,12 +13,12 @@
 .products .each-card {
   margin-bottom: 20px;
 }
-.products  button , .new-arrivals button {
+.products  button , .new-arrivals button , .our-products .button {
   background-color: var(--main-color) !important ;
   border-color: var(--main-color) !important;
   color: white !important;
 }
- .products button:hover , .new-arrivals button{
+ .products button:hover , .new-arrivals button , .our-products .button{
   background-color: var(--secondary-color);
   color: var(--main-color);
 }

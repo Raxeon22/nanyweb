@@ -12,7 +12,6 @@ import Scrollspy from "react-scrollspy";
 import { NavLink, Link } from "react-router-dom";
 import Action from "../middleware/API";
 import baseURL from "../middleware/BaseURL";
-import axios from "axios";
 let ScrollLink = Scroll.Link;
 const NavLinks = [
   { item: "About", link: "about-us" },
@@ -47,7 +46,6 @@ const Navbar = (props) => {
     link: "",
   });
   const menuMobile = useRef();
-  const topHeader = useRef();
   const lanTop = document.querySelector('.language')
   const navbar = useRef();
   const products = useRef(null);
@@ -62,17 +60,17 @@ const Navbar = (props) => {
   }
 
   useEffect(async () => {
-    const handleEventLanguage = (e) => {
-      // if (video.current && !video.current.contains(e.target)) {
-      //   setShowModal(false);
-      // }
-      lanTop.style.top = "10px"
-    };
-    document.addEventListener("scroll", handleEventLanguage);
+    // const handleEventLanguage = (e) => {
+    //   // if (video.current && !video.current.contains(e.target)) {
+    //   //   setShowModal(false);
+    //   // }
+    //   lanTop.style.top = "10px"
+    // };
+    // document.addEventListener("scroll", handleEventLanguage);
 
-    return () => {
-      document.removeEventListener("scroll", handleEventLanguage);
-    };
+    // return () => {
+    //   document.removeEventListener("scroll", handleEventLanguage);
+    // };
     const handleEvent = (e) => {
       if (products.current && !products.current.contains(e.target)) {
         setShowProducts(false);
@@ -105,9 +103,9 @@ const Navbar = (props) => {
 
   return (
     <>
-      { props.header ? (
-        <div ref={ topHeader } className="header-top text-center" style={ { display: 'block' } }>
-          <span
+
+      <div className="header-top text-center" style={ { display: 'block' } }>
+        {/* <span
             aria-hidden={ true }
             className="float-end px-2 "
             onClick={ () => {
@@ -117,42 +115,42 @@ const Navbar = (props) => {
             } }
           >
             &times;
-          </span>
+          </span> */}
 
-          <Container>
-            <Row className="justify-content-center py-2">
-              <Col
-                sm="1"
-                xs="1"
-                className="p-0 "
-                style={ { textAlign: "right" } }
+        <Container>
+          <Row className="justify-content-center py-2">
+            <Col
+              sm="1"
+              xs="1"
+              className="p-0 "
+              style={ { textAlign: "right" } }
+            >
+              <img
+                className=""
+                src={ baseURL + topheader.image }
+                alt=""
+                height="35"
+                width="35"
+              />
+            </Col>
+            <Col sm="3" xs="6" className="p-0">
+              <p className=" pt-2 ">{ topheader.text }</p>
+            </Col>
+            <Col sm="2" xs="8" className="p-0 smol">
+              <Button
+                variant="light"
+                class="btn  mt-1"
+                type="button"
+                href={ topheader.link }
+                target="_blank"
               >
-                <img
-                  className=""
-                  src={ baseURL + topheader.image }
-                  alt=""
-                  height="35"
-                  width="35"
-                />
-              </Col>
-              <Col sm="3" xs="6" className="p-0">
-                <p className=" pt-2 ">{ topheader.text }</p>
-              </Col>
-              <Col sm="2" xs="8" className="p-0 smol">
-                <Button
-                  variant="light"
-                  class="btn  mt-1"
-                  type="button"
-                  href={ topheader.link }
-                  target="_blank"
-                >
-                  { topheader.button_text }
-                </Button>
-              </Col>
-            </Row>
-          </Container>
-        </div>
-      ) : null }
+                { topheader.button_text }
+              </Button>
+            </Col>
+          </Row>
+        </Container>
+      </div>
+
       <div className="top-f-nav">
         <Nav
           ref={ navbar }

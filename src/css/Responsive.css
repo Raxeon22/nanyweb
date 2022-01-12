@@ -38,6 +38,12 @@
     
     
     }
+    .header-top{
+        position: relative !important;
+    }
+    .top-f-nav {
+        top: 0 !important;
+    }
     .scrollspy button{
         margin-top: 10px !important;
     }
@@ -100,6 +106,12 @@
       }
 }
 @media only screen and (min-width: 575px) and (max-width: 765px){
+    .header-top{
+        position: relative !important;
+    }
+    .top-f-nav {
+        top: 0 !important;
+    }
     .scrollspy {
         display: block !important;
     
@@ -181,6 +193,12 @@
     }
 }   
 @media only screen and (min-width: 360px) and (max-width: 576px){
+    .header-top{
+        position: relative !important;
+    }
+    .top-f-nav {
+        top: 0 !important;
+    }
     .header-top .smol {
         text-align: center !important;
     }
@@ -287,6 +305,12 @@
 }
 }
 @media screen and (max-width: 359px){
+    .header-top{
+        position: relative !important;
+    }
+    .top-f-nav {
+        top: 0 !important;
+    }
     .header-top .smol {
         text-align: center !important;
     }

@@ -103,114 +103,114 @@ const Navbar = () => {
   }
   useEffect(async () => {
     fetchservicedata();
-  },[]);
+  }, []);
 
   return (
     <div id="services" className="services">
-      <Modal showModal={showModal} setShowModal={setShowModal} />
+      <Modal showModal={ showModal } setShowModal={ setShowModal } />
       <Container>
         <div className="d-none d-lg-block">
-          <Carousel className="services-slider" controls={false}>
-            
-            
-                    {service.map((value, index) => {
-                      if(index%2!=0 || !service[index+1]){
+          <Carousel className="services-slider" controls={ false }>
 
-                        return (
+
+            { service.map((value, index) => {
+              if (index % 2 != 0 || !service[index + 1]) {
+
+                return (
                   <Carousel.Item>
                     <Row>
                       <h2>Our Service</h2>
-                          <Col xs="12" lg="5" className=" each-slide">
-                            <Row>
-                              <Col xs="5" className="">
-                                <img
-                                  src={baseURL + value.image}
-                                  alt=""
-                                  height="270"
-                                  width="100%"
-                                />
-                              </Col>
-                              <Col xs="7" className="service-slider-text">
-                                <h5>{value.heading}</h5>
-                                <p>{value.paragraph}</p>
-                                <Link to={value.btnLink}>
-                                  <Button
-                                    onClick={() => {
-                                      setShowModal((prev) => !prev);
-                                    }}
-                                  >
-                                    view details
-                                  </Button>
-                                </Link>
-                              </Col>
-                            </Row>
+                      <Col xs="12" lg="5" className=" each-slide">
+                        <Row>
+                          <Col xs="5" className="">
+                            <img
+                              src={ baseURL + value.image }
+                              alt=""
+                              height="270"
+                              width="100%"
+                            />
                           </Col>
-                          <>
-                          {
-                          (service[index+1]?(
+                          <Col xs="7" className="service-slider-text">
+                            <h5>{ value.heading }</h5>
+                            <p>{ value.paragraph }</p>
+                            {/* <Link to={value.btnLink}> */ }
+                            <Button
+                              onClick={ () => {
+                                setShowModal((prev) => !prev);
+                              } }
+                            >
+                              view details
+                            </Button>
+                            {/* </Link> */ }
+                          </Col>
+                        </Row>
+                      </Col>
+                      <>
+                        {
+                          (service[index + 1] ? (
 
-                          <Col xs="12" lg="5" className=" each-slide">
-                            <Row>
-                              <Col xs="5" className="">
-                                <img
-                                  src={baseURL + service[index+1].image}
-                                  alt=""
-                                  height="270"
-                                  width="100%"
-                                />
-                              </Col>
-                              <Col xs="7" className="service-slider-text">
-                                <h5>{service[index+1].heading}</h5>
-                                <p>{service[index+1].paragraph}</p>
-                                <Link to={service[index+1].btnLink}>
-                                  <Button
-                                    onClick={() => {
-                                      setShowModal((prev) => !prev);
-                                    }}
-                                  >
-                                    view details
-                                  </Button>
-                                </Link>
-                              </Col>
-                            </Row>
-                          </Col>
-                          ):null
+                            <Col xs="12" lg="5" className=" each-slide">
+                              <Row>
+                                <Col xs="5" className="">
+                                  <img
+                                    src={ baseURL + service[index + 1].image }
+                                    alt=""
+                                    height="270"
+                                    width="100%"
+                                  />
+                                </Col>
+                                <Col xs="7" className="service-slider-text">
+                                  <h5>{ service[index + 1].heading }</h5>
+                                  <p>{ service[index + 1].paragraph }</p>
+                                  <Link to={ service[index + 1].btnLink }>
+                                    <Button
+                                      onClick={ () => {
+                                        setShowModal((prev) => !prev);
+                                      } }
+                                    >
+                                      view details
+                                    </Button>
+                                  </Link>
+                                </Col>
+                              </Row>
+                            </Col>
+                          ) : null
                           )
                         }
-                        </>
+                      </>
                     </Row>
                   </Carousel.Item>
-                    );
-                      }
-                    })}
-              
-            
+                );
+              }
+            }) }
+
+
           </Carousel>
         </div>
         <div className="d-block d-lg-none">
-          <Carousel className="services-slider" controls={true}>
-            {servicesArrayMobile.map((value, index) => {
+          <Carousel className="services-slider" controls={ true }>
+            { servicesArrayMobile.map((value, index) => {
               return (
-                <Carousel.Item key={index}>
+                <Carousel.Item key={ index }>
                   <Row>
                     <Col xs="12" lg="5" className=" each-slide">
                       <Row>
                         <Col xs="5" className="">
                           <img
-                            src={value.image}
+                            src={ value.image }
                             alt=""
                             height="270"
                             width="100%"
                           />
                         </Col>
                         <Col xs="7" className="service-slider-text">
-                          <h5>{value.heading}</h5>
-                          <p>{value.paragraph}</p>
-                          <Link to={value.btnLink}>
+                          <h5>{ value.heading }</h5>
+                          <p>{ value.paragraph }</p>
+                          <Link to={ value.btnLink }>
                             <Button
-                              onClick={() => {
+                              onClick={ () => {
                                 setShowModal((prev) => !prev);
-                              }}
+                              } }
                             >
                               view details
                             </Button>
@@ -221,7 +221,7 @@ const Navbar = () => {
                   </Row>
                 </Carousel.Item>
               );
-            })}
+            }) }
           </Carousel>
         </div>
       </Container>
