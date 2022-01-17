@@ -36,13 +36,7 @@ const ProductPage = (props) => {
 
 
 
-  const star = (num) => {
-    const rating = [];
-    for (var i = 0; i < num; i++) {
-      rating.push(<FaStar />);
-    }
-    return rating;
-  };
+  
   return (
     <>
       <Navbar header={ false } shop={ false } />
@@ -56,9 +50,7 @@ const ProductPage = (props) => {
             <p className="instock">
               { product.quantity > 0 ? "In Stock" : "Out Of Stock" }
             </p>
-            <div className="d-flex mt-2">
-              <span className="mt-1 ratings">{ star(product.star) }</span>
-            </div>
+            
             <p className="price mt-2">
               price: <b>{ product.price + "$" }</b>
             </p>

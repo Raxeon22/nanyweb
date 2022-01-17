@@ -13,7 +13,7 @@ import baseURL from "../../middleware/BaseURL";
 
 const Categories = () => {
   var settings = {
-    dots: true,
+    dots: false,
     infinite: false,
     speed: 500,
     slidesToShow: 4,
@@ -31,7 +31,6 @@ const Categories = () => {
           slidesToShow: 3,
           slidesToScroll: 1,
           infinite: true,
-          dots: true,
         },
       },
       {

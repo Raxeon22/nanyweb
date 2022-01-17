@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Row, Col, Container, Button, Dropdown, DropdownButton, ButtonGroup } from "react-bootstrap";
+import { Row, Col, Container, Button, Form } from "react-bootstrap";
 import Navbar from "../../components/Navbar";
 import HeadPhones from "../../assets/headphones.jpg";
 import SelfieStick from "../../assets/selfie-stick.jpg";
@@ -37,18 +37,18 @@ const cartDetails = [
 ];
 const AddToCart = () => {
   const [total, settotal] = useState([]);
-  const [data, setdata] = useState([]);  
+  const [data, setdata] = useState([]);
   const [Quantity, setQuantity] = useState([]);
   const [payload, setpayload] = useState(data);
-let color= [];
-  let netamount = 0 
+  let color = [];
+  let netamount = 0
 
   useEffect(async () => {
     setdata(JSON.parse(localStorage.getItem("order")));
-    
+
   }, [data]);
-  
-  
+
+
   const getcart = (value, index) => {
     value.splice(index, 1);
 
@@ -57,7 +57,7 @@ let color= [];
 
   return (
     <>
-      <Navbar header={true} shop={true} Homelink="home" />
+      <Navbar shop={ true } Homelink="home" />
 
       <Container>
         <div className="shopping-cart">
@@ -83,38 +83,38 @@ let color= [];
           </div>
           <hr />
 
-          {data.map((value, index) => {
-            
-      
-              netamount+=(value.price * (Quantity[index]?Quantity[index]:1))
-            
+          { data.map((value, index) => {
+
+
+            netamount += (value.price * (Quantity[index] ? Quantity[index] : 1))
+
             return (
               <>
                 <Row className="each-item">
                   <Col lg="1" md="1" xs="12" className="mt-4">
                     <span
-                      onClick={() => {
+                      onClick={ () => {
                         getcart(data, index);
-                      }}
+                      } }
                     >
                       &times;
                     </span>
                   </Col>
                   <Col lg="2" md="2" xs="6">
-                    <img src={baseURL + value.image} alt="" />
+                    <img src={ baseURL + value.image } alt="" />
                   </Col>
                   <Col lg="5" md="5" xs="5">
-                    {" "}
-                    <p>{value.name}</p>{" "}
+                    { " " }
+                    <p>{ value.name }</p>{ " " }
                   </Col>
                   <Col lg="1" md="1" xs="4">
-                    {" "}
-                    <p>{value.price}</p>
+                    { " " }
+                    <p>{ value.price }</p>
                   </Col>
                   <Col lg="1" md="1" xs="4">
                     <div className="quantity d-flex">
                       <span
-                        onClick={() => {
+                        onClick={ () => {
 
 
                           Quantity[index] =
@@ -123,72 +123,72 @@ let color= [];
                               : (Quantity[index] = 2);
 
 
-                        }}
+                        } }
                       >
-                        {" "}
-                        <AiOutlinePlus />{" "}
+                        { " " }
+                        <AiOutlinePlus />{ " " }
                       </span>
                       <p className="p-2">
-                        {" "}
-                        {Quantity[index] > 0 ? Quantity[index] : 1}{" "}
+                        { " " }
+                        { Quantity[index] > 0 ? Quantity[index] : 1 }{ " " }
                       </p>
                       <span
-                        onClick={() => {
+                        onClick={ () => {
                           Quantity[index] =
                             Quantity[index] > 0
                               ? Quantity[index] - 1
                               : (Quantity[index] = 1);
 
-                          
-                        }}
+
+                        } }
                       >
-                        <AiOutlineMinus />{" "}
+                        <AiOutlineMinus />{ " " }
                       </span>
                     </div>
                   </Col>
                   <Col lg="1" md="1" xs="4">
-                  <>
-  
-                  <div>
+                    <>
 
-                    <select name="cars" id="cars">
-{value.color.map((item)=>{
-return <option onSelect={color[index] = item}> {item}</option>
-  
-})}                    
-                    
-                  </select> 
-                  </div>
-                  </>
+                      <div>
+
+                        <Form.Select className='mt-3' name="cars" id="cars">
+                          { value.color.map((item) => {
+                            return <option onSelect={ color[index] = item }> { item }</option>
+
+                          }) }
+
+                        </Form.Select>
+                      </div>
+                    </>
                   </Col>
                   <Col lg="1" md="1" xs="4">
-                    {" "}
-                    <p>{Quantity[index]?value.price * Quantity[index] :value.price }</p>{" "}
+                    { " " }
+                    <p>{ Quantity[index] ? value.price * Quantity[index] : value.price }</p>{ " " }
                   </Col>
                 </Row>
                 <hr />
               </>
             );
-          })}
+          }) }
           <Row className="justify-content-end text-center subtotal">
             <Col lg="3">
               <h4>
-                Subtotal: ${" "}
+                Subtotal: ${ " " }
                 {
-  netamount
+                  netamount
                 }
               </h4>
               <Link
-                onClick={() => {
+                onClick={ () => {
                   data.map((item, index) => {
                     data[index].quantity =
                       Quantity[index] > 0 ? Quantity[index] : 1;
-                      
-                       data[index].color = color[index] ?  color[index] :data[index].color[0]
+
+                    data[index].color = color[index] ? color[index] : data[index].color[0]
 
                   });
-                }}
-                to={{ pathname: "/order/step1", state: { product: data, total:netamount } }}
+                } }
+                to={ { pathname: "/order/step1", state: { product: data, total: netamount } } }
               >
                 <Button variant="dark" className="w-100">
                   CHECK OUT

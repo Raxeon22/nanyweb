@@ -2,19 +2,8 @@ import React, { Suspense } from 'react'
 import './App.css';
 import './css/Home.css';
 import { Spinner } from 'react-bootstrap'
-import Logo from './assets/logo.png'
+import Logo from "./assets/logoFinal.png";
 import { HashRouter, Route, Switch, } from "react-router-dom";
-// import Loading from './components/Preloader'
-// import { HiHand } from 'react-icons/hi';
-// import Select from "react-select";
-// import {
-//   useLazyTranslate,
-//   getLanguages,
-//   setConfig
-// } from "react-google-translate";
-// import { Form, FormGroup, Label, Input, Col, Row, Jumbotron } from "reactstrap";
-// import { debounce } from "lodash";
-
 const Footer = React.lazy(() => import('./components/Footer'))
 const Home = React.lazy(() => import('./pages/Home/Home'))
 const Shop = React.lazy(() => import('./pages/Shop/Shop'))
@@ -33,23 +22,23 @@ const loading = () => {
   <Spinner variant='dark' animation="grow" />
 
 }
-const hh = <div className="loader"> < img src={Logo} /> <Spinner variant='info' animation="border" /> </div>
+const hh = <div className="loader"> < img src={ Logo } /> <Spinner variant='info' animation="border" /> </div>
 function App() {
   // const Home = React.lazy(()=> import('./pages/Home/Home'))
   return (
     <>
-      <Suspense fallback={hh}>
+      <Suspense fallback={ hh }>
         <HashRouter basename="/">
           <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/shop" component={Shop} />
-            <Route exact path="/shop/product" component={ProductPage} />
-            <Route exact path="/order/step1" component={Step1} />
-            <Route exact path="/order/step2" component={Step2} />
-            <Route exact path="/order/step3" component={Step3} />
-            <Route exact path="/policy" component={PrivacyPolicy} />
-            <Route exact path="/Cart" component={Cart} />
-            <Route exact path="/thankyou" component={Thankyou} />
+            <Route exact path="/" component={ Home } />
+            <Route exact path="/shop" component={ Shop } />
+            <Route exact path="/shop/product" component={ ProductPage } />
+            <Route exact path="/order/step1" component={ Step1 } />
+            <Route exact path="/order/step2" component={ Step2 } />
+            <Route exact path="/order/step3" component={ Step3 } />
+            <Route exact path="/policy" component={ PrivacyPolicy } />
+            <Route exact path="/Cart" component={ Cart } />
+            <Route exact path="/thankyou" component={ Thankyou } />
           </Switch>
           <Footer />
 
