@@ -1,52 +1,34 @@
 import React, { useEffect, useState } from "react";
 import { Row, Col, Carousel } from "react-bootstrap";
-import Banner2 from "../../assets/banner-three.jpg";
-import Banner3 from "../../assets/banner-one.jpg";
-import Banner4 from "../../assets/banner-two.jpg";
-import BannerMobile1 from "../../assets/Mobile Responsive 1-01.jpg";
-import BannerMobile2 from "../../assets/Mobile Responsive 2-01.jpg";
-import BannerMobile3 from "../../assets/Mobile Responsive 3-01.jpg";
 import Action from "../../middleware/API";
 import baseURL from "../../middleware/BaseURL";
 
-const SliderData = [
-  {
-    img: Banner2,
-  },
-  {
-    img: Banner3,
-  },
-  {
-    img: Banner4,
-  },
-];
-
-const SliderDataMobile = [
-  {
-    img: BannerMobile1,
-  },
-  {
-    img: BannerMobile2,
-  },
-  {
-    img: BannerMobile3,
-  },
-];
 const Banner = () => {
   const [banner, setbanner] = useState([]);
-
+  const [mobbanner, setmobbanner] = useState([]);
   const fetchbannerdata = async () => {
-    const response = await Action.get("/banner", {});
+    const response = await Action.get("/banner/web", {});
     if (response.data.success == true) {
+      console.log(response.data.data);
       setbanner(response.data.data);
+    } else {
+      // setbanner(SliderData);
+    }
+  };
+  const fetchmobbannerdata = async () => {
+    const response = await Action.get("/banner/mobile", {});
+    if (response.data.success == true) {
+      console.log(response.data.data);
+
+      setmobbanner(response.data.data);
     } else {
       // setbanner(SliderData);
     }
   };
   useEffect(async () => {
     fetchbannerdata();
+    fetchmobbannerdata();
   }, []);
-
   return (
     <>
       <div className="d-none d-md-block" id="home">
@@ -61,7 +43,7 @@ const Banner = () => {
             return (
               <Carousel.Item key={index}>
                 <img
-                  src={baseURL + val.Bgimage}
+                  src={baseURL + val.image}
                   alt="First Slide"
                   className="first-slide"
                   width="100%"
@@ -106,11 +88,11 @@ const Banner = () => {
           controls={false}
           interval={3000}
         >
-          {banner.map((val, index) => {
+          {mobbanner.map((val, index) => {
             return (
               <Carousel.Item key={index}>
                 <img
-                  src={baseURL + val.img}
+                  src={baseURL + val.image}
                   alt="First Slide"
                   className="first-slide"
                   width="100%"
