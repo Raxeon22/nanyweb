@@ -19,9 +19,7 @@
 .header-top {
 
     background-color: var(--secondary-color);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+  
  }
 
 .header-top span {
@@ -51,13 +49,16 @@
 }
 
 /* navbar css starts here */
+.sticky{
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
 .top-f-nav {
     
     background-color: white !important;
     font-weight: 600;
-    position: sticky;
-    top: 60px;
-    z-index: 999;
+    
     padding: 0;
 }
 .scrollspy .isCurrent .nav-link {
@@ -67,7 +68,6 @@
  .scrollspy {
     
     display: flex;
-
     padding-left: 0;
     margin-bottom: 0;
     list-style: none;

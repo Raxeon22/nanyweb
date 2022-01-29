@@ -58,13 +58,13 @@ const Navbar = (props) => {
     } else {
     }
   }
-  const fetchtopheader = async () =>{
+  const fetchtopheader = async () => {
     const response = await Action.get("/topheader", {});
     if (response.data.success == true) {
       settopheader(response.data.data[0]);
-      
+
       console.log(response.data.data);
-      
+
     } else {
       const TopHeader = {
         image: BabyIcon,
@@ -77,13 +77,13 @@ const Navbar = (props) => {
     }
   }
   useEffect(() => {
-    const handleEventLanguage = (e) => {
-      // if (video.current && !video.current.contains(e.target)) {
-      //   setShowModal(false);
-      // }
-      lanTop.style.top = "10px"
-    };
-    document.addEventListener("scroll", handleEventLanguage);
+    // const handleEventLanguage = (e) => {
+    //   // if (video.current && !video.current.contains(e.target)) {
+    //   //   setShowModal(false);
+    //   // }
+    //   lanTop.style.top = "10px"
+    // };
+    // document.addEventListener("scroll", handleEventLanguage);
 
     fetchtopheader()
     const handleEvent = async (e) => {
@@ -93,14 +93,14 @@ const Navbar = (props) => {
       }
     };
     document.addEventListener("mousedown", handleEvent);
-    
+
     return () => {
-      document.removeEventListener("scroll", handleEventLanguage);
+      // document.removeEventListener("scroll", handleEventLanguage);
       document.removeEventListener("mousedown", handleEvent);
     };
 
-    
-  
+
+
   }, []);
 
   if (showProducts) {
@@ -108,7 +108,7 @@ const Navbar = (props) => {
   }
 
   return (
-    <>
+    <div className="sticky">
 
       <div className="header-top text-center" style={ { display: 'block' } }>
         {/* <span
@@ -127,7 +127,7 @@ const Navbar = (props) => {
           <Row className="justify-content-center py-2">
             <Col
               sm="1"
-              xs="1"
+              xs="4"
               className="p-0 "
               style={ { textAlign: "right" } }
             >
@@ -139,10 +139,10 @@ const Navbar = (props) => {
                 width="35"
               />
             </Col>
-            <Col sm="3" xs="6" className="p-0">
-              <p className=" pt-2 ">{ topheader.text }</p>
+            <Col sm="3" xs="4" className="p-0">
+              <p className=" pt-2 "> { topheader.text } </p>
             </Col>
-            <Col sm="2" xs="8" className="p-0 smol">
+            <Col sm="2" xs="4" className="p-0 smol">
               <Button
                 variant="light"
                 class="btn  mt-1"
@@ -311,7 +311,7 @@ const Navbar = (props) => {
           </div>
         ) : null }
       </div>
-    </>
+    </div>
   );
 };
 export default Navbar;

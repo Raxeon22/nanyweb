@@ -13,7 +13,7 @@
 .products .each-card {
   margin-bottom: 20px;
 }
-.products  button , .new-arrivals button , .our-products .button {
+.products  button , .new-arrivals .button , .our-products .button {
   background-color: var(--main-color) !important ;
   border-color: var(--main-color) !important;
   color: white !important;

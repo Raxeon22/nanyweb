@@ -106,6 +106,9 @@
       }
 }
 @media only screen and (min-width: 575px) and (max-width: 765px){
+    .navbar-light .navbar-brand {
+        width: 130px !important;
+    }
     .header-top{
         position: relative !important;
     }
@@ -193,6 +196,13 @@
     }
 }   
 @media only screen and (min-width: 360px) and (max-width: 576px){
+    .navbar-light .navbar-brand {
+        width: 120px !important;
+    } 
+    footer img {
+        width: 130px !important;
+
+    }
     .header-top{
         position: relative !important;
     }
@@ -305,6 +315,13 @@
 }
 }
 @media screen and (max-width: 359px){
+   .navbar-light .navbar-brand {
+        width: 120px !important;
+    } 
+    footer img {
+        width: 130px !important;
+
+    }
     .header-top{
         position: relative !important;
     }
