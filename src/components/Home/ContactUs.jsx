@@ -185,7 +185,7 @@ const ContactUs = () => {
                   </Col>
                   <Col xs="12">
                     <Form.Group className="mb-3">
-                      <h6>What web do you use?</h6>
+                      <h6>What is the best way for you to contact us?</h6>
                       <Row className="my-4 check-custom">
                         <Col xs="12" sm="6" md="4">
                           <Form.Check
