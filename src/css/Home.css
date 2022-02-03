@@ -492,50 +492,61 @@ html {
 }
 
 /* contact from css here */
-.contact-us .map{
-    position: relative;
-    height: 640px;
-
+.contact-us {
+    padding: 5rem 0px;
+    background-color: rgba(116, 111, 111, 0.096)
 }
-.contact-us .contact-form{
-    position: absolute;
-    padding: 3rem 0px;
-    z-index: 4;
-    right: 5%;
-    margin-left: 30px ;
-
+.contact-us h3 , .contact-us p{
+text-align: center !important;
 }
 .contact-us .contact-form .contact-details{
-    background-color: var(--main-color);
-    border-radius: 10px;
     padding: 30px;
-    color: white;
+    color: black;
 
+}
+.contact-us .contact-form .contact-details .each-detail svg {
+    margin-right: 1px;
+    color: var(--main-color);
+    border-radius: 5px;
+    padding: 9px;
+    box-shadow: 1px 0px 8px 0px rgba(0, 0, 0, 0.226);
+    background-color: white;
+}
+.contact-us .contact-form .contact-details .each-detail{
+    margin-top: 30px;
+}
+.contact-us .contact-form .contact-details .each-detail h6 {
+    text-transform: uppercase;
+    margin-bottom: 1px;
+    color: rgba(34, 7, 7, 0.692);
 }
 .contact-us .contact-form .contact-details h4{
    font-weight: 600;
 }
 .contact-us .contact-form .contact-details p{
     font-size: 13px;
-    color: rgba(255, 255, 255, 0.712);
+    color: black;
 }
 .contact-us .contact-form .contact-details b{
     margin-top: 30px;
     font-weight: normal;
-}
-.contact-us .contact-form .contact-details span {
-    margin-right: 7px;
-    color: var(--secondary-color);
+    color: black;
 }
 .contact-us .contact-form .contact-details .contact-footer-icon{
-    margin-top: 10rem !important;
+    margin-top: 3rem !important;
 }
 .contact-us .contact-form .contact-details .contact-footer-icon span {
-    padding-right: 15px;
+    border: none;
+    padding: 8px 6px;
+    border-radius: 50%;
+    margin-right: 10px;
+    color: white;
+    cursor: pointer;
 }
 
-.contact-us .contact-form .contact-details .contact-footer-icon span svg:hover{
-    color: white;
+.contact-us .contact-form .contact-details .contact-footer-icon span:hover{
+    box-shadow: 4px 0px 8px 2px rgb(0 0 0 / 0.2);
+
 }
 .contact-us .contact-form .contact-inputs{
     color: black;
