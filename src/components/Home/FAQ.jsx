@@ -7,11 +7,17 @@ import baseURL from "../../middleware/BaseURL";
 const FAQ = () => {
   const [faq, setfaq] = useState([]);
   const [count, setcount] = useState([]);
+  const [img,setimg]= useState();
   async function fetchfaqdata() {
     const response = await Action.get("/faq", {});
     if (response.data.success == true) {
       setfaq(response.data.data);
       faq.map((item, index) => {
+        if(!img){
+        if(faq[index].image){
+        setimg(faq[index].image)
+        }}
+        
         const Count = [...count];
         Count[index] = false;
         setcount(Count);
@@ -36,7 +42,7 @@ const FAQ = () => {
       <Container>
         <Row>
           <Col xs="12" md="6">
-            <img src={FAQImg} alt="" width="100%" height="500" />
+            <img src={baseURL+img} alt="" width="100%" height="500" />
           </Col>
           <Col xs="12" md="6" className="heading">
             <strong>FAQ</strong>

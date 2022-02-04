@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../../components/Navbar";
 import { Row, Col, Form, Container, Card, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import HeadPhones from "../../assets/headphones.jpg";
 import SelfieStick from "../../assets/selfie-stick.jpg";
 import Speakers from "../../assets/speakers.jpg";
@@ -10,54 +10,56 @@ import ProductSlider from "../../components/Shop/ProductSlider";
 import Action from "../../middleware/API";
 import baseURL from "../../middleware/BaseURL";
 
-export const Products = [
-  {
-    title: "Head Phones",
-    image: HeadPhones,
-    price: "44$",
-  },
-  {
-    title: "Electrons",
-    image: SelfieStick,
-    price: "24$",
-  },
-  {
-    title: "Speakers",
-    image: Speakers,
-    price: "49$",
-  },
+// export const Products = [
+//   {
+//     title: "Head Phones",
+//     image: HeadPhones,
+//     price: "44$",
+//   },
+//   {
+//     title: "Electrons",
+//     image: SelfieStick,
+//     price: "24$",
+//   },
+//   {
+//     title: "Speakers",
+//     image: Speakers,
+//     price: "49$",
+//   },
 
-  {
-    title: "Speakers",
-    image: SelfieStick,
-    price: "49$",
-  },
-  {
-    title: "Speakers",
-    image: Speakers,
-    price: "49$",
-  },
-  {
-    title: "Speakers",
-    image: HeadPhones,
-    price: "49$",
-  },
-];
-const categories = [
-  { cate: "weeb flowers" },
-  { cate: "laptop" },
-  { cate: "headphones" },
-  { cate: "speakers" },
-  { cate: "knifes" },
-  { cate: "weeb flowers" },
-  { cate: "weeb flowers" },
-  { cate: "phones" },
-  { cate: "weeb flowers" },
-  { cate: "weeb flowers" },
-  { cate: "weeb flowers" },
-];
+//   {
+//     title: "Speakers",
+//     image: SelfieStick,
+//     price: "49$",
+//   },
+//   {
+//     title: "Speakers",
+//     image: Speakers,
+//     price: "49$",
+//   },
+//   {
+//     title: "Speakers",
+//     image: HeadPhones,
+//     price: "49$",
+//   },
+// ];
+// const categories = [
+//   { cate: "weeb flowers" },
+//   { cate: "laptop" },
+//   { cate: "headphones" },
+//   { cate: "speakers" },
+//   { cate: "knifes" },
+//   { cate: "weeb flowers" },
+//   { cate: "weeb flowers" },
+//   { cate: "phones" },
+//   { cate: "weeb flowers" },
+//   { cate: "weeb flowers" },
+//   { cate: "weeb flowers" },
+// ];
 
 const Shop = (props) => {
+  
+  
   const [heading, setheading] = useState("");
   const [category, setcategory] = useState([]);
   const [product, setproduct] = useState([]);
@@ -74,7 +76,7 @@ const Shop = (props) => {
   async function getproduct(k) {
     const response = await Action.get("/product?category=" + k, {});
     if (response.data.success == true) {
-      setproduct(response.data.data);
+      await setproduct(response.data.data);
     } else {
     }
   }
@@ -125,7 +127,7 @@ const Shop = (props) => {
             <Col md="9" xs="12" className="shop-cards">
               <h1 className="heading">{ heading }</h1>
               <Row>
-                { product.map((val, index) => {
+                { !product ? null :product.map((val, index) => {
                   return (
                     <Col xs="12" md="4" sm="6" key={ index }>
                       <Card className="each-card">

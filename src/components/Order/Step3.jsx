@@ -19,10 +19,10 @@ const Step3 = (props) => {
   });
 
   const postorder = async (data) => {
-    const payload = {
-      order: Object.assign(props.location.state.order, order),
-      product: props.location.state.product,
-    };
+    const payload ={
+      order: Object.assign(props.location.state?props.location.state.order:"", order),
+      product: props.location.state?props.location.state.product:"",
+    }
     
     const response = await Action.post("/order", payload);
 

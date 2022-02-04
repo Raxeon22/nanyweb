@@ -29,7 +29,7 @@ const HowItWork = () => {
         <h1>How It Works</h1>
         <div className="step1 d-none d-lg-block"></div>
         <Row className="text-center">
-          { works.map((item, index) => {
+          {!works?null:works.map((item, index) => {
             return (
               <Col className="each-step" xs="12" lg="3" md="6">
                 <img

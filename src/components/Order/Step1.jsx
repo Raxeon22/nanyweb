@@ -16,8 +16,9 @@ const Step1 = (props) => {
   }
   
 
-  const [product, setproduct] = useState(props.location.state.product);
+  const [product, setproduct] = useState( props.location.state?props.location.state.product:[]);
   const content = [];
+  
   product.map((val) => {
     content.push({
       product: val._id,

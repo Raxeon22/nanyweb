@@ -23,7 +23,8 @@ const ProductPage = (props) => {
   if (!props.location.state) {
     history.push('/shop')
   }
-  const [product, setproduct] = useState(props.location.state.val);
+  
+  const [product, setproduct] = useState(props.location.state?props.location.state.val:"");
 
   const [quantity, setQuantity] = useState(1);
   const [color, setColor] = useState("");
@@ -57,7 +58,7 @@ const ProductPage = (props) => {
             <div className="color">
               <p className="mt-2 mb-2 p-0"> color: </p>
               <Form.Select size="sm" style={ { width: ' auto ' } }>
-                { product.color.map((value) => {
+                { !product.color?null:product.color.map((value) => {
                   return (
                     <option>{ value }</option>
                   );

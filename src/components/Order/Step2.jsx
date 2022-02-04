@@ -91,9 +91,10 @@ if(!props.location.state){
           <Link
             to={{
               pathname: "/order/step3",
+              
               state: {
-                order: Object.assign(props.location.state.order, order),
-                product: props.location.state.product,
+                order: Object.assign(props.location.state?props.location.state.order:"", order),
+                product: props.location.state?props.location.state.product:"",
               },
             }}
             // onClick={() => {
