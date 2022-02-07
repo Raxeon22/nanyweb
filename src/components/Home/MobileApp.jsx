@@ -1,11 +1,44 @@
 import React, { useState, useEffect } from "react";
 import { Button, Row, Col, Tabs, Tab } from "react-bootstrap";
-import AppThumb from "../../assets/app-thumb.png";
+import { Link } from "react-router-dom";
 import { FaApple, FaGooglePlay } from "react-icons/fa";
-
+import Action from "../../middleware/API";
+import baseURL from "../../middleware/BaseURL";
 const MobileApp = () => {
-  const [mobileapp, setmobileapp] = useState();
-  useEffect(() => {}, []);
+  const [forEmployee, setForEmployee] = useState({});
+  const [forCustomer, setForCustomer] = useState({});
+  const [url, setUrl] = useState({});
+
+  useEffect(() => {
+    const getForEmployee = async () => {
+      try {
+        const { data } = await Action.get("/employer");
+        setForEmployee(data.data[0])
+      } catch (error) {
+        console.log(error)
+      }
+    };
+    getForEmployee()
+    const getForCustomer = async () => {
+      try {
+        const { data } = await Action.get("/customer");
+        setForCustomer(data.data[0])
+      } catch (error) {
+        console.log(error)
+      }
+    };
+    getForCustomer()
+    const getAppsURL = async () => {
+      try {
+        const { data } = await Action.get("/setting");
+        setUrl(data.data[0])
+      } catch (error) {
+        console.log(error)
+      }
+    };
+    getAppsURL()
+  }, [])
+
   return (
     <div id="mob-app" className="mob-app overflow-hidden">
       <Tabs defaultActiveKey="for-customer">
@@ -18,65 +51,72 @@ const MobileApp = () => {
                 <div class="divider grey"></div>
 
                 <div class="node green">01</div>
-                <h6>easy searching</h6>
+                <h6>{ forCustomer.heading1 }</h6>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Mollitia eum, quaerat omnis doloribus ipsa eaque fuga
-                  molestiae ex voluptatibus nam.
+                  { forCustomer.text1 }
                 </p>
               </div>
 
               <div className="list-bar">
                 <div class="divider grey"></div>
                 <div class="node green">02</div>
-                <h6>easy searching</h6>
+                <h6>{ forCustomer.heading2 }</h6>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Mollitia eum, quaerat omnis doloribus ipsa eaque fuga
-                  molestiae ex voluptatibus nam.
+                  { forCustomer.text2 }
                 </p>
               </div>
 
               <div className="list-bar">
+                <div class="divider grey"></div>
+
                 <div class="node green">03</div>
-                <h6>easy searching</h6>
+                <h6>{ forCustomer.heading3 }</h6>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Mollitia eum, quaerat omnis doloribus ipsa eaque fuga
-                  molestiae ex voluptatibus nam.
+                  { forCustomer.text3 }
+                </p>
+              </div>
+              <div className="list-bar">
+                <div class="node green">04</div>
+                <h6>{ forCustomer.heading4 }</h6>
+                <p>
+                  { forCustomer.text4 }
                 </p>
               </div>
               <Row>
                 <Col xs="6">
-                  <Button className="w-100">
-                    <Row className="g-0">
-                      <Col xs="12" sm="3" className="icon-button">
-                        <FaApple size={35} />
-                      </Col>
-                      <Col sm="8" xs="12">
-                        <span>Download from</span>
-                        <h5>Apple Store</h5>
-                      </Col>
-                    </Row>
-                  </Button>
+                  <Link to={ url.ios_url }>
+                    <Button className="w-100">
+                      <Row className="g-0">
+                        <Col xs="12" sm="3" className="icon-button">
+                          <FaApple size={ 35 } />
+                        </Col>
+                        <Col sm="8" xs="12">
+                          <span>Download from</span>
+                          <h5>Apple Store</h5>
+                        </Col>
+                      </Row>
+                    </Button>
+                  </Link>
                 </Col>
                 <Col xs="6">
-                  <Button className="w-100">
-                    <Row className="g-0">
-                      <Col xs="12" sm="3" className="icon-button pt-1">
-                        <FaGooglePlay size={33} />
-                      </Col>
-                      <Col sm="8" xs="12">
-                        <span>Download from</span>
-                        <h5>Apple Store</h5>
-                      </Col>
-                    </Row>
-                  </Button>
+                  <Link to={ url.android_url }>
+                    <Button className="w-100">
+                      <Row className="g-0">
+                        <Col xs="12" sm="3" className="icon-button pt-1">
+                          <FaGooglePlay size={ 33 } />
+                        </Col>
+                        <Col sm="8" xs="12">
+                          <span>Download from</span>
+                          <h5>Play Store</h5>
+                        </Col>
+                      </Row>
+                    </Button>
+                  </Link>
                 </Col>
               </Row>
             </Col>
             <Col xs="12" lg="5" md="6" className="tab-img  offset-lg-1">
-              <img src={AppThumb} alt="" />
+              <img src={ baseURL + forCustomer.image } alt="" />
             </Col>
           </Row>
         </Tab>
@@ -89,65 +129,72 @@ const MobileApp = () => {
                 <div class="divider grey"></div>
 
                 <div class="node green">01</div>
-                <h6>easy searching</h6>
+                <h6>{ forEmployee.heading1 }</h6>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Mollitia eum, quaerat omnis doloribus ipsa eaque fuga
-                  molestiae ex voluptatibus nam.
+                  { forEmployee.text1 }
                 </p>
               </div>
 
               <div className="list-bar">
                 <div class="divider grey"></div>
                 <div class="node green">02</div>
-                <h6>easy searching</h6>
+                <h6>{ forEmployee.heading2 }</h6>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Mollitia eum, quaerat omnis doloribus ipsa eaque fuga
-                  molestiae ex voluptatibus nam.
+                  { forEmployee.text2 }
                 </p>
               </div>
 
               <div className="list-bar">
+                <div class="divider grey"></div>
+
                 <div class="node green">03</div>
-                <h6>easy searching</h6>
+                <h6>{ forEmployee.heading3 }</h6>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Mollitia eum, quaerat omnis doloribus ipsa eaque fuga
-                  molestiae ex voluptatibus nam.
+                  { forEmployee.text3 }
+                </p>
+              </div>
+              <div className="list-bar">
+                <div class="node green">04</div>
+                <h6>{ forEmployee.heading4 }</h6>
+                <p>
+                  { forEmployee.text4 }
                 </p>
               </div>
               <Row>
                 <Col xs="6">
-                  <Button className="w-100">
-                    <Row className="g-0">
-                      <Col xs="12" sm="4" className="icon-button">
-                        <FaApple size={35} />
-                      </Col>
-                      <Col xs="12" sm="8">
-                        <span>Download from</span>
-                        <h5>Apple Store</h5>
-                      </Col>
-                    </Row>
-                  </Button>
+                  <Link to={ url.ios_url }>
+                    <Button className="w-100">
+                      <Row className="g-0">
+                        <Col xs="12" sm="4" className="icon-button">
+                          <FaApple size={ 35 } />
+                        </Col>
+                        <Col xs="12" sm="8">
+                          <span>Download from</span>
+                          <h5>Apple Store</h5>
+                        </Col>
+                      </Row>
+                    </Button>
+                  </Link>
                 </Col>
                 <Col xs="6">
-                  <Button className="w-100">
-                    <Row className="g-0">
-                      <Col xs="3" sm="4" className="icon-button pt-1">
-                        <FaGooglePlay size={33} />
-                      </Col>
-                      <Col xs="12" sm="8">
-                        <span>Download from</span>
-                        <h5>Apple Store</h5>
-                      </Col>
-                    </Row>
-                  </Button>
+                  <Link to={ url.android_url }>
+                    <Button className="w-100">
+                      <Row className="g-0">
+                        <Col xs="3" sm="4" className="icon-button pt-1">
+                          <FaGooglePlay size={ 33 } />
+                        </Col>
+                        <Col xs="12" sm="8">
+                          <span>Download from</span>
+                          <h5>Play Store</h5>
+                        </Col>
+                      </Row>
+                    </Button>
+                  </Link>
                 </Col>
               </Row>
             </Col>
             <Col xs="12" lg="5" md="6" className="tab-img  offset-lg-1">
-              <img src={AppThumb} alt="" />
+              <img src={ baseURL + forEmployee.image } alt="" />
             </Col>
           </Row>
         </Tab>

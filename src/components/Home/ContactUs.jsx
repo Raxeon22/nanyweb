@@ -10,11 +10,9 @@ import {
 import { FiPhoneCall, FiMail } from "react-icons/fi";
 import Scroll from "react-scroll";
 import Action from "../../middleware/API";
-import baseURL from "../../middleware/BaseURL";
 import { useHistory } from "react-router-dom";
 
 const ContactUs = () => {
-  let history = useHistory();
 
   const [alert, setAlert] = useState("");
   const [spin, setSpin] = useState("Send Message");
@@ -65,7 +63,8 @@ const ContactUs = () => {
                   </span>
                 </Col>
                 <Col xs="9">
-                  <h6>{ contact.Phone }</h6>
+                  <h6>Call us</h6>
+                  <b>{ contact.mobile }</b>
                 </Col>
               </Row>
               <Row className="each-detail">
@@ -75,7 +74,8 @@ const ContactUs = () => {
                   </span>
                 </Col>
                 <Col xs="9">
-                  <h6>{ contact.Email }</h6>
+                  <h6>Mail us</h6>
+                  <b>{ contact.Email }</b>
                 </Col>
               </Row>
               <Row className="each-detail">
@@ -85,7 +85,8 @@ const ContactUs = () => {
                   </span>
                 </Col>
                 <Col xs="9">
-                  <h6>{ contact.Address }</h6>
+                  <h6>Address</h6>
+                  <b>{ contact.Address }</b>
                 </Col>
               </Row>
               <div className="contact-footer-icon d-flex">

@@ -7,6 +7,7 @@ import { HashRouter, Route, Switch, } from "react-router-dom";
 const Footer = React.lazy(() => import('./components/Footer'))
 const Home = React.lazy(() => import('./pages/Home/Home'))
 const Shop = React.lazy(() => import('./pages/Shop/Shop'))
+const NotFound = React.lazy(() => import('./pages/Not-Found'))
 const ProductPage = React.lazy(() => import('./pages/ProductPage/ProductPage'))
 const Step1 = React.lazy(() => import('./components/Order/Step1'))
 const Step2 = React.lazy(() => import('./components/Order/Step2'))
@@ -39,6 +40,8 @@ function App() {
             <Route exact path="/policy" component={ PrivacyPolicy } />
             <Route exact path="/Cart" component={ Cart } />
             <Route exact path="/thankyou" component={ Thankyou } />
+            <Route component={ NotFound } />
+
           </Switch>
           <Footer />
 
