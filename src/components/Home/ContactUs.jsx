@@ -61,52 +61,52 @@ const ContactUs = () => {
               <Row className="each-detail">
                 <Col xs="2">
                   <span className="mb-1">
-                    <FiPhoneCall size={45} />
+                    <FiPhoneCall size={ 45 } />
                   </span>
                 </Col>
                 <Col xs="9">
-                  <h6>{contact.Phone}</h6>
+                  <h6>{ contact.Phone }</h6>
                 </Col>
               </Row>
               <Row className="each-detail">
                 <Col xs="2">
                   <span className="mb-1">
-                    <FiMail size={45} />
+                    <FiMail size={ 45 } />
                   </span>
                 </Col>
                 <Col xs="9">
-                  <h6>{contact.Email}</h6>
+                  <h6>{ contact.Email }</h6>
                 </Col>
               </Row>
               <Row className="each-detail">
                 <Col xs="2">
                   <span className="mb-1">
-                    <HiOutlineLocationMarker size={45} />
+                    <HiOutlineLocationMarker size={ 45 } />
                   </span>
                 </Col>
                 <Col xs="9">
-                  <h6>{contact.Address}</h6>
+                  <h6>{ contact.Address }</h6>
                 </Col>
               </Row>
               <div className="contact-footer-icon d-flex">
-                <a href={contact.fb} target="_blank">
+                <a href={ contact.fb } target="_blank">
                   <span className="bg-primary">
-                    <FaFacebookF size={25} />
+                    <FaFacebookF size={ 25 } />
                   </span>
                 </a>
-                <a href={contact.twitter} target="_blank">
+                <a href={ contact.twitter } target="_blank">
                   <span className="bg-info">
-                    <FaTwitter size={25} />
+                    <FaTwitter size={ 25 } />
                   </span>
                 </a>
-                <a href={contact.google} target="_blank">
+                <a href={ contact.google } target="_blank">
                   <span className="bg-danger">
-                    <FaGooglePlusG size={25} />
+                    <FaGooglePlusG size={ 25 } />
                   </span>
                 </a>
-                <a href={contact.linkedin} target="_blank">
+                <a href={ contact.linkedin } target="_blank">
                   <span className="bg-dark">
-                    <FaLinkedinIn size={25} />
+                    <FaLinkedinIn size={ 25 } />
                   </span>
                 </a>
               </div>
@@ -114,7 +114,7 @@ const ContactUs = () => {
 
             <Col
               xs="12"
-              md={{ offset: 2, span: 6 }}
+              md={ { offset: 2, span: 6 } }
               className="contact-inputs text-right"
             >
               <Form>
@@ -126,10 +126,10 @@ const ContactUs = () => {
                         className="custom-input"
                         type="text"
                         placeholder="Joe"
-                        value={data.first_name}
-                        onChange={(e) => {
+                        value={ data.first_name }
+                        onChange={ (e) => {
                           setdata({ ...data, first_name: e.target.value });
-                        }}
+                        } }
                       />
                     </Form.Group>
                   </Col>
@@ -140,10 +140,10 @@ const ContactUs = () => {
                         className="custom-input"
                         type="text"
                         placeholder="Doe"
-                        value={data.last_name}
-                        onChange={(e) => {
+                        value={ data.last_name }
+                        onChange={ (e) => {
                           setdata({ ...data, last_name: e.target.value });
-                        }}
+                        } }
                       />
                     </Form.Group>
                   </Col>
@@ -154,9 +154,9 @@ const ContactUs = () => {
                         className="custom-input"
                         type="email"
                         placeholder="Enter email"
-                        onChange={(e) => {
+                        onChange={ (e) => {
                           setdata({ ...data, email: e.target.value });
-                        }}
+                        } }
                       />
                     </Form.Group>
                   </Col>
@@ -167,9 +167,9 @@ const ContactUs = () => {
                         className="custom-input"
                         type="number"
                         placeholder="0000000"
-                        onChange={(e) => {
+                        onChange={ (e) => {
                           setdata({ ...data, mobile: e.target.value });
-                        }}
+                        } }
                       />
                     </Form.Group>
                   </Col>
@@ -182,12 +182,12 @@ const ContactUs = () => {
                             type="checkbox"
                             label="Schedule a Meeting"
                             value="Schedule a Meeting"
-                            onClick={(e) => {
+                            onClick={ (e) => {
                               setdata({
                                 ...data,
                                 way_to_use: e.target.value,
                               });
-                            }}
+                            } }
                           />
                         </Col>
                         <Col xs="12" sm="6" md="4">
@@ -195,12 +195,12 @@ const ContactUs = () => {
                             type="checkbox"
                             label="Schedule a Call"
                             value="Schedule a Call"
-                            onClick={(e) => {
+                            onClick={ (e) => {
                               setdata({
                                 ...data,
                                 way_to_use: e.target.value,
                               });
-                            }}
+                            } }
                           />
                         </Col>
                         <Col xs="12" sm="6" md="4">
@@ -208,12 +208,12 @@ const ContactUs = () => {
                             type="checkbox"
                             label="Come to the Office"
                             value="Come to the Office"
-                            onClick={(e) => {
+                            onClick={ (e) => {
                               setdata({
                                 ...data,
                                 way_to_use: e.target.value,
                               });
-                            }}
+                            } }
                           />
                         </Col>
                       </Row>
@@ -227,11 +227,11 @@ const ContactUs = () => {
                       <Form.Label>Message</Form.Label>
                       <Form.Control
                         as="textarea"
-                        rows={3}
+                        rows={ 3 }
                         className="custom-input"
-                        onChange={(e) => {
+                        onChange={ (e) => {
                           setdata({ ...data, message: e.target.value });
-                        }}
+                        } }
                       />
                     </Form.Group>
                   </Col>
@@ -240,7 +240,7 @@ const ContactUs = () => {
                       className="d-flex"
                       variant="primary"
                       type="submit"
-                      onClick={(e) => {
+                      onClick={ (e) => {
                         setSpin(
                           <Spinner
                             as="span"
@@ -251,6 +251,7 @@ const ContactUs = () => {
                           />
                         );
                         e.preventDefault();
+
                         setTimeout(() => {
                           setSpin("Send Message");
                           postquery();
@@ -263,11 +264,11 @@ const ContactUs = () => {
                           setdata({ ...data, way_to_use: " " });
                           setdata({ ...data, message: " " });
                         }, 3000);
-                      }}
+                      } }
                     >
-                      {spin}
+                      { spin }
                     </Button>
-                    <small className="text-success mt-2"> {alert} </small>
+                    <small className="text-success mt-2"> { alert } </small>
                   </Col>
                 </Row>
               </Form>
