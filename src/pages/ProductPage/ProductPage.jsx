@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "../../components/Navbar";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import baseURL from "../../middleware/BaseURL";
+import Action from '../../middleware/API'
 import { Row, Col, Container, Button, Tabs, Tab, Form } from "react-bootstrap";
 // import ProductPageSlider from "../../components/Shop/Product-page/ProductPageSlider";
 import ProductSlider from "../../components/Shop/ProductSlider";
@@ -23,21 +24,34 @@ const ProductPage = (props) => {
   if (!props.location.state) {
     history.push('/shop')
   }
-  
-  const [product, setproduct] = useState(props.location.state?props.location.state.val:"");
 
+  const [product, setproduct] = useState(props.location.state ? props.location.state.val : "");
   const [quantity, setQuantity] = useState(1);
-  const [color, setColor] = useState("");
+  const [color, setColor] = useState([]);
 
   if (quantity < 1) {
     alert("quantity cannot be in minus");
+    setQuantity(1)
   } else if (quantity > product.quantity) {
     alert("Quantity Exceed");
+    setQuantity(product.quantity)
   }
+  useEffect(() => {
+    const getColors = async () => {
+      try {
+        const { data } = await Action.get(`/color`)
+        setColor(data.data)
 
+      } catch (error) {
+        console.log(error)
+      }
 
+    }
+    getColors()
+  }, [])
 
-  
+  console.log(color)
+
   return (
     <>
       <Navbar header={ false } shop={ false } />
@@ -51,16 +65,24 @@ const ProductPage = (props) => {
             <p className="instock">
               { product.quantity > 0 ? "In Stock" : "Out Of Stock" }
             </p>
-            
+
             <p className="price mt-2">
               price: <b>{ product.price + "$" }</b>
             </p>
             <div className="color">
-              <p className="mt-2 mb-2 p-0"> color: </p>
-              <Form.Select size="sm" style={ { width: ' auto ' } }>
-                { !product.color?null:product.color.map((value) => {
+              <p className="mt-2 mb-2 p-0 d-flex"> color:
+                {/* { color.map((color) => {
                   return (
-                    <option>{ value }</option>
+                    <span style={ { backgroundColor: color.code } }></span>
+
+                  )
+
+                }) } */}
+              </p>
+              <Form.Select size="sm" className='mt-3' style={ { width: ' auto ' } }>
+                { color.map((value) => {
+                  return (
+                    <option>{ value.color }</option>
                   );
                 }) }
               </Form.Select>
