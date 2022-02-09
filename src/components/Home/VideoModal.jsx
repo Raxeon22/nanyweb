@@ -5,20 +5,19 @@ import baseURL from "../../middleware/BaseURL";
 import Action from "../../middleware/API";
 
 
-const VideoModal = ({ showModal, setShowModal }) => {
+const VideoModal = ({ showModal, setShowModal, videoUrl }) => {
 
   const video = useRef()
   const [video2, setVideo] = useState('')
 
-
   useEffect(() => {
+
     const getVideo = async () => {
       try {
-        const res = await Action.get('/about')
-        const { data } = res.data
-        setVideo(data[0].video)
+        const { data } = await Action.get(`/about`)
+        setVideo(data.data[0].video)
       } catch (error) {
-        console.log(error)
+
       }
     }
     getVideo()
@@ -34,18 +33,10 @@ const VideoModal = ({ showModal, setShowModal }) => {
     };
   });
 
-  // useEffect(() => {
-  //     const handleEvent = (event) =>{
-  //         if(!video.current.contains(event.target)){
-  //         setShowModal(false)
+  //spiling the url to emded
+  const cut = video2.split('=')
+  console.log(`https://www.youtube.com/embed/${ cut[1] }`)
 
-  //     } 
-  //     }
-  //      document.addEventListener('mousedown' , handleEvent)
-  //      return () => { document.removeEventListener('mousedown' , handleEvent) }
-
-
-  // }, [])
   return (
     <>
       { showModal ?
@@ -59,7 +50,7 @@ const VideoModal = ({ showModal, setShowModal }) => {
                 } } >&times;</span>
             </div>
             <div className="video">
-              <iframe width="100%" height="370" src={ baseURL + video2 }>
+              <iframe width="100%" height="370" src={ `https://www.youtube.com/embed/${ cut[1] }` }>
               </iframe>
             </div>
 

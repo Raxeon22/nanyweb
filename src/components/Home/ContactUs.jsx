@@ -27,9 +27,7 @@ const ContactUs = () => {
   });
   const getcontact = async () => {
     const response = await Action.get("/setting", {});
-    console.log(response);
     if (response.data.success == true) {
-      console.log(response.data.data);
       setcontact(response.data.data[0]);
     } else {
     }

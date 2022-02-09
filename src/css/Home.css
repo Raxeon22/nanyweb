@@ -278,6 +278,12 @@ html {
     outline: none !important;
     box-shadow: none;
 }
+.header-top button:hover{
+    background-color: var(--main-color);
+}
+.header-top button:focus{
+    background-color: var(--main-color);
+}
 .services .each-slide .service-slider-text button:hover{
     background-color: var(--secondary-color);
 }

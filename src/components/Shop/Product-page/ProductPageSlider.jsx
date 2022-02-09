@@ -1,16 +1,52 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Products } from "../../../pages/Shop/Shop";
 import Headphones from "../../../assets/headphones.jpg";
+import baseURL from "../../../middleware/BaseURL";
+import Action from "../../../middleware/API";
+import { useParams } from "react-router-dom";
 
-const ProductPageSlider = (props) => {
+
+const Products = [
+  {
+    image: Headphones
+  },
+  {
+    image: Headphones
+  },
+  {
+    image: Headphones
+  },
+  {
+    image: Headphones
+  }
+  ,
+  {
+    image: Headphones
+  }
+]
+const ProductPageSlider = ({ images }) => {
+  const { id } = useParams()
+  const [productImages, setProductImages] = useState([])
+  useEffect(() => {
+    const getProduct = async () => {
+      try {
+        const { data } = await Action.get(`/product?_id=${ id }`)
+        setProductImages(data.data[0].image)
+
+      } catch (error) {
+        console.log(error)
+      }
+
+    }
+    getProduct()
+  })
   const settings = {
     customPaging: function (i) {
       return (
         <a>
-          <img src={Products[i].image} />
+          <img src={ baseURL + productImages[i] } />
         </a>
       );
     },
@@ -52,12 +88,12 @@ const ProductPageSlider = (props) => {
   };
   return (
     <div className="indiv-showcase">
-      <Slider className="react-slider" {...settings}>
-        {Products.map((val) => {
+      <Slider className="react-slider" { ...settings }>
+        { productImages.map((val) => {
           return (
             <div className="each-slid overflow-hidden">
               <img
-                src={val.image}
+                src={ baseURL + val }
                 width="100%"
                 height="400"
                 alt=""
@@ -65,7 +101,7 @@ const ProductPageSlider = (props) => {
               />
             </div>
           );
-        })}
+        }) }
       </Slider>
     </div>
   );

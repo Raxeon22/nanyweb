@@ -7,17 +7,18 @@ import baseURL from "../../middleware/BaseURL";
 const FAQ = () => {
   const [faq, setfaq] = useState([]);
   const [count, setcount] = useState([]);
-  const [img,setimg]= useState();
+  const [img, setimg] = useState();
   async function fetchfaqdata() {
     const response = await Action.get("/faq", {});
     if (response.data.success == true) {
       setfaq(response.data.data);
       faq.map((item, index) => {
-        if(!img){
-        if(faq[index].image){
-        setimg(faq[index].image)
-        }}
-        
+        if (!img) {
+          if (faq[index].image) {
+            setimg(faq[index].image)
+          }
+        }
+
         const Count = [...count];
         Count[index] = false;
         setcount(Count);
@@ -42,41 +43,41 @@ const FAQ = () => {
       <Container>
         <Row>
           <Col xs="12" md="6">
-            <img src={baseURL+img} alt="" width="100%" height="500" />
+            <img src={ FAQImg } alt="" width="100%" height="500" />
           </Col>
           <Col xs="12" md="6" className="heading">
             <strong>FAQ</strong>
 
             <div className="Qsection">
-              {faq.map((val, index) => {
+              { faq.map((val, index) => {
                 return (
                   <div
                     className="eachQ "
-                    onClick={(e) => {
+                    onClick={ (e) => {
                       getsignforeachfaq(index);
-                    }}
-                    aria-expanded={count[index]}
+                    } }
+                    aria-expanded={ count[index] }
                   >
                     <h6 className="font-bolder">
-                      {" "}
-                      {val.question}{" "}
-                      <span className="float-end" style={{ cursor: "pointer" }}>
-                        {count[index] ? (
-                          <AiOutlineMinus size={23} />
+                      { " " }
+                      { val.question }{ " " }
+                      <span className="float-end" style={ { cursor: "pointer" } }>
+                        { count[index] ? (
+                          <AiOutlineMinus size={ 23 } />
                         ) : (
-                          <AiOutlinePlus size={23} />
-                        )}{" "}
-                      </span>{" "}
+                          <AiOutlinePlus size={ 23 } />
+                        ) }{ " " }
+                      </span>{ " " }
                     </h6>
 
-                    <Collapse in={count[index]}>
+                    <Collapse in={ count[index] }>
                       <div className="">
-                        <p>{val.answer}</p>
+                        <p>{ val.answer }</p>
                       </div>
                     </Collapse>
                   </div>
                 );
-              })}
+              }) }
             </div>
           </Col>
         </Row>

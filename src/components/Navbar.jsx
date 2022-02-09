@@ -63,7 +63,6 @@ const Navbar = (props) => {
     if (response.data.success == true) {
       settopheader(response.data.data[0]);
 
-      console.log(response.data.data);
 
     } else {
       const TopHeader = {
@@ -73,19 +72,10 @@ const Navbar = (props) => {
         link: "",
       };
       settopheader(TopHeader);
-      console.log(topheader);
     }
   }
   useEffect(() => {
-    // const handleEventLanguage = (e) => {
-    //   // if (video.current && !video.current.contains(e.target)) {
-    //   //   setShowModal(false);
-    //   // }
-    //   lanTop.style.top = "10px"
-    // };
-    // document.addEventListener("scroll", handleEventLanguage);
-
-    fetchtopheader()
+    fetchtopheader();
     const handleEvent = async (e) => {
       if (products.current && !products.current.contains(e.target)) {
         setShowProducts(false);
@@ -133,25 +123,23 @@ const Navbar = (props) => {
             >
               <img
                 className=""
-                src={ baseURL + topheader.image}
+                src={ baseURL + topheader.image }
                 alt=""
                 height="35"
                 width="35"
               />
             </Col>
-            <Col sm="3" xs="4" className="p-0">
+            <Col sm="6" xs="4" className="p-0">
               <p className=" pt-2 "> { topheader.text } </p>
             </Col>
-            <Col sm="2" xs="4" className="p-0 smol">
-              <Button
-                variant="light"
-                class="btn  mt-1"
-                type="button"
-                href={ topheader.link }
-                target="_blank"
-              >
-                { topheader.button_text }
-              </Button>
+            <Col sm="2" xs="4" className="p-0 smol" target="_blank">
+              <Link to={ topheader.link }>
+                <Button
+                  class="mt-1"
+                >
+                  { topheader.button_text }
+                </Button>
+              </Link>
             </Col>
           </Row>
         </Container>

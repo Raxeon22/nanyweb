@@ -69,7 +69,7 @@ const ProductSlider = (props) => {
             <div className="each-slid">
               <Card className="each-card">
                 <Card.Img variant="top" />
-                <img src={ baseURL + val.image } width="100%" height="280" />
+                <img src={ baseURL + val.image[1] } width="100%" height="280" />
                 <Card.Body>
                   <Card.Title>
                     <div className="text-center">
@@ -104,10 +104,7 @@ const ProductSlider = (props) => {
                       <br></br>
 
                       <Link
-                        to={ {
-                          pathname: "/shop/product",
-                          state: { val },
-                        } }
+                        to={ `/shop/product/${ val._id }` }
                       >
                         <Button size="sm" className="mt-2 button">View Details</Button>
                       </Link>

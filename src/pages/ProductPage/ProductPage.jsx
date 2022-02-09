@@ -2,41 +2,44 @@ import React, { useState, useEffect } from "react";
 import Navbar from "../../components/Navbar";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import baseURL from "../../middleware/BaseURL";
 import Action from '../../middleware/API'
 import { Row, Col, Container, Button, Tabs, Tab, Form } from "react-bootstrap";
-// import ProductPageSlider from "../../components/Shop/Product-page/ProductPageSlider";
+import ProductPageSlider from "../../components/Shop/Product-page/ProductPageSlider";
 import ProductSlider from "../../components/Shop/ProductSlider";
 import {
   FaFacebook,
-  FaStar,
   FaShoppingCart,
   FaTwitter,
   FaLinkedin,
   FaInstagram,
 } from "react-icons/fa";
-import { RiAccountPinCircleFill } from "react-icons/ri";
 
-import { useHistory } from "react-router-dom";
+import { useParams } from "react-router-dom";
 const ProductPage = (props) => {
 
-  let history = useHistory();
-  if (!props.location.state) {
-    history.push('/shop')
-  }
+  // let history = useHistory();
+  // if (!props.location.state) {
+  //   history.push('/shop')
+  // }
 
-  const [product, setproduct] = useState(props.location.state ? props.location.state.val : "");
+  const [product, setProduct] = useState([]);
   const [quantity, setQuantity] = useState(1);
   const [color, setColor] = useState([]);
 
-  if (quantity < 1) {
-    alert("quantity cannot be in minus");
-    setQuantity(1)
-  } else if (quantity > product.quantity) {
-    alert("Quantity Exceed");
-    setQuantity(product.quantity)
-  }
+  const { id } = useParams()
   useEffect(() => {
+    const getProduct = async () => {
+      try {
+        const { data } = await Action.get(`/product?_id=${ id }`)
+        setProduct(data.data[0])
+
+      } catch (error) {
+        console.log(error)
+      }
+
+    }
+    getProduct()
+
     const getColors = async () => {
       try {
         const { data } = await Action.get(`/color`)
@@ -50,15 +53,21 @@ const ProductPage = (props) => {
     getColors()
   }, [])
 
-  console.log(color)
 
+  if (quantity < 1) {
+    alert("quantity cannot be in minus");
+    setQuantity(1)
+  } else if (quantity > product.quantity) {
+    alert("Quantity Exceed");
+    setQuantity(product.quantity)
+  }
   return (
     <>
       <Navbar header={ false } shop={ false } />
       <Container>
         <Row className="indiv-product">
           <Col xs="12" lg="5" md="6">
-            <img src={ baseURL + product.image } width="100%" height="400" />
+            <ProductPageSlider images={ product.image } />
           </Col>
           <Col xs="12" lg="7" md="6" className="product-about">
             <h4 className="product-name">{ product.name }</h4>
