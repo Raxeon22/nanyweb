@@ -9,7 +9,6 @@ const Banner = () => {
   const fetchbannerdata = async () => {
     const response = await Action.get("/banner/web", {});
     if (response.data.success == true) {
-      console.log(response.data.data);
       setbanner(response.data.data);
     } else {
       // setbanner(SliderData);
@@ -18,7 +17,6 @@ const Banner = () => {
   const fetchmobbannerdata = async () => {
     const response = await Action.get("/banner/mobile", {});
     if (response.data.success == true) {
-      console.log(response.data.data);
 
       setmobbanner(response.data.data);
     } else {
