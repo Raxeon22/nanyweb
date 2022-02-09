@@ -74,6 +74,7 @@ var settings = {
 
 const Shop = (props) => {
   const [category, setcategory] = useState([]);
+  const [id, setId] = useState('');
   const [key, setKey] = useState("");
 
   const [product, setproduct] = useState([]);
@@ -82,17 +83,18 @@ const Shop = (props) => {
 
     if (action.data.success == true) {
       setcategory(action.data.data);
+      setId(action.data.data[0]._id)
     } else {
       // setcategory([]);
     }
   }
 
   async function getproduct(k) {
-    
+
     const response = await Action.get("/product?category=" + k, {});
     if (response.data.success == true) {
       setproduct(response.data.data);
-      
+
     } else {
     }
   }
@@ -100,7 +102,7 @@ const Shop = (props) => {
   useEffect(async () => {
     fetchproductdata();
   }, []);
-
+  console.log(id)
   return (
     <div className="our-products">
       <Container>
@@ -109,8 +111,7 @@ const Shop = (props) => {
         <div className="">
           <div className="prod-tabs">
             <Tabs
-              // defaultActiveKey={key}
-              activeKey={ key }
+              defaultActiveKey={ id }
               onSelect={ (k) => {
                 getproduct(k);
                 setKey(k);

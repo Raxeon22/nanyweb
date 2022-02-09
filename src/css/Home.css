@@ -832,7 +832,7 @@ footer .footer-button button svg{
     color: black;
 }
 .categories .each-img {
-   
+   margin: 10px !important;
     position: relative;
 }
 .categories .each-img  h4{

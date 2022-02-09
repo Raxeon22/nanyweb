@@ -64,7 +64,7 @@ const Categories = () => {
     fetchcategorydata();
   }, []);
   const arrows = category.length > 4 ? true : false
-  
+
 
   return (
     <div className="categories">
@@ -74,7 +74,7 @@ const Categories = () => {
           <Slider className="react-slider" { ...settings }>
             { category.map((item) => {
               return (
-                <div className="each-img">
+                <div className="each-img px-2">
                   <Link
                     to={ {
                       pathname: "/shop",
@@ -83,7 +83,7 @@ const Categories = () => {
                   >
                     <div className="img-text">
                       <h4> { item.heading } </h4>
-                      <p>{ item.etxt }</p>
+                      <p>{ item.text }</p>
                     </div>
                     <img
                       width="100%"
