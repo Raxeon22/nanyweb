@@ -13,92 +13,13 @@ import baseURL from "../../middleware/BaseURL";
 const Navbar = () => {
   const [showModal, setShowModal] = useState(false);
   const [service, setservice] = useState([]);
-
-  const servicesArrayDesktopSlide1 = [
-    {
-      image: ServicesImg1,
-      heading: "Babies and Nannies duo",
-      paragraph:
-        " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo expedita facere praesentium.",
-      btnLink: "/",
-    },
-    {
-      image: ServicesImg2,
-      heading: "Babies and Nannies duo",
-      paragraph:
-        " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo expedita facere praesentium.",
-      btnLink: "/",
-    },
-  ];
-  const servicesArrayDesktopSlide2 = [
-    {
-      image: ServicesImg3,
-      heading: "Babies and Nannies duo",
-      paragraph:
-        " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo expedita facere praesentium.",
-      btnLink: "/",
-    },
-    {
-      image: ServicesImg4,
-      heading: "Babies and Nannies duo",
-      paragraph:
-        " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo expedita facere praesentium.",
-      btnLink: "/",
-    },
-  ];
-  const servicesArrayDesktopSlide3 = [
-    {
-      image: ServicesImg5,
-      heading: "Babies and Nannies duo",
-      paragraph:
-        " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo expedita facere praesentium.",
-      btnLink: "/",
-    },
-  ];
-  const servicesArrayMobile = [
-    {
-      image: ServicesImg1,
-      heading: "Babies and Nannies duo",
-      paragraph:
-        " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo expedita facere praesentium.",
-      btnLink: "/",
-    },
-    {
-      image: ServicesImg2,
-      heading: "Babies and Nannies duo",
-      paragraph:
-        " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo expedita facere praesentium.",
-      btnLink: "/",
-    },
-    {
-      image: ServicesImg3,
-      heading: "Babies and Nannies duo",
-      paragraph:
-        " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo expedita facere praesentium.",
-      btnLink: "/",
-    },
-    {
-      image: ServicesImg4,
-      heading: "Babies and Nannies duo",
-      paragraph:
-        " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo expedita facere praesentium.",
-      btnLink: "/",
-    },
-    {
-      image: ServicesImg5,
-      heading: "Babies and Nannies duo",
-      paragraph:
-        " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo expedita facere praesentium.",
-      btnLink: "/",
-    },
-  ];
-
+  
   async function fetchservicedata() {
     const response = await Action.get("/service", {});
     if (response.data.success == true) {
       setservice(response.data.data);
     } else {
-      setservice(servicesArrayDesktopSlide1);
+      setservice([]);
     }
   }
   useEffect(async () => {
@@ -189,7 +110,7 @@ const Navbar = () => {
         </div>
         <div className="d-block d-lg-none">
           <Carousel className="services-slider" controls={ true }>
-            { servicesArrayMobile.map((value, index) => {
+            { service.map((value, index) => {
               return (
                 <Carousel.Item key={ index }>
                   <Row>
