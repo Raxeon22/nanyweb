@@ -8,29 +8,19 @@ import baseURL from "../../middleware/BaseURL";
 const Navbar = () => {
   const [showModal, setShowModal] = useState(false);
   const [about, setabout] = useState([]);
-  const [service, setservice] = useState([]);
 
   async function fetchaboutdata() {
     const response = await Action.get("/about", {});
     if (response.data.success === true) {
       setabout(response.data.data[0]);
+      console.log(response.data.data[0]);
     } else {
       setabout([]);
     }
   }
-  async function fetchservicedata() {
-    const res = await Action.get("/Service", {});
 
-    if (res.data.success === true) {
-      setservice(res.data.data);
-    } else {
-      setservice([]);
-    }
-  }
-  console.log(service[0]);
   useEffect(() => {
     fetchaboutdata();
-    fetchservicedata();
   }, []);
 
   return (
@@ -61,42 +51,33 @@ const Navbar = () => {
           </Col>
           <Col xs="12" md="6">
             <Row className="text-center about-cards justify-content-center">
-              {
-                service.map((item,index)=>{
-                  if(index==4){
-                    return null;
-                  }
-                return (
-                  <Col xs="5" md="5" className=" each-card py-4 ">
+              <Col xs="5" md="5" className=" each-card py-4 ">
                 <img
-                  src={ baseURL +item.image}
+                  src={baseURL + about.img1}
                   alt="service"
                   height="30%"
                   width="30%"
                 />
-                <h2>{item.heading} </h2>
-                {/* <p> { about.txt1 }</p> */}
-              </Col>)
-              })
-
-              }
-
-              {/* <Col xs="5" md="5" className=" each-card py-4 ">
-                <img src={baseURL + service.image} height="30%" width="30%" />
-                 <h2>100 </h2> 
-                <p> {service.heading}</p>
+                <h2>{about.heading1}</h2>
+                <p>{about.txt1} </p>
               </Col>
 
               <Col xs="5" md="5" className=" each-card py-4 ">
-                <img src={baseURL + service.image} height="30%" width="30%" />
-                <h2>100 </h2> 
-                <p> {service.heading}</p>
+                <img src={baseURL + about.img2} height="30%" width="30%" />
+                <h2>{about.heading2}</h2>
+                <p> {about.txt2}</p>
+              </Col>
+
+              <Col xs="5" md="5" className=" each-card py-4 ">
+                <img src={baseURL + about.img3} height="30%" width="30%" />
+                <h2>{about.heading3}</h2>
+                <p> {about.txt3}</p>
               </Col>
               <Col xs="5" md="5" className=" each-card py-4 ">
-                <img src={baseURL + service.image} height="30%" width="30%" />
-                 <h2>100 </h2> 
-                <p> {service.heading}</p>
-              </Col> */}
+                <img src={baseURL + about.img4} height="30%" width="30%" />
+                <h2>{about.heading4}</h2>
+                <p> {about.txt4}</p>
+              </Col>
             </Row>
           </Col>
         </Row>
