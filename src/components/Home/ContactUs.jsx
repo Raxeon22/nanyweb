@@ -50,7 +50,7 @@ const ContactUs = () => {
     <Scroll.Element id="contact-us">
       <div className="contact-us">
         <Container>
-          <h3>Contact Us</h3>
+          <h1 className="before_line">Contact Us</h1>
           <p>We will get to you asap!</p>
           <Row className="contact-form mt-5">
             <Col md="4" sm="12" className=" text-dark  contact-details">

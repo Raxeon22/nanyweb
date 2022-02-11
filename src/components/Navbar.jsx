@@ -114,10 +114,11 @@ const Navbar = (props) => {
           </span> */}
 
         <Container>
-          <Row className="justify-content-center py-2">
+          <Row className="justify-content-center pt-2">
             <Col
-              sm="1"
-              xs="4"
+              md="2"
+              xs="2"
+              sm="2"
               className="p-0 "
               style={ { textAlign: "right" } }
             >
@@ -129,10 +130,10 @@ const Navbar = (props) => {
                 width="35"
               />
             </Col>
-            <Col sm="6" xs="4" className="p-0">
+            <Col md="4" xs="6" sm="8" className="p-0">
               <p className=" pt-2 "> { topheader.text } </p>
             </Col>
-            <Col sm="2" xs="4" className="p-0 smol" target="_blank">
+            <Col md="2" xs="3" sm="2" className="p-0 smol" target="_blank">
               <Link to={ topheader.link }>
                 <Button
                   class="mt-1"

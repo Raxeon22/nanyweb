@@ -6,10 +6,26 @@
     .new-arrivals .slick-prev {
         left: 88% !important;
     }
+    .header-top p {
+        font-size: 14px;
+    }
+.language {
+    position: relative !important;
+    right: auto!important;
+    top: 0 !important;
+    text-align: center !important;
+    margin: 6px 0px;
 }
-@media only screen and (min-width: 990px) and (max-width: 1100px) {
+.language select{
+    margin: auto !important;
+}
+}
+@media only screen and (min-width: 990px) and (max-width: 1200px) {
     .navbar-nav .nav-link{
         font-size: 10px !important;
+    }
+    .header-top p {
+        font-size: 12px;
     }
     .node {
         left: -5px !important;
@@ -37,6 +53,9 @@
         display: block !important;
     
     
+    }
+    .header-top p {
+        font-size: 12px;
     }
     .header-top{
         position: relative !important;
@@ -111,6 +130,12 @@
     }
     .header-top{
         position: relative !important;
+    }
+    .header-top p {
+        font-size: 12px;
+    }
+    .header-top button{
+        font-size: 10px !important;
     }
     .top-f-nav {
         top: 0 !important;
@@ -205,6 +230,13 @@
     }
     .header-top{
         position: relative !important;
+    }
+    .header-top p {
+        font-size: 12px;
+    }
+    .header-top button{
+        font-size: 10px !important;
+        margin: 0 !important;
     }
     .top-f-nav {
         top: 0 !important;
@@ -318,6 +350,13 @@
    .navbar-light .navbar-brand {
         width: 120px !important;
     } 
+    .header-top p {
+        font-size: 12px;
+    }
+    .header-top button{
+        font-size: 10px !important;
+        margin: 0 !important;
+    }
     footer img {
         width: 130px !important;
 

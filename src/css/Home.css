@@ -39,6 +39,10 @@
     color: white;
     font-size: 14px;
     text-align: left !important;
+    margin-left: 10px;
+}
+.header-top .navbar-brand{
+    padding: 0 !important;
 }
 
 .header-top .smol {
@@ -58,7 +62,6 @@
     
     background-color: white !important;
     font-weight: 600;
-    
     padding: 0;
 }
 .scrollspy .isCurrent .nav-link {
@@ -107,13 +110,9 @@ html {
    color:var(--main-color) !important;
    font-size: 13px;
    text-transform: uppercase;
-
-
-
 }
 .scrollspy .nav-item {
-    padding-right: 5px;
-
+    padding-right: 18px;
   
 }
 .scrollspy .nav-link:hover{
@@ -223,8 +222,8 @@ html {
     transition: all .2s;
 }
 .about-us  .each-card p {
-     line-height: 1px;
-     font-size: 10px;
+     line-height: auto;
+     font-size: 12px;
      color: var(--main-color);
  }
  .about-us  .each-card  h2 {
@@ -232,7 +231,6 @@ html {
     color: var(--secondary-color);
     margin-top: 1rem;
     font-weight: 600;
-
  }
 
 /* Services slider css starts */
@@ -250,13 +248,15 @@ html {
     margin: 4rem 40px;
     border-radius: 3px;
     padding: 1rem 0px;
+    height: 22rem;
 }
 .services .each-slide img {
     border-radius: 3px;
-    margin-top: 5px;
+    margin-top: 3rem;
+    padding: 10px;
 }
 .services .each-slide .service-slider-text  {
-  padding-top: 3rem ;
+  padding-top: 1rem ;
 }
 .services .each-slide .service-slider-text h5 {
     color: var(--main-color);
@@ -266,6 +266,13 @@ html {
     font-size: 15px;
     padding-top: 10px ;
     padding-right: 20px;
+    --max-lines: 4;
+    --lh: 3rem;
+    position: relative;
+    max-height: calc(var(--lh) * var(--max-lines));
+    overflow: hidden;
+
+
 }
 .services .each-slide .service-slider-text button{
     background-color: white;
@@ -364,6 +371,7 @@ html {
 .mob-app .nav-tabs {
     justify-content: center;
     border:none;
+    margin-bottom: 20px;
 }
 .mob-app .nav-tabs .nav-link {
     border-radius: 5px !important;
@@ -472,12 +480,9 @@ html {
     margin-top:33px;
 
  }
- .faq .heading strong {
-     font-weight: 600;
-     border-bottom: 5px solid var(--main-color);
-     border-bottom-left-radius: 7px;
-     font-size: 40px;
-     text-align: left;
+ .faq h1  {
+        font-weight: 600;
+        margin-bottom: 30px;
 
  }
 .faq .heading .eachQ{
@@ -502,7 +507,11 @@ html {
     padding: 5rem 0px;
     background-color: rgba(116, 111, 111, 0.096)
 }
-.contact-us h3 , .contact-us p{
+.contact-us h1{
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.contact-us h1 , .contact-us p{
 text-align: center !important;
 }
 .contact-us .contact-form .contact-details{
@@ -601,7 +610,7 @@ text-align: center !important;
 footer{
     background-color: black;
     color: white;
-    padding: 50px 0px;
+    padding: 20px 0px;
 }
 footer p {
     font-size: 13px;
@@ -610,8 +619,8 @@ footer p {
 footer .each-row-f h6 {
    font-size: 20px;
    font-weight: 400;
-   margin-top: 10px;
-   margin-bottom: 30px;
+   margin-top: 40px;
+   margin-bottom: 10px;
    color: var(--secondary-color);
    font-weight: 600;
 }
@@ -800,7 +809,26 @@ footer .footer-button button svg{
     text-align: center;
     font-weight: 600;
     margin-bottom: 30px;
+    
 }
+.before_line::after {
+    content: "";
+    width: 10%;
+    height: 2px;
+    display: block;
+    background-color: rgb(245 51 9);
+    background-color: var(--main-color);
+    margin:5px auto
+}
+/* .after_line::after {
+    content: "";
+    width: 10%;
+    height: 2px;
+    display: block;
+    background-color: rgb(245 51 9);
+    background-color: var(--main-color);
+    margin:5px auto
+} */
 .our-products .each-slide {
     text-align: center;
     margin-top: 20px;
@@ -822,17 +850,38 @@ footer .footer-button button svg{
     justify-content: center;
     align-items: center;
 }
-.categories .slick-prev:before, .categories  .slick-next:before {
-    font-size: 25px;
-    opacity: .85;
-    color: var(--main-color);
+ .slick-prev:before{
+    content: "<" !important
 }
+.slick-next::before{
+    content: ">" !important
+}
+.slick-prev {
+    left: -1% !important;
+   z-index: 200;
+
+  }
+  .slick-next {
+    right: 1% !important;
+   z-index: 200;
+
+  }
+.slick-prev:before,  .slick-next:before {
+    font-size: 29px !important;
+    opacity: 100 !important;
+    color: var(--main-color) !important;
+   font-family: poppins !important;
+   background-color: white;
+   border-radius: 50%;
+   padding: 2px 15px;
+   border: 2px solid rgba(121, 116, 116, 0.199);
+}
+
 .categories a{
     text-decoration: none !important;
     color: black;
 }
 .categories .each-img {
-   margin: 10px !important;
     position: relative;
 }
 .categories .each-img  h4{

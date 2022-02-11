@@ -34,6 +34,7 @@
     width: 50%;
     height: 470px;
     border:none;
+    overflow-y: scroll;
     background-color: white;
     border-radius: 5px;
 }
@@ -42,6 +43,7 @@
 }
 .modal .modal-services .content h3{
     color: blue;
+    margin-bottom: 20px;
 
 }
 .modal .modal-popup{

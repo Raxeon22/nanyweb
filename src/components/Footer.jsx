@@ -43,7 +43,7 @@ const ContactUs = () => {
                                 </li>
                             </ul>
                         </Col>
-                        <Col xs="12" md="6" lg="3" className="each-row-f">
+                        <Col xs="12" md="6" lg="3" className="each-row-f mt-4">
                             {/* <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Control className="custom-input" type="text" placeholder="Your Email" />
 
@@ -53,7 +53,7 @@ const ContactUs = () => {
                                 Submit
                             </Button>
                         </div> */}
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque minus perspiciatis neque odio iste eius rerum molestias voluptate, eaque veritatis ipsa debitis.</p>
+                            <p>Download our App.</p>
                             <Row>
                                 <Col xs="6" className="my-1 footer-button"  >
                                     <Button variant="light" className=" d-flex w-100 ">

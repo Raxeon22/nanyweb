@@ -58,8 +58,8 @@ import baseURL from "../../middleware/BaseURL";
 // ];
 
 const Shop = (props) => {
-  
-  
+
+
   const [heading, setheading] = useState("");
   const [category, setcategory] = useState([]);
   const [product, setproduct] = useState([]);
@@ -127,59 +127,55 @@ const Shop = (props) => {
             <Col md="9" xs="12" className="shop-cards">
               <h1 className="heading">{ heading }</h1>
               <Row>
-                { !product ? null :product.map((val, index) => {
+                { !product ? null : product.map((val, index) => {
                   return (
                     <Col xs="12" md="4" sm="6" key={ index }>
                       <Card className="each-card">
                         <Card.Img variant="top" />
-                        <img
-                          src={ baseURL + val.image }
-                          width="100%"
-                          height="280"
-                        />
+                        <Link
+                          to={ {
+                            pathname: "/shop/product",
+                            state: { val },
+                          } }
+                        >
+                          <img
+                            src={ baseURL + val.image }
+                            width="100%"
+                            height="280"
+                          />
+                        </Link>
                         <Card.Body>
                           <Card.Title>
-                            <div className="text-center m-0">
-                              <span className="price"> { val.price } </span>
+                            <span className="price"> { val.price } </span>
 
-                              <p>{ val.name } </p>
+                            <p>{ val.name } </p>
 
-                              <Button size="sm"
-                                onClick={ () => {
-                                  if (
+                            <Button size="sm"
+                              onClick={ () => {
+                                if (
+                                  localStorage.getItem("order")
+                                    ? localStorage.getItem("order").length
+                                    : -1 > 0
+                                ) {
+                                  const content = JSON.parse(
                                     localStorage.getItem("order")
-                                      ? localStorage.getItem("order").length
-                                      : -1 > 0
-                                  ) {
-                                    const content = JSON.parse(
-                                      localStorage.getItem("order")
-                                    );
-                                    content.push(val);
-                                    localStorage.setItem(
-                                      "order",
-                                      JSON.stringify(content)
-                                    );
-                                  } else {
-                                    localStorage.setItem(
-                                      "order",
-                                      JSON.stringify([val])
-                                    );
-                                  }
-                                } }
-                              >
-                                Add to cart
-                              </Button>
-                              <br></br>
-
-                              <Link
-                                to={ {
-                                  pathname: "/shop/product",
-                                  state: { val },
-                                } }
-                              >
-                                <Button size="sm" className="mt-2">View Details</Button>
-                              </Link>
-                            </div>
+                                  );
+                                  content.push(val);
+                                  localStorage.setItem(
+                                    "order",
+                                    JSON.stringify(content)
+                                  );
+                                } else {
+                                  localStorage.setItem(
+                                    "order",
+                                    JSON.stringify([val])
+                                  );
+                                }
+                              } }
+                            >
+                              Add to cart
+                            </Button>
+                            <br></br>
                           </Card.Title>
                         </Card.Body>
                       </Card>

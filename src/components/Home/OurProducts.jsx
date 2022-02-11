@@ -106,7 +106,7 @@ const Shop = (props) => {
   return (
     <div className="our-products">
       <Container>
-        <h1>Our Products</h1>
+        <h1 className="before_line">Our Products</h1>
         <p>There is something perfect for every business, brand, or event.</p>
         <div className="">
           <div className="prod-tabs">

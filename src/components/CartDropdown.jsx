@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from "react";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { Card, Row, Col, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { Products } from "../pages/Shop/Shop";
 import baseURL from "../middleware/BaseURL";
 import "../css/Shop.css";
 const items = 2;
@@ -27,7 +26,7 @@ const Cart = () => {
   //       document.removeEventListener("mousedown", handleEvent);
   //     };
   //   });
-  
+
   return (
     <div className="cart">
       <span onClick={ () => setisOpen((prev) => !prev) }>

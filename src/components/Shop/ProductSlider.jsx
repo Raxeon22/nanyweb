@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
-
+import { AiOutlineShoppingCart } from 'react-icons/ai'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Products } from "../../pages/Shop/Shop";
 import Action from "../../middleware/API";
 import baseURL from "../../middleware/BaseURL";
 import { Link } from "react-router-dom";
-import { Button, Card } from "react-bootstrap";
+import { Button, Card, Row, Col } from "react-bootstrap";
 
 const ProductSlider = (props) => {
   var settings = {
@@ -69,46 +68,46 @@ const ProductSlider = (props) => {
             <div className="each-slid">
               <Card className="each-card">
                 <Card.Img variant="top" />
-                <img src={ baseURL + val.image[1] } width="100%" height="280" />
+                <Link to={ `/shop/product/${ val._id }` }  >
+                  <img src={ baseURL + val.image[1] } width="100%" height="280" />
+                </Link>
                 <Card.Body>
-                  <Card.Title>
-                    <div className="text-center">
-                      <span className="price"> { val.price } </span>
+                  <Card.Title >
+                    <Row>
+                      <Col xs="9">
+                        <span className="price"> <small>$</small>{ val.price } </span>
 
-                      <p>{ val.name } </p>
-                      <Button size="sm" className="button"
-                        onClick={ () => {
-                          if (
-                            localStorage.getItem("order")
-                              ? localStorage.getItem("order").length
-                              : -1 > 0
-                          ) {
-                            const content = JSON.parse(
+                        <p>{ val.name } </p>
+                      </Col>
+                      <Col xs="2" className="mt-3">
+                        <span className="cart_button"
+                          onClick={ () => {
+                            if (
                               localStorage.getItem("order")
-                            );
-                            content.push(val);
-                            localStorage.setItem(
-                              "order",
-                              JSON.stringify(content)
-                            );
-                          } else {
-                            localStorage.setItem(
-                              "order",
-                              JSON.stringify([val])
-                            );
-                          }
-                        } }
-                      >
-                        Add to cart
-                      </Button>
-                      <br></br>
-
-                      <Link
-                        to={ `/shop/product/${ val._id }` }
-                      >
-                        <Button size="sm" className="mt-2 button">View Details</Button>
-                      </Link>
-                    </div>
+                                ? localStorage.getItem("order").length
+                                : -1 > 0
+                            ) {
+                              const content = JSON.parse(
+                                localStorage.getItem("order")
+                              );
+                              content.push(val);
+                              localStorage.setItem(
+                                "order",
+                                JSON.stringify(content)
+                              );
+                            } else {
+                              localStorage.setItem(
+                                "order",
+                                JSON.stringify([val])
+                              );
+                            }
+                            window.location.reload()
+                          } }
+                        >
+                          <AiOutlineShoppingCart size={ 25 } color=" white" />
+                        </span>
+                      </Col>
+                    </Row>
                   </Card.Title>
                 </Card.Body>
               </Card>

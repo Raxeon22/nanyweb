@@ -46,7 +46,7 @@ const FAQ = () => {
             <img src={ FAQImg } alt="" width="100%" height="500" />
           </Col>
           <Col xs="12" md="6" className="heading">
-            <strong>FAQ</strong>
+            <h1 className="before_line">FAQ</h1>
 
             <div className="Qsection">
               { faq.map((val, index) => {

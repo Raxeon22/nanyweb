@@ -87,10 +87,10 @@ const MobileApp = () => {
                   <Link to={ url.ios_url }>
                     <Button className="w-100">
                       <Row className="g-0">
-                        <Col xs="12" sm="3" className="icon-button">
+                        <Col xs="12" sm="3" className="icon-button mt-md-2">
                           <FaApple size={ 35 } />
                         </Col>
-                        <Col sm="8" xs="12">
+                        <Col sm="8" xs="12" >
                           <span>Download from</span>
                           <h5>Apple Store</h5>
                         </Col>
@@ -102,8 +102,8 @@ const MobileApp = () => {
                   <Link to={ url.android_url }>
                     <Button className="w-100">
                       <Row className="g-0">
-                        <Col xs="12" sm="3" className="icon-button pt-1">
-                          <FaGooglePlay size={ 33 } />
+                        <Col xs="12" sm="3" className="icon-button mt-md-2 pt-1">
+                          <FaGooglePlay size={ 32 } />
                         </Col>
                         <Col sm="8" xs="12">
                           <span>Download from</span>
@@ -165,7 +165,7 @@ const MobileApp = () => {
                   <Link to={ url.ios_url }>
                     <Button className="w-100">
                       <Row className="g-0">
-                        <Col xs="12" sm="4" className="icon-button">
+                        <Col xs="12" sm="4" className="icon-button  mt-md-2">
                           <FaApple size={ 35 } />
                         </Col>
                         <Col xs="12" sm="8">
@@ -180,7 +180,7 @@ const MobileApp = () => {
                   <Link to={ url.android_url }>
                     <Button className="w-100">
                       <Row className="g-0">
-                        <Col xs="3" sm="4" className="icon-button pt-1">
+                        <Col xs="3" sm="4" className="icon-button pt-1  mt-md-2">
                           <FaGooglePlay size={ 33 } />
                         </Col>
                         <Col xs="12" sm="8">

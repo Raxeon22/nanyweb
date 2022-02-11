@@ -26,7 +26,7 @@ const Categories = () => {
     cssEase: "linear",
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1224,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
@@ -34,7 +34,7 @@ const Categories = () => {
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 760,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
@@ -69,12 +69,12 @@ const Categories = () => {
   return (
     <div className="categories">
       <Container>
-        <h2>Categories </h2>
+        <h2 className="before_line">Categories </h2>
         <div className="cate-tabs">
           <Slider className="react-slider" { ...settings }>
             { category.map((item) => {
               return (
-                <div className="each-img px-2">
+                <div className="each-img px-3">
                   <Link
                     to={ {
                       pathname: "/shop",
