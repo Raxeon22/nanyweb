@@ -22,7 +22,7 @@ const Navbar = () => {
   useEffect(() => {
     fetchaboutdata();
   });
-  console.log(about)
+  // console.log(about)
   return (
     <Container id="about-us">
       <div className="about-us">

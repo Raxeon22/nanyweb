@@ -75,6 +75,7 @@ const Navbar = (props) => {
     }
   }
   useEffect(() => {
+    getproduct();
     fetchtopheader();
     const handleEvent = async (e) => {
       if (products.current && !products.current.contains(e.target)) {

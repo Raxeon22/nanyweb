@@ -35,7 +35,7 @@ const VideoModal = ({ showModal, setShowModal, videoUrl }) => {
 
   //spiling the url to emded
   const cut = video2.split('=')
-  console.log(`https://www.youtube.com/embed/${ cut[1] }`)
+  // console.log(`https://www.youtube.com/embed/${ cut[1] }`)
 
   return (
     <>

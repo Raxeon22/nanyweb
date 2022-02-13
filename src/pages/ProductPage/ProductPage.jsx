@@ -125,6 +125,8 @@ const ProductPage = (props) => {
 
                 <Button className="mx-1"
                   onClick={ () => {
+                    props.generate(localStorage.getItem("order"));
+
                     if (
                       localStorage.getItem("order")
                         ? localStorage.getItem("order").length

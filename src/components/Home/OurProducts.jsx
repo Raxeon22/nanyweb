@@ -74,7 +74,7 @@ var settings = {
 
 const Shop = (props) => {
   const [category, setcategory] = useState([]);
-  const [id, setId] = useState('');
+  const [id, setId] = useState("");
   const [key, setKey] = useState("");
 
   const [product, setproduct] = useState([]);
@@ -83,18 +83,20 @@ const Shop = (props) => {
 
     if (action.data.success == true) {
       setcategory(action.data.data);
-      setId(action.data.data[0]._id)
+      setId(action.data.data[0].heading);
     } else {
       // setcategory([]);
     }
   }
 
   async function getproduct(k) {
-
+    console.log("====================================");
+    console.log(k);
+    console.log("====================================");
     const response = await Action.get("/product?category=" + k, {});
+    // console.log(response);
     if (response.data.success == true) {
       setproduct(response.data.data);
-
     } else {
     }
   }
@@ -102,7 +104,7 @@ const Shop = (props) => {
   useEffect(async () => {
     fetchproductdata();
   }, []);
-  console.log(id)
+  // console.log(id)
   return (
     <div className="our-products">
       <Container>
@@ -111,36 +113,41 @@ const Shop = (props) => {
         <div className="">
           <div className="prod-tabs">
             <Tabs
-              defaultActiveKey={ id }
-              onSelect={ (k) => {
+              defaultActiveKey={id}
+              activeKey={key}
+              onSelect={(k) => {
+                console.log(k);
                 getproduct(k);
                 setKey(k);
-              } }
+              }}
             >
-              { category.map((item) => {
+              {category.map((item) => {
                 return (
-                  <Tab
-                    eventKey={ item._id }
-                    title={ item.heading }
-                  >
+                  <Tab eventKey={item.heading} title={item.heading}>
                     <div className="">
-                      <h3> { props.heading } </h3>
-                      <Slider className="" { ...settings }>
-                        { product.map((val) => {
+                      <h3> {props.heading} </h3>
+                      <Slider className="" {...settings}>
+                        {product.map((val) => {
                           return (
                             <div className="each-slide">
                               <img
-                                src={ baseURL + val.image }
+                                src={baseURL + val.image}
                                 width="100%"
                                 height="300"
                                 alt=""
                                 className="p-1"
                               />
-                              <p className="mt-3"> { val.name } </p>
-                              <span> { val.price } </span>
-                              <br></br><br />
-                              <Button size="sm" className="button"
-                                onClick={ () => {
+
+                              <p className="mt-3"> {val.name} </p>
+                              <span> {val.price} </span>
+                              <br></br>
+                              <br />
+                              <Button
+                                size="sm"
+                                className="button"
+                                onClick={() => {
+                                  // window.location.reload();
+                                  props.generate(localStorage.getItem("order"));
                                   if (
                                     localStorage.getItem("order")
                                       ? localStorage.getItem("order").length
@@ -160,28 +167,30 @@ const Shop = (props) => {
                                       JSON.stringify([val])
                                     );
                                   }
-                                } }
+                                }}
                               >
                                 Add to cart
                               </Button>
                               <br></br>
 
                               <Link
-                                to={ {
-                                  pathname: "/shop/product",
+                                to={{
+                                  pathname: ` /shop/product${val._id}`,
                                   state: { val },
-                                } }
+                                }}
                               >
-                                <Button size="sm" className="mt-2 button">View Details</Button>
+                                <Button size="sm" className="mt-2 button">
+                                  View Details
+                                </Button>
                               </Link>
                             </div>
                           );
-                        }) }
+                        })}
                       </Slider>
                     </div>
                   </Tab>
                 );
-              }) }
+              })}
             </Tabs>
             {/* <Tab eventKey="sweat-shirts" title={<GiMonclerJacket />}>
               <p>return policy</p>
@@ -196,7 +205,7 @@ const Shop = (props) => {
               <p>return policy</p>
             </Tab> */}
           </div>
-        </div >
+        </div>
         {/* <div className="d-block d-lg-none">
             <Carousel  className="services-slider" controls={false}>
                 {
@@ -228,8 +237,8 @@ const Shop = (props) => {
                
             </Carousel>
             </div> */}
-      </Container >
-    </div >
+      </Container>
+    </div>
   );
 };
 export default Shop;

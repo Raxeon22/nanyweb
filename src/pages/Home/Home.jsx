@@ -16,12 +16,16 @@ import "../../css/Home.css";
 
 const Home = () => {
   const [showModal, setShowModal] = useState(false);
-
-  useEffect(() => {
+const [data,setdata] = useState([])
+const updatedata =()=>{
+  console.log("Munib");
+  setdata(localStorage.getItem("order"))
+}
+useEffect(() => {
     setTimeout(() => {
       setShowModal(true);
     }, 6000);
-  }, []);
+  },[data]);
 
   return (
     <div id="navBanner">
@@ -32,7 +36,7 @@ const Home = () => {
       <Services />
       <HowItWork />
       <Categories />
-      <OurProducts />
+      <OurProducts generate={updatedata} />
       <MobileApp />
       <FAQ />
       <ContactUs />

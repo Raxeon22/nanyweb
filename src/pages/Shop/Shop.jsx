@@ -80,9 +80,16 @@ const Shop = (props) => {
     } else {
     }
   }
-
+async function fetchproductdata(){
+  const response = await Action.get("/product", {});
+  if (response.data.success == true) {
+    await setproduct(response.data.data);
+  } else {
+  }
+}
   useEffect(async () => {
     fetchcategorydata();
+    fetchproductdata();
     if (props.location.state) {
       getproduct(props.location.state.item._id);
       setheading(props.location.state.item.heading);
@@ -114,7 +121,7 @@ const Shop = (props) => {
                       key={ index }
                       onClick={ () => {
                         setheading(val.heading);
-                        getproduct(val._id);
+                        getproduct(val.heading);
                       } }
                     >
                       { " " }
@@ -134,7 +141,7 @@ const Shop = (props) => {
                         <Card.Img variant="top" />
                         <Link
                           to={ {
-                            pathname: "/shop/product",
+                            pathname: `/shop/product/${val._id}`,
                             state: { val },
                           } }
                         >

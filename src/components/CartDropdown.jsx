@@ -8,9 +8,17 @@ const items = 2;
 
 const Cart = () => {
   const [isOpen, setisOpen] = useState(false);
-  const data = JSON.parse(localStorage.getItem("order")) ? JSON.parse(localStorage.getItem("order")) : [];
 
+  const [data,setdata]= useState([])
   const cartDropdown = useRef();
+  useEffect(()=>{
+    const interval = setInterval(() => {
+      setdata(JSON.parse(localStorage.getItem("order")))
+      
+    }, 100);
+    return () => clearInterval(interval);
+    // const data = JSON.parse(localStorage.getItem("order")) ? JSON.parse(localStorage.getItem("order")) : [];
+  })
   const height = data.length > 0 ? "400px" : "auto";
   // console.log(JSON.parse(localStorage.getItem("order")));
   // console.log(JSON.parse(localStorage.getItem("order")));
@@ -80,7 +88,7 @@ const Cart = () => {
 
 
                 });
-                console.log(data)
+                // console.log(data)
               } }
               to={ { pathname: "/order/step1", state: { product: data } } }
             >

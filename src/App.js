@@ -32,8 +32,8 @@ function App() {
         <HashRouter basename="/">
           <Switch>
             <Route exact path="/" component={ Home } />
-            <Route exact path="/shop" component={ Shop } />
-            <Route exact path="/shop/product/:id" component={ ProductPage } />
+            <Route exact path="/shop" component={ Shop } generate = {localStorage.getItem("order")} />
+            <Route exact path="/shop/product/:id" component={ ProductPage } generate = {localStorage.getItem("order")}/>
             <Route exact path="/order/step1" component={ Step1 } />
             <Route exact path="/order/step2" component={ Step2 } />
             <Route exact path="/order/step3" component={ Step3 } />
