@@ -290,6 +290,7 @@ html {
 }
 .header-top button:focus{
     background-color: var(--main-color);
+    color: var(--main-color) !important;
 }
 .services .each-slide .service-slider-text button:hover{
     background-color: var(--secondary-color);
@@ -297,6 +298,7 @@ html {
 .services .each-slide .service-slider-text button:focus{
     background-color: var(--main-color) !important;
     border-color: var(--main-color) !important;
+    color: white!important;
 }
 .carousel-indicators .active {
     opacity: 1 !important;
@@ -691,7 +693,7 @@ footer .footer-button button {
     color: white;
 }
 footer .footer-button button:focus{
-    background-color: var(--secondary-color) ;
+    background-color: var(--secondary-color) !important;
     border-color: var(--secondary-color);
     color: var(--main-color);
    
@@ -862,7 +864,7 @@ footer .footer-button button svg{
 
   }
   .slick-next {
-    right: 1% !important;
+    right: 1% ;
    z-index: 200;
 
   }

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Button, Row, Col, Tabs, Tab } from "react-bootstrap";
+import { Button, Row, Col, Tabs, Tab, Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FaApple, FaGooglePlay } from "react-icons/fa";
 import Action from "../../middleware/API";
 import baseURL from "../../middleware/BaseURL";
 const MobileApp = () => {
-  const [forEmployee, setForEmployee] = useState({});
-  const [forCustomer, setForCustomer] = useState({});
+  const [forEmployee, setForEmployee] = useState(false);
+  const [forCustomer, setForCustomer] = useState(false);
   const [url, setUrl] = useState({});
 
   useEffect(() => {
@@ -43,85 +43,87 @@ const MobileApp = () => {
     <div id="mob-app" className="mob-app overflow-hidden">
       <Tabs defaultActiveKey="for-customer">
         <Tab eventKey="for-customer" title="For Customer">
-          <Row>
-            <Col xs="12" lg="5" md="6" className="tab-text offset-lg-1">
-              <span className="meet">meet app</span>
-              <h1>Check Our Mobile Application</h1>
-              <div className="list-bar">
-                <div class="divider grey"></div>
+          { forCustomer ?
+            <Row>
+              <Col xs="12" lg="5" md="6" className="tab-text offset-lg-1">
+                <span className="meet">meet app</span>
+                <h1>Check Our Mobile Application</h1>
+                <div className="list-bar">
+                  <div class="divider grey"></div>
 
-                <div class="node green">01</div>
-                <h6>{ forCustomer.heading1 }</h6>
-                <p>
-                  { forCustomer.text1 }
-                </p>
-              </div>
+                  <div class="node green">01</div>
+                  <h6>{ forCustomer.heading1 }</h6>
+                  <p>
+                    { forCustomer.text1 }
+                  </p>
+                </div>
 
-              <div className="list-bar">
-                <div class="divider grey"></div>
-                <div class="node green">02</div>
-                <h6>{ forCustomer.heading2 }</h6>
-                <p>
-                  { forCustomer.text2 }
-                </p>
-              </div>
+                <div className="list-bar">
+                  <div class="divider grey"></div>
+                  <div class="node green">02</div>
+                  <h6>{ forCustomer.heading2 }</h6>
+                  <p>
+                    { forCustomer.text2 }
+                  </p>
+                </div>
 
-              <div className="list-bar">
-                <div class="divider grey"></div>
+                <div className="list-bar">
+                  <div class="divider grey"></div>
 
-                <div class="node green">03</div>
-                <h6>{ forCustomer.heading3 }</h6>
-                <p>
-                  { forCustomer.text3 }
-                </p>
-              </div>
-              <div className="list-bar">
-                <div class="node green">04</div>
-                <h6>{ forCustomer.heading4 }</h6>
-                <p>
-                  { forCustomer.text4 }
-                </p>
-              </div>
-              <Row>
-                <Col xs="6">
-                  <Link to={ url.ios_url }>
-                    <Button className="w-100">
-                      <Row className="g-0">
-                        <Col xs="12" sm="3" className="icon-button mt-md-2">
-                          <FaApple size={ 35 } />
-                        </Col>
-                        <Col sm="8" xs="12" >
-                          <span>Download from</span>
-                          <h5>Apple Store</h5>
-                        </Col>
-                      </Row>
-                    </Button>
-                  </Link>
-                </Col>
-                <Col xs="6">
-                  <Link to={ url.android_url }>
-                    <Button className="w-100">
-                      <Row className="g-0">
-                        <Col xs="12" sm="3" className="icon-button mt-md-2 pt-1">
-                          <FaGooglePlay size={ 32 } />
-                        </Col>
-                        <Col sm="8" xs="12">
-                          <span>Download from</span>
-                          <h5>Play Store</h5>
-                        </Col>
-                      </Row>
-                    </Button>
-                  </Link>
-                </Col>
-              </Row>
-            </Col>
-            <Col xs="12" lg="5" md="6" className="tab-img  offset-lg-1">
-              <img src={ baseURL + forCustomer.image } alt="" />
-            </Col>
-          </Row>
+                  <div class="node green">03</div>
+                  <h6>{ forCustomer.heading3 }</h6>
+                  <p>
+                    { forCustomer.text3 }
+                  </p>
+                </div>
+                <div className="list-bar">
+                  <div class="node green">04</div>
+                  <h6>{ forCustomer.heading4 }</h6>
+                  <p>
+                    { forCustomer.text4 }
+                  </p>
+                </div>
+                <Row>
+                  <Col xs="6">
+                    <Link to={ url.ios_url }>
+                      <Button className="w-100">
+                        <Row className="g-0">
+                          <Col xs="12" sm="3" className="icon-button mt-md-2">
+                            <FaApple size={ 35 } />
+                          </Col>
+                          <Col sm="8" xs="12" >
+                            <span>Download from</span>
+                            <h5>Apple Store</h5>
+                          </Col>
+                        </Row>
+                      </Button>
+                    </Link>
+                  </Col>
+                  <Col xs="6">
+                    <Link to={ url.android_url }>
+                      <Button className="w-100">
+                        <Row className="g-0">
+                          <Col xs="12" sm="3" className="icon-button mt-md-2 pt-1">
+                            <FaGooglePlay size={ 32 } />
+                          </Col>
+                          <Col sm="8" xs="12">
+                            <span>Download from</span>
+                            <h5>Play Store</h5>
+                          </Col>
+                        </Row>
+                      </Button>
+                    </Link>
+                  </Col>
+                </Row>
+              </Col>
+              <Col xs="12" lg="5" md="6" className="tab-img  offset-lg-1">
+                <img src={ baseURL + forCustomer.image } alt="" />
+              </Col>
+            </Row>
+            : <div className="text-center"><Spinner animation="border" variant="dark" /></div> }
         </Tab>
         <Tab eventKey="for-employee" title="For Employee">
-          <Row>
+          { forEmployee ? <Row>
             <Col xs="12" lg="5" md="6" className="tab-text offset-lg-1">
               <span className="meet">meet app</span>
               <h1>Check Our Mobile Application For Employee</h1>
@@ -197,6 +199,7 @@ const MobileApp = () => {
               <img src={ baseURL + forEmployee.image } alt="" />
             </Col>
           </Row>
+            : <div className="text-center"><Spinner animation="border" variant="dark" /></div> }
         </Tab>
       </Tabs>
     </div>

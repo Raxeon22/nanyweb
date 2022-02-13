@@ -1,14 +1,20 @@
 
+@media screen and (min-width: 990px){
+    .slick-next {
+        right: 1% !important ;
+       z-index: 200;
+    
+      }
+}
 @media only screen and (min-width: 1100px) and (max-width: 1400px) {
     .certified-job {
         margin-top: 13rem !important;
     }
-    .new-arrivals .slick-prev {
-        left: 88% !important;
-    }
+
     .header-top p {
         font-size: 14px;
     }
+
 .language {
     position: relative !important;
     right: auto!important;
@@ -27,15 +33,14 @@
     .header-top p {
         font-size: 12px;
     }
+
     .node {
         left: -5px !important;
     }
     .certified-job {
         margin-top: 11rem !important;
     }
-    .new-arrivals .slick-prev {
-        left: 86% !important;
-    }
+
     .language {
         position: relative !important;
         right: auto!important;
@@ -83,9 +88,17 @@
         height: 600px;
         position: relative;
     }
+    .services .each-slide img{
+        margin-top: 10px !important;
+    }
     .services .each-slide{
-        margin: 4rem 20px !important;
-        padding: 1rem 0px;
+        margin: 2rem 20px !important;
+        padding: 20px  !important;
+        height: 25rem!important;
+    }
+    .services .each-slide .service-slider-text p{
+        --max-lines: 2 !important;
+        --lh: 3rem;
     }
     .mob-app .tab-text{
         padding-left: 30px;
@@ -99,9 +112,7 @@
     .contact-us .contact-form{
         position: relative  !important ;
     }
-    .new-arrivals .slick-prev {
-        left: 84% !important;
-    }
+  
     .indiv-showcase .slick-dots img {
         height: 30px !important;
         width: 30px !important;
@@ -144,6 +155,10 @@
         display: block !important;
     
    }
+   .slick-next {
+    right: 2% !important;
+
+  }
     .scrollspy button{
         margin-top: 10px !important;
     }
@@ -168,9 +183,17 @@
     .how-it-works .each-step{
         margin: 1rem 0px !important;
     }
+    .services .each-slide img{
+        margin-top: 10px !important;
+    }
     .services .each-slide{
-        margin: 4rem 0px !important;
-        padding: 1rem 0px;
+        margin: 3rem 20px !important;
+        padding: 20px  !important;
+        height: 25rem!important;
+    }
+    .services .each-slide .service-slider-text p{
+        --max-lines: 2 !important;
+        --lh: 3rem;
     }
     .mob-app .tab-text{
         margin-left: 10px;
@@ -200,9 +223,7 @@
     .contact-us .contact-form{
         position: relative  !important ;
     }
-    .new-arrivals .slick-prev {
-        left: 80% !important;
-    }
+
     .order-now .forms  {
         width: 75% !important;
     }
@@ -228,6 +249,10 @@
         width: 130px !important;
 
     }
+    .slick-next {
+        right: 5% !important;
+    
+      }
     .header-top{
         position: relative !important;
     }
@@ -254,8 +279,17 @@
     .number{
         margin-top: 5px;
     }
-    .certified-job {
-        display: none !important;
+    .services .each-slide img{
+        margin-top: 10px !important;
+    }
+    .services .each-slide{
+        margin: 3rem 20px !important;
+        padding: 20px  !important;
+        height: 25rem!important;
+    }
+    .services .each-slide .service-slider-text p{
+        --max-lines: 2 !important;
+        --lh: 3rem;
     }
     .slider-banner .carousel-inner  {
         height: 440px !important;
@@ -265,10 +299,6 @@
     }
     .how-it-works .each-step{
         margin: 1rem 0px !important;
-    }
-    .services .each-slide{
-        margin: 4rem 0px !important;
-        padding: 1rem 0px;
     }
     .mob-app .tab-text{
         margin-left: 10px;
@@ -300,6 +330,7 @@
     .modal .modal-services{
         width: 98% !important;
        height: 400px !important;
+       margin: 20px;
 
     }
     .modal .modal-video{
@@ -317,9 +348,7 @@
    .prod-tabs .nav-tabs .nav-item{
     margin-right: 0px !important;
 } 
-.new-arrivals .slick-prev {
-    left: 70% !important;
-}
+
 .new-arrivals h3 {
     margin-bottom: 3rem !important;
 }
@@ -350,6 +379,10 @@
    .navbar-light .navbar-brand {
         width: 120px !important;
     } 
+    .slick-next {
+        right: 6% !important;
+    
+      }
     .header-top p {
         font-size: 12px;
     }
@@ -407,9 +440,17 @@
     .services .each-slide img {
         margin-left: 0 !important;
     }
+    .services .each-slide img{
+        margin-top: 10px !important;
+    }
     .services .each-slide{
-        margin: 4rem 0px !important;
-        padding: 1rem 0px;
+        margin: 3rem 20px !important;
+        padding: 20px  !important;
+        height: 25rem!important;
+    }
+    .services .each-slide .service-slider-text p{
+        --max-lines: 2 !important;
+        --lh: 3rem;
     }
     .about-us .about-cards {
         margin-right: 0 !important;
@@ -450,6 +491,7 @@
     .modal .modal-services{
         width: 98% !important;
        height: 400px !important;
+       margin: 20px;
 
     }
     .modal .modal-video{
@@ -464,9 +506,7 @@
    .prod-tabs .nav-tabs .nav-item{
     margin-right: -10px !important;
 }
-.new-arrivals .slick-prev {
-    left: 68% !important;
-}
+
 .new-arrivals h3 {
     margin-bottom: 3rem !important;
 }

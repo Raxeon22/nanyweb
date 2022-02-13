@@ -58,26 +58,26 @@ const Navbar = () => {
                     <img
                       src={ baseURL + about.img1 }
                       alt="icon"
-                      height="45%"
-                      width="40%"
+                      height="90"
+                      width="90"
                     />
                     <h2>{ about.heading1 }</h2>
                     <p>{ about.txt1 } </p>
                   </Col>
 
                   <Col xs="5" md="5" className=" each-card py-4 ">
-                    <img src={ baseURL + about.img2 } alt="icon" height="45%" width="40%" />
+                    <img src={ baseURL + about.img2 } alt="icon" height="90" width="90" />
                     <h2>{ about.heading2 }</h2>
                     <p> { about.txt2 }</p>
                   </Col>
 
                   <Col xs="5" md="5" className=" each-card py-4 ">
-                    <img src={ baseURL + about.img3 } alt="icon" height="45%" width="40%" />
+                    <img src={ baseURL + about.img3 } alt="icon" height="90" width="90" />
                     <h2>{ about.heading3 }</h2>
                     <p> { about.txt3 }</p>
                   </Col>
                   <Col xs="5" md="5" className=" each-card py-4 ">
-                    <img src={ baseURL + about.img4 } alt="icon" height="45%" width="40%" />
+                    <img src={ baseURL + about.img4 } alt="icon" height="90" width="90" />
                     <h2>{ about.heading4 }</h2>
                     <p> { about.txt4 }</p>
                   </Col>

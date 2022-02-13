@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Row, Col, Container, Collapse, TabContent } from "react-bootstrap";
+import { Row, Col, Container, Collapse, Spinner } from "react-bootstrap";
 import FAQImg from "../../assets/faq-bg.jpg";
+import parse from 'html-react-parser'
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import Action from "../../middleware/API";
-import baseURL from "../../middleware/BaseURL";
 const FAQ = () => {
   const [faq, setfaq] = useState([]);
   const [count, setcount] = useState([]);
@@ -45,7 +45,7 @@ const FAQ = () => {
           <Col xs="12" md="6">
             <img src={ FAQImg } alt="" width="100%" height="500" />
           </Col>
-          <Col xs="12" md="6" className="heading">
+          { faq ? <Col xs="12" md="6" className="heading">
             <h1 className="before_line">FAQ</h1>
 
             <div className="Qsection">
@@ -59,27 +59,26 @@ const FAQ = () => {
                     aria-expanded={ count[index] }
                   >
                     <h6 className="font-bolder">
-                      { " " }
-                      { val.question }{ " " }
+                      { val.question }
                       <span className="float-end" style={ { cursor: "pointer" } }>
                         { count[index] ? (
                           <AiOutlineMinus size={ 23 } />
                         ) : (
                           <AiOutlinePlus size={ 23 } />
-                        ) }{ " " }
-                      </span>{ " " }
+                        ) }
+                      </span>
                     </h6>
 
                     <Collapse in={ count[index] }>
-                      <div className="">
-                        <p>{ val.answer }</p>
+                      <div style={ { textAlign: "left" } }>
+                        <p>{ parse(val.answer) }</p>
                       </div>
                     </Collapse>
                   </div>
                 );
               }) }
             </div>
-          </Col>
+          </Col> : <div className="text-center"><Spinner animation="border" variant="dark" /></div> }
         </Row>
       </Container>
     </div>

@@ -49,8 +49,8 @@ const Navbar = () => {
                                 <img
                                   src={ baseURL + value.image }
                                   alt=""
-                                  height="270"
-                                  width="100%"
+                                  height="280"
+                                  width="220"
                                 />
                               </Col>
                               <Col xs="7" className="service-slider-text">
@@ -126,7 +126,7 @@ const Navbar = () => {
                           <Row className="justify-content-center">
                             <Col xs="6" className="">
                               <img
-                                src={ value.image }
+                                src={ baseURL + value.image }
                                 alt=""
                                 height="160"
                                 width="100%"

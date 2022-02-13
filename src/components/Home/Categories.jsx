@@ -6,9 +6,9 @@ import HomeApplic from "../../assets/home-applic.jpg";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
 import Action from "../../middleware/API";
 import baseURL from "../../middleware/BaseURL";
+import { Spinner } from 'react-bootstrap'
 
 
 const Categories = () => {
@@ -50,114 +50,55 @@ const Categories = () => {
       },
     ],
   };
-  const [category, setcategory] = useState([]);
+  const [category, setcategory] = useState(false);
   async function fetchcategorydata() {
     const response = await Action.get("/category", {});
     if (response.data.success == true) {
       setcategory(response.data.data);
     } else {
-      setcategory([]);
+      setcategory(false);
     }
   }
 
   useEffect(async () => {
     fetchcategorydata();
   }, []);
-  const arrows = category.length > 4 ? true : false
 
 
   return (
     <div className="categories">
+
       <Container>
         <h2 className="before_line">Categories </h2>
-        <div className="cate-tabs">
-          <Slider className="react-slider" { ...settings }>
-            { category.map((item) => {
-              return (
-                <div className="each-img px-3">
-                  <Link
-                    to={ {
-                      pathname: "/shop",
-                      state: { item },
-                    } }
-                  >
-                    <div className="img-text">
-                      <h4> { item.heading } </h4>
-                      <p>{ item.text }</p>
-                    </div>
-                    <img
-                      width="100%"
-                      height="400"
-                      src={ baseURL + item.image }
-                      alt=""
-                    />
-                  </Link>
-                </div>
-              );
-            }) }
-          </Slider>
-          {/* <Carousel controls={ arrows } interval={ 2000 }>
-              <Carousel.Item>
-                  { category.map((item) => {
-                    return (
-                <Row>
-              <Col className="each-img" md="3">
-                        <Link
-                          to={ {
-                            pathname: "/shop",
-                            state: { item },
-                          } }
-                        >
-                          <div className="img-text">
-                            <h4> { item.heading } </h4>
-                            <p>{ item.etxt }</p>
-                          </div>
-                          <img
-                            width="100%"
-                            height="400"
-                            src={ baseURL + item.image }
-                            alt=""
-                          />
-                        </Link>
-                      </Col>
-                </Row>
+        { category ?
+          <div className="cate-tabs">
+            <Slider className="react-slider" { ...settings }>
+              { category.map((item) => {
+                return (
+                  <div className="each-img px-3">
+                    <Link
+                      to={ {
+                        pathname: "/shop",
+                        state: { item },
+                      } }
+                    >
+                      <div className="img-text">
+                        <h4> { item.heading } </h4>
+                        <p>{ item.text }</p>
+                      </div>
+                      <img
+                        width="100%"
+                        height="400"
+                        src={ baseURL + item.image }
+                        alt=""
+                      />
+                    </Link>
+                  </div>
                 );
               }) }
-              </Carousel.Item>
-            </Carousel>
-          </div>
-        </div>
-        <div className="d-block d-lg-none">
-          <Carousel className="cate-tabs" interval={ 2000 }>
-            { category.map((item) => {
-              return (
-                <Carousel.Item>
-                  <Row>
-                    <Col className="each-img" md="3">
-                      <Link
-                        to={ {
-                          pathname: "/shop",
-                          state: { item },
-                        } }
-                      >
-                        <div className="img-text">
-                          <h4> { item.heading } </h4>
-                          <p>{ item.etxt }</p>
-                        </div>
-                        <img
-                          width="100%"
-                          height="400"
-                          src={ baseURL + item.image }
-                          alt=""
-                        />
-                      </Link>
-                    </Col>
-                  </Row>
-                </Carousel.Item>
-              );
-            }) }
-          </Carousel>*/}
-        </div>
+            </Slider>
+
+          </div> : <div className="text-center"><Spinner animation="border" variant="dark" /></div> }
       </Container>
     </div>
   );
