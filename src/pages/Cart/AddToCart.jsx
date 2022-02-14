@@ -44,10 +44,19 @@ const AddToCart = () => {
   let netamount = 0
 
   useEffect(async () => {
-    setdata(JSON.parse(localStorage.getItem("order")));
+     setdata(await JSON.parse(localStorage.getItem("order")));
+    //  (JSON.parse(localStorage.getItem("order"))).map((item)=>{
+    //   const content = Quantity
+    //   content.push(item.quantity)  
+    //   setQuantity(content)
+    // })
+  }, []);
+  
+  // console.log('====================================');
+  // console.log(data);
+  // console.log(Quantity);
 
-  }, [data]);
-
+  // console.log('====================================');
 
   const getcart = (value, index) => {
     value.splice(index, 1);
@@ -86,7 +95,7 @@ const AddToCart = () => {
           { data.map((value, index) => {
 
 
-            netamount += (value.price * (Quantity[index] ? Quantity[index] : 1))
+            netamount += (value.price * value.quantity)
 
             return (
               <>
@@ -115,14 +124,11 @@ const AddToCart = () => {
                     <div className="quantity d-flex">
                       <span
                         onClick={ () => {
-
-
-                          Quantity[index] =
-                            Quantity[index] > 0
-                              ? Quantity[index] + 1
-                              : (Quantity[index] = 2);
-
-
+                          
+                          Quantity[index] = Quantity[index] > 0 ? Quantity[index] + 1:(Quantity[index] = 2);
+                            console.log('====================================');
+                            console.log(Quantity);
+                            console.log('====================================');
                         } }
                       >
                         { " " }
@@ -138,8 +144,6 @@ const AddToCart = () => {
                             Quantity[index] > 0
                               ? Quantity[index] - 1
                               : (Quantity[index] = 1);
-
-
                         } }
                       >
                         <AiOutlineMinus />{ " " }
@@ -153,7 +157,8 @@ const AddToCart = () => {
 
                         <Form.Select className='mt-3' name="cars" id="cars">
                           { value.color.map((item) => {
-                            return <option onSelect={ color[index] = item }> { item }</option>
+                            console.log(item.name);
+                            return <option onSelect={ color[index] = item }> { item.name }</option>
 
                           }) }
 
