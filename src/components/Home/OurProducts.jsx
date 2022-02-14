@@ -1,47 +1,31 @@
 import React, { useEffect, useState } from "react";
 import {
-  Row,
-  Col,
-  Carousel,
   Tabs,
   Tab,
   Container,
   Button,
+  Card,
+  Row,
+  Col
 } from "react-bootstrap";
+import { AiOutlineShoppingCart } from 'react-icons/ai'
 import { Link } from "react-router-dom";
-import HomeApplic from "../../assets/home-applic.jpg";
-import HeadPhones from "../../assets/headphones.jpg";
-import SelfieStick from "../../assets/selfie-stick.jpg";
-import Speakers from "../../assets/speakers.jpg";
-import { RiTShirt2Line } from "react-icons/ri";
-import {
-  GiMonclerJacket,
-  GiBilledCap,
-  GiPoloShirt,
-  GiJewelCrown,
-} from "react-icons/gi";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Products } from "../../pages/Shop/Shop";
 import Action from "../../middleware/API";
 import baseURL from "../../middleware/BaseURL";
-
-// const bleh = (
-//   <b>
-//     <RiTShirt2Line size="30" />T Shirts
-//   </b>
-// );
+import ProductSlider from "../Shop/ProductSlider";
 var settings = {
   dots: false,
   infinite: false,
   speed: 500,
-  slidesToShow: 4,
+  slidesToShow: 3,
   slidesToScroll: 1,
   initialSlide: 0,
   autoplay: true,
   speed: 500,
-  arrows: false,
+  arrows: true,
   autoplaySpeed: 2000,
   cssEase: "linear",
   responsive: [
@@ -75,7 +59,7 @@ var settings = {
 const Shop = (props) => {
   const [category, setcategory] = useState([]);
   const [id, setId] = useState("");
-  const [key, setKey] = useState("");
+  const [key, setKey] = useState('productSlider');
 
   const [product, setproduct] = useState([]);
   async function fetchproductdata() {
@@ -90,9 +74,6 @@ const Shop = (props) => {
   }
 
   async function getproduct(k) {
-    console.log("====================================");
-    console.log(k);
-    console.log("====================================");
     const response = await Action.get("/product?category=" + k, {});
     // console.log(response);
     if (response.data.success == true) {
@@ -104,7 +85,6 @@ const Shop = (props) => {
   useEffect(async () => {
     fetchproductdata();
   }, []);
-  // console.log(id)
   return (
     <div className="our-products">
       <Container>
@@ -113,84 +93,80 @@ const Shop = (props) => {
         <div className="">
           <div className="prod-tabs">
             <Tabs
-              defaultActiveKey={id}
-              activeKey={key}
-              onSelect={(k) => {
+              activeKey={ key }
+              onSelect={ (k) => {
                 console.log(k);
                 getproduct(k);
                 setKey(k);
-              }}
-            >
-              {category.map((item) => {
+                console.log(k)
+              } }
+            >    <Tab eventKey='productSlider' >
+                <ProductSlider show={ 3 } />
+              </Tab>
+              { category.map((item) => {
                 return (
-                  <Tab eventKey={item.heading} title={item.heading}>
-                    <div className="">
-                      <h3> {props.heading} </h3>
-                      <Slider className="" {...settings}>
-                        {product.map((val) => {
+                  <Tab eventKey={ item.heading } title={ item.heading }>
+
+                    <div className="new-arrivals">
+                      <h3> { props.heading } </h3>
+                      <Slider className="react-slider" { ...settings }>
+                        { product.map((val) => {
                           return (
-                            <div className="each-slide">
-                              <img
-                                src={baseURL + val.image}
-                                width="100%"
-                                height="300"
-                                alt=""
-                                className="p-1"
-                              />
+                            <div className="each-slid">
+                              <Card className="each-card">
+                                <Card.Img variant="top" />
+                                <Link to={ `/shop/product/${ val._id }` }  >
+                                  <img src={ baseURL + val.image[1] } width="100%" height="280" />
+                                </Link>
+                                <Card.Body>
+                                  <Card.Title >
+                                    <Row>
+                                      <Col xs="9" style={ { textAlign: "left" } }>
+                                        <span className="price"> <small>$</small>{ val.price } </span>
 
-                              <p className="mt-3"> {val.name} </p>
-                              <span> {val.price} </span>
-                              <br></br>
-                              <br />
-                              <Button
-                                size="sm"
-                                className="button"
-                                onClick={() => {
-                                  // window.location.reload();
-                                  props.generate(localStorage.getItem("order"));
-                                  if (
-                                    localStorage.getItem("order")
-                                      ? localStorage.getItem("order").length
-                                      : -1 > 0
-                                  ) {
-                                    const content = JSON.parse(
-                                      localStorage.getItem("order")
-                                    );
-                                    content.push(val);
-                                    localStorage.setItem(
-                                      "order",
-                                      JSON.stringify(content)
-                                    );
-                                  } else {
-                                    localStorage.setItem(
-                                      "order",
-                                      JSON.stringify([val])
-                                    );
-                                  }
-                                }}
-                              >
-                                Add to cart
-                              </Button>
-                              <br></br>
-
-                              <Link
-                                to={{
-                                  pathname: ` /shop/product${val._id}`,
-                                  state: { val },
-                                }}
-                              >
-                                <Button size="sm" className="mt-2 button">
-                                  View Details
-                                </Button>
-                              </Link>
+                                        <p>{ val.name } </p>
+                                      </Col>
+                                      <Col xs="2" className="mt-3">
+                                        <span className="cart_button"
+                                          onClick={ () => {
+                                            if (
+                                              localStorage.getItem("order")
+                                                ? localStorage.getItem("order").length
+                                                : -1 > 0
+                                            ) {
+                                              const content = JSON.parse(
+                                                localStorage.getItem("order")
+                                              );
+                                              content.push(val);
+                                              localStorage.setItem(
+                                                "order",
+                                                JSON.stringify(content)
+                                              );
+                                            } else {
+                                              localStorage.setItem(
+                                                "order",
+                                                JSON.stringify([val])
+                                              );
+                                            }
+                                            window.location.reload()
+                                          } }
+                                        >
+                                          <AiOutlineShoppingCart size={ 25 } color=" white" />
+                                        </span>
+                                      </Col>
+                                    </Row>
+                                  </Card.Title>
+                                </Card.Body>
+                              </Card>
                             </div>
                           );
-                        })}
+                        }) }
                       </Slider>
                     </div>
+
                   </Tab>
                 );
-              })}
+              }) }
             </Tabs>
             {/* <Tab eventKey="sweat-shirts" title={<GiMonclerJacket />}>
               <p>return policy</p>

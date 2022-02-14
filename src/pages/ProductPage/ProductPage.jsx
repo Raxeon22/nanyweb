@@ -75,10 +75,10 @@ const ProductPage = (props) => {
                 <span className="product_key mt-1"> colors: </span>
 
                 {
-                  color.map((color) => {
+                  product.color.map((color) => {
                     return (
                       <div className="form-check">
-                        <input style={ { backgroundColor: color.code } } onChange={ (e) => console.log(e.target.value) } className="form-check-input" type="checkbox" value={ color.name } id="flexCheckDefault" />
+                        <input style={ { backgroundColor: color.name } } onChange={ (e) => console.log(e.target.value) } className="form-check-input" type="checkbox" value={ color.name } id="flexCheckDefault" />
                       </div>
                     )
                   })

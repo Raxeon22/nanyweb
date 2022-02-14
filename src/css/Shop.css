@@ -23,9 +23,13 @@
   background-color: var(--secondary-color);
   color: var(--main-color);
 } */
+.products .each-card .price {
+  color: var(--main-color) !important;
+  font-weight: 600 !important;
+}
 .products .each-card:hover {
   transform: scale(1.1);
-  transition: all 0.2s;
+  transition: all 0.3s;
 }
 .cartdropdown {
   margin-top: 10px;
@@ -34,15 +38,10 @@
   text-decoration: none !important;
 }
 
-.products .shop-cards .card .card-title span {
-  color: var(--main-color);
-  font-weight: 600;
-  font-size: 16px;
-}
 
 .products .shop-cards .card .card-title p {
-  font-size: 17px;
-  margin-top: 10px;
+  font-size: 18px;
+  margin-top: 8px;
   color: black;
 }
 .products .filter-by {
@@ -86,6 +85,7 @@
   background-color: var(--main-color);
   padding: 8px 10px;
   border-radius: 50%;
+  cursor: pointer;
 }
 .new-arrivals h3 {
   text-align: center;
@@ -485,3 +485,23 @@ border: 3px solid var(--main-color) !important ;
   font-size: 25px;
   float: right;
 }
+.pagination-custom {
+  display: flex;
+  position: relative;
+  list-style: none;
+  border: none;
+  margin: 1rem 2rem;
+  float: right;
+
+}
+.pagination-custom li{
+  padding: 10px 18px;
+  border: 1px solid var(--main-color);
+  margin: 10px 3px;
+  cursor: pointer;
+}
+.pagination-custom li:hover{
+  background-color: var(--main-color);
+  color: white;
+}
+
