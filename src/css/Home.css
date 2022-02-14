@@ -748,39 +748,16 @@ footer .footer-button button svg{
     border: none;
 }
 .prod-tabs .nav-tabs .nav-item{
-    margin-right: 20px;
+    margin-right: 4px;
 }
 .prod-tabs .nav-tabs .nav-item .nav-link {
     color: black;
     transition: width 0.4s cubic-bezier(.175,.885,.32,1.15);
-}
-.prod-tabs .nav-tabs .nav-item #react-aria1396955469-2-tab-T-shirts:after {
-    content: 'T Shirts';
-    display: block;
-    font-size: 14px;
-}
-.prod-tabs .nav-tabs .nav-item #react-aria4207743177-2-tab-sweat-shirts::after {
-    content: 'Sweat Shirts';
-    display: block;
-    font-size: 14px;
-}
-.prod-tabs .nav-tabs .nav-item #react-aria4207743177-2-tab-head-wear::after {
-    content: 'Head Wear';
-    display: block;
-    font-size: 14px;
-}
-.prod-tabs .nav-tabs .nav-item #react-aria4207743177-2-tab-polos::after {
-    content: 'Polos';
-    display: block;
-    font-size: 14px;
-}
-.prod-tabs .nav-tabs .nav-item #react-aria4207743177-2-tab-accessories::after {
-    content: 'Accessories';
-    display: block;
-    font-size: 14px;
+    border-color: rgba(128, 128, 128, 0.37);
+    border-radius: 0px;
 }
 .prod-tabs .nav-tabs .nav-link.active {
-    border-bottom: 3px solid black;
+    border-bottom: 3px solid var(--main-color);
    background-color: var(--secondary-color);
    border-top: none;
    border-left: none;

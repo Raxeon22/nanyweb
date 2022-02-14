@@ -78,7 +78,7 @@ const ProductPage = (props) => {
                   product.color.map((color) => {
                     return (
                       <div className="form-check">
-                        <input style={ { backgroundColor: "#FA8072" } } onChange={ (e) => console.log(e.target.value) } className="form-check-input" type="checkbox" value={ color.name } id="flexCheckDefault" />
+                        <input style={ { backgroundColor: color.name } } onChange={ (e) => console.log(e.target.value) } className="form-check-input" type="checkbox" value={ color.name } id="flexCheckDefault" />
                       </div>
                     )
                   })

@@ -1,61 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../../components/Navbar";
-import { Row, Col, Form, Container, Card, Button } from "react-bootstrap";
-import { Link, useHistory } from "react-router-dom";
-import HeadPhones from "../../assets/headphones.jpg";
-import SelfieStick from "../../assets/selfie-stick.jpg";
-import Speakers from "../../assets/speakers.jpg";
+import { Row, Col, Container, Card, Spinner } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { AiOutlineShoppingCart } from 'react-icons/ai'
 import "../../css/Shop.css";
 import ProductSlider from "../../components/Shop/ProductSlider";
 import Action from "../../middleware/API";
 import baseURL from "../../middleware/BaseURL";
-
-// export const Products = [
-//   {
-//     title: "Head Phones",
-//     image: HeadPhones,
-//     price: "44$",
-//   },
-//   {
-//     title: "Electrons",
-//     image: SelfieStick,
-//     price: "24$",
-//   },
-//   {
-//     title: "Speakers",
-//     image: Speakers,
-//     price: "49$",
-//   },
-
-//   {
-//     title: "Speakers",
-//     image: SelfieStick,
-//     price: "49$",
-//   },
-//   {
-//     title: "Speakers",
-//     image: Speakers,
-//     price: "49$",
-//   },
-//   {
-//     title: "Speakers",
-//     image: HeadPhones,
-//     price: "49$",
-//   },
-// ];
-// const categories = [
-//   { cate: "weeb flowers" },
-//   { cate: "laptop" },
-//   { cate: "headphones" },
-//   { cate: "speakers" },
-//   { cate: "knifes" },
-//   { cate: "weeb flowers" },
-//   { cate: "weeb flowers" },
-//   { cate: "phones" },
-//   { cate: "weeb flowers" },
-//   { cate: "weeb flowers" },
-//   { cate: "weeb flowers" },
-// ];
+import Pagination from '../../components/Shop/Pagination'
 
 const Shop = (props) => {
 
@@ -63,6 +15,7 @@ const Shop = (props) => {
   const [heading, setheading] = useState("");
   const [category, setcategory] = useState([]);
   const [product, setproduct] = useState([]);
+
 
   async function fetchcategorydata() {
     const response = await Action.get("/category", {});
@@ -80,13 +33,14 @@ const Shop = (props) => {
     } else {
     }
   }
-async function fetchproductdata(){
-  const response = await Action.get("/product", {});
-  if (response.data.success == true) {
-    await setproduct(response.data.data);
-  } else {
+  async function fetchproductdata() {
+    const response = await Action.get("/product", {});
+    if (response.data.success == true) {
+      await setproduct(response.data.data);
+    } else {
+
+    }
   }
-}
   useEffect(async () => {
     fetchcategorydata();
     fetchproductdata();
@@ -95,21 +49,22 @@ async function fetchproductdata(){
       setheading(props.location.state.item.heading);
     }
   }, [1]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [dataPerPage, setDataPerPage] = useState(3)
+  //setting pages into the pagination
+  const indexOfLastPage = currentPage * dataPerPage; //5
+  const indexOfFirstPage = indexOfLastPage - dataPerPage; //0
+
+  const currentData = product.slice(indexOfFirstPage, indexOfLastPage)
+  const totalPages = product.length //15
+
+  //change pages onclick 
+  const Paginate = (pageNumber) => { setCurrentPage(pageNumber) }
   return (
     <>
       <Navbar />
-      <div className=" products animate__animated animate__fadeInUp animate__fast">
+      <div className=" products new-arrivals animate__animated animate__fadeInUp animate__fast">
         <Container fluid>
-          {/* <div className="sort">
-            <h6>sort by</h6>
-            <Form.Select aria-label="Default select example" size="sm">
-              <option>Oldest</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
-            </Form.Select>
-          </div> */}
-
           <Row>
             <Col md="3" xs="12" className="text-right mb-4">
               <div className="filter-by">
@@ -124,8 +79,7 @@ async function fetchproductdata(){
                         getproduct(val.heading);
                       } }
                     >
-                      { " " }
-                      <p> { val.heading } </p>{ " " }
+                      <p> { val.heading } </p>
                     </Link>
                   );
                 }) }
@@ -134,62 +88,71 @@ async function fetchproductdata(){
             <Col md="9" xs="12" className="shop-cards">
               <h1 className="heading">{ heading }</h1>
               <Row>
-                { !product ? null : product.map((val, index) => {
+                { currentData ? currentData.map((val, index) => {
                   return (
                     <Col xs="12" md="4" sm="6" key={ index }>
                       <Card className="each-card">
                         <Card.Img variant="top" />
                         <Link
                           to={ {
-                            pathname: `/shop/product/${val._id}`,
-                            state: { val },
+                            pathname: `/shop/product/${ val._id }`
                           } }
                         >
                           <img
-                            src={ baseURL + val.image }
+                            src={ baseURL + val.image[0] }
                             width="100%"
                             height="280"
                           />
                         </Link>
                         <Card.Body>
                           <Card.Title>
-                            <span className="price"> { val.price } </span>
+                            <Row>
+                              <Col xs="9">
+                                <span className="price"> <small>$</small>{ val.price } </span>
 
-                            <p>{ val.name } </p>
-
-                            <Button size="sm"
-                              onClick={ () => {
-                                if (
-                                  localStorage.getItem("order")
-                                    ? localStorage.getItem("order").length
-                                    : -1 > 0
-                                ) {
-                                  const content = JSON.parse(
-                                    localStorage.getItem("order")
-                                  );
-                                  content.push(val);
-                                  localStorage.setItem(
-                                    "order",
-                                    JSON.stringify(content)
-                                  );
-                                } else {
-                                  localStorage.setItem(
-                                    "order",
-                                    JSON.stringify([val])
-                                  );
-                                }
-                              } }
-                            >
-                              Add to cart
-                            </Button>
-                            <br></br>
+                                <p>{ val.name } </p>
+                              </Col>
+                              <Col xs="2" className="mt-3">
+                                <span className="cart_button"
+                                  onClick={ () => {
+                                    if (
+                                      localStorage.getItem("order")
+                                        ? localStorage.getItem("order").length
+                                        : -1 > 0
+                                    ) {
+                                      const content = JSON.parse(
+                                        localStorage.getItem("order")
+                                      );
+                                      content.push(val);
+                                      localStorage.setItem(
+                                        "order",
+                                        JSON.stringify(content)
+                                      );
+                                    } else {
+                                      localStorage.setItem(
+                                        "order",
+                                        JSON.stringify([val])
+                                      );
+                                    }
+                                  } }
+                                >
+                                  <AiOutlineShoppingCart size={ 25 } color=" white" />
+                                </span>
+                              </Col>
+                            </Row>
                           </Card.Title>
                         </Card.Body>
                       </Card>
                     </Col>
                   );
-                }) }
+                }) : <div className="text-center"><Spinner animation="border" variant="dark" /></div> }
               </Row>
+              <Pagination
+                dataPerPage={ dataPerPage }
+                totalPages={ totalPages }
+                currentData={ currentData }
+                Paginate={ Paginate }
+              />
             </Col>
           </Row>
         </Container>

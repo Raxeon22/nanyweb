@@ -12,6 +12,7 @@ import Scrollspy from "react-scrollspy";
 import { NavLink, Link } from "react-router-dom";
 import Action from "../middleware/API";
 import baseURL from "../middleware/BaseURL";
+import ProductSlider from './Shop/ProductSlider'
 let ScrollLink = Scroll.Link;
 const NavLinks = [
   { item: "About", link: "about-us" },
@@ -99,10 +100,11 @@ const Navbar = (props) => {
   }
 
   return (
-    <div className="sticky">
+    <>
+      <div className="sticky">
 
-      <div className="header-top text-center" style={ { display: 'block' } }>
-        {/* <span
+        <div className="header-top text-center" style={ { display: 'block' } }>
+          {/* <span
             aria-hidden={ true }
             className="float-end px-2 "
             onClick={ () => {
@@ -114,92 +116,92 @@ const Navbar = (props) => {
             &times;
           </span> */}
 
-        <Container>
-          <Row className="justify-content-center pt-2">
-            <Col
-              md="2"
-              xs="2"
-              sm="2"
-              className="p-0 "
-              style={ { textAlign: "right" } }
-            >
-              <img
-                className=""
-                src={ baseURL + topheader.image }
-                alt=""
-                height="35"
-                width="35"
-              />
-            </Col>
-            <Col md="4" xs="6" sm="8" className="p-0">
-              <p className=" pt-2 "> { topheader.text } </p>
-            </Col>
-            <Col md="2" xs="3" sm="2" className="p-0 smol" target="_blank">
-              <Link to={ topheader.link }>
-                <Button
-                  class="mt-1"
-                >
-                  { topheader.button_text }
-                </Button>
-              </Link>
-            </Col>
-          </Row>
-        </Container>
-      </div>
-
-      <div className="top-f-nav">
-        <Nav
-          ref={ navbar }
-          className="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top"
-        >
           <Container>
-            <a className="navbar-brand" href="#">
-              <img src={ Logo } width="100%" height="auto" alt="" />
-            </a>
+            <Row className="justify-content-center pt-2">
+              <Col
+                md="2"
+                xs="2"
+                sm="2"
+                className="p-0 "
+                style={ { textAlign: "right" } }
+              >
+                <img
+                  className=""
+                  src={ baseURL + topheader.image }
+                  alt=""
+                  height="35"
+                  width="35"
+                />
+              </Col>
+              <Col md="4" xs="6" sm="8" className="p-0">
+                <p className=" pt-2 "> { topheader.text } </p>
+              </Col>
+              <Col md="2" xs="3" sm="2" className="p-0 smol" target="_blank">
+                <Link to={ topheader.link }>
+                  <Button
+                    class="mt-1"
+                  >
+                    { topheader.button_text }
+                  </Button>
+                </Link>
+              </Col>
+            </Row>
+          </Container>
+        </div>
 
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-              onClick={ () => {
-                const Collapse = menuMobile.current;
-                if (showNav) {
-                  Collapse.classList.remove("show");
-                  setShowNav(false);
-                } else {
-                  Collapse.classList.add("show");
-                  setShowNav(true);
-                }
-              } }
-            >
-              <span className="navbar-toggler-icon"></span>
-            </button>
+        <div className="top-f-nav">
+          <Nav
+            ref={ navbar }
+            className="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top"
+          >
+            <Container>
+              <a className="navbar-brand" href="#">
+                <img src={ Logo } width="100%" height="auto" alt="" />
+              </a>
 
-            <div
-              ref={ menuMobile }
-              className="collapse navbar-collapse justify-content-end "
-              id="navbarSupportedContent"
-            >
-              <div className="navbar-nav ">
-                <Scrollspy
-                  className="scrollspy"
-                  items={ [
-                    "home",
-                    "about-us",
-                    "services",
-                    "how-it-works",
-                    "mob-app",
-                    "faq",
-                    "contact-us",
-                  ] }
-                  currentClassName="isCurrent"
-                >
-                  <li className="nav-item">
-                    {/* <ScrollLink
+              <button
+                className="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+                onClick={ () => {
+                  const Collapse = menuMobile.current;
+                  if (showNav) {
+                    Collapse.classList.remove("show");
+                    setShowNav(false);
+                  } else {
+                    Collapse.classList.add("show");
+                    setShowNav(true);
+                  }
+                } }
+              >
+                <span className="navbar-toggler-icon"></span>
+              </button>
+
+              <div
+                ref={ menuMobile }
+                className="collapse navbar-collapse justify-content-end "
+                id="navbarSupportedContent"
+              >
+                <div className="navbar-nav ">
+                  <Scrollspy
+                    className="scrollspy"
+                    items={ [
+                      "home",
+                      "about-us",
+                      "services",
+                      "how-it-works",
+                      "mob-app",
+                      "faq",
+                      "contact-us",
+                    ] }
+                    currentClassName="isCurrent"
+                  >
+                    <li className="nav-item">
+                      {/* <ScrollLink
                     className="nav-link cursor-pointer"
                     exact
                     to={props.Homelink}
@@ -212,96 +214,78 @@ const Navbar = (props) => {
                   >
                     Home
                   </ScrollLink> */}
-                    <NavLink to="/" className="nav-link ">
-                      Home
-                    </NavLink>
-                  </li>
-                  { NavLinks.map((value, index) => {
-                    return (
-                      <li className="nav-item" key={ index }>
-                        <ScrollLink
-                          className="nav-link cursor-pointer"
-                          exact
-                          to={ value.link }
-                          href="/"
-                          spy={ false }
-                          smooth={ false }
-                          offset={ 50 }
-                          duration={ 500 }
-                          spyThrottle={ 500 }
-                        >
-                          { value.item }
-                        </ScrollLink>
-                      </li>
-                    );
-                  }) }
+                      <NavLink to="/" className="nav-link ">
+                        Home
+                      </NavLink>
+                    </li>
+                    { NavLinks.map((value, index) => {
+                      return (
+                        <li className="nav-item" key={ index }>
+                          <ScrollLink
+                            className="nav-link cursor-pointer"
+                            exact
+                            to={ value.link }
+                            href="/"
+                            spy={ false }
+                            smooth={ false }
+                            offset={ 50 }
+                            duration={ 500 }
+                            spyThrottle={ 500 }
+                          >
+                            { value.item }
+                          </ScrollLink>
+                        </li>
+                      );
+                    }) }
 
-                  <li className="nav-item">
-                    <NavLink
-                      to="/shop"
-                      className="nav-link "
-                      ref={ shop }
-                      onMouseEnter={ () => {
-                        if (props.shop) {
-                          setShowProducts(true);
-                        }
-                      } }
-                    >
-                      { " " }
-                      Shop{ " " }
-                      { props.shop ? (
-                        <span>
-                          { " " }
-                          <RiArrowDownSLine size={ 20 } />{ " " }
-                        </span>
-                      ) : null }{ " " }
-                    </NavLink>
-                  </li>
+                    <li className="nav-item">
+                      <NavLink
+                        to="/shop"
+                        className="nav-link "
+                        ref={ shop }
+                        onMouseEnter={ () => {
+                          if (props.shop) {
+                            setShowProducts(true);
+                          }
+                        } }
+                      >
+                        { " " }
+                        Shop{ " " }
+                        { props.shop ? (
+                          <span>
+                            { " " }
+                            <RiArrowDownSLine size={ 20 } />{ " " }
+                          </span>
+                        ) : null }{ " " }
+                      </NavLink>
+                    </li>
 
-                  {/* shopping cart  */ }
-                  <li className="nav-item pt-1 number ">
-                    <Cart />
-                  </li>
-                  {/* <li className="nav-item  ">
+                    {/* shopping cart  */ }
+                    <li className="nav-item pt-1 number ">
+                      <Cart />
+                    </li>
+                    {/* <li className="nav-item  ">
                     <Button className="btn mb-4 my-sm-0">Book a Nanny</Button>
                   </li> */}
-                </Scrollspy>
+                  </Scrollspy>
+                </div>
               </div>
-            </div>
-          </Container>
-        </Nav>
-        { showProducts ? (
-          <div
-            className="product-cards animate__animated animate__fadeInUp animate__fast	"
-            ref={ products }
-          >
-            <Container>
-              <Row>
-                { product.map((val, index) => {
-                  return (
-                    <Col xs="12" md="4" key={ index }>
-                      <Link to={ { path: "/shop/product", state: { val } } }>
-                        <Card className="each-product">
-                          <Card.Img variant="top" />
-                          <img
-                            src={ baseURL + val.image }
-                            width="100%"
-                            height="280"
-                          />
-                          <Card.Body>
-                            <Card.Title> { val.name } </Card.Title>
-                          </Card.Body>
-                        </Card>
-                      </Link>
-                    </Col>
-                  );
-                }) }
-              </Row>
             </Container>
-          </div>
-        ) : null }
+          </Nav></div>
       </div>
-    </div>
+      { showProducts ? (
+        <div
+          className="product-cards animate__animated animate__fadeInUp animate__fast	"
+          ref={ products }
+        >
+          <Container>
+            <ProductSlider />
+          </Container>
+        </div>
+      ) : null }
+    </>
+
+
   );
 };
 export default Navbar;
