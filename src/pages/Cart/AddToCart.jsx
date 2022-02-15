@@ -63,6 +63,7 @@ const AddToCart = () => {
 
     localStorage.setItem("order", JSON.stringify(value));
   };
+  
 
   return (
     <>
@@ -124,10 +125,14 @@ const AddToCart = () => {
                     <div className="quantity d-flex">
                       <span
                         onClick={ () => {
-                          
-                          Quantity[index] = Quantity[index] > 0 ? Quantity[index] + 1:(Quantity[index] = 2);
+                          // let qua = Quantity;
+                          Quantity[index] = Quantity[index]+1
+                          // qua[index] =qua[index]+1;
+                          // console.log(qua[index]);
+                          // setQuantity(Quantity) 
+                          // Quantity[index] = Quantity[index] > 0 ? Quantity[index] + 1:(Quantity[index] = 2);
                             console.log('====================================');
-                            console.log(Quantity);
+                            // console.log(Quantity);
                             console.log('====================================');
                         } }
                       >
@@ -140,10 +145,18 @@ const AddToCart = () => {
                       </p>
                       <span
                         onClick={ () => {
-                          Quantity[index] =
-                            Quantity[index] > 0
-                              ? Quantity[index] - 1
-                              : (Quantity[index] = 1);
+                          // const qua = Quantity;
+
+                          // qua[index] =qua[index]-1;
+                          // console.log(qua[index]);
+                          Quantity[index] = Quantity[index]-1
+                          console.log(Quantity[index] );
+
+                          // setQuantity(Quantity) 
+                          // Quantity[index] =
+                          //   Quantity[index] > 0
+                          //     ? Quantity[index] - 1
+                          //     : (Quantity[index] = 1);
                         } }
                       >
                         <AiOutlineMinus />{ " " }

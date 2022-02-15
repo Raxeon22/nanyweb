@@ -15,7 +15,7 @@ import {
 
 import { useParams } from "react-router-dom";
 const ProductPage = (props) => {
-  const [product, setProduct] = useState(false);
+  const [product, setProduct] = useState([]);
   const [quantity, setQuantity] = useState(1);
   const [color, setColor] = useState([
     { code: "black", name: "Blue" },
@@ -27,12 +27,16 @@ const ProductPage = (props) => {
 
   const { id } = useParams()
   useEffect(() => {
+    
     const getProduct = async () => {
+
       try {
         const { data } = await Action.get(`/product?_id=${ id }`)
-        setProduct(data.data[0])
-        console.log(product.color)
-      } catch (error) {
+        console.log(product);        
+        console.log(data.data[0]);        
+        setProduct(data.data)
+        console.log(data.data[0]);
+       } catch (error) {
         console.log(error)
       }
 
@@ -42,6 +46,7 @@ const ProductPage = (props) => {
 
   }, [])
 
+console.log(product);
 
   if (quantity < 1) {
     alert("quantity cannot be in minus");
@@ -53,14 +58,20 @@ const ProductPage = (props) => {
   return (
     <>
       <Navbar header={ false } shop={ false } />
-      { product ?
+      { product ? product.map((item,index)=>{
+        console.log('====================================');
+        console.log(item);
+        console.log('====================================');
+        return(
+
+         
         <Container>
           <Row className="indiv-product">
             <Col xs="12" lg="5" md="6">
-              <ProductPageSlider images={ product.image } />
+              <ProductPageSlider images={ item.image } />
             </Col>
             <Col xs="12" lg="7" md="6" className="product-about">
-              <h4 className="product-name">{ product.name }</h4>
+              <h4 className="product-name">{ item.name }</h4>
               <hr />
               {/* <p className="instock">
               { product.quantity > 0 ? "In Stock" : "Out Of Stock" }
@@ -69,13 +80,13 @@ const ProductPage = (props) => {
                 <span className="product_key mt-2">
                   price:
                 </span>
-                <h3>{ product.price }<small>$</small> </h3>
+                <h3>{ item.price }<small>$</small> </h3>
               </div>
               <div className="color d-flex">
                 <span className="product_key mt-1"> colors: </span>
 
                 {
-                  product.color.map((color) => {
+                  item.color.map((color) => {
                     return (
                       <div className="form-check">
                         <input style={ { backgroundColor: color.name } } onChange={ (e) => console.log(e.target.value) } className="form-check-input" type="checkbox" value={ color.name } id="flexCheckDefault" />
@@ -88,7 +99,7 @@ const ProductPage = (props) => {
                 <span className="product_key mt-2">
                   size:
                 </span>
-                <p className="mt-2"> {product.size}</p>
+                <p className="mt-2"> {item.size}</p>
               </div>
               <hr />
               <div className="quantity d-flex">
@@ -107,8 +118,8 @@ const ProductPage = (props) => {
               <div className="d-flex">
                 <Link
                   onClick={ () => {
-                    product.quantity = quantity;
-                    product.color = color ? color : product.color[0];
+                    product[0].quantity = quantity;
+                    product[0].color = color ? color : product.color[0];
                   } }
                   to={ {
                     pathname: "/order/step1",
@@ -125,12 +136,11 @@ const ProductPage = (props) => {
 
                 <Button className="mx-1"
                   onClick={ () => {
-                    props.generate(localStorage.getItem("order"));
+                    // props.generate(localStorage.getItem("order"));
 
                     if (
                       localStorage.getItem("order")
-                        ? localStorage.getItem("order").length
-                        : -1 > 0
+                        
                     ) {
                       const content = JSON.parse(localStorage.getItem("order"));
 
@@ -161,7 +171,7 @@ const ProductPage = (props) => {
             <Tabs defaultActiveKey="description">
               <Tab eventKey="description" title="Description">
                 <p>
-                  { parse(product.description) }
+                  { product.description }
                 </p>
               </Tab>
 
@@ -171,6 +181,8 @@ const ProductPage = (props) => {
             </Tabs>
           </div>
         </Container>
+        )
+      })
         : <div className="text-center"><Spinner animation="border" variant="dark" /></div>
       }
       <ProductSlider heading="related products" />
