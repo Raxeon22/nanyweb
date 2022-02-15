@@ -44,26 +44,17 @@ const AddToCart = () => {
   let netamount = 0
 
   useEffect(async () => {
-     setdata(await JSON.parse(localStorage.getItem("order")));
-    //  (JSON.parse(localStorage.getItem("order"))).map((item)=>{
-    //   const content = Quantity
-    //   content.push(item.quantity)  
-    //   setQuantity(content)
-    // })
-  }, []);
-  
-  // console.log('====================================');
-  // console.log(data);
-  // console.log(Quantity);
+    setdata(await JSON.parse(localStorage.getItem("order")));
 
-  // console.log('====================================');
+  }, []);
+
 
   const getcart = (value, index) => {
     value.splice(index, 1);
 
     localStorage.setItem("order", JSON.stringify(value));
   };
-  
+
 
   return (
     <>
@@ -111,7 +102,7 @@ const AddToCart = () => {
                     </span>
                   </Col>
                   <Col lg="2" md="2" xs="6">
-                    <img src={ baseURL + value.image } alt="" />
+                    <img src={ baseURL + value.image[0] } alt="" />
                   </Col>
                   <Col lg="5" md="5" xs="5">
                     { " " }
@@ -126,14 +117,14 @@ const AddToCart = () => {
                       <span
                         onClick={ () => {
                           // let qua = Quantity;
-                          Quantity[index] = Quantity[index]+1
+                          Quantity[index] = Quantity[index] + 1
                           // qua[index] =qua[index]+1;
                           // console.log(qua[index]);
                           // setQuantity(Quantity) 
                           // Quantity[index] = Quantity[index] > 0 ? Quantity[index] + 1:(Quantity[index] = 2);
-                            console.log('====================================');
-                            // console.log(Quantity);
-                            console.log('====================================');
+                          console.log('====================================');
+                          // console.log(Quantity);
+                          console.log('====================================');
                         } }
                       >
                         { " " }
@@ -149,8 +140,7 @@ const AddToCart = () => {
 
                           // qua[index] =qua[index]-1;
                           // console.log(qua[index]);
-                          Quantity[index] = Quantity[index]-1
-                          console.log(Quantity[index] );
+                          Quantity[index] = Quantity[index] - 1
 
                           // setQuantity(Quantity) 
                           // Quantity[index] =

@@ -99,7 +99,7 @@ const Shop = (props) => {
                           } }
                         >
                           <img
-                            src={ baseURL + val.image[0] }
+                            src={ baseURL + val.image[1] }
                             width="100%"
                             height="280"
                           />

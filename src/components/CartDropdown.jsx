@@ -9,12 +9,12 @@ const items = 2;
 const Cart = () => {
   const [isOpen, setisOpen] = useState(false);
 
-  const [data,setdata]= useState([])
+  const [data, setdata] = useState([])
   const cartDropdown = useRef();
-  useEffect(()=>{
+  useEffect(() => {
     const interval = setInterval(() => {
       setdata(JSON.parse(localStorage.getItem("order")))
-      
+
     }, 100);
     return () => clearInterval(interval);
     // const data = JSON.parse(localStorage.getItem("order")) ? JSON.parse(localStorage.getItem("order")) : [];
@@ -56,26 +56,25 @@ const Cart = () => {
             </h5>
           </Card.Header>
           <Card.Body className="dropdown">
-            <Row className="each-item">
-              { (data.length > 0 ? data : []).map((item) => {
-                return (
-                  <>
-                    <Col xs="3" className="cartdropdown">
-                      <img
-                        src={ baseURL + item.image }
-                        height="60"
-                        width="60"
-                        alt=""
-                      />
-                    </Col>
-                    <Col xs="9">
-                      <h6> { item.name } </h6>
-                      price: { item.price }
-                    </Col>
-                  </>
-                );
-              }) }
-            </Row>
+            { (data.length > 0 ? data : []).map((item) => {
+              return (
+                <Row className="each-item">
+
+                  <Col xs="3" className="cartdropdown">
+                    <img
+                      src={ baseURL + item.image[0] }
+                      height="60"
+                      width="60"
+                      alt=""
+                    />
+                  </Col>
+                  <Col xs="9">
+                    <h6> { item.name } </h6>
+                    price: { item.price }
+                  </Col>
+                </Row>
+              );
+            }) }
 
 
             <Link
