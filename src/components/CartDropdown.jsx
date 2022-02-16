@@ -13,13 +13,13 @@ const Cart = () => {
   const cartDropdown = useRef();
   useEffect(() => {
     const interval = setInterval(() => {
-      setdata(JSON.parse(localStorage.getItem("order")))
+      setdata(localStorage.getItem("order")?JSON.parse(localStorage.getItem("order")):[])
 
     }, 100);
     return () => clearInterval(interval);
     // const data = JSON.parse(localStorage.getItem("order")) ? JSON.parse(localStorage.getItem("order")) : [];
   })
-  const height = data.length > 0 ? "400px" : "auto";
+  const height = data ? "400px" : "auto";
   // console.log(JSON.parse(localStorage.getItem("order")));
   // console.log(JSON.parse(localStorage.getItem("order")));
   // useEffect(() => {
@@ -62,7 +62,7 @@ const Cart = () => {
 
                   <Col xs="3" className="cartdropdown">
                     <img
-                      src={ baseURL + item.image[0] }
+                      src={ baseURL + item.image }
                       height="60"
                       width="60"
                       alt=""
@@ -81,7 +81,7 @@ const Cart = () => {
               onClick={ () => {
                 data.map((item, index) => {
 
-                  data[index].quantity = 1;
+                  data[index].quantity = data[index].quantity >1?data[index].quantity :1;
 
                   data[index].color = data[index].color[0] ? data[index].color[0] : " "
 

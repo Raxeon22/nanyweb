@@ -102,7 +102,7 @@ const AddToCart = () => {
                     </span>
                   </Col>
                   <Col lg="2" md="2" xs="6">
-                    <img src={ baseURL + value.image[0] } alt="" />
+                    <img src={ baseURL + value.image } alt="" />
                   </Col>
                   <Col lg="5" md="5" xs="5">
                     { " " }
@@ -116,15 +116,11 @@ const AddToCart = () => {
                     <div className="quantity d-flex">
                       <span
                         onClick={ () => {
-                          // let qua = Quantity;
-                          Quantity[index] = Quantity[index] + 1
-                          // qua[index] =qua[index]+1;
-                          // console.log(qua[index]);
-                          // setQuantity(Quantity) 
-                          // Quantity[index] = Quantity[index] > 0 ? Quantity[index] + 1:(Quantity[index] = 2);
-                          console.log('====================================');
-                          // console.log(Quantity);
-                          console.log('====================================');
+                          const qua = [...Quantity];
+                          qua[index] =(qua[index]?qua[index]:1) + 1;
+                          console.log(qua[index]);
+
+                          setQuantity(qua)                                              
                         } }
                       >
                         { " " }
@@ -136,17 +132,12 @@ const AddToCart = () => {
                       </p>
                       <span
                         onClick={ () => {
-                          // const qua = Quantity;
+                          const qua = [...Quantity];
 
-                          // qua[index] =qua[index]-1;
-                          // console.log(qua[index]);
-                          Quantity[index] = Quantity[index] - 1
-
-                          // setQuantity(Quantity) 
-                          // Quantity[index] =
-                          //   Quantity[index] > 0
-                          //     ? Quantity[index] - 1
-                          //     : (Quantity[index] = 1);
+                          qua[index] =(qua[index]?qua[index]:1)-1;
+                          console.log(qua[index]);
+                          setQuantity(qua) 
+                          
                         } }
                       >
                         <AiOutlineMinus />{ " " }
@@ -160,8 +151,8 @@ const AddToCart = () => {
 
                         <Form.Select className='mt-3' name="cars" id="cars">
                           { value.color.map((item) => {
-                            console.log(item.name);
-                            return <option onSelect={ color[index] = item }> { item.name }</option>
+                            
+                            return <option onSelect={ color[index] = item }> { item }</option>
 
                           }) }
 
@@ -189,12 +180,14 @@ const AddToCart = () => {
               <Link
                 onClick={ () => {
                   data.map((item, index) => {
+
                     data[index].quantity =
                       Quantity[index] > 0 ? Quantity[index] : 1;
 
                     data[index].color = color[index] ? color[index] : data[index].color[0]
 
                   });
+                  
                 } }
                 to={ { pathname: "/order/step1", state: { product: data, total: netamount } } }
               >

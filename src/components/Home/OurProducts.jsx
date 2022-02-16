@@ -129,6 +129,12 @@ const Shop = (props) => {
                                       <Col xs="2" className="mt-3">
                                         <span className="cart_button"
                                           onClick={ () => {
+                                            var col = []
+                                            val.color.map((clr)=>{
+                                              col.push(clr.name)
+                                            })
+                                            val.color = col;
+                                            val.quantity = 1
                                             if (
                                               localStorage.getItem("order")
                                                 ? localStorage.getItem("order").length
@@ -137,6 +143,7 @@ const Shop = (props) => {
                                               const content = JSON.parse(
                                                 localStorage.getItem("order")
                                               );
+                                              console.log(val);
                                               content.push(val);
                                               localStorage.setItem(
                                                 "order",
@@ -148,7 +155,7 @@ const Shop = (props) => {
                                                 JSON.stringify([val])
                                               );
                                             }
-                                            window.location.reload()
+                                            // window.location.reload()
                                           } }
                                         >
                                           <AiOutlineShoppingCart size={ 25 } color=" white" />
