@@ -84,7 +84,7 @@ const AddToCart = () => {
           </div>
           <hr />
 
-          {data?( data.map((value, index) => {
+          { data.length > 0 ? (data.map((value, index) => {
 
 
             netamount += (value.price * value.quantity)
@@ -117,10 +117,10 @@ const AddToCart = () => {
                       <span
                         onClick={ () => {
                           const qua = [...Quantity];
-                          qua[index] =(qua[index]?qua[index]:1) + 1;
+                          qua[index] = (qua[index] ? qua[index] : 1) + 1;
                           console.log(qua[index]);
 
-                          setQuantity(qua)                                              
+                          setQuantity(qua)
                         } }
                       >
                         { " " }
@@ -134,10 +134,10 @@ const AddToCart = () => {
                         onClick={ () => {
                           const qua = [...Quantity];
 
-                          qua[index] =(qua[index]?qua[index]:1)-1;
+                          qua[index] = (qua[index] ? qua[index] : 1) - 1;
                           console.log(qua[index]);
-                          setQuantity(qua) 
-                          
+                          setQuantity(qua)
+
                         } }
                       >
                         <AiOutlineMinus />{ " " }
@@ -151,7 +151,7 @@ const AddToCart = () => {
 
                         <Form.Select className='mt-3' name="cars" id="cars">
                           { value.color.map((item) => {
-                            
+
                             return <option onSelect={ color[index] = item }> { item }</option>
 
                           }) }
@@ -168,8 +168,8 @@ const AddToCart = () => {
                 <hr />
               </>
             );
-          })):(  (
-            
+          })) : ((
+
             <center>
 
               <h2>No item in cart</h2>
@@ -193,7 +193,7 @@ const AddToCart = () => {
                     data[index].color = color[index] ? color[index] : data[index].color[0]
 
                   });
-                  
+
                 } }
                 to={ { pathname: "/order/step1", state: { product: data, total: netamount } } }
               >

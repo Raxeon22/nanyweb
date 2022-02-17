@@ -29,7 +29,7 @@ const ProductPage = (props) => {
   useEffect(() => {
     const getProduct = async () => {
       try {
-        const { data } = await Action.get(`/product?_id=${id}`);
+        const { data } = await Action.get(`/product?_id=${ id }`);
         setProduct(data.data);
         setProductQuatity(data.data[0].quantity)
       } catch (error) {
@@ -48,17 +48,17 @@ const ProductPage = (props) => {
   console.log();
   return (
     <>
-      <Navbar header={false} shop={false} />
-      {product ? (
+      <Navbar header={ false } shop={ false } />
+      { product ? (
         product.map((item, index) => {
           return (
             <Container>
               <Row className="indiv-product">
                 <Col xs="12" lg="5" md="6">
-                  <ProductPageSlider images={item.image} />
+                  <ProductPageSlider images={ item.image } />
                 </Col>
                 <Col xs="12" lg="7" md="6" className="product-about">
-                  <h4 className="product-name">{item.name}</h4>
+                  <h4 className="product-name">{ item.name }</h4>
                   <hr />
                   {/* <p className="instock">
               { product.quantity > 0 ? "In Stock" : "Out Of Stock" }
@@ -66,19 +66,19 @@ const ProductPage = (props) => {
                   <div className="d-flex">
                     <span className="product_key mt-2">price:</span>
                     <h3>
-                      {item.price}
-                      <small>$</small>{" "}
+                      { item.price }
+                      <small>$</small>{ " " }
                     </h3>
                   </div>
                   <div className="color d-flex">
                     <span className="product_key mt-1"> colors: </span>
 
-                    {item.color.map((clr) => {
+                    { item.color.map((clr) => {
                       return (
                         <div className="form-check">
                           <input
-                            style={{ backgroundColor: clr.code }}
-                            onChange={(e) => {
+                            style={ { backgroundColor: clr.code } }
+                            onChange={ (e) => {
                               // let arra = color
                               if (color.indexOf(e.target.value) !== -1) {
                                 let i = color.indexOf(e.target.value);
@@ -90,28 +90,28 @@ const ProductPage = (props) => {
                                 color.push(e.target.value)
                               }
                               console.log(color);
-                            }}
+                            } }
                             className="form-check-input"
                             type="checkbox"
-                            value={clr.name}
+                            value={ clr.name }
                             id="flexCheckDefault"
                           />
                         </div>
                       );
-                    })}
+                    }) }
                   </div>
                   <div className="d-flex mt-2">
                     <span className="product_key mt-2">size:</span>
-                    <p className="mt-2"> {item.size[0].length}</p>
+                    <p className="mt-2"> { item.size[0].length }</p>
                   </div>
                   <hr />
                   <div className="quantity d-flex">
                     <span className="product_key mt-2">Quantity:</span>
-                    <i onClick={() => setQuantity(quantity + 1)}>
+                    <i onClick={ () => setQuantity(quantity + 1) }>
                       <AiOutlinePlus />
                     </i>
-                    <p className="p-2"> {quantity} </p>
-                    <i onClick={() => setQuantity(quantity - 1)}>
+                    <p className="p-2"> { quantity } </p>
+                    <i onClick={ () => setQuantity(quantity - 1) }>
                       <AiOutlineMinus />
                     </i>
                   </div>
@@ -119,28 +119,28 @@ const ProductPage = (props) => {
                   <hr />
                   <div className="d-flex">
                     <Link
-                      onClick={() => {
+                      onClick={ () => {
 
                         product[0].quantity = quantity;
                         product[0].color = color;
                         console.log(product);
-                      }}
-                      to={{
+                      } }
+                      to={ {
                         pathname: "/order/step1",
                         state: {
                           product: [product],
                         },
-                      }}
+                      } }
                     >
                       <Button>
-                        {" "}
+                        { " " }
                         <FaShoppingCart className="m-1" /> Order Now
                       </Button>
                     </Link>
 
                     <Button
                       className="mx-1"
-                      onClick={() => {
+                      onClick={ () => {
                         // props.generate(localStorage.getItem("order"));
                         product[0].quantity = quantity;
                         product[0].color = color
@@ -163,7 +163,7 @@ const ProductPage = (props) => {
                             JSON.stringify([product])
                           );
                         }
-                      }}
+                      } }
                     >
                       <FiShoppingBag className="m-1" /> Add to cart
                     </Button>
@@ -179,7 +179,7 @@ const ProductPage = (props) => {
               <div className="product-details">
                 <Tabs defaultActiveKey="description">
                   <Tab eventKey="description" title="Description">
-                    <p>{product[0].description}</p>
+                    <p>{ product[0].description }</p>
                   </Tab>
 
                   <Tab eventKey="policy" title="Return Policy">
@@ -194,7 +194,7 @@ const ProductPage = (props) => {
         <div className="text-center">
           <Spinner animation="border" variant="dark" />
         </div>
-      )}
+      ) }
       <ProductSlider heading="related products" />
     </>
   );

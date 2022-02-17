@@ -84,12 +84,13 @@ const Categories = () => {
                     >
                       <div className="img-text">
                         <h4> { item.heading } </h4>
-                        <p>{ item.text }</p>
+                        <p >{ item.text }</p>
                       </div>
                       <img
                         width="100%"
                         height="400"
                         src={ baseURL + item.image }
+
                         alt=""
                       />
                     </Link>
