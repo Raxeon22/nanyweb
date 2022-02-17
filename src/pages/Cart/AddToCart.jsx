@@ -84,7 +84,7 @@ const AddToCart = () => {
           </div>
           <hr />
 
-          { data.map((value, index) => {
+          {data?( data.map((value, index) => {
 
 
             netamount += (value.price * value.quantity)
@@ -168,7 +168,13 @@ const AddToCart = () => {
                 <hr />
               </>
             );
-          }) }
+          })):(  (
+            
+            <center>
+
+              <h2>No item in cart</h2>
+            </center>
+          )) }
           <Row className="justify-content-end text-center subtotal">
             <Col lg="3">
               <h4>
