@@ -133,7 +133,7 @@ const Navbar = (props) => {
                   width="35"
                 />
               </Col>
-              <Col md="5" xs="6" sm="8" className="p-0">
+              <Col md="4" lg="3" xs="6" sm="8" className="p-0">
                 <p className=" pt-2 "> { topheader.text } </p>
               </Col>
               <Col md="2" xs="3" sm="2" className="p-0 smol" target="_blank">

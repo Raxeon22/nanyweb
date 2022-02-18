@@ -116,7 +116,7 @@ const Shop = (props) => {
                               <Card className="each-card">
                                 <Card.Img variant="top" />
                                 <Link to={ `/shop/product/${ val._id }` }  >
-                                  <img src={ baseURL + val.image[1] } width="100%" height="280" />
+                                  <img src={ baseURL + val.image[0] } width="100%" height="280" />
                                 </Link>
                                 <Card.Body>
                                   <Card.Title >

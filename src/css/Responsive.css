@@ -6,6 +6,15 @@
     
       }
 }
+/* @media only screen and (min-width: 1100px) and (max-width: 1400px) {
+
+} */
+@media only screen and (min-width: 990px) and (max-width: 1300px) {
+    .scrollspy .nav-item {
+        padding-right: 0px !important;
+    }
+
+}
 @media only screen and (min-width: 1100px) and (max-width: 1400px) {
     .certified-job {
         margin-top: 13rem !important;

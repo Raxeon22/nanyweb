@@ -4,7 +4,6 @@ import { Card, Row, Col, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import baseURL from "../middleware/BaseURL";
 import "../css/Shop.css";
-const items = 2;
 
 const Cart = () => {
   const [isOpen, setisOpen] = useState(false);
@@ -13,7 +12,7 @@ const Cart = () => {
   const cartDropdown = useRef();
   useEffect(() => {
     const interval = setInterval(() => {
-      setdata(localStorage.getItem("order")?JSON.parse(localStorage.getItem("order")):[])
+      setdata(localStorage.getItem("order") ? JSON.parse(localStorage.getItem("order")) : [])
 
     }, 100);
     return () => clearInterval(interval);
@@ -34,7 +33,6 @@ const Cart = () => {
   //       document.removeEventListener("mousedown", handleEvent);
   //     };
   //   });
-
   return (
     <div className="cart">
       <span onClick={ () => setisOpen((prev) => !prev) }>
@@ -62,15 +60,15 @@ const Cart = () => {
 
                   <Col xs="3" className="cartdropdown">
                     <img
-                      src={ baseURL + item.image }
+                      src={ baseURL + item[0].image[0] }
                       height="60"
                       width="60"
                       alt=""
                     />
                   </Col>
                   <Col xs="9">
-                    <h6> { item.name } </h6>
-                    price: { item.price }
+                    <h6> { item[0].name } </h6>
+                    price: { item[0].price }
                   </Col>
                 </Row>
               );
@@ -81,7 +79,7 @@ const Cart = () => {
               onClick={ () => {
                 data.map((item, index) => {
 
-                  data[index].quantity = data[index].quantity >1?data[index].quantity :1;
+                  data[index].quantity = data[index].quantity > 1 ? data[index].quantity : 1;
 
                   data[index].color = data[index].color[0] ? data[index].color[0] : " "
 

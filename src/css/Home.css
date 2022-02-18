@@ -434,6 +434,7 @@ html {
 }
 .mob-app .tab-text button h5{
   font-weight: 600;
+  font-size: 14px;
 }
 .mob-app .tab-text button .icon-button{
     text-align: end;

@@ -179,7 +179,7 @@ const AddToCart = () => {
 
                         <Form.Select className='mt-3' name="cars" id="cars">
                           { value.color.map((item) => {
-                            
+
                             return <option onSelect={ color[index] = item }> { item }</option>
 
                           }) }
