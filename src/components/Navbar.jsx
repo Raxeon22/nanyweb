@@ -15,7 +15,7 @@ import baseURL from "../middleware/BaseURL";
 import ProductSlider from './Shop/ProductSlider'
 let ScrollLink = Scroll.Link;
 const NavLinks = [
-  { item: "SUR", link: "about-us" },
+  { item: "À propos de nous", link: "about-us" },
   { item: "Prestations de service", link: "services" },
   { item: "Application mobile", link: "mob-app" },
   { item: "FAQ", link: "faq" },

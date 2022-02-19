@@ -31,7 +31,7 @@ const ProductSlider = (props) => {
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 900,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
@@ -39,7 +39,7 @@ const ProductSlider = (props) => {
         },
       },
       {
-        breakpoint: 480,
+        breakpoint: 580,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -84,7 +84,7 @@ const ProductSlider = (props) => {
                           <span className="cart_button"
                             onClick={ () => {
                               var col = []
-                              val.color.map((clr)=>{
+                              val.color.map((clr) => {
                                 col.push(clr.name)
                               })
                               val.color = col;

@@ -53,14 +53,14 @@ const ContactUs = () => {
           <h1 className="before_line">Nous contacter</h1>
           <p>Nous vous répondrons dès que possible!</p>
           <Row className="contact-form mt-5">
-            <Col md="4" sm="12" className=" text-dark  contact-details">
+            <Col lg="4" sm="12" className=" text-dark  contact-details">
               <Row className="each-detail">
                 <Col xs="2">
                   <span className="mb-1">
                     <FiPhoneCall size={ 45 } />
                   </span>
                 </Col>
-                <Col xs="9">
+                <Col xs="9" className="m-margin">
                   <h6>APPELEZ-NOUS</h6>
                   <b>{ contact.mobile }</b>
                 </Col>
@@ -71,7 +71,7 @@ const ContactUs = () => {
                     <FiMail size={ 45 } />
                   </span>
                 </Col>
-                <Col xs="9">
+                <Col xs="9" className="m-margin">
                   <h6>ENVOYEZ-NOUS UN E-MAIL</h6>
                   <b>{ contact.Email }</b>
                 </Col>
@@ -82,7 +82,7 @@ const ContactUs = () => {
                     <HiOutlineLocationMarker size={ 45 } />
                   </span>
                 </Col>
-                <Col xs="9">
+                <Col xs="9" className="m-margin">
                   <h6>ADRESSE</h6>
                   <b>{ contact.Address }</b>
                 </Col>
@@ -113,12 +113,12 @@ const ContactUs = () => {
 
             <Col
               xs="12"
-              md={ { offset: 2, span: 6 } }
+              lg={ { offset: 2, span: 6 } }
               className="contact-inputs text-right"
             >
               <Form>
                 <Row>
-                  <Col xs="12" md="6">
+                  <Col xs="12" lg="8">
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                       <Form.Label>Prénom</Form.Label>
                       <Form.Control

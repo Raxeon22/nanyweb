@@ -9,9 +9,19 @@
 /* @media only screen and (min-width: 1100px) and (max-width: 1400px) {
 
 } */
-@media only screen and (min-width: 990px) and (max-width: 1300px) {
+@media only screen and (min-width: 990px) and (max-width: 1400px) {
     .scrollspy .nav-item {
         padding-right: 0px !important;
+    }
+    .cart {
+        margin-right: 0px !important;
+    }
+    .services .each-slide img {
+      width: 200px !important;
+      height: 200px !important;
+    }
+    .services .each-slide{
+        margin: 4rem 40px !important;
     }
 
 }
@@ -540,5 +550,8 @@
   }
   .how-it-works  .badge{
     left: 43% !important;
+}
+.m-margin{
+    margin-left:10px;
 }
 } 

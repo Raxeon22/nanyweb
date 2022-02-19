@@ -66,7 +66,7 @@ const Shop = (props) => {
       <div className=" products new-arrivals animate__animated animate__fadeInUp animate__fast">
         <Container fluid>
           <Row>
-            <Col md="3" xs="12" className="text-right mb-4">
+            <Col md="6" lg="3" xs="12" className="text-right mb-4">
               <div className="filter-by">
                 <h6>Filter Results By</h6>
                 { category.map((val, index) => {
@@ -85,12 +85,12 @@ const Shop = (props) => {
                 }) }
               </div>
             </Col>
-            <Col md="9" xs="12" className="shop-cards">
+            <Col md="12" xs="12" lg="9" className="shop-cards">
               <h1 className="heading">{ heading }</h1>
               <Row>
                 { currentData ? currentData.map((val, index) => {
                   return (
-                    <Col xs="12" md="4" sm="6" key={ index }>
+                    <Col xs="12" md="6" lg="4" sm="6" key={ index } >
                       <Card className="each-card">
                         <Card.Img variant="top" />
                         <Link
@@ -116,11 +116,11 @@ const Shop = (props) => {
                                 <span className="cart_button"
                                   onClick={ () => {
                                     var col = []
-                                            val.color.map((clr)=>{
-                                              col.push(clr.name)
-                                            })
-                                            val.color = col;
-                                            val.quantity = 1
+                                    val.color.map((clr) => {
+                                      col.push(clr.name)
+                                    })
+                                    val.color = col;
+                                    val.quantity = 1
                                     if (
                                       localStorage.getItem("order")
                                         ? localStorage.getItem("order").length
@@ -162,7 +162,7 @@ const Shop = (props) => {
             </Col>
           </Row>
         </Container>
-      </div>
+      </div >
       <ProductSlider heading="new arrivals" />
     </>
   );

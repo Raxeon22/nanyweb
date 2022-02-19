@@ -43,8 +43,8 @@ const Navbar = () => {
                     return (
                       <Carousel.Item>
                         <Row>
-                          <Col xs="12" lg="5" className=" each-slide">
-                            <Row>
+                          <Col xs="12" lg="5" md="6" className=" each-slide">
+                            <Row className="">
                               <Col xs="5" className="">
                                 <img
                                   src={ baseURL + value.image }
@@ -76,7 +76,7 @@ const Navbar = () => {
                             {
                               (service[index + 1] ? (
 
-                                <Col xs="12" lg="5" className=" each-slide">
+                                <Col xs="12" lg="5" md="6" className="each-slide">
                                   <Row>
                                     <Col xs="5" className="">
                                       <img

@@ -756,6 +756,7 @@ footer .footer-button button svg{
     transition: width 0.4s cubic-bezier(.175,.885,.32,1.15);
     border-color: rgba(128, 128, 128, 0.37);
     border-radius: 0px;
+    margin-top: 10px;
 }
 .prod-tabs .nav-tabs .nav-link.active {
     border-bottom: 3px solid var(--main-color);

@@ -123,6 +123,7 @@
 }
 .new-arrivals .each-slid p {
   margin-top: 10px;
+  font-size: 15px;
 }
 .new-arrivals .each-slid span {
   color: var(--main-color);
