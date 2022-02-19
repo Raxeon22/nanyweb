@@ -100,9 +100,21 @@ const ProductPage = (props) => {
                       );
                     }) }
                   </div>
-                  <div className="d-flex mt-2">
+                  <div className="d-flex mt-2 size">
                     <span className="product_key mt-2">size:</span>
-                    <p className="mt-2"> { item.size[0].length }</p>
+                    { [{}, {}, {}].map((val, index) => {
+                      return (
+                        <div className="form-check">
+                          <input
+                            className="form-check-input"
+                            type="checkbox"
+                            value={ index }
+                            id="flexCheckDefault"
+                          />
+                          <label>200ml</label>
+                        </div>
+                      );
+                    }) }
                   </div>
                   <hr />
                   <div className="quantity d-flex">

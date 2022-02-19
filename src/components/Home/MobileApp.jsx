@@ -92,7 +92,7 @@ const MobileApp = () => {
                             <FaApple size={ 30 } />
                           </Col>
                           <Col sm="8" xs="12" >
-                            <span>Download from</span>
+                            <span>Télécharger à partir de</span>
                             <h5>Apple Store</h5>
                           </Col>
                         </Row>
@@ -107,8 +107,8 @@ const MobileApp = () => {
                             <FaGooglePlay size={ 28 } />
                           </Col>
                           <Col sm="8" xs="12">
-                            <span>Download from</span>
-                            <h5>Play Store</h5>
+                            <span>Télécharger à partir de</span>
+                            <h5>Jouer au magasin</h5>
                           </Col>
                         </Row>
                       </Button>
@@ -171,7 +171,7 @@ const MobileApp = () => {
                           <FaApple size={ 30 } />
                         </Col>
                         <Col xs="12" sm="8">
-                          <span>Download from</span>
+                          <span>Télécharger à partir de</span>
                           <h5>Apple Store</h5>
                         </Col>
                       </Row>
@@ -186,8 +186,8 @@ const MobileApp = () => {
                           <FaGooglePlay size={ 28 } />
                         </Col>
                         <Col xs="12" sm="8">
-                          <span>Download from</span>
-                          <h5>Play Store</h5>
+                          <span>Télécharger à partir de</span>
+                          <h5>Jouer au magasin</h5>
                         </Col>
                       </Row>
                     </Button>

@@ -21,25 +21,25 @@ const ContactUs = () => {
                             <h6>Support</h6>
                             <ul>
                                 <li>
-                                    <NavLink to="/policy">Privacy policy</NavLink>
+                                    <NavLink to="/policy">Politique de confidentialité</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/terms">Terms and Conditions</NavLink>
+                                    <NavLink to="/terms-condition">Termes et conditions</NavLink>
                                 </li>
 
                             </ul>
                         </Col>
                         <Col xs="12" md="6" lg="3" className="each-row-f">
-                            <h6>About</h6>
+                            <h6>Sur</h6>
                             <ul>
                                 <li>
-                                    <NavLink to="#">About us</NavLink>
+                                    <NavLink to="/">À propos de nous</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="#">How it works</NavLink>
+                                    <NavLink to="/">Comment ça fonctionne</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="#">Services</NavLink>
+                                    <NavLink to="/">Prestations de service</NavLink>
                                 </li>
                             </ul>
                         </Col>
@@ -53,7 +53,7 @@ const ContactUs = () => {
                                 Submit
                             </Button>
                         </div> */}
-                            <p>Download our App.</p>
+                            <p>Téléchargez notre application..</p>
                             <Row>
                                 <Col xs="6" className="my-1 footer-button"  >
                                     <Button variant="light" className=" d-flex w-100 ">

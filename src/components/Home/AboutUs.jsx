@@ -33,8 +33,8 @@ const Navbar = () => {
             <Row>
               <Col xs="12" md="6">
                 <h3>
-                  Professional senior care, <br />
-                  whenever you need it.
+                  Des soins professionnels aux personnes âgées,
+                  chaque fois que vous en avez besoin.
                 </h3>
                 <p>{ parse(about.text) }</p>
                 <Row className="see-our-video">
@@ -48,7 +48,7 @@ const Navbar = () => {
                     <MdOutlineSlowMotionVideo size={ 35 } />
                   </Col>
                   <Col xs="9" className="video-text">
-                    see our video
+                    voir notre vidéo
                   </Col>
                 </Row>
               </Col>

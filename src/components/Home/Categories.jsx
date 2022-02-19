@@ -1,8 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
-import { Row, Col, Carousel, Card, Container } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import HomeApplic from "../../assets/home-applic.jpg";
-
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -69,7 +67,7 @@ const Categories = () => {
     <div className="categories">
 
       <Container>
-        <h2 className="before_line">Categories </h2>
+        <h2 className="before_line">Catégories </h2>
         { category ?
           <div className="cate-tabs">
             <Slider className="react-slider" { ...settings }>

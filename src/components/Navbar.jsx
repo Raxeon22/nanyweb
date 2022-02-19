@@ -15,27 +15,13 @@ import baseURL from "../middleware/BaseURL";
 import ProductSlider from './Shop/ProductSlider'
 let ScrollLink = Scroll.Link;
 const NavLinks = [
-  { item: "About", link: "about-us" },
-  { item: "Services", link: "services" },
-  { item: "Mobile Aplication", link: "mob-app" },
+  { item: "SUR", link: "about-us" },
+  { item: "Prestations de service", link: "services" },
+  { item: "Application mobile", link: "mob-app" },
   { item: "FAQ", link: "faq" },
-  { item: "Contact Us", link: "contact-us" },
+  { item: "Nous contacter", link: "contact-us" },
 ];
 
-export const ProductDetails = [
-  {
-    title: "Head Phones",
-    image: HeadPhones,
-  },
-  {
-    title: "Electrons",
-    image: SelfieStick,
-  },
-  {
-    title: "Speakers",
-    image: Speakers,
-  },
-];
 
 const Navbar = (props) => {
   const [showNav, setShowNav] = useState(false);
@@ -47,7 +33,6 @@ const Navbar = (props) => {
     link: "",
   });
   const menuMobile = useRef();
-  const lanTop = document.querySelector('.language')
   const navbar = useRef();
   const products = useRef(null);
   const shop = useRef();
@@ -190,13 +175,12 @@ const Navbar = (props) => {
                   <Scrollspy
                     className="scrollspy"
                     items={ [
-                      "home",
-                      "about-us",
-                      "services",
-                      "how-it-works",
-                      "mob-app",
+                      "MAISON",
+                      "SUR",
+                      "Prestations de service",
+                      "Application mobile",
                       "faq",
-                      "contact-us",
+                      "Nous contacter",
                     ] }
                     currentClassName="isCurrent"
                   >
@@ -215,7 +199,7 @@ const Navbar = (props) => {
                     Home
                   </ScrollLink> */}
                       <NavLink to="/" className="nav-link ">
-                        Home
+                        MAISON
                       </NavLink>
                     </li>
                     { NavLinks.map((value, index) => {
@@ -250,7 +234,7 @@ const Navbar = (props) => {
                         } }
                       >
                         { " " }
-                        Shop{ " " }
+                        Boutique{ " " }
                         { props.shop ? (
                           <span>
                             { " " }

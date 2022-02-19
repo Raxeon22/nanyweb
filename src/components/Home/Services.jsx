@@ -30,7 +30,7 @@ const Navbar = () => {
     <div id="services" className="services">
       <Modal showModal={ showModal } setShowModal={ setShowModal } modalContent={ modalContent } />
       <Container>
-        <h2>Our Services</h2>
+        <h2>Nos Services</h2>
         { service ?
           <>
             <div className="d-none d-lg-block">

@@ -13,6 +13,7 @@ const Step1 = React.lazy(() => import('./components/Order/Step1'))
 const Step2 = React.lazy(() => import('./components/Order/Step2'))
 const Step3 = React.lazy(() => import('./components/Order/Step3'))
 const PrivacyPolicy = React.lazy(() => import('./pages/Privacy-Policy/PrivacyPolicy'))
+const TermsCondition = React.lazy(() => import('./pages/Terms-Conditions/TermsConditions'))
 const Cart = React.lazy(() => import('./pages/Cart/AddToCart'))
 const Thankyou = React.lazy(() => import('./pages/Thank-you/Thankyou'))
 
@@ -32,12 +33,13 @@ function App() {
         <HashRouter basename="/">
           <Switch>
             <Route exact path="/" component={ Home } />
-            <Route exact path="/shop" component={ Shop } generate = {localStorage.getItem("order")} />
+            <Route exact path="/shop" component={ Shop } generate={ localStorage.getItem("order") } />
             <Route exact path="/shop/product/:id" component={ ProductPage } />
             <Route exact path="/order/step1" component={ Step1 } />
             <Route exact path="/order/step2" component={ Step2 } />
             <Route exact path="/order/step3" component={ Step3 } />
             <Route exact path="/policy" component={ PrivacyPolicy } />
+            <Route exact path="/terms-condition" component={ TermsCondition } />
             <Route exact path="/Cart" component={ Cart } />
             <Route exact path="/thankyou" component={ Thankyou } />
             <Route component={ NotFound } />

@@ -88,8 +88,8 @@ const Shop = (props) => {
   return (
     <div className="our-products">
       <Container>
-        <h1 className="before_line">Our Products</h1>
-        <p>There is something perfect for every business, brand, or event.</p>
+        <h1 className="before_line">Nos Produits</h1>
+        <p>Il y a quelque chose de parfait pour chaque entreprise, marque ou événement.</p>
         <div className="">
           <div className="prod-tabs">
             <Tabs
@@ -130,7 +130,7 @@ const Shop = (props) => {
                                         <span className="cart_button"
                                           onClick={ () => {
                                             var col = []
-                                            val.color.map((clr)=>{
+                                            val.color.map((clr) => {
                                               col.push(clr.name)
                                             })
                                             val.color = col;

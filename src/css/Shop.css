@@ -207,7 +207,26 @@ border: 3px solid var(--main-color) !important ;
  box-shadow: none;
 }
 
-
+.indiv-product .product-about .size .form-check-input {
+  width: 28px;
+  height: 28px;
+  border-color: rgba(126, 122, 122, 0.445) !important;
+  background-color: #ccc;
+  border-radius: 50%;
+}
+.indiv-product .product-about .size .form-check{
+  margin-left: 5px;
+}
+.indiv-product .product-about .size .form-check label{
+  margin-top: 8px;
+  margin-left: 5px;
+}
+/* .indiv-product .product-about .size .form-check-input:checked[type=checkbox] {
+border: 3px solid var(--main-color) !important ;
+} */
+.indiv-product .product-about .size .form-check-input:focus{
+ box-shadow: none;
+}
 .indiv-product .product-about .quantity p {
   margin: 0px 20px;
   padding: 0;

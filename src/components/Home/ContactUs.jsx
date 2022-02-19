@@ -15,7 +15,7 @@ import { useHistory } from "react-router-dom";
 const ContactUs = () => {
 
   const [alert, setAlert] = useState("");
-  const [spin, setSpin] = useState("Send Message");
+  const [spin, setSpin] = useState("Envoyer le message");
   const [contact, setcontact] = useState([]);
   const [data, setdata] = useState({
     first_name: "",
@@ -50,8 +50,8 @@ const ContactUs = () => {
     <Scroll.Element id="contact-us">
       <div className="contact-us">
         <Container>
-          <h1 className="before_line">Contact Us</h1>
-          <p>We will get to you asap!</p>
+          <h1 className="before_line">Nous contacter</h1>
+          <p>Nous vous répondrons dès que possible!</p>
           <Row className="contact-form mt-5">
             <Col md="4" sm="12" className=" text-dark  contact-details">
               <Row className="each-detail">
@@ -61,7 +61,7 @@ const ContactUs = () => {
                   </span>
                 </Col>
                 <Col xs="9">
-                  <h6>Call us</h6>
+                  <h6>APPELEZ-NOUS</h6>
                   <b>{ contact.mobile }</b>
                 </Col>
               </Row>
@@ -72,7 +72,7 @@ const ContactUs = () => {
                   </span>
                 </Col>
                 <Col xs="9">
-                  <h6>Mail us</h6>
+                  <h6>ENVOYEZ-NOUS UN E-MAIL</h6>
                   <b>{ contact.Email }</b>
                 </Col>
               </Row>
@@ -83,7 +83,7 @@ const ContactUs = () => {
                   </span>
                 </Col>
                 <Col xs="9">
-                  <h6>Address</h6>
+                  <h6>ADRESSE</h6>
                   <b>{ contact.Address }</b>
                 </Col>
               </Row>
@@ -120,7 +120,7 @@ const ContactUs = () => {
                 <Row>
                   <Col xs="12" md="6">
                     <Form.Group className="mb-3" controlId="formBasicEmail">
-                      <Form.Label>First Name</Form.Label>
+                      <Form.Label>Prénom</Form.Label>
                       <Form.Control
                         className="custom-input"
                         type="text"
@@ -134,7 +134,7 @@ const ContactUs = () => {
                   </Col>
                   <Col xs="12" md="6">
                     <Form.Group className="mb-3" controlId="formBasicPassword">
-                      <Form.Label>Last Name</Form.Label>
+                      <Form.Label>Nom de famille</Form.Label>
                       <Form.Control
                         className="custom-input"
                         type="text"
@@ -161,7 +161,7 @@ const ContactUs = () => {
                   </Col>
                   <Col xs="12" md="6">
                     <Form.Group className="mb-3" controlId="formBasicPassword">
-                      <Form.Label>Phone</Form.Label>
+                      <Form.Label>Téléphoner</Form.Label>
                       <Form.Control
                         className="custom-input"
                         type="number"
@@ -174,7 +174,7 @@ const ContactUs = () => {
                   </Col>
                   <Col xs="12">
                     <Form.Group className="mb-3">
-                      <h6>What is the best way for you to contact us?</h6>
+                      <h6>Quelle est la meilleure façon pour vous de nous contacter ?</h6>
                       <Row className="my-4 check-custom">
                         <Col xs="12" sm="6" md="4">
                           <Form.Check
@@ -223,7 +223,7 @@ const ContactUs = () => {
                       className="mb-3"
                       controlId="exampleForm.ControlTextarea1"
                     >
-                      <Form.Label>Message</Form.Label>
+                      <Form.Label>Un Message</Form.Label>
                       <Form.Control
                         as="textarea"
                         rows={ 3 }

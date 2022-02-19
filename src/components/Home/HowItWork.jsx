@@ -22,7 +22,7 @@ const HowItWork = () => {
   return (
     <div id="how-it-works" className="how-it-works">
       <Container>
-        <h1>How It Works</h1>
+        <h1>Comment ça fonctionne</h1>
         { works ?
           <>
             <div className="step1 d-none d-lg-block"></div>
