@@ -40,7 +40,7 @@
 
 
 .products .shop-cards .card .card-title p {
-  font-size: 18px;
+  font-size: 15px;
   margin-top: 8px;
   color: black;
 }
@@ -197,6 +197,7 @@
   height: 28px;
   border-color: white !important;
   border-radius: 50%;
+  cursor: pointer;
 }
 .indiv-product .product-about .color .form-check{
   margin-left: 5px;
@@ -209,22 +210,33 @@ border: 3px solid var(--main-color) !important ;
 }
 
 .indiv-product .product-about .size .form-check-input {
-  width: 28px;
-  height: 28px;
-  border-color: rgba(126, 122, 122, 0.445) !important;
-  background-color: #ccc;
-  border-radius: 50%;
+  width: 83px;
+  height: 30px;
+  border-color: rgba(126, 122, 122, 0.637) !important;
+  background-color: rgba(220, 220, 220, 0.486);
+  border-radius: 5px;
+  z-index: 9;
+ cursor: pointer;
 }
 .indiv-product .product-about .size .form-check{
   margin-left: 5px;
+  position: relative;
 }
 .indiv-product .product-about .size .form-check label{
-  margin-top: 8px;
   margin-left: 5px;
+  position: absolute;
+  top: 8px;
+  left: 0;
+  font-weight: 600;
+  font-size: 14px;
+  z-index: -1;
 }
-/* .indiv-product .product-about .size .form-check-input:checked[type=checkbox] {
+.indiv-product .product-about .size .form-check-input:checked[type=checkbox] {
 border: 3px solid var(--main-color) !important ;
-} */
+background-image: none !important;
+background-color: rgb(176 204 224 / 42%);
+
+}
 .indiv-product .product-about .size .form-check-input:focus{
  box-shadow: none;
 }

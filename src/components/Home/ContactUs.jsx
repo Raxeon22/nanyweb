@@ -10,7 +10,6 @@ import {
 import { FiPhoneCall, FiMail } from "react-icons/fi";
 import Scroll from "react-scroll";
 import Action from "../../middleware/API";
-import { useHistory } from "react-router-dom";
 
 const ContactUs = () => {
 
@@ -25,25 +24,24 @@ const ContactUs = () => {
     way_to_use: "",
     message: "",
   });
-  const getcontact = async () => {
-    const response = await Action.get("/setting", {});
-    if (response.data.success == true) {
-      setcontact(response.data.data[0]);
-    } else {
-    }
-  };
   const postquery = async () => {
     const response = await Action.post("/query", data, {});
 
-    if (response.data.success == true) {
+    if (response.data.success === true) {
       return setAlert(response.data.message);
     } else {
       return setAlert(response.data.message);
     }
   };
-
-  useEffect(async () => {
-    await getcontact();
+  useEffect(() => {
+    const getcontact = async () => {
+      const response = await Action.get("/setting", {});
+      if (response.data.success === true) {
+        setcontact(response.data.data[0]);
+      } else {
+      }
+    };
+    getcontact();
   }, []);
 
   return (
@@ -88,22 +86,22 @@ const ContactUs = () => {
                 </Col>
               </Row>
               <div className="contact-footer-icon d-flex">
-                <a href={ contact.fb } target="_blank">
+                <a href={ contact.fb } target="_blank" rel="noreferrer">
                   <span className="bg-primary">
                     <FaFacebookF size={ 25 } />
                   </span>
                 </a>
-                <a href={ contact.twitter } target="_blank">
+                <a href={ contact.twitter } target="_blank" rel="noreferrer">
                   <span className="bg-info">
                     <FaTwitter size={ 25 } />
                   </span>
                 </a>
-                <a href={ contact.google } target="_blank">
+                <a href={ contact.google } target="_blank" rel="noreferrer">
                   <span className="bg-danger">
                     <FaGooglePlusG size={ 25 } />
                   </span>
                 </a>
-                <a href={ contact.linkedin } target="_blank">
+                <a href={ contact.linkedin } target="_blank" rel="noreferrer">
                   <span className="bg-dark">
                     <FaLinkedinIn size={ 25 } />
                   </span>
@@ -274,8 +272,8 @@ const ContactUs = () => {
             </Col>
           </Row>
         </Container>
-      </div>
-    </Scroll.Element>
+      </div >
+    </Scroll.Element >
   );
 };
 export default ContactUs;

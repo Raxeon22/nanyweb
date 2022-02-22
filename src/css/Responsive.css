@@ -5,6 +5,9 @@
        z-index: 200;
     
       }
+    .faq img{
+        margin-top: 4rem;
+    }
 }
 /* @media only screen and (min-width: 1100px) and (max-width: 1400px) {
 
@@ -234,7 +237,7 @@
         width: 98% !important;
     }
     .modal .modal-popup{
-        width: 98% !important;
+        width: auto !important;
     }
     h5{
         font-size: 15px !important;
@@ -269,9 +272,12 @@
 
     }
     .slick-next {
-        right: 5% !important;
+        right: 2% !important;
     
       }
+      .slick-prev {
+        left: -8% !important; 
+    }
     .header-top{
         position: relative !important;
     }
@@ -357,10 +363,11 @@
        height: 400px !important;
    }
    .modal .modal-popup{
-       width: 98% !important;
-       height: 470px !important;
+       width: auto !important;
+       height: auto !important;
 
    }
+
    .modal .modal-video .video {
     padding: 10px 20px !important;
    } 
@@ -393,15 +400,24 @@
   .how-it-works  .badge{
     left: 46% !important;
 }
+.about-us .about-cards {
+    margin-right: 0px !important;
+}
+.new-arrivals .each-slid {
+    padding: 0px !important;
+}
 }
 @media screen and (max-width: 359px){
    .navbar-light .navbar-brand {
         width: 120px !important;
     } 
     .slick-next {
-        right: 6% !important;
+        right: 2% !important;
     
       }
+      .slick-prev {
+        left: -8% !important; 
+    }
     .header-top p {
         font-size: 12px;
     }
@@ -519,9 +535,12 @@
    }
    .modal .modal-popup{
        width: 98% !important;
-       height: 470px !important;
+       height: auto !important;
 
    }
+   .modal .modal-popup .popup {
+    padding: 0px !important;
+}
    .prod-tabs .nav-tabs .nav-item{
     margin-right: -10px !important;
 }
@@ -553,5 +572,11 @@
 }
 .m-margin{
     margin-left:10px;
+}
+.about-us .about-cards {
+    margin-right: 0px !important;
+}
+.new-arrivals .each-slid {
+    padding: 0px !important;
 }
 } 

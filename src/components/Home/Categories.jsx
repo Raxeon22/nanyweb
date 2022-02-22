@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
@@ -12,13 +12,12 @@ import { Spinner } from 'react-bootstrap'
 const Categories = () => {
   var settings = {
     dots: false,
-    infinite: false,
+    infinite: true,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
     initialSlide: 0,
     autoplay: true,
-    speed: 500,
     autoplaySpeed: 2000,
     arrows: true,
     cssEase: "linear",
@@ -40,7 +39,7 @@ const Categories = () => {
         },
       },
       {
-        breakpoint: 480,
+        breakpoint: 680,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -49,16 +48,17 @@ const Categories = () => {
     ],
   };
   const [category, setcategory] = useState(false);
-  async function fetchcategorydata() {
-    const response = await Action.get("/category", {});
-    if (response.data.success == true) {
-      setcategory(response.data.data);
-    } else {
-      setcategory(false);
-    }
-  }
 
-  useEffect(async () => {
+
+  useEffect(() => {
+    async function fetchcategorydata() {
+      const response = await Action.get("/category", {});
+      if (response.data.success === true) {
+        setcategory(response.data.data);
+      } else {
+        setcategory(false);
+      }
+    }
     fetchcategorydata();
   }, []);
 

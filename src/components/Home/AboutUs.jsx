@@ -26,7 +26,7 @@ const Navbar = () => {
   return (
     <Container id="about-us">
       <div className="about-us">
-        <Modal showModal={ showModal } setShowModal={ setShowModal } videoUrl={ about.video } />
+        <Modal showModal={ showModal } setShowModal={ setShowModal } />
 
         {
           about ?

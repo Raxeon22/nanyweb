@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, Container, Form, Button } from 'react-bootstrap';
+import { Row, Col, Container, Button } from 'react-bootstrap';
 import Logo from "../assets/logoFinal.png";
 import { NavLink } from 'react-router-dom';
 import { FaApple, FaGooglePlay } from "react-icons/fa";
@@ -15,7 +15,7 @@ const ContactUs = () => {
                     <Row>
                         <Col xs="12" md="6" lg="3" className="each-row-f">
                             <img src={ Logo } alt="logo" width="160" height="auto" />
-                            <p className='mt-2'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem architecto repellat ab Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                            <p className='mt-2'>CARE INC SARL est une jeune entreprise camerounaise créée en JUIN 2020, qui a décidé d'accompagner la population africaine dans la lutte contre la propagation du COVID 19</p>
                         </Col>
                         <Col xs="12" md="6" lg="3" className="each-row-f">
                             <h6>Support</h6>
@@ -30,7 +30,7 @@ const ContactUs = () => {
                             </ul>
                         </Col>
                         <Col xs="12" md="6" lg="3" className="each-row-f">
-                            <h6>Sur</h6>
+                            <h6>À propos de nous</h6>
                             <ul>
                                 <li>
                                     <NavLink to="/">À propos de nous</NavLink>
@@ -64,7 +64,7 @@ const ContactUs = () => {
                                 <Col xs="6" className="my-1 footer-button"  >
                                     <Button className=" d-flex w-100 " variant="light">
                                         <FaGooglePlay size={ 22 } />
-                                        <span>Google Store</span>
+                                        <span>Jouer au magasin</span>
                                     </Button>
                                 </Col>
                             </Row>

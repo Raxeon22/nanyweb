@@ -42,16 +42,17 @@ const MobileApp = () => {
   return (
     <div id="mob-app" className="mob-app overflow-hidden">
       <Tabs defaultActiveKey="for-customer">
-        <Tab eventKey="for-customer" title="For Customer">
+        <Tab eventKey="for-customer" title="Pour le Client">
           { forCustomer ?
             <Row>
               <Col xs="12" lg="5" md="6" className="tab-text offset-lg-1">
-                <span className="meet">meet app</span>
-                <h1>Check Our Mobile Application</h1>
+                <span className="meet">
+                  rencontrer l'application</span>
+                <h1>Consultez notre application mobile</h1>
                 <div className="list-bar">
-                  <div class="divider grey"></div>
+                  <div className="divider grey"></div>
 
-                  <div class="node green">01</div>
+                  <div className="node green">01</div>
                   <h6>{ forCustomer.heading1 }</h6>
                   <p>
                     { forCustomer.text1 }
@@ -59,8 +60,8 @@ const MobileApp = () => {
                 </div>
 
                 <div className="list-bar">
-                  <div class="divider grey"></div>
-                  <div class="node green">02</div>
+                  <div className="divider grey"></div>
+                  <div className="node green">02</div>
                   <h6>{ forCustomer.heading2 }</h6>
                   <p>
                     { forCustomer.text2 }
@@ -68,16 +69,16 @@ const MobileApp = () => {
                 </div>
 
                 <div className="list-bar">
-                  <div class="divider grey"></div>
+                  <div className="divider grey"></div>
 
-                  <div class="node green">03</div>
+                  <div className="node green">03</div>
                   <h6>{ forCustomer.heading3 }</h6>
                   <p>
                     { forCustomer.text3 }
                   </p>
                 </div>
                 <div className="list-bar">
-                  <div class="node green">04</div>
+                  <div className="node green">04</div>
                   <h6>{ forCustomer.heading4 }</h6>
                   <p>
                     { forCustomer.text4 }
@@ -116,21 +117,21 @@ const MobileApp = () => {
                   </Col>
                 </Row>
               </Col>
-              <Col xs="12" lg="5" md="6" className="tab-img  offset-lg-1">
-                <img src={ baseURL + forCustomer.image } alt="" />
+              <Col xs="12" lg="3" md="6" className="tab-img  offset-lg-2">
+                <img src={ baseURL + forCustomer.image } width="400" height="500" alt="" />
               </Col>
             </Row>
             : <div className="text-center"><Spinner animation="border" variant="dark" /></div> }
         </Tab>
-        <Tab eventKey="for-employee" title="For Employee">
+        <Tab eventKey="for-employee" title="Pour Employé">
           { forEmployee ? <Row>
             <Col xs="12" lg="5" md="6" className="tab-text offset-lg-1">
               <span className="meet">meet app</span>
               <h1>Check Our Mobile Application For Employee</h1>
               <div className="list-bar">
-                <div class="divider grey"></div>
+                <div className="divider grey"></div>
 
-                <div class="node green">01</div>
+                <div className="node green">01</div>
                 <h6>{ forEmployee.heading1 }</h6>
                 <p>
                   { forEmployee.text1 }
@@ -138,8 +139,8 @@ const MobileApp = () => {
               </div>
 
               <div className="list-bar">
-                <div class="divider grey"></div>
-                <div class="node green">02</div>
+                <div className="divider grey"></div>
+                <div className="node green">02</div>
                 <h6>{ forEmployee.heading2 }</h6>
                 <p>
                   { forEmployee.text2 }
@@ -147,16 +148,16 @@ const MobileApp = () => {
               </div>
 
               <div className="list-bar">
-                <div class="divider grey"></div>
+                <div className="divider grey"></div>
 
-                <div class="node green">03</div>
+                <div className="node green">03</div>
                 <h6>{ forEmployee.heading3 }</h6>
                 <p>
                   { forEmployee.text3 }
                 </p>
               </div>
               <div className="list-bar">
-                <div class="node green">04</div>
+                <div className="node green">04</div>
                 <h6>{ forEmployee.heading4 }</h6>
                 <p>
                   { forEmployee.text4 }
@@ -195,7 +196,7 @@ const MobileApp = () => {
                 </Col>
               </Row>
             </Col>
-            <Col xs="12" lg="5" md="6" className="tab-img  offset-lg-1">
+            <Col xs="12" lg="3" md="6" className="tab-img  offset-lg-2">
               <img src={ baseURL + forEmployee.image } alt="" />
             </Col>
           </Row>

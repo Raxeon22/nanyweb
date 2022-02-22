@@ -4,30 +4,32 @@ import { Link } from "react-router-dom";
 import Navbar from "../Navbar";
 import Action from "../../middleware/API";
 import { useHistory } from "react-router-dom";
+import Footer from '../../components/Footer'
+
 
 
 const Step3 = (props) => {
-  
+
   let history = useHistory();
-  
-  if(!props.location.state){
+
+  if (!props.location.state) {
     history.push('/shop')
   }
-  
+
   const [order, setorder] = useState({
     order_note: "",
   });
 
   const postorder = async (data) => {
-    const payload ={
-      order: Object.assign(props.location.state?props.location.state.order:"", order),
-      product: props.location.state?props.location.state.product:"",
+    const payload = {
+      order: Object.assign(props.location.state ? props.location.state.order : "", order),
+      product: props.location.state ? props.location.state.product : "",
     }
-    
+
     const response = await Action.post("/order", payload);
 
     if (response.data.success == true) {
-      
+
       history.push("/thankyou");
     }
   };
@@ -36,18 +38,18 @@ const Step3 = (props) => {
       <Navbar />
       <div className="order-now">
         <div className="forms">
-          <div class="stepper-wrapper">
-            <div class="stepper-item completed ">
-              <div class="step-counter">1</div>
-              <div class="step-name">step 1 </div>
+          <div className="stepper-wrapper">
+            <div className="stepper-item completed ">
+              <div className="step-counter">1</div>
+              <div className="step-name">step 1 </div>
             </div>
-            <div class="stepper-item completed ">
-              <div class="step-counter">2</div>
-              <div class="step-name">step 2</div>
+            <div className="stepper-item completed ">
+              <div className="step-counter">2</div>
+              <div className="step-name">step 2</div>
             </div>
-            <div class="stepper-item completed active ">
-              <div class="step-counter">3</div>
-              <div class="step-name">step 3</div>
+            <div className="stepper-item completed active ">
+              <div className="step-counter">3</div>
+              <div className="step-name">step 3</div>
             </div>
           </div>
           <Form>
@@ -55,11 +57,11 @@ const Step3 = (props) => {
               <Form.Label>Order Note(Optional)</Form.Label>
               <Form.Control
                 as="textarea"
-                rows={3}
+                rows={ 3 }
                 placeholder=""
-                onChange={(e) => {
+                onChange={ (e) => {
                   setorder({ ...order, order_note: e.target.value });
-                }}
+                } }
               />
             </Form.Group>
             {/* <Form.Group className="mb-3">
@@ -77,14 +79,15 @@ const Step3 = (props) => {
 
           <Button
             className="float-end"
-            onClick={() => {
+            onClick={ () => {
               postorder();
-            }}
+            } }
           >
             Submit
           </Button>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

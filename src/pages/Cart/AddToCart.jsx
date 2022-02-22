@@ -1,40 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Row, Col, Container, Button, Form } from "react-bootstrap";
 import Navbar from "../../components/Navbar";
-import HeadPhones from "../../assets/headphones.jpg";
-import SelfieStick from "../../assets/selfie-stick.jpg";
-import Speakers from "../../assets/speakers.jpg";
 import { Link } from "react-router-dom";
 import baseURL from "../../middleware/BaseURL";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
+import Footer from "../../components/Footer"
 
 
-const cartDetails = [
-  {
-    image: HeadPhones,
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, possimus.",
-    price: "$60",
-    quantity: "2",
-    total: "$120",
-  },
-  {
-    image: SelfieStick,
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, possimus.",
-    price: "$60",
-    quantity: "1",
-    total: "$60",
-  },
-  {
-    image: Speakers,
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, possimus.",
-    price: "$80",
-    quantity: "3",
-    total: "$320",
-  },
-];
+
 const AddToCart = () => {
   const [total, settotal] = useState([]);
   const [data, setdata] = useState([]);
@@ -44,11 +17,11 @@ const AddToCart = () => {
   let netamount = 0
 
   useEffect(async () => {
-    
+
     setdata(await JSON.parse(localStorage.getItem("order")));
-    
+
   }, []);
-console.log(data);
+  console.log(data);
 
   const getcart = async (value, index) => {
     value.splice(index, 1);
@@ -90,7 +63,7 @@ console.log(data);
           </div>
           <hr />
 
-          { (data? data.length:[].length) > 0 ? (data.map((value, index) => {
+          { (data ? data.length : [].length) > 0 ? (data.map((value, index) => {
 
 
             netamount += (value.price * value.quantity)
@@ -98,49 +71,49 @@ console.log(data);
 
             return (
               <>
-                 <Row className="each-item">
-                    <Col lg="3" md="3" xs="6">
-                      <img src={baseURL + value.image} alt="" />
-                    </Col>
-                    <Col lg="5" md="5" xs="5">
-                      <p>{value.name}</p>
-                      <p>color: {value.color}</p>
-                      <p>size: {value.size}</p>
-                    </Col>
-                    <Col lg="1" md="1" xs="4">
-                      {" "}
-                      <p>{value.price}</p>
-                    </Col>
-                    <Col lg="1" md="1" xs="4">
-                      <div className="quantity d-flex">
-                        <span
-                          onClick={() => {
-                            const qua = [...Quantity];
-                            qua[index] = (qua[index] ? qua[index] : 1) + 1;
-                            console.log(qua[index]);
-                            setQuantity(qua)
-                          }}
-                        >
-                          {" "}
-                          <AiOutlinePlus />{" "}
-                        </span>
-                        <p className="p-2">
-                          {" "}
-                          {Quantity[index] > 0 ? Quantity[index] : 1}{" "}
-                        </p>
-                        <span
-                          onClick={() => {
-                            const qua = [...Quantity];
-                            qua[index] = (qua[index] ? qua[index] : 1) - 1;
-                            console.log(qua[index]);
-                            setQuantity(qua)
-                          }}
-                        >
-                          <AiOutlineMinus />{" "}
-                        </span>
-                      </div>
-                    </Col>
-                    {/* <Col lg="1" md="1" xs="4">
+                <Row className="each-item">
+                  <Col lg="3" md="3" xs="6">
+                    <img src={ baseURL + value.image } alt="" />
+                  </Col>
+                  <Col lg="5" md="5" xs="5">
+                    <p>{ value.name }</p>
+                    <p>color: { value.color }</p>
+                    <p>size: { value.size }</p>
+                  </Col>
+                  <Col lg="1" md="1" xs="4">
+                    { " " }
+                    <p>{ value.price }</p>
+                  </Col>
+                  <Col lg="1" md="1" xs="4">
+                    <div className="quantity d-flex">
+                      <span
+                        onClick={ () => {
+                          const qua = [...Quantity];
+                          qua[index] = (qua[index] ? qua[index] : 1) + 1;
+                          console.log(qua[index]);
+                          setQuantity(qua)
+                        } }
+                      >
+                        { " " }
+                        <AiOutlinePlus />{ " " }
+                      </span>
+                      <p className="p-2">
+                        { " " }
+                        { Quantity[index] > 0 ? Quantity[index] : 1 }{ " " }
+                      </p>
+                      <span
+                        onClick={ () => {
+                          const qua = [...Quantity];
+                          qua[index] = (qua[index] ? qua[index] : 1) - 1;
+                          console.log(qua[index]);
+                          setQuantity(qua)
+                        } }
+                      >
+                        <AiOutlineMinus />{ " " }
+                      </span>
+                    </div>
+                  </Col>
+                  {/* <Col lg="1" md="1" xs="4">
                     <>
                       <div>
                         <Form.Select className='mt-3' name="cars" id="cars">
@@ -152,20 +125,20 @@ console.log(data);
                       </div>
                     </>
                   </Col> */}
-                    <Col lg="1" md="1" xs="4">
-                      {" "}
-                      <p>{Quantity[index] ? value.price * Quantity[index] : value.price}</p>{" "}
-                    </Col>
-                    <Col lg="1" md="1" xs="12" className="mt-4">
-                      <span
-                        onClick={() => {
-                          getcart(data, index);
-                        }}
-                      >
-                        &times;
-                      </span>
-                    </Col>
-                  </Row>
+                  <Col lg="1" md="1" xs="4">
+                    { " " }
+                    <p>{ Quantity[index] ? value.price * Quantity[index] : value.price }</p>{ " " }
+                  </Col>
+                  <Col lg="1" md="1" xs="12" className="mt-4">
+                    <span
+                      onClick={ () => {
+                        getcart(data, index);
+                      } }
+                    >
+                      &times;
+                    </span>
+                  </Col>
+                </Row>
                 <hr />
               </>
             );
@@ -206,6 +179,7 @@ console.log(data);
           </Row>
         </div>
       </Container>
+      <Footer />
     </>
   );
 };

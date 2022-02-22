@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Button, Row, Col, Container, Carousel, Spinner } from "react-bootstrap";
-import { Link } from "react-router-dom";
 import parse from 'html-react-parser'
 import Modal from "./ServicesModal";
 import Action from "../../middleware/API";
@@ -14,18 +13,18 @@ const Navbar = () => {
     para: ''
   });
 
-  async function fetchservicedata() {
-    const response = await Action.get("/service", {});
-    if (response.data.success == true) {
-      setservice(response.data.data);
-    } else {
-      setservice([]);
+
+  useEffect(() => {
+    async function fetchservicedata() {
+      const response = await Action.get("/service", {});
+      if (response.data.success === true) {
+        setservice(response.data.data);
+      } else {
+        setservice([]);
+      }
     }
-  }
-  useEffect(async () => {
     fetchservicedata();
   }, []);
-
   return (
     <div id="services" className="services">
       <Modal showModal={ showModal } setShowModal={ setShowModal } modalContent={ modalContent } />
@@ -34,11 +33,11 @@ const Navbar = () => {
         { service ?
           <>
             <div className="d-none d-lg-block">
-              <Carousel className="services-slider" controls={ false }>
+              <Carousel className="services-slider" interval={ 4000 } controls={ false }>
 
 
                 { service.map((value, index) => {
-                  if (index % 2 != 0 || !service[index + 1]) {
+                  if (index % 2 === 0 || !service[index + 1]) {
 
                     return (
                       <Carousel.Item>
@@ -84,6 +83,7 @@ const Navbar = () => {
                                         alt=""
                                         height="250"
                                         width="100%"
+                                        onClick={ () => console.log(service[index + 1]) }
                                       />
                                     </Col>
                                     <Col xs="7" className="service-slider-text">

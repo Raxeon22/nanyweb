@@ -6,16 +6,17 @@ import baseURL from "../../middleware/BaseURL";
 const HowItWork = () => {
   const [works, setworks] = useState(false);
 
-  async function fetchworkdata() {
-    const response = await Action.get("/Work", {});
-    if (response.data.success == true) {
-      setworks(response.data.data);
-    } else {
-      setworks([]);
-    }
-  }
 
-  useEffect(async () => {
+
+  useEffect(() => {
+    async function fetchworkdata() {
+      const response = await Action.get("/Work", {});
+      if (response.data.success === true) {
+        setworks(response.data.data);
+      } else {
+        setworks([]);
+      }
+    }
     fetchworkdata();
   }, []);
 

@@ -1,11 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Card, Container } from 'react-bootstrap';
 import '../../css/Modals.css'
-import baseURL from "../../middleware/BaseURL";
 import Action from "../../middleware/API";
 
 
-const VideoModal = ({ showModal, setShowModal, videoUrl }) => {
+const VideoModal = ({ showModal, setShowModal }) => {
 
   const video = useRef()
   const [video2, setVideo] = useState('')
@@ -50,7 +48,7 @@ const VideoModal = ({ showModal, setShowModal, videoUrl }) => {
                 } } >&times;</span>
             </div>
             <div className="video">
-              <iframe width="100%" height="370" src={ `https://www.youtube.com/embed/${ cut[1] }` }>
+              <iframe width="100%" title="" height="370" src={ `https://www.youtube.com/embed/${ cut[1] }` }>
               </iframe>
             </div>
 

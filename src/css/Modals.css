@@ -47,15 +47,15 @@
 
 }
 .modal .modal-popup{
-    width: 50%;
-    height: 470px;
+    width: auto;
+    height: 450px;
     border:none;
     background-color: white;
     border-radius: 5px;
 
 }
 .modal .modal-popup .popup {
-    padding: 40px;
+    padding: 20px;
  
    
 }

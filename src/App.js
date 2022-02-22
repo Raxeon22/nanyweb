@@ -4,7 +4,6 @@ import './css/Home.css';
 import { Spinner } from 'react-bootstrap'
 import Logo from "./assets/logoFinal.png";
 import { HashRouter, Route, Switch, } from "react-router-dom";
-const Footer = React.lazy(() => import('./components/Footer'))
 const Home = React.lazy(() => import('./pages/Home/Home'))
 const Shop = React.lazy(() => import('./pages/Shop/Shop'))
 const NotFound = React.lazy(() => import('./pages/Not-Found'))
@@ -17,19 +16,12 @@ const TermsCondition = React.lazy(() => import('./pages/Terms-Conditions/TermsCo
 const Cart = React.lazy(() => import('./pages/Cart/AddToCart'))
 const Thankyou = React.lazy(() => import('./pages/Thank-you/Thankyou'))
 
-
-
-const loading = () => {
-
-  <Spinner variant='dark' animation="grow" />
-
-}
-const hh = <div className="loader"> < img src={ Logo } /> <Spinner variant='info' animation="border" /> </div>
+const preLoader = <div className="loader"> < img src={ Logo } alt="logo" /> <Spinner variant='info' animation="border" /> </div>
 function App() {
   // const Home = React.lazy(()=> import('./pages/Home/Home'))
   return (
     <>
-      <Suspense fallback={ hh }>
+      <Suspense fallback={ preLoader }>
         <HashRouter basename="/">
           <Switch>
             <Route exact path="/" component={ Home } />
@@ -45,7 +37,6 @@ function App() {
             <Route component={ NotFound } />
 
           </Switch>
-          <Footer />
 
         </HashRouter>
       </Suspense>
