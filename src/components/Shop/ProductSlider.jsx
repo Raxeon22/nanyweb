@@ -78,21 +78,6 @@ const ProductSlider = (props) => {
                       <Col xs="9" style={ { textAlign: "left" } }>
                         <span className="price"> <small>$</small>{ val.price } </span>
 
-<<<<<<< HEAD
-                          <p>{ val.name } </p>
-                        </Col>
-                        <Col xs="2" className="mt-3">
-                          <span className="cart_button"
-                            onClick={ () => {
-                              var col = []
-                              val.color.map((clr) => {
-                                col.push(clr.name)
-                              })
-                              val.color = col;
-                              val.quantity = 1
-                              val.size = val.size[0][Object.keys(val.size[0])[0]]
-                              if (
-=======
                         <p>{ val.name } </p>
                       </Col>
                       <Col xs="2" className="mt-3">
@@ -104,13 +89,13 @@ const ProductSlider = (props) => {
                             ))
                             val.color = col;
                             val.quantity = 1
+                            val.size = val.size[0][Object.keys(val.size[0])[0]]
                             if (
                               localStorage.getItem("order")
                                 ? localStorage.getItem("order").length
                                 : -1 > 0
                             ) {
                               const content = JSON.parse(
->>>>>>> 867567543c882937b08be2cdecca5c089708032e
                                 localStorage.getItem("order")
                               );
                               content.push(val);
@@ -124,7 +109,7 @@ const ProductSlider = (props) => {
                                 JSON.stringify([val])
                               );
                             }
-                            // window.location.reload()
+                            
                           } }
                         >
                           <AiOutlineShoppingCart size={ 25 } color=" white" />
