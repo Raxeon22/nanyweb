@@ -119,6 +119,7 @@ const Shop = (props) => {
                                     val.color.map((clr) => {
                                       col.push(clr.name)
                                     })
+                                    val.size = val.size[0][Object.keys(val.size[0])[0]]
                                     val.color = col;
                                     val.quantity = 1
                                     if (

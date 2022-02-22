@@ -60,15 +60,15 @@ const Cart = () => {
 
                   <Col xs="3" className="cartdropdown">
                     <img
-                      src={ baseURL + item[0].image[0] }
+                      src={ baseURL + item.image[0] }
                       height="60"
                       width="60"
                       alt=""
                     />
                   </Col>
                   <Col xs="9">
-                    <h6> { item[0].name } </h6>
-                    price: { item[0].price }
+                    <h6> { item.name } </h6>
+                    price: { item.price }
                   </Col>
                 </Row>
               );
