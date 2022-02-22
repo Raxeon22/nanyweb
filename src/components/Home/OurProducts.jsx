@@ -3,7 +3,6 @@ import {
   Tabs,
   Tab,
   Container,
-  Button,
   Card,
   Row,
   Col
@@ -19,7 +18,6 @@ import ProductSlider from "../Shop/ProductSlider";
 var settings = {
   dots: false,
   infinite: false,
-  speed: 500,
   slidesToShow: 3,
   slidesToScroll: 1,
   initialSlide: 0,
@@ -58,31 +56,30 @@ var settings = {
 
 const Shop = (props) => {
   const [category, setcategory] = useState([]);
-  const [id, setId] = useState("");
   const [key, setKey] = useState('productSlider');
 
   const [product, setproduct] = useState([]);
-  async function fetchproductdata() {
-    const action = await Action.get("/category", {});
 
-    if (action.data.success == true) {
-      setcategory(action.data.data);
-      setId(action.data.data[0].heading);
-    } else {
-      // setcategory([]);
-    }
-  }
 
   async function getproduct(k) {
     const response = await Action.get("/product?category=" + k, {});
     // console.log(response);
-    if (response.data.success == true) {
+    if (response.data.success === true) {
       setproduct(response.data.data);
     } else {
     }
   }
 
-  useEffect(async () => {
+  useEffect(() => {
+    async function fetchproductdata() {
+      const action = await Action.get("/category", {});
+
+      if (action.data.success === true) {
+        setcategory(action.data.data);
+      } else {
+        // setcategory([]);
+      }
+    }
     fetchproductdata();
   }, []);
   return (
@@ -116,7 +113,7 @@ const Shop = (props) => {
                               <Card className="each-card">
                                 <Card.Img variant="top" />
                                 <Link to={ `/shop/product/${ val._id }` }  >
-                                  <img src={ baseURL + val.image[0] } width="100%" height="280" />
+                                  <img src={ baseURL + val.image[0] } alt="" width="100%" height="280" />
                                 </Link>
                                 <Card.Body>
                                   <Card.Title >

@@ -346,7 +346,7 @@ html {
 
 .how-it-works  .badge {
     position: absolute;
-    top: 45%;
+    top: 31%;
     left: 43%;
     padding: 15px 19px;
     border-radius: 50%;
@@ -838,7 +838,7 @@ footer .footer-button button svg{
     content: ">" !important
 }
 .slick-prev {
-    left: -1% !important;
+    left: -1% ;
    z-index: 200;
 
   }
@@ -871,15 +871,16 @@ footer .footer-button button svg{
 .categories .each-img p{
     font-size: 15px;
 }
-.categories  .img-text{
-    position: absolute;  
+.categories .img-text {
+    position: absolute;
     top: 6%;
     left: 10%;
     right: 10%;
     z-index: 5;
-}
-.categories .carousel-control-next {
-    right: -10%;
+    background-color: rgba(243, 243, 242, 0.609);
+    padding: 8px;
+    border-radius: 5px;
+
 }
 .categories .carousel-control-prev {
     left: -10%;

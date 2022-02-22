@@ -8,6 +8,7 @@ import ProductSlider from "../../components/Shop/ProductSlider";
 import Action from "../../middleware/API";
 import baseURL from "../../middleware/BaseURL";
 import Pagination from '../../components/Shop/Pagination'
+import Footer from '../../components/Footer'
 
 const Shop = (props) => {
 
@@ -68,12 +69,12 @@ const Shop = (props) => {
           <Row>
             <Col md="6" lg="3" xs="12" className="text-right mb-4">
               <div className="filter-by">
-                <h6>Filter Results By</h6>
+                <h6>Filtrer les Résultats par</h6>
                 { category.map((val, index) => {
                   return (
                     <Link
                       to="/shop"
-                      key={ index }
+                      key={ val._id }
                       onClick={ () => {
                         setheading(val.heading);
                         getproduct(val.heading);
@@ -90,7 +91,7 @@ const Shop = (props) => {
               <Row>
                 { currentData ? currentData.map((val, index) => {
                   return (
-                    <Col xs="12" md="6" lg="4" sm="6" key={ index } >
+                    <Col xs="12" md="6" lg="4" sm="6" key={ val._id } >
                       <Card className="each-card">
                         <Card.Img variant="top" />
                         <Link
@@ -99,7 +100,7 @@ const Shop = (props) => {
                           } }
                         >
                           <img
-                            src={ baseURL + val.image[1] }
+                            src={ baseURL + val.image[0] }
                             width="100%"
                             height="280"
                           />
@@ -164,7 +165,8 @@ const Shop = (props) => {
           </Row>
         </Container>
       </div >
-      <ProductSlider heading="new arrivals" />
+      <ProductSlider heading="NOUVELLES ARRIVÉES" />
+      <Footer />
     </>
   );
 };

@@ -8,25 +8,6 @@ const FAQ = () => {
   const [faq, setfaq] = useState([]);
   const [count, setcount] = useState([]);
   const [img, setimg] = useState();
-  async function fetchfaqdata() {
-    const response = await Action.get("/faq", {});
-    if (response.data.success == true) {
-      setfaq(response.data.data);
-      faq.map((item, index) => {
-        if (!img) {
-          if (faq[index].image) {
-            setimg(faq[index].image)
-          }
-        }
-
-        const Count = [...count];
-        Count[index] = false;
-        setcount(Count);
-      });
-    } else {
-      setfaq([]);
-    }
-  }
 
   const getsignforeachfaq = (index) => {
     const item = [...count];
@@ -34,7 +15,27 @@ const FAQ = () => {
     setcount(item);
   };
 
-  useEffect(async () => {
+  useEffect(() => {
+    async function fetchfaqdata() {
+      const response = await Action.get("/faq", {});
+      if (response.data.success === true) {
+        setfaq(response.data.data);
+        faq.map((item, index) => {
+          if (!img) {
+            if (faq[index].image) {
+              setimg(faq[index].image)
+            }
+          }
+
+          const Count = [...count];
+          Count[index] = false;
+          setcount(Count);
+        });
+      } else {
+        setfaq([]);
+      }
+    }
+
     fetchfaqdata();
   }, []);
 
@@ -52,6 +53,7 @@ const FAQ = () => {
               { faq.map((val, index) => {
                 return (
                   <div
+                    key={ index.toString() }
                     className="eachQ "
                     onClick={ (e) => {
                       getsignforeachfaq(index);

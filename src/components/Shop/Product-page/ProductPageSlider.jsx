@@ -2,31 +2,11 @@ import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Headphones from "../../../assets/headphones.jpg";
 import baseURL from "../../../middleware/BaseURL";
 import Action from "../../../middleware/API";
 import { useParams } from "react-router-dom";
 
-
-const Products = [
-  {
-    image: Headphones
-  },
-  {
-    image: Headphones
-  },
-  {
-    image: Headphones
-  },
-  {
-    image: Headphones
-  }
-  ,
-  {
-    image: Headphones
-  }
-]
-const ProductPageSlider = ({ images }) => {
+const ProductPageSlider = () => {
   const { id } = useParams()
   const [productImages, setProductImages] = useState([])
   useEffect(() => {

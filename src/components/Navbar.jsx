@@ -1,11 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import Cart from "./CartDropdown";
 import { RiArrowDownSLine } from "react-icons/ri";
-import HeadPhones from "../assets/headphones.jpg";
-import SelfieStick from "../assets/selfie-stick.jpg";
-import Speakers from "../assets/speakers.jpg";
-import { Button, Row, Col, Nav, Container, Card } from "react-bootstrap";
-import BabyIcon from "../assets/topimg.jpg";
+import { Button, Row, Col, Nav, Container } from "react-bootstrap";
 import Logo from "../assets/logoFinal.png";
 import Scroll from "react-scroll";
 import Scrollspy from "react-scrollspy";
@@ -36,32 +32,20 @@ const Navbar = (props) => {
   const navbar = useRef();
   const products = useRef(null);
   const shop = useRef();
-  const [product, setproduct] = useState([]);
-  async function getproduct() {
-    const response = await Action.get("/product", {});
-    if (response.data.success == true) {
-      setproduct(response.data.data);
-    } else {
-    }
-  }
+
+
   const fetchtopheader = async () => {
     const response = await Action.get("/topheader", {});
-    if (response.data.success == true) {
+    if (response.data.success === true) {
       settopheader(response.data.data[0]);
 
 
     } else {
-      const TopHeader = {
-        image: BabyIcon,
-        text: "Looking for a babysitting job?",
-        button_text: "Book a nany",
-        link: "",
-      };
-      settopheader(TopHeader);
+
+      settopheader([]);
     }
   }
   useEffect(() => {
-    getproduct();
     fetchtopheader();
     const handleEvent = async (e) => {
       if (products.current && !products.current.contains(e.target)) {
@@ -124,7 +108,7 @@ const Navbar = (props) => {
               <Col md="2" xs="3" sm="2" className="p-0 smol" target="_blank">
                 <Link to={ topheader.link }>
                   <Button
-                    class="mt-1"
+                    className="mt-1"
                   >
                     { topheader.button_text }
                   </Button>
@@ -204,7 +188,7 @@ const Navbar = (props) => {
                     </li>
                     { NavLinks.map((value, index) => {
                       return (
-                        <li className="nav-item" key={ index }>
+                        <li className="nav-item" key={ index.toString() }>
                           <ScrollLink
                             className="nav-link cursor-pointer"
                             exact
@@ -263,7 +247,7 @@ const Navbar = (props) => {
           ref={ products }
         >
           <Container>
-            <ProductSlider />
+            <ProductSlider show="3" />
           </Container>
         </div>
       ) : null }

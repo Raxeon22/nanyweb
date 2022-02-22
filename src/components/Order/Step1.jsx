@@ -2,23 +2,23 @@ import React, { useEffect, useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Navbar from "../Navbar";
-import baseURL from "../../middleware/BaseURL";
-import Action from "../../middleware/API";
+import Footer from '../../components/Footer'
+
 import { useHistory } from "react-router-dom";
 
 const Step1 = (props) => {
 
-  
+
   let history = useHistory();
-  if(!props.location.state){
-    
+  if (!props.location.state) {
+
     history.push('/shop')
   }
-  
 
-  const [product, setproduct] = useState( props.location.state?props.location.state.product:[]);
+
+  const [product, setproduct] = useState(props.location.state ? props.location.state.product : []);
   const content = [];
-  
+
   product.map((val) => {
     content.push({
       product: val._id,
@@ -31,7 +31,7 @@ const Step1 = (props) => {
         : val.price,
     });
   });
-  
+
   // if (props.location.state.data) {
   //   props.location.state.data.map((item) => {
   //     content.push({});
@@ -55,18 +55,18 @@ const Step1 = (props) => {
       <Navbar />
       <div className="order-now">
         <div className="forms">
-          <div class="stepper-wrapper">
-            <div class="stepper-item completed ">
-              <div class="step-counter">1</div>
-              <div class="step-name">step 1 </div>
+          <div className="stepper-wrapper">
+            <div className="stepper-item completed ">
+              <div className="step-counter">1</div>
+              <div className="step-name">step 1 </div>
             </div>
-            <div class="stepper-item ">
-              <div class="step-counter">2</div>
-              <div class="step-name">step 2</div>
+            <div className="stepper-item ">
+              <div className="step-counter">2</div>
+              <div className="step-name">step 2</div>
             </div>
-            <div class="stepper-item ">
-              <div class="step-counter">3</div>
-              <div class="step-name">step 3</div>
+            <div className="stepper-item ">
+              <div className="step-counter">3</div>
+              <div className="step-name">step 3</div>
             </div>
           </div>
           <Form>
@@ -75,10 +75,10 @@ const Step1 = (props) => {
               <Form.Control
                 type="text"
                 placeholder="name"
-                value={order.name}
-                onChange={(e) => {
+                value={ order.name }
+                onChange={ (e) => {
                   setorder({ ...order, name: e.target.value });
-                }}
+                } }
               />
             </Form.Group>
 
@@ -87,10 +87,10 @@ const Step1 = (props) => {
               <Form.Control
                 type="email"
                 placeholder="email"
-                value={order.email}
-                onChange={(e) => {
+                value={ order.email }
+                onChange={ (e) => {
                   setorder({ ...order, email: e.target.value });
-                }}
+                } }
               />
             </Form.Group>
             <Form.Group>
@@ -98,29 +98,30 @@ const Step1 = (props) => {
               <Form.Control
                 type="Number"
                 placeholder="Mobile"
-                value={order.mobile}
-                onChange={(e) => {
+                value={ order.mobile }
+                onChange={ (e) => {
                   setorder({ ...order, mobile: e.target.value });
-                }}
+                } }
               />
             </Form.Group>
           </Form>
 
-          {/* <Link to="/order/step2" state={order}> */}
+          {/* <Link to="/order/step2" state={order}> */ }
           <Link
-            to={{
+            to={ {
               pathname: "/order/step2",
               state: {
                 order: order,
                 product: product,
               },
-            }}
-            
+            } }
+
           >
             <Button className="float-end">next</Button>
           </Link>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
