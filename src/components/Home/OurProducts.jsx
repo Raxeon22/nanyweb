@@ -135,6 +135,7 @@ const Shop = (props) => {
                                             })
                                             val.color = col;
                                             val.quantity = 1
+                                            val.size = val.size[0][Object.keys(val.size[0])[0]]
                                             if (
                                               localStorage.getItem("order")
                                                 ? localStorage.getItem("order").length
