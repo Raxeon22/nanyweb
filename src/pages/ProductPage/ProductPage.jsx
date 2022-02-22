@@ -35,7 +35,7 @@ const ProductPage = (props) => {
         setProductQuatity(data.data[0].quantity)
         setColor([data.data[0].color[0].name])
         setsize(Object.values(data.data[0].size[0])[0]);
-        console.log(Object.values(data.data[0].size[0])[0]);
+      
       } catch (error) {
         console.log(error);
       }
