@@ -2,7 +2,7 @@
   "name": "nanny",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://raxeon22.github.io/nanny_app2/",
+  "homepage": "http://raxeon22.github.io/nanyweb/",
   "dependencies": {
     "@google-cloud/translate": "^6.3.1",
     "animate.css": "^4.1.1",
