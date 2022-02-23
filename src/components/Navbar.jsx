@@ -246,9 +246,7 @@ const Navbar = (props) => {
           className="product-cards animate__animated animate__fadeInUp animate__fast	"
           ref={ products }
         >
-          <Container>
-            <ProductSlider show="3" />
-          </Container>
+          <ProductSlider />
         </div>
       ) : null }
     </>
