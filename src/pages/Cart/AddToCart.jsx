@@ -39,7 +39,7 @@ const AddToCart = () => {
       <Container>
         <div className="shopping-cart">
           <h1>shopping cart</h1>
-          <div className="d-none d-md-block">
+          <div className="d-none d-lg-block">
             <Row className="items-heading ">
               <Col lg="3" md="3">
                 <p>Image</p>
@@ -75,16 +75,16 @@ const AddToCart = () => {
                   <Col lg="3" md="3" xs="6">
                     <img src={ baseURL + value.image } alt="" />
                   </Col>
-                  <Col lg="5" md="5" xs="5">
-                    <p>{ value.name }</p>
-                    <p>color: { value.color }</p>
-                    <p>size: { value.size }</p>
+                  <Col lg="5" md="6" xs="5">
+                    <small>{ value.name }</small><br />
+                    <small>color: { value.color }</small><br />
+                    <small>size: { value.size }</small><br />
                   </Col>
-                  <Col lg="1" md="1" xs="4">
+                  <Col lg="1" md="3" xs="4">
                     { " " }
                     <p>{ value.price }</p>
                   </Col>
-                  <Col lg="1" md="1" xs="4">
+                  <Col lg="1" md="3" xs="4">
                     <div className="quantity d-flex">
                       <span
                         onClick={ () => {
@@ -125,11 +125,11 @@ const AddToCart = () => {
                       </div>
                     </>
                   </Col> */}
-                  <Col lg="1" md="1" xs="4">
+                  <Col lg="1" md="3" xs="4">
                     { " " }
                     <p>{ Quantity[index] ? value.price * Quantity[index] : value.price }</p>{ " " }
                   </Col>
-                  <Col lg="1" md="1" xs="12" className="mt-4">
+                  <Col lg="1" md="3" xs="12" className="mt-4">
                     <span
                       onClick={ () => {
                         getcart(data, index);
@@ -177,8 +177,8 @@ const AddToCart = () => {
               </Link>
             </Col>
           </Row>
-        </div>
-      </Container>
+        </div >
+      </Container >
       <Footer />
     </>
   );

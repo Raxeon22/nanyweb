@@ -84,12 +84,10 @@ const ProductSlider = (props) => {
                         <span className="cart_button"
                           onClick={ () => {
                             var col = []
-                            val.color.map((clr) => (
-                              col.push(clr.name)
-                            ))
+                            col.push(val.color[0].name)
                             val.color = col;
                             val.quantity = 1
-                            val.size = val.size[0][Object.keys(val.size[0])[0]]
+                            val.size = val.size[0].length[0]
                             if (
                               localStorage.getItem("order")
                                 ? localStorage.getItem("order").length
@@ -109,7 +107,7 @@ const ProductSlider = (props) => {
                                 JSON.stringify([val])
                               );
                             }
-                            
+
                           } }
                         >
                           <AiOutlineShoppingCart size={ 25 } color=" white" />

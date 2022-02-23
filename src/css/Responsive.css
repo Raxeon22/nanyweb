@@ -262,6 +262,9 @@
     .how-it-works  .badge{
         left: 46% !important;
     }
+    .product-details {
+        padding: 0px; 
+    }
 }   
 @media only screen and (min-width: 360px) and (max-width: 576px){
     .navbar-light .navbar-brand {
@@ -270,6 +273,11 @@
     footer img {
         width: 130px !important;
 
+    }
+    
+
+    .product-details {
+        padding: 0px !important; 
     }
     .slick-next {
         right: 2% !important;
@@ -578,5 +586,8 @@
 }
 .new-arrivals .each-slid {
     padding: 0px !important;
+}
+.product-details {
+    padding: 0px !important; 
 }
 } 

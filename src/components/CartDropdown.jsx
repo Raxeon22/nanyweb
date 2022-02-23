@@ -54,7 +54,7 @@ const Cart = () => {
             </h5>
           </Card.Header>
           <Card.Body className="dropdown">
-            { (data.length > 0 ? data : []).map((item) => {
+            { data.length > 0 ? data.map((item) => {
               return (
                 <Row className="each-item">
 
@@ -72,7 +72,7 @@ const Cart = () => {
                   </Col>
                 </Row>
               );
-            }) }
+            }) : [] }
 
 
             <Link

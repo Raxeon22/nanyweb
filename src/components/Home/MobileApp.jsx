@@ -183,7 +183,7 @@ const MobileApp = () => {
                   <Link to={ url.android_url }>
                     <Button className="w-100">
                       <Row className="g-0">
-                        <Col xs="3" sm="2" className="icon-button pt-0  mt-md-2">
+                        <Col xs="12" sm="2" className="icon-button mt-md-2 pt-0">
                           <FaGooglePlay size={ 28 } />
                         </Col>
                         <Col xs="12" sm="8">
