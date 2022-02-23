@@ -117,13 +117,10 @@ const Shop = (props) => {
                                 <span className="cart_button"
                                   onClick={ () => {
                                     var col = []
-                                    val.color.map((clr) => {
-                                      col.push(clr.name)
-                                    })
-                                    val.size = val.size[0][Object.keys(val.size[0])[0]]
+                                    col.push(val.color[0].name)
                                     val.color = col;
                                     val.quantity = 1
-                                    val.size = val.size[0][Object.keys(val.size[0])[0]]
+                                    val.size = val.size[0].length[0]
                                     if (
                                       localStorage.getItem("order")
                                         ? localStorage.getItem("order").length

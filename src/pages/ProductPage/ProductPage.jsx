@@ -33,9 +33,7 @@ const ProductPage = (props) => {
         const { data } = await Action.get(`/product?_id=${ id }`);
         setProduct(data.data);
         setProductQuatity(data.data[0].quantity)
-        setColor([data.data[0].color[0].name])
-        setsize(Object.values(data.data[0].size[0])[0]);
-      
+
       } catch (error) {
         console.log(error);
       }
@@ -49,11 +47,27 @@ const ProductPage = (props) => {
   } else if (quantity > productQuantity) {
     alert("Quantity Exceed");
   }
+  // const [checked, setChecked] = React.useState([]);
+  // const [checkedsize, setcheckedsize] = React.useState([])
+  // checkedsize[0] = true
 
-  const [checked, setChecked] = React.useState([]);
-  checked[0] = true
-  const [checkedsize, setcheckedsize] = React.useState([])
-  checkedsize[0] = true
+  //get all sizes
+  const checkSize = (e, val) => {
+    if (e.target.checked) {
+      setsize([...size, val]);
+    } else {
+      setsize(size.filter(value => value !== val));
+    }
+  }
+  //get all colors
+  const checkColor = (e, val) => {
+    if (e.target.checked) {
+      setColor([...color, val]);
+    } else {
+      setColor(color.filter(value => value !== val));
+    }
+  }
+  console.log(color.length)
   return (
     <>
       <Navbar header={ false } shop={ false } />
@@ -88,26 +102,14 @@ const ProductPage = (props) => {
                           <div className="form-check">
                             <input
                               style={ { backgroundColor: clr.code } }
-                              onChange={ (e) => {
-                                checked[index] = true
-                                if (color.indexOf(e.target.value) !== -1) {
-
-                                  let i = color.indexOf(e.target.value);
-                                  if (i >= 0) {
-                                    color.splice(i, 1);
-                                  }
-                                } else {
-
-
-                                  color.push(e.target.value)
-                                }
-
-                              } }
+                              custom
+                              id={ `checkbox${ clr }` }
+                              checked={ clr._color }
+                              onChange={ e => checkColor(e, clr.name) }
                               className="form-check-input"
                               type="checkbox"
                               value={ clr.name }
                               id="flexCheckDefault"
-                              defaultChecked={ checked[index] }
                             />
                           </div>
                         );
@@ -125,41 +127,34 @@ const ProductPage = (props) => {
                             Object.values(val)[index].map((v, i) => {
 
 
-                              return (<div className="form-check">
-                                <input
-                                  className="form-check-input"
-                                  type="checkbox"
-                                  value={ v }
-                                  id="flexCheckDefault"
-                                  onChange={ async (e) => {
-                                    checkedsize[i] = !checkedsize[i];
+                              return (
+                                <div className="form-check">
+                                  <input
+                                    className="form-check-input"
+                                    type="checkbox"
 
-                                    if (size.indexOf(e.target.value) !== -1) {
-                                      let i = size.indexOf(e.target.value);
+                                    custom
+                                    id={ `checkbox${ val }` }
+                                    checked={ v._size }
+                                    onChange={ e => checkSize(e, v) }
+                                  // onClick={ (e) => {
+                                  //   console.log(size)
+                                  //   if (e.target.checked) {
+                                  //     let i = size.indexOf(e.target.value);
+                                  //     size.splice(i, 1)
+                                  //     setsize([e.target.value])
 
+                                  //   } else {
+                                  //     // let s = [...size]
+                                  //     setsize([])
+                                  //     // setsize(s)
 
+                                  //   }
 
-                                      if (i >= 0) {
-
-
-                                        await size.splice(i, 1)
-                                      }
-
-                                    } else {
-
-
-                                      // let s = [...size]
-                                      size.push(e.target.value)
-                                      // setsize(s)
-
-
-                                    }
-
-                                  } }
-                                  defaultChecked={ checkedsize[index] }
-                                />
-                                <label>{ v } </label>
-                              </div>)
+                                  // } }
+                                  />
+                                  <label>{ v } </label>
+                                </div>)
                             }) }
                         </div>
                       );
@@ -178,28 +173,34 @@ const ProductPage = (props) => {
 
                   <hr />
                   <div className="d-flex">
-                    <Link
+                    { !(color.length === 0 || size.length === 0) ?
+                      <Link
 
-                      to={ {
-                        pathname: "/order/step1",
-                        state: {
-                          product: [product[0]],
-                        },
-                      } }
-                    >
-                      <Button onClick={ () => {
+                        to={ {
+                          pathname: "/order/step1",
+                          state: {
+                            product: [product[0]],
+                          },
+                        } }
+                      >
+                        <Button
 
-                        product[0].quantity = quantity;
-                        product[0].color = color;
-                        product[0].size = size;
+                          onClick={ () => {
 
-                      } }>
-                        { " " }
-                        <FaShoppingCart className="m-1" /> Order Now
-                      </Button>
-                    </Link>
+                            product[0].quantity = quantity;
+                            product[0].color = color;
+                            product[0].size = size;
+
+
+                          } }>
+                          { " " }
+                          <FaShoppingCart className="m-1" /> Order Now
+                        </Button>
+                      </Link> : <Button disabled><FaShoppingCart className="m-1" /> Order Now </Button>
+                    }
 
                     <Button
+                      disabled={ !(color.length === 0 || size.length === 0) ? false : true }
                       className="mx-3"
                       onClick={ () => {
                         // props.generate(localStorage.getItem("order"));
@@ -221,7 +222,7 @@ const ProductPage = (props) => {
 
                           localStorage.setItem(
                             "order",
-                            JSON.stringify([product])
+                            JSON.stringify(product)
                           );
                         }
                       } }
