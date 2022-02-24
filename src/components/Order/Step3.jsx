@@ -9,7 +9,7 @@ import Footer from '../../components/Footer'
 
 
 const Step3 = (props) => {
-  const [spin, setSpin] = useState("Submit");
+  const [spin, setSpin] = useState(false);
 
   let history = useHistory();
 
@@ -30,8 +30,9 @@ const Step3 = (props) => {
     const response = await Action.post("/order", payload);
 
     if (response.data.success == true) {
-
       history.push("/thankyou");
+    } else {
+      console.log(response)
     }
   };
   return (
@@ -77,20 +78,20 @@ const Step3 = (props) => {
           <Link to="/order/step2">
             <Button>previous</Button>
           </Link>
-          <Button className="float-end " onClick={ () => {
-            setSpin(
-              <Spinner
-                as="span"
-                animation="border"
-                size="sm"
-                role="status"
-                className="mx-4"
-              />)
-            setTimeout(() => {
-              postorder();
-            }, 2000)
+          <Button className="float-end d-flex " onClick={ () => {
 
-          } }> { spin }</Button>
+            postorder();
+            setSpin(true)
+
+          } }>submit
+            { spin ? <Spinner
+              as="span"
+              animation="border"
+              size="sm"
+              role="status"
+              className="mx-2 mt-1"
+            /> : null }
+          </Button>
 
         </div>
       </div>

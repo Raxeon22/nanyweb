@@ -123,15 +123,15 @@ const Step1 = (props) => {
                 role="status"
                 className="mx-4"
               />)
-            setTimeout(() => {
-              history.push({
-                pathname: "/order/step2",
-                state: {
-                  order: order,
-                  product: product,
-                }
-              })
-            }, 2000)
+
+            history.push({
+              pathname: "/order/step2",
+              state: {
+                order: order,
+                product: product,
+              }
+            })
+
 
           } }> { spin }</Button>
           {/* </Link> */ }

@@ -150,15 +150,7 @@ const AddToCart = () => {
               </h4>
               <Link
                 onClick={ () => {
-                  data.map((item, index) => {
-                    console.log(data[index])
-                    data[index].quantity =
-                      Quantity[index] > 0 ? Quantity[index] : 1;
-
-                    // data[index].color = color[index] ? color[index] : data[index].color[0]
-                    console.log(Quantity[index])
-
-                  });
+                  console.log(data)
                 } }
                 to={ { pathname: "/order/step1", state: { product: data, total: netamount } } }
               >

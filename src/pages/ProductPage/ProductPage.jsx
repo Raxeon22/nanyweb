@@ -67,7 +67,6 @@ const ProductPage = (props) => {
       setColor(color.filter(value => value !== val));
     }
   }
-  console.log(color.length)
   return (
     <>
       <Navbar header={ false } shop={ false } />
@@ -96,7 +95,7 @@ const ProductPage = (props) => {
                     <span className="product_key mt-1"> colors: </span>
 
                     {
-                      item.color.map((clr, index) => {
+                      item.color.map((clr) => {
 
                         return (
                           <div className="form-check">
@@ -162,7 +161,10 @@ const ProductPage = (props) => {
                   <hr />
                   <div className="quantity d-flex">
                     <span className="product_key mt-2">Quantity:</span>
-                    <i onClick={ () => setQuantity(quantity + 1) }>
+                    <i onClick={ () => {
+                      setQuantity(quantity + 1)
+                      console.log(quantity)
+                    } }>
                       <AiOutlinePlus />
                     </i>
                     <p className="p-2"> { quantity } </p>

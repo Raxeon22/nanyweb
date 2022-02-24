@@ -50,7 +50,7 @@ const Navbar = (props) => {
     const handleEvent = async (e) => {
       if (products.current && !products.current.contains(e.target)) {
         setShowProducts(false);
-        shop.current.classList.remove("shop");
+        //shop.current.classList.remove("shop");
       }
     };
     document.addEventListener("mousedown", handleEvent);
@@ -219,12 +219,7 @@ const Navbar = (props) => {
                       >
                         { " " }
                         Boutique{ " " }
-                        { props.shop ? (
-                          <span>
-                            { " " }
-                            <RiArrowDownSLine size={ 20 } />{ " " }
-                          </span>
-                        ) : null }{ " " }
+
                       </NavLink>
                     </li>
 
@@ -241,14 +236,14 @@ const Navbar = (props) => {
             </Container>
           </Nav></div>
       </div>
-      { showProducts ? (
+      {/* { showProducts ? (
         <div
           className="product-cards animate__animated animate__fadeInUp animate__fast	"
           ref={ products }
         >
           <ProductSlider />
         </div>
-      ) : null }
+      ) : null } */}
     </>
 
 

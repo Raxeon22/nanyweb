@@ -18,7 +18,7 @@ const Cart = () => {
     return () => clearInterval(interval);
     // const data = JSON.parse(localStorage.getItem("order")) ? JSON.parse(localStorage.getItem("order")) : [];
   })
-  const height = data ? "400px" : "auto";
+  const height = '320px'
   // console.log(JSON.parse(localStorage.getItem("order")));
   // console.log(JSON.parse(localStorage.getItem("order")));
   // useEffect(() => {
@@ -34,7 +34,7 @@ const Cart = () => {
   //     };
   //   });
   return (
-    <div className="cart cart-mobile">
+    <div className="cart">
       <span onClick={ () => setisOpen((prev) => !prev) }>
         { " " }
         <AiOutlineShoppingCart size={ 30 } />
@@ -54,50 +54,34 @@ const Cart = () => {
             </h5>
           </Card.Header>
           <Card.Body className="dropdown">
-            { data.length > 0 ? data.map((item) => {
-              return (
-                <Row className="each-item">
+            { data.length > 0 ?
+              <>
+                { data.map((item) => {
+                  return (
+                    <Row className="each-item">
 
-                  <Col xs="3" className="cartdropdown">
-                    <img
-                      src={ baseURL + item.image[0] }
-                      height="60"
-                      width="60"
-                      alt=""
-                    />
-                  </Col>
-                  <Col xs="9">
-                    <h6> { item.name } </h6>
-                    price: { item.price }
-                  </Col>
-                </Row>
-              );
-            }) : [] }
+                      <Col xs="3" className="cartdropdown">
+                        <img
+                          src={ baseURL + item.image[0] }
+                          height="60"
+                          width="60"
+                          alt=""
+                        />
+                      </Col>
+                      <Col xs="9">
+                        <h6> { item.name } </h6>
+                        price: { item.price }
+                      </Col>
+                    </Row>
+                  );
+                }) }
 
-
-            {/* <Link
-              onClick={ () => {
-                data.map((item, index) => {
-
-                  data[index].quantity = data[index].quantity > 1 ? data[index].quantity : 1;
-
-                  data[index].color = data[index].color[0] ? data[index].color[0] : " "
-
-
-                });
-                // console.log(data)
-              } }
-              to={ { pathname: "/order/step1", state: { product: data } } }
-            >
-              <Button className="mt-3" variant="light">
-                CHECK OUT
-              </Button>
-            </Link> */}
-            <Link to="/cart">
-              <Button className="mt-1" variant="light">
-                VIEW ALL CART
-              </Button>
-            </Link>
+                <Link to="/cart">
+                  <Button className="mt-1" variant="light">
+                    VIEW ALL CART
+                  </Button>
+                </Link>
+              </> : <i>No cart added yet</i> }
           </Card.Body>
         </Card>
       ) : null }

@@ -102,15 +102,15 @@ const Step2 = (props) => {
                 role="status"
                 className="mx-4"
               />)
-            setTimeout(() => {
-              history.push({
-                pathname: "/order/step3",
-                state: {
-                  order: Object.assign(props.location.state ? props.location.state.order : "", order),
-                  product: props.location.state ? props.location.state.product : "",
-                },
-              })
-            }, 2000)
+
+            history.push({
+              pathname: "/order/step3",
+              state: {
+                order: Object.assign(props.location.state ? props.location.state.order : "", order),
+                product: props.location.state ? props.location.state.product : "",
+              },
+            })
+
 
           } }> { spin }
           </Button>
