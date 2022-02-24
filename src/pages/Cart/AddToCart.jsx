@@ -86,22 +86,24 @@ const AddToCart = () => {
                   </Col>
                   <Col lg="1" md="3" xs="4">
                     <div className="quantity d-flex">
-                      <span
+                      {/* <span
                         onClick={ () => {
                           const qua = [...Quantity];
                           qua[index] = (qua[index] ? qua[index] : 1) + 1;
-                          console.log(qua[index]);
+                          console.log(qua[index] + 1);
                           setQuantity(qua)
+                          // setQuantity([...Quantity, Quantity[index] + 1])
+                          // console.log(Quantity)
                         } }
                       >
                         { " " }
                         <AiOutlinePlus />{ " " }
-                      </span>
+                      </span> */}
                       <p className="p-2">
                         { " " }
                         { Quantity[index] > 0 ? Quantity[index] : 1 }{ " " }
                       </p>
-                      <span
+                      {/* <span
                         onClick={ () => {
                           const qua = [...Quantity];
                           qua[index] = (qua[index] ? qua[index] : 1) - 1;
@@ -110,21 +112,10 @@ const AddToCart = () => {
                         } }
                       >
                         <AiOutlineMinus />{ " " }
-                      </span>
+                      </span> */}
                     </div>
                   </Col>
-                  {/* <Col lg="1" md="1" xs="4">
-                    <>
-                      <div>
-                        <Form.Select className='mt-3' name="cars" id="cars">
-                          { value.color.map((item) => {
-                            
-                            return <option onSelect={ color[index] = item }> { item }</option>
-                          }) }
-                        </Form.Select>
-                      </div>
-                    </>
-                  </Col> */}
+
                   <Col lg="1" md="3" xs="4">
                     { " " }
                     <p>{ Quantity[index] ? value.price * Quantity[index] : value.price }</p>{ " " }
@@ -160,14 +151,14 @@ const AddToCart = () => {
               <Link
                 onClick={ () => {
                   data.map((item, index) => {
-
+                    console.log(data[index])
                     data[index].quantity =
                       Quantity[index] > 0 ? Quantity[index] : 1;
 
-                    data[index].color = color[index] ? color[index] : data[index].color[0]
+                    // data[index].color = color[index] ? color[index] : data[index].color[0]
+                    console.log(Quantity[index])
 
                   });
-
                 } }
                 to={ { pathname: "/order/step1", state: { product: data, total: netamount } } }
               >

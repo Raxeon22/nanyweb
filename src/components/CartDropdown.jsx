@@ -34,7 +34,7 @@ const Cart = () => {
   //     };
   //   });
   return (
-    <div className="cart">
+    <div className="cart cart-mobile">
       <span onClick={ () => setisOpen((prev) => !prev) }>
         { " " }
         <AiOutlineShoppingCart size={ 30 } />
@@ -75,7 +75,7 @@ const Cart = () => {
             }) : [] }
 
 
-            <Link
+            {/* <Link
               onClick={ () => {
                 data.map((item, index) => {
 
@@ -92,7 +92,7 @@ const Cart = () => {
               <Button className="mt-3" variant="light">
                 CHECK OUT
               </Button>
-            </Link>
+            </Link> */}
             <Link to="/cart">
               <Button className="mt-1" variant="light">
                 VIEW ALL CART

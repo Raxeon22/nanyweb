@@ -13,11 +13,12 @@ const Thankyou = () => {
             <Navbar header={ true } shop={ true } />
             <div className="thank-you">
                 <img src={ Gif } alt="" height="300" width="300" />
-                <h1>THANK YOU, ENJOY!</h1>
+                <p>nous avons envoyé une facture à votre email</p>
+                <h1>MERCI, PROFITEZ !</h1>
                 <Link to="/">
-                    <Button variant="light"> { '<   ' }Back Home </Button>
+                    <Button variant="light"> { '<   ' }retour à la maison</Button>
                 </Link>
-                <span>if you have any issues <a href="/"> contact us</a> </span>
+                <span>si vous avez des problèmes  <a href="/">contactez-nous</a> </span>
             </div>
             <Footer />
         </>

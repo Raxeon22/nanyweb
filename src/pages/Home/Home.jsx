@@ -31,30 +31,7 @@ const Home = () => {
 
   return (
     <div id="navBanner">
-      <div className="modal">
-        <div
-          className="modal-popup animate__animated animate__slideInDown"
-        >
-          <div>
-            <span
-              aria-hidden={ true }
-              className="float-end px-2 "
-              onClick={ () => {
-                setShowModal((prev) => !prev);
-              } }
-            >
-              &times;
-            </span>
-          </div>
-          <div className="popup text-center">
-            <img src={ Bannerimg } alt="" width="300" height="360" />
-            {/* <br />
-              <div className="float-end mt-3">
-                <Button>get a clue</Button>
-              </div> */}
-          </div>
-        </div>
-      </div>
+      <Popup showModal={ showModal } setShowModal={ setShowModal } />
       <Navbar header={ true } shop={ true } Homelink="home" />
       <Banner />
       <AboutUs />

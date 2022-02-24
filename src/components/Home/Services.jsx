@@ -6,7 +6,7 @@ import Action from "../../middleware/API";
 import baseURL from "../../middleware/BaseURL";
 
 const Navbar = () => {
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
   const [service, setservice] = useState(false);
   const [modalContent, setModalContent] = useState({
     heading: '',

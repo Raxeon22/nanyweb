@@ -156,6 +156,10 @@
       .language select{
           margin: auto !important;
       }
+    .cart .cart-dropdown{
+        right: 0!important;
+        top: 20% !important;
+    }
 }
 @media only screen and (min-width: 575px) and (max-width: 765px){
     .navbar-light .navbar-brand {
@@ -264,6 +268,10 @@
     }
     .product-details {
         padding: 0px; 
+    }
+    .cart .cart-dropdown{
+        right: 0!important;
+        top: 20% !important;
     }
 }   
 @media only screen and (min-width: 360px) and (max-width: 576px){
@@ -413,6 +421,10 @@
 }
 .new-arrivals .each-slid {
     padding: 0px !important;
+}
+.cart .cart-dropdown{
+    right: 0!important;
+    top: 20% !important;
 }
 }
 @media screen and (max-width: 359px){
@@ -589,5 +601,9 @@
 }
 .product-details {
     padding: 0px !important; 
+}
+.cart .cart-dropdown{
+    right: 0!important;
+    top: 20% !important;
 }
 } 

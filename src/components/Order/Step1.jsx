@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Form, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Form, Button, Spinner } from "react-bootstrap";
 import Navbar from "../Navbar";
 import Footer from '../../components/Footer'
 
@@ -15,7 +14,7 @@ const Step1 = (props) => {
     history.push('/shop')
   }
 
-
+  const [spin, setSpin] = useState("next");
   const [product, setproduct] = useState(props.location.state ? props.location.state.product : []);
   const content = [];
 
@@ -107,18 +106,35 @@ const Step1 = (props) => {
           </Form>
 
           {/* <Link to="/order/step2" state={order}> */ }
-          <Link
+          {/* <Link
             to={ {
               pathname: "/order/step2",
               state: {
                 order: order,
                 product: product,
               },
-            } }
+            } }> */}
+          <Button className="float-end mt-3" onClick={ () => {
+            setSpin(
+              <Spinner
+                as="span"
+                animation="border"
+                size="sm"
+                role="status"
+                className="mx-4"
+              />)
+            setTimeout(() => {
+              history.push({
+                pathname: "/order/step2",
+                state: {
+                  order: order,
+                  product: product,
+                }
+              })
+            }, 2000)
 
-          >
-            <Button className="float-end">next</Button>
-          </Link>
+          } }> { spin }</Button>
+          {/* </Link> */ }
         </div>
       </div>
       <Footer />

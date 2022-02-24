@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Navbar from "../Navbar";
 import { useHistory } from "react-router-dom";
@@ -11,6 +11,8 @@ const Step2 = (props) => {
 
   let history = useHistory();
   const [product, setproduct] = useState([]);
+  const [spin, setSpin] = useState("next");
+
 
   const [order, setorder] = useState({
     address: "",
@@ -90,24 +92,28 @@ const Step2 = (props) => {
           <Link to="/order/step1">
             <Button>previous</Button>
           </Link>
-          <Link
-            to={ {
-              pathname: "/order/step3",
 
-              state: {
-                order: Object.assign(props.location.state ? props.location.state.order : "", order),
-                product: props.location.state ? props.location.state.product : "",
-              },
-            } }
-          // onClick={() => {
-          //   localStorage.setItem(
-          //     "data",
-          //     Object.assign(JSON.parse(localStorage.getItem("data")), order)
-          //   );
-          // }}
-          >
-            <Button className="float-end">next</Button>
-          </Link>
+          <Button className="float-end " onClick={ () => {
+            setSpin(
+              <Spinner
+                as="span"
+                animation="border"
+                size="sm"
+                role="status"
+                className="mx-4"
+              />)
+            setTimeout(() => {
+              history.push({
+                pathname: "/order/step3",
+                state: {
+                  order: Object.assign(props.location.state ? props.location.state.order : "", order),
+                  product: props.location.state ? props.location.state.product : "",
+                },
+              })
+            }, 2000)
+
+          } }> { spin }
+          </Button>
         </div>
       </div>
       <Footer />

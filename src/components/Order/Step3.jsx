@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Navbar from "../Navbar";
 import Action from "../../middleware/API";
@@ -9,6 +9,7 @@ import Footer from '../../components/Footer'
 
 
 const Step3 = (props) => {
+  const [spin, setSpin] = useState("Submit");
 
   let history = useHistory();
 
@@ -76,15 +77,21 @@ const Step3 = (props) => {
           <Link to="/order/step2">
             <Button>previous</Button>
           </Link>
-
-          <Button
-            className="float-end"
-            onClick={ () => {
+          <Button className="float-end " onClick={ () => {
+            setSpin(
+              <Spinner
+                as="span"
+                animation="border"
+                size="sm"
+                role="status"
+                className="mx-4"
+              />)
+            setTimeout(() => {
               postorder();
-            } }
-          >
-            Submit
-          </Button>
+            }, 2000)
+
+          } }> { spin }</Button>
+
         </div>
       </div>
       <Footer />

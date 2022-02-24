@@ -1,6 +1,6 @@
 .modal {
     justify-content: center;
-    display: flex;
+    display: flex !important;
     position: fixed;
     background-color: rgba(31, 26, 26, 0.795);
     align-items: center;
