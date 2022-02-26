@@ -38,7 +38,7 @@ const Cart = () => {
       <span onClick={ () => setisOpen((prev) => !prev) }>
         { " " }
         <AiOutlineShoppingCart size={ 30 } />
-        <span className="items d-none d-lg-block">{ data.length }</span>{ " " }
+        <span className="items">{ data.length }</span>{ " " }
       </span>
 
       { isOpen ? (

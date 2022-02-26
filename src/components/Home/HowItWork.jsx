@@ -30,7 +30,7 @@ const HowItWork = () => {
             <Row className="text-center">
               { works.map((item, index) => {
                 return (
-                  <Col className="each-step" xs="12" lg="3" md="6">
+                  <Col key={ item._id } className="each-step" xs="12" lg="3" md="6">
                     <img
                       src={ baseURL + item.icon }
                       alt=""

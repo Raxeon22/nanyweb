@@ -5,7 +5,6 @@ import Modal from "./VideoModal";
 import Action from "../../middleware/API";
 import parse from 'html-react-parser'
 import baseURL from "../../middleware/BaseURL";
-
 const Navbar = () => {
   const [showModal, setShowModal] = useState(false);
   const [about, setabout] = useState(false);

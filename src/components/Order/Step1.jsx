@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Form, Button, Spinner } from "react-bootstrap";
 import Navbar from "../Navbar";
 import Footer from '../../components/Footer'
@@ -15,11 +15,11 @@ const Step1 = (props) => {
   }
 
   const [spin, setSpin] = useState("next");
-  const [product, setproduct] = useState(props.location.state ? props.location.state.product : []);
+  const product = props.location.state ? props.location.state.product : []
   const content = [];
 
   product.map((val) => {
-    content.push({
+    return content.push({
       product: val._id,
       quantity: val.quantity,
       color: props.location.state.color
@@ -40,14 +40,10 @@ const Step1 = (props) => {
   const [order, setorder] = useState({
     name: "",
     email: "",
-    mobile: 0,
+    mobile: "xxxxxxxxxxxx",
 
   });
 
-  useEffect(async () => {
-    // await setorder({ ...order, product: product.data._id });
-    // await setorder({ ...order, quantity: product.quantity });
-  }, [1]);
 
   return (
     <>

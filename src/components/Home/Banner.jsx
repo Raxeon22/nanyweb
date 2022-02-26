@@ -10,7 +10,7 @@ const Banner = () => {
 
   useEffect(() => {
     const fetchbannerdata = async () => {
-      const response = await Action.get("/banner/web", {});
+      const response = await Action.get("/banner/web?lang=French", {});
       if (response.data.success === true) {
         setbanner(response.data.data);
       } else {

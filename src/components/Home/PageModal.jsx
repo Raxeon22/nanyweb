@@ -1,22 +1,12 @@
-import React, { useEffect, useRef } from "react";
-import Banner from '../../assets/marketBanner.jpg'
+import React, { useEffect, useRef, useState } from "react";
 import "../../css/Modals.css";
+import Action from '../../middleware/API'
+import BaseUrl from '../../middleware/BaseURL'
 
 const PageModal = ({ showModal, setShowModal }) => {
   const popup = useRef(null);
-  // const [popimg, setpopimg] = useState();
-  // const getpopimg = async () => {
-  //   try {
-  //     const action = await Action.get("/splashscreen", {});
+  const [popimg, setpopimg] = useState();
 
-  //     if (action.data.success == true) {
-
-  //       setpopimg(action.data.data[0].image);
-  //     } else {
-  //       // setcategory([]);
-  //     }
-  //   } catch (e) {}
-  // };
 
   useEffect(() => {
     const handleEvent = (e) => {
@@ -24,13 +14,22 @@ const PageModal = ({ showModal, setShowModal }) => {
         setShowModal(false);
       }
     };
+    const getpopimg = async () => {
+      try {
+        const { data } = await Action.get("/banner/splash?lang=French", {});
+        setpopimg(data.data[0].image)
+      } catch (e) {
+        console.log(e)
+      }
+    }
 
-    // getpopimg();
+    getpopimg();
     document.addEventListener("mousedown", handleEvent);
 
     return () => {
       document.removeEventListener("mousedown", handleEvent);
     };
+
   });
 
   return (
@@ -53,7 +52,7 @@ const PageModal = ({ showModal, setShowModal }) => {
               </span>
             </div>
             <div className="popup text-center">
-              <img src={ Banner } alt="" width="300" height="360" />
+              <img src={ BaseUrl + popimg } alt="" width="300" height="360" />
               {/* <br />
               <div className="float-end mt-3">
                 <Button>get a clue</Button>

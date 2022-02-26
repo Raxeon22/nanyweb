@@ -512,6 +512,7 @@ background-color: rgb(176 204 224 / 42%);
   color: white;
   font-size: 12px;
   font-weight: 600;
+  margin-left: -10px;
 }
 .cart .card-header span {
   font-size: 25px;

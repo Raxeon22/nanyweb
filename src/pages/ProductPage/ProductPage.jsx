@@ -39,7 +39,7 @@ const ProductPage = (props) => {
       }
     };
     getProduct();
-  }, []);
+  });
 
   if (quantity < 1) {
     alert("quantity cannot be in minus");
@@ -58,6 +58,8 @@ const ProductPage = (props) => {
     } else {
       setsize(size.filter(value => value !== val));
     }
+    //[red,orange,blue, red, gray]
+    //[blue]
   }
   //get all colors
   const checkColor = (e, val) => {
@@ -98,7 +100,7 @@ const ProductPage = (props) => {
                       item.color.map((clr) => {
 
                         return (
-                          <div className="form-check">
+                          <div className="form-check" key={ clr.code }>
                             <input
                               style={ { backgroundColor: clr.code } }
                               custom
@@ -108,7 +110,6 @@ const ProductPage = (props) => {
                               className="form-check-input"
                               type="checkbox"
                               value={ clr.name }
-                              id="flexCheckDefault"
                             />
                           </div>
                         );

@@ -1,14 +1,12 @@
 import React, { useState, useRef, useEffect } from "react";
 import Cart from "./CartDropdown";
-import { RiArrowDownSLine } from "react-icons/ri";
-import { Button, Row, Col, Nav, Container } from "react-bootstrap";
+import { Button, Row, Col, Container, Nav, Navbar } from "react-bootstrap";
 import Logo from "../assets/logoFinal.png";
 import Scroll from "react-scroll";
 import Scrollspy from "react-scrollspy";
 import { NavLink, Link } from "react-router-dom";
 import Action from "../middleware/API";
 import baseURL from "../middleware/BaseURL";
-import ProductSlider from './Shop/ProductSlider'
 let ScrollLink = Scroll.Link;
 const NavLinks = [
   { item: "À propos de nous", link: "about-us" },
@@ -19,8 +17,7 @@ const NavLinks = [
 ];
 
 
-const Navbar = (props) => {
-  const [showNav, setShowNav] = useState(false);
+const Navigation = (props) => {
   const [showProducts, setShowProducts] = useState(false);
   const [topheader, settopheader] = useState({
     image: "",
@@ -28,11 +25,8 @@ const Navbar = (props) => {
     buttontext: "",
     link: "",
   });
-  const menuMobile = useRef();
-  const navbar = useRef();
   const products = useRef(null);
   const shop = useRef();
-
 
   const fetchtopheader = async () => {
     const response = await Action.get("/topheader", {});
@@ -108,7 +102,7 @@ const Navbar = (props) => {
               <Col md="2" xs="3" sm="2" className="p-0 smol" target="_blank">
                 <Link to={ topheader.link }>
                   <Button
-                    className="mt-1"
+                    className="my-1"
                   >
                     { topheader.button_text }
                   </Button>
@@ -119,43 +113,18 @@ const Navbar = (props) => {
         </div>
 
         <div className="top-f-nav">
-          <Nav
-            ref={ navbar }
-            className="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top"
-          >
+          <Navbar bg="light" expand="lg" >
             <Container>
-              <a className="navbar-brand" href="#">
-                <img src={ Logo } width="100%" height="auto" alt="" />
-              </a>
+              <Navbar.Brand href="#">
+                <img src={ Logo } width="100%" height="80" alt="" />
+              </Navbar.Brand>
+              <div className="d-lg-none d-block mobile-cart">
+                <Cart />
+              </div>
+              <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
-              <button
-                className="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-                onClick={ () => {
-                  const Collapse = menuMobile.current;
-                  if (showNav) {
-                    Collapse.classList.remove("show");
-                    setShowNav(false);
-                  } else {
-                    Collapse.classList.add("show");
-                    setShowNav(true);
-                  }
-                } }
-              >
-                <span className="navbar-toggler-icon"></span>
-              </button>
-
-              <div
-                ref={ menuMobile }
-                className="collapse navbar-collapse justify-content-end "
-                id="navbarSupportedContent"
-              >
-                <div className="navbar-nav ">
+              <Navbar.Collapse id="basic-navbar-nav" style={ { justifyContent: "end" } }>
+                <Nav className="">
                   <Scrollspy
                     className="scrollspy"
                     items={ [
@@ -188,7 +157,7 @@ const Navbar = (props) => {
                     </li>
                     { NavLinks.map((value, index) => {
                       return (
-                        <li className="nav-item" key={ index.toString() }>
+                        <li className="nav-item" key={ value.toString() }>
                           <ScrollLink
                             className="nav-link cursor-pointer"
                             exact
@@ -224,17 +193,17 @@ const Navbar = (props) => {
                     </li>
 
                     {/* shopping cart  */ }
-                    <li className="nav-item pt-1 number ">
+                    <li className="nav-item d-lg-block d-none">
                       <Cart />
                     </li>
                     {/* <li className="nav-item  ">
                     <Button className="btn mb-4 my-sm-0">Book a Nanny</Button>
                   </li> */}
                   </Scrollspy>
-                </div>
-              </div>
+                </Nav >
+              </Navbar.Collapse>
             </Container>
-          </Nav></div>
+          </Navbar></div>
       </div>
       {/* { showProducts ? (
         <div
@@ -249,4 +218,4 @@ const Navbar = (props) => {
 
   );
 };
-export default Navbar;
+export default Navigation;

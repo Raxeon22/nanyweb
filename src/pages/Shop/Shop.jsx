@@ -21,7 +21,7 @@ const Shop = (props) => {
   async function fetchcategorydata() {
     const response = await Action.get("/category", {});
 
-    if (response.data.success == true) {
+    if (response.data.success === true) {
       setcategory(response.data.data);
     } else {
       setcategory([]);
@@ -29,27 +29,28 @@ const Shop = (props) => {
   }
   async function getproduct(k) {
     const response = await Action.get("/product?category=" + k, {});
-    if (response.data.success == true) {
+    if (response.data.success === true) {
       await setproduct(response.data.data);
     } else {
     }
   }
   async function fetchproductdata() {
     const response = await Action.get("/product", {});
-    if (response.data.success == true) {
+    if (response.data.success === true) {
       await setproduct(response.data.data);
     } else {
 
     }
   }
-  useEffect(async () => {
+  useEffect(() => {
     fetchcategorydata();
     fetchproductdata();
     if (props.location.state) {
       getproduct(props.location.state.item._id);
       setheading(props.location.state.item.heading);
     }
-  }, [1]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   const [currentPage, setCurrentPage] = useState(1);
   const [dataPerPage, setDataPerPage] = useState(3)
   //setting pages into the pagination
@@ -103,6 +104,7 @@ const Shop = (props) => {
                             src={ baseURL + val.image[0] }
                             width="100%"
                             height="280"
+                            alt="products"
                           />
                         </Link>
                         <Card.Body>
@@ -158,6 +160,7 @@ const Shop = (props) => {
                 totalPages={ totalPages }
                 currentData={ currentData }
                 Paginate={ Paginate }
+                setDataPerPage={ setDataPerPage }
               />
             </Col>
           </Row>

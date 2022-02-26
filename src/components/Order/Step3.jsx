@@ -29,7 +29,7 @@ const Step3 = (props) => {
 
     const response = await Action.post("/order", payload);
 
-    if (response.data.success == true) {
+    if (response.data.success === true) {
       history.push("/thankyou");
     } else {
       console.log(response)

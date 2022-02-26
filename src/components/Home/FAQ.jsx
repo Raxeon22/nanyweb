@@ -20,7 +20,7 @@ const FAQ = () => {
       const response = await Action.get("/faq", {});
       if (response.data.success === true) {
         setfaq(response.data.data);
-        faq.map((item, index) => {
+        faq.forEach((item, index) => {
           if (!img) {
             if (faq[index].image) {
               setimg(faq[index].image)
@@ -37,6 +37,7 @@ const FAQ = () => {
     }
 
     fetchfaqdata();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

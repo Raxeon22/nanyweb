@@ -8,7 +8,6 @@ import MobileApp from "../../components/Home/MobileApp";
 import FAQ from "../../components/Home/FAQ";
 import ContactUs from "../../components/Home/ContactUs";
 import Popup from "../../components/Home/PageModal";
-import Bannerimg from '../../assets/marketBanner.jpg'
 import Categories from "../../components/Home/Categories";
 import OurProducts from "../../components/Home/OurProducts";
 import Footer from "../../components/Footer"
@@ -26,7 +25,7 @@ const Home = () => {
   useEffect(() => {
     setTimeout(() => {
       setShowModal(true);
-    }, 6000);
+    }, 7000);
   }, [data]);
 
   return (

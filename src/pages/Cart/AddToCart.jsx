@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Row, Col, Container, Button, Form } from "react-bootstrap";
+import { Row, Col, Container, Button } from "react-bootstrap";
 import Navbar from "../../components/Navbar";
 import { Link } from "react-router-dom";
 import baseURL from "../../middleware/BaseURL";
@@ -9,19 +9,18 @@ import Footer from "../../components/Footer"
 
 
 const AddToCart = () => {
-  const [total, settotal] = useState([]);
   const [data, setdata] = useState([]);
-  const [Quantity, setQuantity] = useState([]);
-  const [payload, setpayload] = useState(data);
-  let color = [];
+  let [Quantity, setQuantity] = useState([]);
   let netamount = 0
 
-  useEffect(async () => {
+  useEffect(() => {
+    const getData = async () => {
+      setdata(await JSON.parse(localStorage.getItem("order")));
 
-    setdata(await JSON.parse(localStorage.getItem("order")));
+    }
+    getData()
 
   }, []);
-  console.log(data);
 
   const getcart = async (value, index) => {
     value.splice(index, 1);
@@ -68,6 +67,7 @@ const AddToCart = () => {
 
             netamount += (value.price * value.quantity)
             Quantity[index] = value.quantity
+            console.log(Quantity)
 
             return (
               <>
@@ -86,33 +86,36 @@ const AddToCart = () => {
                   </Col>
                   <Col lg="1" md="3" xs="4">
                     <div className="quantity d-flex">
-                      {/* <span
+                      <span
                         onClick={ () => {
-                          const qua = [...Quantity];
-                          qua[index] = (qua[index] ? qua[index] : 1) + 1;
-                          console.log(qua[index] + 1);
-                          setQuantity(qua)
-                          // setQuantity([...Quantity, Quantity[index] + 1])
-                          // console.log(Quantity)
+                          // const qua = [...Quantity];
+                          // qua[index] = (qua[index] ? qua[index] : 1) + 1;
+                          // console.log(qua[index] + 1);
+                          // setQuantity(qua)
+                          Quantity[index] = Quantity[index] + 1
+                          console.log(Quantity)
                         } }
                       >
                         { " " }
                         <AiOutlinePlus />{ " " }
-                      </span> */}
+                      </span>
                       <p className="p-2">
                         { " " }
-                        { Quantity[index] > 0 ? Quantity[index] : 1 }{ " " }
+                        { Quantity[index] }{ " " }
                       </p>
-                      {/* <span
+                      <span
                         onClick={ () => {
-                          const qua = [...Quantity];
-                          qua[index] = (qua[index] ? qua[index] : 1) - 1;
-                          console.log(qua[index]);
-                          setQuantity(qua)
+                          // const qua = [...Quantity];
+                          // qua[index] = (qua[index] ? qua[index] : 1) - 1;
+                          // console.log(qua[index]);
+                          // setQuantity(qua)
+                          //value.quantity + 1
+                          setQuantity(Quantity[index] = Quantity[index] - 1)
+                          console.log(Quantity)
                         } }
                       >
                         <AiOutlineMinus />{ " " }
-                      </span> */}
+                      </span>
                     </div>
                   </Col>
 

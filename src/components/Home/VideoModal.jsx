@@ -48,7 +48,7 @@ const VideoModal = ({ showModal, setShowModal }) => {
                 } } >&times;</span>
             </div>
             <div className="video">
-              <iframe width="100%" title="" height="370" src={ `https://www.youtube.com/embed/${ cut[1] }` }>
+              <iframe width="100%" title="about-video" height="370" src={ `https://www.youtube.com/embed/${ cut[1] }` }>
               </iframe>
             </div>
 

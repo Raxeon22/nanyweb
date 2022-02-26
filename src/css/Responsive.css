@@ -81,6 +81,10 @@
     
     
     }
+    .cart {
+         margin-right: 0px !important;
+    }
+  
     .header-top p {
         font-size: 12px;
     }
@@ -93,9 +97,7 @@
     .scrollspy button{
         margin-top: 10px !important;
     }
-    .number{
-     margin-top: 5px;
-    }
+
     .certified-job {
         margin-top: 12rem !important;
     }
@@ -156,10 +158,10 @@
       .language select{
           margin: auto !important;
       }
-    .cart .cart-dropdown{
+    /* .cart .cart-dropdown{
         right: 0!important;
         top: 20% !important;
-    }
+    } */
 }
 @media only screen and (min-width: 575px) and (max-width: 765px){
     .navbar-light .navbar-brand {
@@ -168,6 +170,12 @@
     .header-top{
         position: relative !important;
     }
+    .cart {
+        margin-right: 0px !important;
+   }
+   .mobile-cart{
+       margin-right: 10px !important;
+   }
     .header-top p {
         font-size: 12px;
     }
@@ -269,10 +277,10 @@
     .product-details {
         padding: 0px; 
     }
-    .cart .cart-dropdown{
+    /* .cart .cart-dropdown{
         right: 0!important;
         top: 20% !important;
-    }
+    } */
 }   
 @media only screen and (min-width: 360px) and (max-width: 576px){
     .navbar-light .navbar-brand {
@@ -282,17 +290,22 @@
         width: 130px !important;
 
     }
-    
+    .cart {
+        margin-right: 0px !important;
+   }
+   .mobile-cart{
+       margin-right: 10px !important;
+   }
 
     .product-details {
         padding: 0px !important; 
     }
     .slick-next {
-        right: 2% !important;
+        right: 5% !important;
     
       }
       .slick-prev {
-        left: -8% !important; 
+        left: -4% !important; 
     }
     .header-top{
         position: relative !important;
@@ -422,21 +435,21 @@
 .new-arrivals .each-slid {
     padding: 0px !important;
 }
-.cart .cart-dropdown{
+/* .cart .cart-dropdown{
     right: 0!important;
     top: 20% !important;
-}
+} */
 }
 @media screen and (max-width: 359px){
    .navbar-light .navbar-brand {
         width: 120px !important;
     } 
     .slick-next {
-        right: 2% !important;
+        right: 5% !important;
     
       }
       .slick-prev {
-        left: -8% !important; 
+        left: -4% !important; 
     }
     .header-top p {
         font-size: 12px;
@@ -602,8 +615,14 @@
 .product-details {
     padding: 0px !important; 
 }
-.cart .cart-dropdown{
+.cart {
+    margin-right: 0px !important;
+}
+.mobile-cart{
+   margin-right: 10px !important;
+}
+/* .cart .cart-dropdown{
     right: 0!important;
     top: 20% !important;
-}
+} */
 } 

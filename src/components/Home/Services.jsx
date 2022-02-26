@@ -37,6 +37,7 @@ const Navbar = () => {
 
 
                 { service.map((value, index) => {
+
                   if (index % 2 === 0 || !service[index + 1]) {
 
                     return (
@@ -110,6 +111,8 @@ const Navbar = () => {
                         </Row>
                       </Carousel.Item>
                     );
+                  } else {
+                    return null
                   }
                 }) }
 

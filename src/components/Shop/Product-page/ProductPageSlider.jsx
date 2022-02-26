@@ -25,9 +25,9 @@ const ProductPageSlider = () => {
   const settings = {
     customPaging: function (i) {
       return (
-        <a>
-          <img src={ baseURL + productImages[i] } />
-        </a>
+        <button>
+          <img alt="products" src={ baseURL + productImages[i] } />
+        </button>
       );
     },
     dots: true,

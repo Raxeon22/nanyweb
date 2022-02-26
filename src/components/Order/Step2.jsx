@@ -10,7 +10,6 @@ const Step2 = (props) => {
 
 
   let history = useHistory();
-  const [product, setproduct] = useState([]);
   const [spin, setSpin] = useState("next");
 
 
