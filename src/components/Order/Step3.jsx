@@ -43,20 +43,20 @@ const Step3 = (props) => {
           <div className="stepper-wrapper">
             <div className="stepper-item completed ">
               <div className="step-counter">1</div>
-              <div className="step-name">step 1 </div>
+              <div className="step-name">étape 1 </div>
             </div>
             <div className="stepper-item completed ">
               <div className="step-counter">2</div>
-              <div className="step-name">step 2</div>
+              <div className="step-name">étape 2</div>
             </div>
             <div className="stepper-item completed active ">
               <div className="step-counter">3</div>
-              <div className="step-name">step 3</div>
+              <div className="step-name">étape 3</div>
             </div>
           </div>
           <Form>
             <Form.Group className="mb-3">
-              <Form.Label>Order Note(Optional)</Form.Label>
+              <Form.Label>Note de commande (facultatif)</Form.Label>
               <Form.Control
                 as="textarea"
                 rows={ 3 }

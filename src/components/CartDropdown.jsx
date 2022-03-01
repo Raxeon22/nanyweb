@@ -49,7 +49,7 @@ const Cart = () => {
         >
           <Card.Header>
             <h5>
-              My Cart{ " " }
+              Mon Chariot{ " " }
               <span onClick={ () => setisOpen((prev) => !prev) }> &times;</span>
             </h5>
           </Card.Header>
@@ -70,7 +70,7 @@ const Cart = () => {
                       </Col>
                       <Col xs="9">
                         <h6> { item.name } </h6>
-                        price: { item.price }
+                        le prix: { item.price }
                       </Col>
                     </Row>
                   );
@@ -78,10 +78,10 @@ const Cart = () => {
 
                 <Link to="/cart">
                   <Button className="mt-1" variant="light">
-                    VIEW ALL CART
+                    VOIR TOUT LE CHARIOT
                   </Button>
                 </Link>
-              </> : <i>No cart added yet</i> }
+              </> : <i>Pas encore de panier ajouté</i> }
           </Card.Body>
         </Card>
       ) : null }

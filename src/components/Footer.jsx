@@ -18,7 +18,7 @@ const ContactUs = () => {
                             <p className='mt-2'>CARE INC SARL est une jeune entreprise camerounaise créée en JUIN 2020, qui a décidé d'accompagner la population africaine dans la lutte contre la propagation du COVID 19</p>
                         </Col>
                         <Col xs="12" md="6" lg="3" className="each-row-f">
-                            <h6>Support</h6>
+                            <h6>Pages</h6>
                             <ul>
                                 <li>
                                     <NavLink to="/policy">Politique de confidentialité</NavLink>
@@ -30,16 +30,16 @@ const ContactUs = () => {
                             </ul>
                         </Col>
                         <Col xs="12" md="6" lg="3" className="each-row-f">
-                            <h6>À propos de nous</h6>
+                            <h6>Liens rapides</h6>
                             <ul>
                                 <li>
-                                    <NavLink to="/">À propos de nous</NavLink>
+                                    <NavLink to="/shop">Boutique</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/">Comment ça fonctionne</NavLink>
+                                    <NavLink to="/cart">Chariot</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/">Prestations de service</NavLink>
+                                    <NavLink to="/"> Accueil</NavLink>
                                 </li>
                             </ul>
                         </Col>
@@ -64,7 +64,7 @@ const ContactUs = () => {
                                 <Col xs="6" className="my-1 footer-button"  >
                                     <Button className=" d-flex w-100 " variant="light">
                                         <FaGooglePlay size={ 22 } />
-                                        <span>Jouer au magasin</span>
+                                        <span>Play Store</span>
                                     </Button>
                                 </Col>
                             </Row>

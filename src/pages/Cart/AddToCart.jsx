@@ -6,8 +6,6 @@ import baseURL from "../../middleware/BaseURL";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import Footer from "../../components/Footer"
 
-
-
 const AddToCart = () => {
   const [data, setdata] = useState([]);
   let [Quantity, setQuantity] = useState([]);
@@ -37,23 +35,23 @@ const AddToCart = () => {
 
       <Container>
         <div className="shopping-cart">
-          <h1>shopping cart</h1>
+          <h1>Caddie</h1>
           <div className="d-none d-lg-block">
             <Row className="items-heading ">
               <Col lg="3" md="3">
                 <p>Image</p>
               </Col>
               <Col lg="5" md="5">
-                <p>Product Name</p>
+                <p>Nom du produit</p>
               </Col>
               <Col lg="1" md="1">
-                <p>Unit Price</p>
+                <p>Prix ​​unitaire</p>
               </Col>
               <Col lg="1" md="1">
-                <p>Qty</p>
+                <p>qualité</p>
               </Col>
               <Col lg="1" md="1">
-                <p>Subtotal</p>
+                <p>total</p>
               </Col>
               <Col lg="1" md="1">
                 <p>Action</p>
@@ -75,18 +73,30 @@ const AddToCart = () => {
                   <Col lg="3" md="3" xs="6">
                     <img src={ baseURL + value.image } alt="" />
                   </Col>
-                  <Col lg="5" md="6" xs="5">
-                    <small>{ value.name }</small><br />
-                    <small>color: { value.color }</small><br />
-                    <small>size: { value.size }</small><br />
+                  <Col lg="1" md="3" xs="6" className="mt-2" className="d-block d-lg-none">
+                    <span
+                      onClick={ () => {
+                        getcart(data, index);
+                      } }
+                    >
+                      &times;
+                    </span>
                   </Col>
-                  <Col lg="1" md="3" xs="4">
+                  <Col lg="5" md="6" xs="12">
+                    <small>{ value.name }</small><br />
+                    <small>couleur: { value.color }</small><br />
+                    <small>size: { value.size }</small><br />
+                    <small className="d-block d-lg-none">le prix: { value.price }</small>
+                    <small className="d-block d-lg-none">qualité: { Quantity[index] }</small>
+                    <small className="d-block d-lg-none">total: { Quantity[index] ? value.price * Quantity[index] : value.price }</small><br />
+                  </Col>
+                  <Col lg="1" md="3" className="d-none d-lg-block">
                     { " " }
                     <p>{ value.price }</p>
                   </Col>
-                  <Col lg="1" md="3" xs="4">
+                  <Col lg="1" md="3" className="d-none d-lg-block">
                     <div className="quantity d-flex">
-                      <span
+                      {/* <span
                         onClick={ () => {
                           // const qua = [...Quantity];
                           // qua[index] = (qua[index] ? qua[index] : 1) + 1;
@@ -98,12 +108,12 @@ const AddToCart = () => {
                       >
                         { " " }
                         <AiOutlinePlus />{ " " }
-                      </span>
-                      <p className="p-2">
+                      </span> */}
+                      <p className="">
                         { " " }
                         { Quantity[index] }{ " " }
                       </p>
-                      <span
+                      {/* <span
                         onClick={ () => {
                           // const qua = [...Quantity];
                           // qua[index] = (qua[index] ? qua[index] : 1) - 1;
@@ -115,15 +125,15 @@ const AddToCart = () => {
                         } }
                       >
                         <AiOutlineMinus />{ " " }
-                      </span>
+                      </span> */}
                     </div>
                   </Col>
 
-                  <Col lg="1" md="3" xs="4">
+                  <Col lg="1" md="3" xs="4" className="d-none d-lg-block">
                     { " " }
                     <p>{ Quantity[index] ? value.price * Quantity[index] : value.price }</p>{ " " }
                   </Col>
-                  <Col lg="1" md="3" xs="12" className="mt-4">
+                  <Col lg="1" md="3" xs="1" className="mt-4" className="d-none d-lg-block">
                     <span
                       onClick={ () => {
                         getcart(data, index);
@@ -140,7 +150,7 @@ const AddToCart = () => {
 
             <center>
 
-              <h2>No item in cart</h2>
+              <h2>Aucun article dans le panier</h2>
             </center>
           )) }
           <Row className="justify-content-end text-center subtotal">
@@ -158,7 +168,7 @@ const AddToCart = () => {
                 to={ { pathname: "/order/step1", state: { product: data, total: netamount } } }
               >
                 <Button variant="dark" className="w-100">
-                  CHECK OUT
+                  Vérifier
                 </Button>
               </Link>
             </Col>

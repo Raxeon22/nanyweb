@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, Button, Spinner } from "react-bootstrap";
+import { Form, Button } from "react-bootstrap";
 import Navbar from "../Navbar";
 import Footer from '../../components/Footer'
 
@@ -14,7 +14,7 @@ const Step1 = (props) => {
     history.push('/shop')
   }
 
-  const [spin, setSpin] = useState("next");
+  const [error, setError] = useState(false);
   const product = props.location.state ? props.location.state.product : []
   const content = [];
 
@@ -38,9 +38,9 @@ const Step1 = (props) => {
   // }
 
   const [order, setorder] = useState({
-    name: "",
-    email: "",
-    mobile: "xxxxxxxxxxxx",
+    name: null,
+    email: null,
+    mobile: null,
 
   });
 
@@ -53,23 +53,23 @@ const Step1 = (props) => {
           <div className="stepper-wrapper">
             <div className="stepper-item completed ">
               <div className="step-counter">1</div>
-              <div className="step-name">step 1 </div>
+              <div className="step-name">étape 1 </div>
             </div>
             <div className="stepper-item ">
               <div className="step-counter">2</div>
-              <div className="step-name">step 2</div>
+              <div className="step-name">étape 2</div>
             </div>
             <div className="stepper-item ">
               <div className="step-counter">3</div>
-              <div className="step-name">step 3</div>
+              <div className="step-name">étape 3</div>
             </div>
           </div>
           <Form>
             <Form.Group className="mb-3">
-              <Form.Label> Name</Form.Label>
+              <Form.Label> Nom</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="name"
+                placeholder="entrez votre nom"
                 value={ order.name }
                 onChange={ (e) => {
                   setorder({ ...order, name: e.target.value });
@@ -78,10 +78,10 @@ const Step1 = (props) => {
             </Form.Group>
 
             <Form.Group className="mb-3">
-              <Form.Label>Email</Form.Label>
+              <Form.Label>E-mail</Form.Label>
               <Form.Control
                 type="email"
-                placeholder="email"
+                placeholder="entrez votre e-mail"
                 value={ order.email }
                 onChange={ (e) => {
                   setorder({ ...order, email: e.target.value });
@@ -89,10 +89,10 @@ const Step1 = (props) => {
               />
             </Form.Group>
             <Form.Group>
-              <Form.Label>Phone No</Form.Label>
+              <Form.Label>uméro de téléphone</Form.Label>
               <Form.Control
                 type="Number"
-                placeholder="Mobile"
+                placeholder="XXXXXXXXXXXX"
                 value={ order.mobile }
                 onChange={ (e) => {
                   setorder({ ...order, mobile: e.target.value });
@@ -100,6 +100,7 @@ const Step1 = (props) => {
               />
             </Form.Group>
           </Form>
+          { error ? <small className="text-center text-danger"> Tous les champs sont requis</small> : null }
 
           {/* <Link to="/order/step2" state={order}> */ }
           {/* <Link
@@ -111,25 +112,22 @@ const Step1 = (props) => {
               },
             } }> */}
           <Button className="float-end mt-3" onClick={ () => {
-            setSpin(
-              <Spinner
-                as="span"
-                animation="border"
-                size="sm"
-                role="status"
-                className="mx-4"
-              />)
 
-            history.push({
-              pathname: "/order/step2",
-              state: {
-                order: order,
-                product: product,
-              }
-            })
+            if (order.name && order.email && order.mobile) {
+              history.push({
+                pathname: "/order/step2",
+                state: {
+                  order: order,
+                  product: product,
+                }
+              })
+            } else {
+              setError(true)
+            }
 
 
-          } }> { spin }</Button>
+
+          } }> suivante</Button>
           {/* </Link> */ }
         </div>
       </div>

@@ -128,7 +128,6 @@ const Navigation = (props) => {
                   <Scrollspy
                     className="scrollspy"
                     items={ [
-                      "MAISON",
                       "SUR",
                       "Prestations de service",
                       "Application mobile",
@@ -152,7 +151,7 @@ const Navigation = (props) => {
                     Home
                   </ScrollLink> */}
                       <NavLink to="/" className="nav-link ">
-                        MAISON
+                        Accueil
                       </NavLink>
                     </li>
                     { NavLinks.map((value, index) => {

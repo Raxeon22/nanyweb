@@ -1,137 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="utf-8" />
-  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-  <link href="../src/css/Responsive.css" rel="stylesheet" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#000000" />
-  <meta name="description" content="Web site created using create-react-app" />
-  <!-- Messenger Chat Plugin Code -->
-  <div id="fb-root"></div>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link href="../src/css/Responsive.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description"
+      content="CARE INC SARL est une jeune entreprise camerounaise créée en JUIN 2020, qui a décidé d'accompagner la population africaine dans la lutte contre la propagation du COVID 19 ; ceci grâce à une offre variée de produits indispensables fabriqués au Cameroun pour la plupart." />
+    <!-- Messenger Chat Plugin Code -->
+    <div id="fb-root"></div>
 
-  <!-- Your Chat Plugin code -->
-  <div id="fb-customer-chat" class="fb-customerchat">
-  </div>
+    <!-- Your Chat Plugin code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
 
-  <script>
-    var chatbox = document.getElementById('fb-customer-chat');
-    chatbox.setAttribute("page_id", "479488865464011");
-    chatbox.setAttribute("attribution", "biz_inbox");
-  </script>
+    <script>
+      var chatbox = document.getElementById('fb-customer-chat');
+      chatbox.setAttribute("page_id", "479488865464011");
+      chatbox.setAttribute("attribution", "biz_inbox");
+    </script>
 
-  <!-- Your SDK code -->
-  <script>
-    window.fbAsyncInit = function () {
-      FB.init({
-        xfbml: true,
-        version: 'v13.0'
-      });
-    };
+    <!-- Your SDK code -->
+    <script>
+      window.fbAsyncInit = function () {
+        FB.init({
+          xfbml: true,
+          version: 'v13.0'
+        });
+      };
 
-    (function (d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = 'https://connect.facebook.net/fr_FR/sdk/xfbml.customerchat.js';
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-  </script>
-  <!-- GTranslate: https://gtranslate.io/ -->
-  <div class="language">
-    <a href="#" onclick="doGTranslate('fr|en');  return false;" title="English" class="gflag nturl"
-      style="background-position:-0px -0px;"><img src="//gtranslate.net/flags/blank.png" height="auto" width="30"
-        alt="English" /></a>
-    <a href="#" onclick="doGTranslate('en|fr'); return false;" title="French" class="gflag nturl"
-      style="background-position:-200px -100px;">
-      <img src="//gtranslate.net/flags/blank.png" height="auto" width="30" alt="French" />
-    </a>
-    <br />
-    <select class="form-select form-select-sm " aria-label="Default select example"
-      onchange="doGTranslate(this); sessionStorage.setItem('Language', this.value) ">
-      <option value="">select a language</option>
-      <option value="en|fr">French</option>
-      <option value="fr|en">English</option>
-    </select>
-  </div>
-  <div id="google_translate_element2"></div>
-  <script type="text/javascript">
-    function googleTranslateElementInit2() { new google.translate.TranslateElement({ pageLanguage: 'fr', autoDisplay: false }, 'google_translate_element2'); }
-  </script>
-  <script type="text/javascript"
-    src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit2"></script>
+      (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/fr_FR/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <!-- GTranslate: https://gtranslate.io/ -->
+    <div class="language">
+      <a href="#" onclick="doGTranslate('fr|en');  return false;" title="English" class="gflag nturl"
+        style="background-position:-0px -0px;"><img src="//gtranslate.net/flags/blank.png" height="auto" width="30"
+          alt="English" /></a>
+      <a href="#" onclick="doGTranslate('en|fr'); return false;" title="French" class="gflag nturl"
+        style="background-position:-200px -100px;">
+        <img src="//gtranslate.net/flags/blank.png" height="auto" width="30" alt="French" />
+      </a>
+      <br />
+      <select class="form-select form-select-sm " aria-label="Default select example"
+        onchange="doGTranslate(this); sessionStorage.setItem('Language', this.value) ">
+        <option value="">select a language</option>
+        <option value="en|fr">French</option>
+        <option value="fr|en">English</option>
+      </select>
+    </div>
+    <div id="google_translate_element2"></div>
+    <script type="text/javascript">
+      function googleTranslateElementInit2() { new google.translate.TranslateElement({ pageLanguage: 'fr', autoDisplay: false }, 'google_translate_element2'); }
+    </script>
+    <script type="text/javascript"
+      src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit2"></script>
 
 
-  <script type="text/javascript">
-    /* <![CDATA[ */
-    eval(function (p, a, c, k, e, r) { e = function (c) { return (c < a ? '' : e(parseInt(c / a))) + ((c = c % a) > 35 ? String.fromCharCode(c + 29) : c.toString(36)) }; if (!''.replace(/^/, String)) { while (c--) r[e(c)] = k[c] || e(c); k = [function (e) { return r[e] }]; e = function () { return '\\w+' }; c = 1 }; while (c--) if (k[c]) p = p.replace(new RegExp('\\b' + e(c) + '\\b', 'g'), k[c]); return p }('6 7(a,b){n{4(2.9){3 c=2.9("o");c.p(b,f,f);a.q(c)}g{3 c=2.r();a.s(\'t\'+b,c)}}u(e){}}6 h(a){4(a.8)a=a.8;4(a==\'\')v;3 b=a.w(\'|\')[1];3 c;3 d=2.x(\'y\');z(3 i=0;i<d.5;i++)4(d[i].A==\'B-C-D\')c=d[i];4(2.j(\'k\')==E||2.j(\'k\').l.5==0||c.5==0||c.l.5==0){F(6(){h(a)},G)}g{c.8=b;7(c,\'m\');7(c,\'m\')}}', 43, 43, '||document|var|if|length|function|GTranslateFireEvent|value|createEvent||||||true|else|doGTranslate||getElementById|google_translate_element2|innerHTML|change|try|HTMLEvents|initEvent|dispatchEvent|createEventObject|fireEvent|on|catch|return|split|getElementsByTagName|select|for|className|goog|te|combo|null|setTimeout|500'.split('|'), 0, {}))
+    <script type="text/javascript">
+      /* <![CDATA[ */
+      eval(function (p, a, c, k, e, r) { e = function (c) { return (c < a ? '' : e(parseInt(c / a))) + ((c = c % a) > 35 ? String.fromCharCode(c + 29) : c.toString(36)) }; if (!''.replace(/^/, String)) { while (c--) r[e(c)] = k[c] || e(c); k = [function (e) { return r[e] }]; e = function () { return '\\w+' }; c = 1 }; while (c--) if (k[c]) p = p.replace(new RegExp('\\b' + e(c) + '\\b', 'g'), k[c]); return p }('6 7(a,b){n{4(2.9){3 c=2.9("o");c.p(b,f,f);a.q(c)}g{3 c=2.r();a.s(\'t\'+b,c)}}u(e){}}6 h(a){4(a.8)a=a.8;4(a==\'\')v;3 b=a.w(\'|\')[1];3 c;3 d=2.x(\'y\');z(3 i=0;i<d.5;i++)4(d[i].A==\'B-C-D\')c=d[i];4(2.j(\'k\')==E||2.j(\'k\').l.5==0||c.5==0||c.l.5==0){F(6(){h(a)},G)}g{c.8=b;7(c,\'m\');7(c,\'m\')}}', 43, 43, '||document|var|if|length|function|GTranslateFireEvent|value|createEvent||||||true|else|doGTranslate||getElementById|google_translate_element2|innerHTML|change|try|HTMLEvents|initEvent|dispatchEvent|createEventObject|fireEvent|on|catch|return|split|getElementsByTagName|select|for|className|goog|te|combo|null|setTimeout|500'.split('|'), 0, {}))
     /* ]]> */
-  </script>
+    </script>
 
 
-  <style type="text/css">
-    .language {
-      position: fixed;
-      right: 29px;
-      top: 90px;
-      z-index: 1000;
-      text-align: right;
-    }
+    <style type="text/css">
+      .language {
+        position: fixed;
+        right: 29px;
+        top: 90px;
+        z-index: 1000;
+        text-align: right;
+      }
 
-    .language select {
-      width: auto;
-    }
+      .language select {
+        width: auto;
+      }
 
-    a.gflag {
-      vertical-align: baseline;
-      padding: 1px 0;
-      background-repeat: no-repeat;
-      background-image: url(//gtranslate.net/flags/24.png);
-    }
+      a.gflag {
+        vertical-align: baseline;
+        padding: 1px 0;
+        background-repeat: no-repeat;
+        background-image: url(//gtranslate.net/flags/24.png);
+      }
 
-    a.gflag img {
-      border: 0;
-    }
+      a.gflag img {
+        border: 0;
+      }
 
-    a.gflag:hover {
-      background-image: url(//gtranslate.net/flags/24a.png);
-    }
+      a.gflag:hover {
+        background-image: url(//gtranslate.net/flags/24a.png);
+      }
 
-    #goog-gt-tt {
-      display: none !important;
-    }
+      #goog-gt-tt {
+        display: none !important;
+      }
 
-    .goog-te-banner-frame {
-      display: none !important;
-    }
+      .goog-te-banner-frame {
+        display: none !important;
+      }
 
-    .goog-te-menu-value:hover {
-      text-decoration: none !important;
-    }
+      .goog-te-menu-value:hover {
+        text-decoration: none !important;
+      }
 
-    body {
-      top: 0 !important;
-    }
+      body {
+        top: 0 !important;
+      }
 
-    #google_translate_element2 {
-      display: none !important;
-    }
+      #google_translate_element2 {
+        display: none !important;
+      }
 
-  </style>
+    </style>
 
 
 
-  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-  <!--
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-  <!--
+    <!--
 
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -141,14 +142,14 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-  <title>Care Inc Sarl</title>
-</head>
+    <title>Care Inc Sarl</title>
+  </head>
 
-<body>
-  <noscript>You need to enable JavaScript to run this app.</noscript>
-  <div id="root"></div>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
 
-  <!--
+    <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
 
@@ -158,6 +159,6 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-</body>
+  </body>
 
 </html>
