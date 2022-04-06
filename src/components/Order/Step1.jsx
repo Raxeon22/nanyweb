@@ -16,8 +16,9 @@ const Step1 = (props) => {
 
   const [error, setError] = useState(false);
   const product = props.location.state ? props.location.state.product : []
+  const total = props.location.state ? props.location.state.total : []
   const content = [];
-
+  console.log(total)
   product.map((val) => {
     return content.push({
       product: val._id,
@@ -41,6 +42,7 @@ const Step1 = (props) => {
     name: null,
     email: null,
     mobile: null,
+    total: total
 
   });
 

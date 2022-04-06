@@ -73,7 +73,7 @@ const AddToCart = () => {
                   <Col lg="3" md="3" xs="6">
                     <img src={ baseURL + value.image } alt="" />
                   </Col>
-                  <Col lg="1" md="3" xs="6" className="mt-2" className="d-block d-lg-none">
+                  <Col lg="1" md="3" xs="6" className="mt-2 d-block d-lg-none">
                     <span
                       onClick={ () => {
                         getcart(data, index);
@@ -133,7 +133,7 @@ const AddToCart = () => {
                     { " " }
                     <p>{ Quantity[index] ? value.price * Quantity[index] : value.price }</p>{ " " }
                   </Col>
-                  <Col lg="1" md="3" xs="1" className="mt-4" className="d-none d-lg-block">
+                  <Col lg="1" md="3" xs="1" className="mt-4 d-none d-lg-block">
                     <span
                       onClick={ () => {
                         getcart(data, index);

@@ -26,13 +26,15 @@ const Step3 = (props) => {
       order: Object.assign(props.location.state ? props.location.state.order : "", order),
       product: props.location.state ? props.location.state.product : "",
     }
-
+    console.log(payload)
     const response = await Action.post("/order", payload);
+    console.log(response)
 
     if (response.data.success === true) {
       history.push("/thankyou");
     } else {
-      console.log(response)
+      setSpin(false)
+      alert('something went wrong')
     }
   };
   return (
