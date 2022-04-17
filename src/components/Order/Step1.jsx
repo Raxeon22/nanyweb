@@ -21,11 +21,14 @@ const Step1 = (props) => {
   console.log(total)
   product.map((val) => {
     return content.push({
-      product: val._id,
+      product: val.name,
       quantity: val.quantity,
       color: props.location.state.color
         ? props.location.state.color
         : val.color,
+      size: props.location.state.size
+        ? props.location.state.size
+        : val.size,
       price: props.location.state.price
         ? props.location.state.price
         : val.price,
@@ -37,7 +40,7 @@ const Step1 = (props) => {
   //     content.push({});
   //   });
   // }
-
+  console.log(content)
   const [order, setorder] = useState({
     name: null,
     email: null,
@@ -120,7 +123,7 @@ const Step1 = (props) => {
                 pathname: "/order/step2",
                 state: {
                   order: order,
-                  product: product,
+                  product: content,
                 }
               })
             } else {

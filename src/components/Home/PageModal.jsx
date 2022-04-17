@@ -16,8 +16,8 @@ const PageModal = ({ showModal, setShowModal }) => {
     };
     const getpopimg = async () => {
       try {
-        const { data } = await Action.get("/banner/splash?lang=French", {});
-        setpopimg(data.data[0].image)
+        const { data } = await Action.get("/banner/market?lang=French", {});
+        setpopimg(data.data[0])
       } catch (e) {
         console.log(e)
       }
@@ -30,11 +30,11 @@ const PageModal = ({ showModal, setShowModal }) => {
       document.removeEventListener("mousedown", handleEvent);
     };
 
-  });
+  }, []);
 
   return (
     <>
-      { showModal ? (
+      { showModal && popimg?.is_shown ? (
         <div className="modal">
           <div
             ref={ popup }
@@ -52,7 +52,7 @@ const PageModal = ({ showModal, setShowModal }) => {
               </span>
             </div>
             <div className="popup text-center">
-              <img src={ BaseUrl + popimg } alt="" width="300" height="360" />
+              <img src={ BaseUrl + popimg.image } alt="" width="300" height="360" />
               {/* <br />
               <div className="float-end mt-3">
                 <Button>get a clue</Button>

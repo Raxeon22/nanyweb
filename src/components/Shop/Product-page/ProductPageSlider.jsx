@@ -21,7 +21,7 @@ const ProductPageSlider = () => {
 
     }
     getProduct()
-  })
+  }, [])
   const settings = {
     customPaging: function (i) {
       return (

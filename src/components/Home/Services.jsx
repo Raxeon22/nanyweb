@@ -84,7 +84,6 @@ const Navbar = () => {
                                         alt=""
                                         height="250"
                                         width="100%"
-                                        onClick={ () => console.log(service[index + 1]) }
                                       />
                                     </Col>
                                     <Col xs="7" className="service-slider-text">

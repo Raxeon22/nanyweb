@@ -2,6 +2,7 @@
     --main-color: #03204c;
     --secondary-color: rgb(176 204 224);
 }
+
 .loader {
     display: flex;
     align-items: center;
@@ -10,17 +11,19 @@
     width: 100%;
     height: 100vh;
 }
+
 .loader img {
     width: 200px;
     height: auto;
     margin-bottom: 20px;
 }
+
 /* top close bar section */
 .header-top {
 
     background-color: var(--secondary-color);
-  
- }
+
+}
 
 .header-top span {
 
@@ -31,132 +34,153 @@
     cursor: pointer;
 
 }
-.header-top span:hover{
+
+.header-top span:hover {
     color: black;
 }
-.header-top button{
+
+.header-top button {
     background-color: var(--main-color);
     color: white;
     font-size: 14px;
     text-align: left !important;
     margin-left: 10px;
 }
-.header-top .navbar-brand{
+
+.header-top .navbar-brand {
     padding: 0 !important;
 }
 
 .header-top .smol {
     text-align: left;
 }
+
 .header-top p {
     color: var(--main-color);
 }
 
 /* navbar css starts here */
-.sticky{
+.sticky {
     position: sticky;
     top: 0;
     z-index: 999;
 }
+
 .top-f-nav {
-    
+
     background-color: white !important;
     font-weight: 600;
     padding: 0;
 }
-.scrollspy .isCurrent .nav-link {
-    background-color: var(--secondary-color ) !important; 
-  }
 
- .scrollspy {
-    
+.scrollspy .isCurrent .nav-link {
+    background-color: var(--secondary-color) !important;
+}
+
+.scrollspy {
+
     display: flex;
     padding-left: 0;
     margin-bottom: 0;
     list-style: none;
 
 }
+
 html {
     scroll-behavior: smooth;
-  }
-.scrollspy button{
-    background-color: var(--main-color) ;
+}
+
+.scrollspy button {
+    background-color: var(--main-color);
     border-color: var(--main-color);
     color: white;
     font-size: 13px;
 
 }
-.scrollspy button:hover{
-    background-color: var(--secondary-color) ;
+
+.scrollspy button:hover {
+    background-color: var(--secondary-color);
     border-color: var(--secondary-color);
     color: var(--main-color);
-   
+
 
 }
-.scrollspy button:focus{
-    background-color: var(--secondary-color) ;
+
+.scrollspy button:focus {
+    background-color: var(--secondary-color);
     border-color: var(--secondary-color);
     color: var(--main-color);
-   
+
 }
+
 /* navbar phone number */
 .number a {
-    color:var(--main-color) !important;
+    color: var(--main-color) !important;
     font-weight: 600;
     text-decoration: none;
     font-size: 13px;
 }
-.scrollspy .nav-link{
-   color:var(--main-color) !important;
-   font-size: 13px;
-   text-transform: uppercase;
+
+.scrollspy .nav-link {
+    color: var(--main-color) !important;
+    font-size: 13px;
+    text-transform: uppercase;
 }
+
 .scrollspy .nav-item {
     padding-right: 18px;
-  
+
 }
-.scrollspy .nav-link:hover{
-    background-color: var(--secondary-color ) !important;
+
+.scrollspy .nav-link:hover {
+    background-color: var(--secondary-color) !important;
 
 }
 
 
 /* banner slider css starts */
-.slidercaption{
+.slidercaption {
     text-align: right;
     margin-bottom: 5rem;
     margin-top: 30px;
 }
+
 .certified-job {
     margin-top: 13.7rem;
     padding: 8px 0px;
     background-color: var(--main-color);
 
 }
-.certified-job img{
+
+.certified-job img {
     height: 200px;
     width: 200px;
 }
+
 .certified-job .user-img {
     margin-top: -30% !important;
     border: 10px solid var(--main-color);
 }
+
 .carousel-caption {
     position: absolute;
     top: 0;
     bottom: 1.25rem;
-     padding-bottom: 1.25rem;
+    padding-bottom: 1.25rem;
     color: #fff;
     text-align: center;
 }
+
 .slider-banner .carousel-indicators [data-bs-target] {
     background-color: rgba(0, 0, 0, 0.404) !important;
 }
-.slider-banner .carousel-inner  {
+
+.slider-banner .carousel-inner {
     height: 600px;
     position: relative;
 }
-.slider-banner{
+
+.slider-banner {
     margin-bottom: 5rem;
 }
 
@@ -171,40 +195,46 @@ html {
     margin: 5rem 0px;
 
 }
+
 .about-us svg {
     color: var(--main-color);
 }
-.about-us h3  {
+
+.about-us h3 {
     font-weight: 600;
     color: var(--main-color);
-    margin: 20px 0px ;
+    margin: 20px 0px;
 }
-.about-us  p {
-    font-size: 15px ;
-    margin: 10px 0px ;
+
+.about-us p {
+    font-size: 15px;
+    margin: 10px 0px;
 }
+
 .about-us .see-our-video {
     cursor: pointer;
     margin: 30px 5px;
-     border: 1px solid rgba(128, 128, 128, 0.123);
-     background-color: white;
+    border: 1px solid rgba(128, 128, 128, 0.123);
+    background-color: white;
 }
-.about-us .video-icon:hover{
+
+.about-us .video-icon:hover {
     transform: scale(1.1);
     transition: all .2s;
-} 
+}
 
 .about-us .video-text {
     padding-top: 4%;
     font-size: 14px;
     color: var(--main-color);
 }
+
 .about-us .video-icon {
     padding: 10px 0px;
     background-color: var(--secondary-color);
     border-radius: 5px;
     border: 1px solid var(--secondary-color)
-}   
+}
 
 .about-us .about-cards {
     margin-top: 20px;
@@ -212,59 +242,69 @@ html {
 
 
 }
+
 .about-us .about-cards .each-card {
     margin: 10px 5px;
     background-color: white;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
-.about-us .about-cards .each-card:hover{
+
+.about-us .about-cards .each-card:hover {
     transform: scale(1.1);
     transition: all .2s;
 }
-.about-us  .each-card p {
-     line-height: auto;
-     font-size: 12px;
-     color: var(--main-color);
- }
- .about-us  .each-card  h2 {
+
+.about-us .each-card p {
+    line-height: auto;
+    font-size: 12px;
+    color: var(--main-color);
+}
+
+.about-us .each-card h2 {
 
     color: var(--secondary-color);
     margin-top: 1rem;
     font-weight: 600;
- }
+}
 
 /* Services slider css starts */
-.services{
+.services {
     background-color: var(--main-color);
     padding: 4rem 0px;
 }
-.services h2{
+
+.services h2 {
     color: white;
     font-weight: 600;
     text-align: center;
 }
-.services .each-slide{
+
+.services .each-slide {
     background-color: white;
     margin: 4rem 40px;
     border-radius: 3px;
     padding: 1rem 0px;
     height: 22rem;
 }
+
 .services .each-slide img {
     border-radius: 3px;
     margin-top: 3rem;
     padding: 10px;
 }
-.services .each-slide .service-slider-text  {
-  padding-top: 1rem ;
+
+.services .each-slide .service-slider-text {
+    padding-top: 1rem;
 }
+
 .services .each-slide .service-slider-text h5 {
     color: var(--main-color);
     font-weight: 600;
 }
-.services .each-slide .service-slider-text p{
+
+.services .each-slide .service-slider-text p {
     font-size: 15px;
-    padding-top: 10px ;
+    padding-top: 10px;
     padding-right: 20px;
     --max-lines: 4;
     --lh: 3rem;
@@ -274,32 +314,39 @@ html {
 
 
 }
-.services .each-slide .service-slider-text button{
+
+.services .each-slide .service-slider-text button {
     background-color: white;
     border: 1px var(--secondary-color) solid;
     color: var(--main-color);
     font-size: 13px;
     font-weight: 600;
 }
-.services .each-slide .service-slider-text button:focus{
+
+.services .each-slide .service-slider-text button:focus {
     outline: none !important;
     box-shadow: none;
 }
-.header-top button:hover{
+
+.header-top button:hover {
     background-color: var(--main-color);
 }
-.header-top button:focus{
+
+.header-top button:focus {
     background-color: var(--main-color);
     color: var(--main-color) !important;
 }
-.services .each-slide .service-slider-text button:hover{
+
+.services .each-slide .service-slider-text button:hover {
     background-color: var(--secondary-color);
 }
-.services .each-slide .service-slider-text button:focus{
+
+.services .each-slide .service-slider-text button:focus {
     background-color: var(--main-color) !important;
     border-color: var(--main-color) !important;
-    color: white!important;
+    color: white !important;
 }
+
 .carousel-indicators .active {
     opacity: 1 !important;
     background-color: var(--secondary-color) !important;
@@ -312,39 +359,44 @@ html {
     background-repeat: no-repeat;
     position: relative;
     background-position: center center;
-    background-size: cover; 
+    background-size: cover;
     padding: 5rem 0px;
 }
-.how-it-works h1{
+
+.how-it-works h1 {
     color: white;
     text-align: center;
     font-weight: 900;
 }
-.how-it-works .each-step img{
+
+.how-it-works .each-step img {
     background-color: white;
     border-radius: 50%;
     padding: 10px 10px;
     margin-bottom: 40px;
 
 }
+
 .how-it-works .each-step {
     margin: 5rem 0px;
     position: relative;
     z-index: 2;
 }
-.how-it-works .each-step h5{
+
+.how-it-works .each-step h5 {
     color: white;
     font-weight: 600;
     margin-top: 10px;
 
 }
-.how-it-works .each-step p{
+
+.how-it-works .each-step p {
     font-size: 14px;
     margin-top: 20px;
     color: white;
 }
 
-.how-it-works  .badge {
+.how-it-works .badge {
     position: absolute;
     top: 122px;
     left: 43%;
@@ -355,7 +407,8 @@ html {
     font-size: 13px;
     font-weight: 600;
 }
-  .step1{
+
+.step1 {
     width: 59%;
     left: 20%;
 
@@ -366,20 +419,21 @@ html {
     border-style: dashed;
     color: transparent;
     z-index: 1;
-  }
+}
 
 /* customer and employee tabs css */
 
 .mob-app .nav-tabs {
     justify-content: center;
-    border:none;
+    border: none;
     margin-bottom: 20px;
 }
+
 .mob-app .nav-tabs .nav-link {
     border-radius: 5px !important;
     color: var(--main-color);
     font-weight: 600;
-    padding: 15px 20px !important; 
+    padding: 15px 20px !important;
 }
 
 .mob-app .nav-tabs .nav-link.active {
@@ -388,15 +442,17 @@ html {
     color: white;
     font-weight: 600;
 }
+
 /* Tab text section */
-.mob-app .tab-text{
+.mob-app .tab-text {
     margin-top: 3rem;
     margin-bottom: 3rem;
 
     padding-right: 40px;
 
 }
-.mob-app .tab-text .meet{
+
+.mob-app .tab-text .meet {
     color: var(--main-color);
     background-color: var(--secondary-color);
     padding: 10px 20px;
@@ -406,43 +462,53 @@ html {
     font-weight: 600;
 
 }
-.mob-app .tab-text h1{
+
+.mob-app .tab-text h1 {
     color: var(--main-color);
     font-weight: 900;
     margin: 30px 0px;
     padding-right: 60px;
 }
-.mob-app .tab-text h6{
+
+.mob-app .tab-text h6 {
     color: var(--main-color);
     font-weight: bolder;
     margin: 20px 0px;
 }
-.mob-app .tab-text p{
+
+.mob-app .tab-text p {
     font-size: 13px;
 
 }
-.mob-app img{
+
+.mob-app img {
     width: 100%;
     height: 660px;
 }
-.mob-app .tab-text button{
+
+.mob-app .tab-text button {
     background-color: var(--main-color);
     border-color: var(--main-color);
 }
-.mob-app .tab-text button span{
+
+.mob-app .tab-text button span {
     font-size: 12px;
 }
-.mob-app .tab-text button h5{
-  font-weight: 600;
-  font-size: 14px;
+
+.mob-app .tab-text button h5 {
+    font-weight: 600;
+    font-size: 14px;
 }
-.mob-app .tab-text button .icon-button{
+
+.mob-app .tab-text button .icon-button {
     text-align: end;
 }
+
 .list-bar {
     position: relative;
     padding-left: 15%;
 }
+
 .node {
     margin: 9px;
     padding: 8px 10px;
@@ -455,9 +521,9 @@ html {
     font-size: 17px;
     font-weight: 600;
     color: var(--main-color);
- }
+}
 
- .divider {
+.divider {
     height: 52px;
     width: 2px;
     position: absolute;
@@ -467,41 +533,48 @@ html {
     border-style: dashed;
 
     color: rgba(204, 201, 201, 0.459);
- }
+}
 
 
- /* FAQ css starts  */
- .faq{
+/* FAQ css starts  */
+.faq {
 
     margin: 4rem 0px;
- }
- .faq .Qsection{
+}
+
+.faq .Qsection {
     margin-top: 2rem;
 
- }
- .faq .heading{
-    margin-top:33px;
+}
 
- }
- .faq h1  {
-        font-weight: 600;
-        margin-bottom: 30px;
+.faq .heading {
+    margin-top: 33px;
 
- }
-.faq .heading .eachQ{
+}
+
+.faq h1 {
+    font-weight: 600;
+    margin-bottom: 30px;
+
+}
+
+.faq .heading .eachQ {
     border-bottom: 1px solid rgba(107, 106, 106, 0.322);
 }
-.faq .heading .eachQ h6{
+
+.faq .heading .eachQ h6 {
     font-weight: 500;
     color: black;
-    padding:16px 3px;
+    padding: 16px 3px;
     text-align: left;
 
 }
-.faq .heading .eachQ p{
+
+.faq .heading .eachQ p {
     font-size: 13px;
 }
-.faq .heading .eachQ svg{
+
+.faq .heading .eachQ svg {
     color: var(--main-color);
 }
 
@@ -510,18 +583,23 @@ html {
     padding: 5rem 0px;
     background-color: rgba(116, 111, 111, 0.096)
 }
-.contact-us h1{
+
+.contact-us h1 {
     font-weight: 600;
     margin-bottom: 20px;
 }
-.contact-us h1 , .contact-us p{
-text-align: center !important;
+
+.contact-us h1,
+.contact-us p {
+    text-align: center !important;
 }
-.contact-us .contact-form .contact-details{
+
+.contact-us .contact-form .contact-details {
     padding: 30px;
     color: black;
 
 }
+
 .contact-us .contact-form .contact-details .each-detail svg {
     margin-right: 1px;
     color: var(--main-color);
@@ -530,29 +608,36 @@ text-align: center !important;
     box-shadow: 1px 0px 8px 0px rgba(0, 0, 0, 0.226);
     background-color: white;
 }
-.contact-us .contact-form .contact-details .each-detail{
+
+.contact-us .contact-form .contact-details .each-detail {
     margin-top: 30px;
 }
+
 .contact-us .contact-form .contact-details .each-detail h6 {
     text-transform: uppercase;
     margin-bottom: 1px;
     color: rgba(34, 7, 7, 0.692);
 }
-.contact-us .contact-form .contact-details h4{
-   font-weight: 600;
+
+.contact-us .contact-form .contact-details h4 {
+    font-weight: 600;
 }
-.contact-us .contact-form .contact-details p{
+
+.contact-us .contact-form .contact-details p {
     font-size: 13px;
     color: black;
 }
-.contact-us .contact-form .contact-details b{
+
+.contact-us .contact-form .contact-details b {
     margin-top: 30px;
     font-weight: normal;
     color: black;
 }
-.contact-us .contact-form .contact-details .contact-footer-icon{
+
+.contact-us .contact-form .contact-details .contact-footer-icon {
     margin-top: 3rem !important;
 }
+
 .contact-us .contact-form .contact-details .contact-footer-icon span {
     border: none;
     padding: 8px 6px;
@@ -562,32 +647,37 @@ text-align: center !important;
     cursor: pointer;
 }
 
-.contact-us .contact-form .contact-details .contact-footer-icon span:hover{
+.contact-us .contact-form .contact-details .contact-footer-icon span:hover {
     box-shadow: 4px 0px 8px 2px rgb(0 0 0 / 0.2);
 
 }
-.contact-us .contact-form .contact-inputs{
+
+.contact-us .contact-form .contact-inputs {
     color: black;
     background-color: white;
     padding: 30px;
     border: 1px solid rgba(190, 186, 186, 0.199);
 
 }
-.contact-us .contact-form .contact-inputs button{
+
+.contact-us .contact-form .contact-inputs button {
     background-color: var(--main-color);
     border-color: var(--main-color);
     font-size: 13px;
     padding: 10px 20px;
 }
-.contact-us .contact-form .contact-inputs label{
+
+.contact-us .contact-form .contact-inputs label {
     font-size: 13px;
     color: black;
 }
-.contact-us .contact-form .contact-inputs  .form-check-label{
+
+.contact-us .contact-form .contact-inputs .form-check-label {
     font-size: 11px !important;
 }
+
 .contact-us .contact-form .contact-inputs .custom-input {
-    border: none ;
+    border: none;
     border-bottom: 1px solid var(--main-color);
     border-radius: 0;
     padding: 0;
@@ -596,56 +686,67 @@ text-align: center !important;
     outline: none !important;
     box-shadow: none !important;
 }
-.contact-us .contact-form .contact-inputs .check-custom input{
+
+.contact-us .contact-form .contact-inputs .check-custom input {
     outline: none !important;
     box-shadow: none !important;
 }
+
 .contact-us .contact-form .contact-inputs .check-custom input:checked {
     background-color: var(--main-color);
     border-color: var(--main-color);
 }
-.contact-us .contact-form .contact-inputs h6{
+
+.contact-us .contact-form .contact-inputs h6 {
     font-size: 15px;
     margin-top: 30px;
     margin-bottom: 20px;
 }
+
 /* footer css */
-footer{
+footer {
     background-color: black;
     color: white;
     padding: 20px 0px;
 }
+
 footer p {
     font-size: 13px;
-   
+
 }
+
 footer .each-row-f h6 {
-   font-size: 20px;
-   font-weight: 400;
-   margin-top: 40px;
-   margin-bottom: 10px;
-   color: var(--secondary-color);
-   font-weight: 600;
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+    font-weight: 600;
 }
-footer .each-row-f li{
+
+footer .each-row-f li {
     list-style: none;
     padding: 0;
     font-size: 14px;
     margin-top: 10px;
 }
-footer .each-row-f a{
+
+footer .each-row-f a {
     text-decoration: none;
     color: white;
 }
-footer .each-row-f a:hover{
+
+footer .each-row-f a:hover {
     text-decoration: none;
     color: var(--secondary-color);
 }
-footer .each-row-f ul{
+
+footer .each-row-f ul {
     padding: 0;
 }
+
 footer .each-row-f .custom-input {
-    border: none ;
+    border: none;
     border-bottom: 1px solid var(--secondary-color);
     border-radius: 0;
     padding: 0;
@@ -657,25 +758,30 @@ footer .each-row-f .custom-input {
     margin: 20px 0px;
     color: white;
 }
-footer .each-row-f button{
+
+footer .each-row-f button {
 
     font-size: 13px;
-;
+    ;
 }
-footer .each-row-f button:hover{
+
+footer .each-row-f button:hover {
     background-color: var(--secondary-color);
     border-color: var(--secondary-color);
-    color: var(--main-color) ;
+    color: var(--main-color);
 
 }
+
 footer .each-row-f .footer-icons {
     text-align: center;
 }
-footer .each-row-f .footer-icons span{
+
+footer .each-row-f .footer-icons span {
     margin: 40px 8px;
     color: var(--secondary-color);
 }
-footer  .footer-widget{
+
+footer .footer-widget {
     margin-top: 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.185);
     text-align: center;
@@ -684,6 +790,7 @@ footer  .footer-widget{
     color: rgba(255, 255, 255, 0.692);
     font-weight: 100;
 }
+
 footer .footer-button button {
     padding: 5px 3px;
     text-align: center;
@@ -693,21 +800,25 @@ footer .footer-button button {
     border-color: var(--main-color) !important;
     color: white;
 }
-footer .footer-button button:focus{
+
+footer .footer-button button:focus {
     background-color: var(--secondary-color) !important;
     border-color: var(--secondary-color);
     color: var(--main-color);
-   
+
 }
-footer .footer-button button:hover{
-    background-color: var(--secondary-color) !important ;
+
+footer .footer-button button:hover {
+    background-color: var(--secondary-color) !important;
     border-color: var(--secondary-color);
     color: var(--main-color) !important;
-   
+
 }
-footer .footer-button button svg{
+
+footer .footer-button button svg {
     padding-right: 5px;
 }
+
 /* fancy border css */
 .custom-shape-divider-top-1635422766 {
     left: 0;
@@ -716,57 +827,68 @@ footer .footer-button button svg{
     line-height: 0;
     background-color: white;
 
-} 
+}
+
 .shop {
     background-color: var(--secondary-color);
 }
+
 .shop:hover {
     color: var(--main-color);
 }
+
 .product-cards {
     padding: 20px 0px;
     animation-delay: -350ms !important;
 }
+
 .product-cards .each-product:hover {
     transform: scale(1.1);
     transition: all .2s;
 }
-.product-cards  a {
+
+.product-cards a {
     text-decoration: none;
 }
+
 .product-cards .card {
     border: none;
 }
-.product-cards .card .card-title  {
+
+.product-cards .card .card-title {
     font-size: 18px;
     text-align: center;
     font-weight: 500;
     color: black;
     letter-spacing: 1px;
 }
-.prod-tabs .nav-tabs{
+
+.prod-tabs .nav-tabs {
     justify-content: center !important;
     border: none;
 }
-.prod-tabs .nav-tabs .nav-item{
+
+.prod-tabs .nav-tabs .nav-item {
     margin-right: 4px;
 }
+
 .prod-tabs .nav-tabs .nav-item .nav-link {
     color: black;
-    transition: width 0.4s cubic-bezier(.175,.885,.32,1.15);
+    transition: width 0.4s cubic-bezier(.175, .885, .32, 1.15);
     border-color: rgba(128, 128, 128, 0.37);
     border-radius: 0px;
     margin-top: 10px;
 }
+
 .prod-tabs .nav-tabs .nav-link.active {
     border-bottom: 3px solid var(--main-color);
-   background-color: var(--secondary-color);
-   border-top: none;
-   border-left: none;
-   border-right: none;
- }
+    background-color: var(--secondary-color);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
 
- /* .prod-tabs .nav-tabs .nav-link.active::after{
+/* .prod-tabs .nav-tabs .nav-link.active::after{
      content: '';
      width: 20%;
      display: none;
@@ -786,12 +908,14 @@ footer .footer-button button svg{
     align-items: center;
     text-align: center;
 }
+
 .our-products h1 {
     text-align: center;
     font-weight: 600;
     margin-bottom: 30px;
-    
+
 }
+
 .before_line::after {
     content: "";
     width: 10%;
@@ -799,8 +923,9 @@ footer .footer-button button svg{
     display: block;
     background-color: rgb(245 51 9);
     background-color: var(--main-color);
-    margin:5px auto
+    margin: 5px auto
 }
+
 /* .after_line::after {
     content: "";
     width: 10%;
@@ -814,16 +939,19 @@ footer .footer-button button svg{
     text-align: center;
     margin-top: 20px;
 }
-.our-products .each-slide p{
+
+.our-products .each-slide p {
     text-align: center;
     padding: 0;
     margin: 0;
 }
+
 .our-products span {
     font-weight: 600;
     color: var(--main-color);
     text-align: center;
 }
+
 .categories {
     padding: 5rem 0px;
     height: auto;
@@ -831,46 +959,60 @@ footer .footer-button button svg{
     justify-content: center;
     align-items: center;
 }
- .slick-prev:before{
+
+.slick-prev:before {
     content: "<" !important
 }
-.slick-next::before{
+
+.slick-next::before {
     content: ">" !important
 }
+
 .slick-prev {
-    left: -1% ;
-   z-index: 200;
+    left: -1%;
+    z-index: 200;
 
-  }
-  .slick-next {
-    right: 1% ;
-   z-index: 200;
+}
 
-  }
-.slick-prev:before,  .slick-next:before {
+.slick-next {
+    right: 1%;
+    z-index: 200;
+
+}
+
+.slick-prev:before,
+.slick-next:before {
     font-size: 29px !important;
     opacity: 100 !important;
     color: var(--main-color) !important;
-   font-family: poppins !important;
-   background-color: white;
-   border-radius: 50%;
-   padding: 2px 15px;
-   border: 2px solid rgba(121, 116, 116, 0.199);
+    font-family: poppins !important;
+    background-color: white;
+    border-radius: 50%;
+    padding: 2px 15px;
+    border: 2px solid rgba(121, 116, 116, 0.199);
 }
 
-.categories a{
+.categories a {
     text-decoration: none !important;
     color: black;
 }
+
 .categories .each-img {
     position: relative;
 }
-.categories .each-img  h4{
+
+.categories .slick-track {
+    width: auto !important;
+}
+
+.categories .each-img h4 {
     font-weight: 600;
 }
-.categories .each-img p{
+
+.categories .each-img p {
     font-size: 15px;
 }
+
 .categories .img-text {
     position: absolute;
     top: 6%;
@@ -882,6 +1024,7 @@ footer .footer-button button svg{
     border-radius: 5px;
 
 }
+
 .categories .carousel-control-prev {
     left: -10%;
 }
@@ -890,75 +1033,88 @@ footer .footer-button button svg{
 .categories .carousel-control-next-icon {
     background-color: var(--main-color);
 }
+
 .categories .carousel-control-prev-icon {
     background-color: var(--main-color);
 }
-.categories .each-img{
+
+.categories .each-img {
     overflow: hidden;
 }
-.categories img{
+
+.categories img {
     transition: transform .5s ease;
 
 }
-.categories img:hover{
+
+.categories img:hover {
     transform: scale(1.2);
 }
-.categories .each-img .img-text-smol{
+
+.categories .each-img .img-text-smol {
     position: absolute;
     left: 9%;
     top: 14%;
     right: 30%;
     z-index: 5;
 }
+
 .categories h2 {
     text-align: center;
     font-weight: 600;
     margin-bottom: 2rem;
 }
 
-.categories  .carousel-item{
+.categories .carousel-item {
     margin: 50px 0px;
 }
 
 .thank-you {
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
     margin: 2rem 0px;
 }
+
 .thank-you h1 {
     font-weight: 600;
     color: var(--main-color);
-    margin-top:30px
+    margin-top: 30px
 }
+
 .thank-you button {
     background-color: var(--main-color);
-    color:white;
+    color: white;
     margin-top: 10px;
 }
+
 .thank-you button:hover {
-    background-color: var(--secondary-color) ;
+    background-color: var(--secondary-color);
     border-color: var(--secondary-color);
     color: var(--main-color);
-   
+
 }
+
 .thank-you button:focus {
-    background-color: var(--secondary-color) ;
+    background-color: var(--secondary-color);
     border-color: var(--secondary-color);
     color: var(--main-color);
-   
+
 }
-.thank-you span{
+
+.thank-you span {
     font-size: 15px;
     margin-top: 10px;
 }
-.thank-you a{
+
+.thank-you a {
     text-decoration: none;
     color: var(--main-color);
 }
-.mobile-cart{
+
+.mobile-cart {
     justify-content: end !important;
     margin-left: auto !important;
     margin-right: 30px;

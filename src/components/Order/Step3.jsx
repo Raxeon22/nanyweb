@@ -28,13 +28,12 @@ const Step3 = (props) => {
     }
     console.log(payload)
     const response = await Action.post("/order", payload);
-    console.log(response)
 
     if (response.data.success === true) {
       history.push("/thankyou");
     } else {
       setSpin(false)
-      alert('something went wrong')
+      alert('something went wrong, please try again later')
     }
   };
   return (
@@ -68,14 +67,6 @@ const Step3 = (props) => {
                 } }
               />
             </Form.Group>
-            {/* <Form.Group className="mb-3">
-              <Form.Label>Last Name</Form.Label>
-              <Form.Control type="text" placeholder="Wash" />
-            </Form.Group>
-            <Form.Group className="mb-3">
-              <Form.Label>Email</Form.Label>
-              <Form.Control type="email" placeholder="@" />
-            </Form.Group> */}
           </Form>
           <Link to="/order/step2">
             <Button>previous</Button>

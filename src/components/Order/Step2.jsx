@@ -12,7 +12,7 @@ const Step2 = (props) => {
   let history = useHistory();
   const [error, setError] = useState(false);
 
-
+  console.log(props.location.state ? props.location.state.product : "")
   const [order, setorder] = useState({
     address: null,
     city: null,
@@ -101,14 +101,6 @@ const Step2 = (props) => {
 
           <Button className="float-end " type="submit" onClick={ (e) => {
             e.preventDefault()
-            // setSpin(
-            //   <Spinner
-            //     as="span"
-            //     animation="border"
-            //     size="sm"
-            //     role="status"
-            //     className="mx-4"
-            //   />)
             if (order.address && order.city && order.country && order.postalCode) {
               history.push({
                 pathname: "/order/step3",

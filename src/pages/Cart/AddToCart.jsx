@@ -28,7 +28,6 @@ const AddToCart = () => {
 
   };
 
-
   return (
     <>
       <Navbar shop={ true } Homelink="home" />
@@ -65,13 +64,12 @@ const AddToCart = () => {
 
             netamount += (value.price * value.quantity)
             Quantity[index] = value.quantity
-            console.log(Quantity)
 
             return (
               <>
                 <Row className="each-item">
                   <Col lg="3" md="3" xs="6">
-                    <img src={ baseURL + value.image } alt="" />
+                    <img src={ baseURL + value.image[0] } alt="" />
                   </Col>
                   <Col lg="1" md="3" xs="6" className="mt-2 d-block d-lg-none">
                     <span
@@ -84,8 +82,8 @@ const AddToCart = () => {
                   </Col>
                   <Col lg="5" md="6" xs="12">
                     <small>{ value.name }</small><br />
-                    <small>couleur: { value.color }</small><br />
-                    <small>size: { value.size }</small><br />
+                    <small>couleur: { value.color.map((color) => { return (`${ color }, `) }) }</small><br />
+                    <small>size: { value.size.map((size) => { return (`${ size }, `) }) }</small><br />
                     <small className="d-block d-lg-none">le prix: { value.price }</small>
                     <small className="d-block d-lg-none">qualité: { Quantity[index] }</small>
                     <small className="d-block d-lg-none">total: { Quantity[index] ? value.price * Quantity[index] : value.price }</small><br />
@@ -162,9 +160,6 @@ const AddToCart = () => {
                 }
               </h4>
               <Link
-                onClick={ () => {
-                  console.log(data)
-                } }
                 to={ { pathname: "/order/step1", state: { product: data, total: netamount } } }
               >
                 <Button variant="dark" className="w-100">

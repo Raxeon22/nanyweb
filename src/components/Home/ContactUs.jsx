@@ -39,7 +39,9 @@ const ContactUs = () => {
       if (response.data.success === true) {
         setcontact(response.data.data[0]);
       } else {
+        console.log(response)
       }
+
     };
     getcontact();
   }, []);
@@ -60,7 +62,7 @@ const ContactUs = () => {
                 </Col>
                 <Col xs="9" className="m-margin">
                   <h6>APPELEZ-NOUS</h6>
-                  <b>{ contact.mobile }</b>
+                  <b>{ contact.Phone }</b>
                 </Col>
               </Row>
               <Row className="each-detail">
@@ -86,7 +88,7 @@ const ContactUs = () => {
                 </Col>
               </Row>
               <div className="contact-footer-icon d-flex">
-                <a href={ contact.fb } target="_blank" rel="noreferrer">
+                <a href={ contact.facebook } target="_blank" rel="noreferrer">
                   <span className="bg-primary">
                     <FaFacebookF size={ 25 } />
                   </span>

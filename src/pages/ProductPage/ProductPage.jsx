@@ -5,6 +5,7 @@ import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { FiShoppingBag } from "react-icons/fi";
 import Action from "../../middleware/API";
+import parse from 'html-react-parser'
 import {
   Row,
   Col,
@@ -19,6 +20,7 @@ import ProductSlider from "../../components/Shop/ProductSlider";
 import { FaShoppingCart } from "react-icons/fa";
 
 import { useParams } from "react-router-dom";
+const o = parse('<h2>deidhei</h2>')
 const ProductPage = (props) => {
   const [product, setProduct] = useState(false);
   const [quantity, setQuantity] = useState(1);
@@ -39,17 +41,13 @@ const ProductPage = (props) => {
       }
     };
     getProduct();
-  });
-
+  }, []);
   if (quantity < 1) {
     alert("quantity cannot be in minus");
     setQuantity(1);
   } else if (quantity > productQuantity) {
     alert("Quantity Exceed");
   }
-  // const [checked, setChecked] = React.useState([]);
-  // const [checkedsize, setcheckedsize] = React.useState([])
-  // checkedsize[0] = true
 
   //get all sizes
   const checkSize = (e, val) => {
@@ -58,8 +56,7 @@ const ProductPage = (props) => {
     } else {
       setsize(size.filter(value => value !== val));
     }
-    //[red,orange,blue, red, gray]
-    //[blue]
+
   }
   //get all colors
   const checkColor = (e, val) => {
@@ -106,10 +103,10 @@ const ProductPage = (props) => {
                               custom
                               id={ `checkbox${ clr }` }
                               checked={ clr._color }
-                              onChange={ e => checkColor(e, clr.name) }
+                              onChange={ e => checkColor(e, clr.color) }
                               className="form-check-input"
                               type="checkbox"
-                              value={ clr.name }
+                              value={ clr.color }
                             />
                           </div>
                         );
@@ -164,7 +161,6 @@ const ProductPage = (props) => {
                     <span className="product_key mt-2">Quantity:</span>
                     <i onClick={ () => {
                       setQuantity(quantity + 1)
-                      console.log(quantity)
                     } }>
                       <AiOutlinePlus />
                     </i>
@@ -189,7 +185,6 @@ const ProductPage = (props) => {
                         <Button
 
                           onClick={ () => {
-
                             product[0].quantity = quantity;
                             product[0].color = color;
                             product[0].size = size;
@@ -244,7 +239,7 @@ const ProductPage = (props) => {
               <div className="product-details">
                 <Tabs defaultActiveKey="description">
                   <Tab eventKey="description" title="Description">
-                    <p>{ product[0].description }</p>
+                    <p>{ parse(product[0].comments) }</p>
                   </Tab>
 
                   <Tab eventKey="policy" title="Return Policy">

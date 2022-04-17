@@ -29,7 +29,7 @@ const VideoModal = ({ showModal, setShowModal }) => {
     return () => {
       document.removeEventListener("mousedown", handleEvent);
     };
-  });
+  }, []);
 
   //spiling the url to emded
   const cut = video2.split('=')

@@ -7,7 +7,6 @@ const Pagination = ({ dataPerPage, totalPages, Paginate }) => {
         pageNumbers.push(i)
     }
     const [currN, setCurrN] = useState(1)
-    console.log(currN)
     return (
         <nav className="pagination-custom" aria-label="Pagination">
             <li className="">

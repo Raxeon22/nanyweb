@@ -81,37 +81,13 @@ const ProductSlider = (props) => {
                         <p>{ val.name } </p>
                       </Col>
                       <Col xs="2" className="mt-3">
-                        <span className="cart_button"
-                          onClick={ () => {
-                            var col = []
-                            col.push(val.color[0].name)
-                            val.color = col;
-                            val.quantity = 1
-                            val.size = val.size[0].length[0]
-                            if (
-                              localStorage.getItem("order")
-                                ? localStorage.getItem("order").length
-                                : -1 > 0
-                            ) {
-                              const content = JSON.parse(
-                                localStorage.getItem("order")
-                              );
-                              content.push(val);
-                              localStorage.setItem(
-                                "order",
-                                JSON.stringify(content)
-                              );
-                            } else {
-                              localStorage.setItem(
-                                "order",
-                                JSON.stringify([val])
-                              );
-                            }
+                        <Link to={ `/shop/product/${ val._id }` }  >
 
-                          } }
-                        >
-                          <AiOutlineShoppingCart size={ 25 } color=" white" />
-                        </span>
+                          <span className="cart_button">
+                            <AiOutlineShoppingCart size={ 25 } color=" white" />
+                          </span>
+                        </Link>
+
                       </Col>
                     </Row>
                   </Card.Title>
@@ -120,8 +96,9 @@ const ProductSlider = (props) => {
             </div>
           )
           ) }
-        </Slider> : <div className="text-center"><Spinner animation="border" variant="dark" /></div> }
-    </div>
+        </Slider> : <div className="text-center"><Spinner animation="border" variant="dark" /></div>
+      }
+    </div >
   );
 };
 export default ProductSlider;

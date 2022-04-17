@@ -1,17 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;800&display=swap');
 
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   width: 5px;
   cursor: pointer;
   /*background-color: rgba(229, 231, 235, var(--bg-opacity));*/
 
 }
+
 ::-webkit-scrollbar-track {
   background-color: transparent;
   cursor: pointer;
   /*background: red;*/
 }
+
 ::-webkit-scrollbar-thumb {
   cursor: pointer;
   background-color: var(--main-color);
@@ -24,42 +26,49 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family : 'Poppins', sans-serif !important; 
+  font-family: 'Poppins', sans-serif !important;
 }
-button{
+
+button {
   outline: none !important;
   box-shadow: none !important;
- 
+
 }
-button:focus{
+
+button:focus {
   outline: none !important;
   box-shadow: none !important;
-  
+
 }
+
 .center {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   height: 100vh;
-  padding:50px 0px;
+  padding: 50px 0px;
 
   background-color: rgba(128, 128, 128, 0.397);
-  
+
 }
-.center label{
+
+.center label {
   font-size: 20px;
   font-weight: 600;
   color: black;
 }
-.center p{
+
+.center p {
   font-size: 14px;
 }
-.center h5{
+
+.center h5 {
   color: blue;
   font-weight: 500;
 }
-.center .card-title{
+
+.center .card-title {
   font-weight: 600;
   font-size: 23px;
 }

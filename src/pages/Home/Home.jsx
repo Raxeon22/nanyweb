@@ -19,7 +19,7 @@ const Home = () => {
   const [showModal, setShowModal] = useState(false);
   const [data, setdata] = useState([])
   const updatedata = () => {
-    console.log("Munib");
+    ("Munib");
     setdata(localStorage.getItem("order"))
   }
   useEffect(() => {
