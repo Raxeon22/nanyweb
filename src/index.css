@@ -72,3 +72,7 @@ button:focus {
   font-weight: 600;
   font-size: 23px;
 }
+
+.slick-cloned {
+  display: none !important;
+}

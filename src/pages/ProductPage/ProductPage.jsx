@@ -47,6 +47,7 @@ const ProductPage = (props) => {
     setQuantity(1);
   } else if (quantity > productQuantity) {
     alert("Quantity Exceed");
+    setQuantity(productQuantity)
   }
 
   //get all sizes
@@ -115,15 +116,11 @@ const ProductPage = (props) => {
 
                   {
                     item.size.map((val, index) => {
-
-
                       return (
                         <div className="d-flex mt-2 size">
                           <span className="product_key mt-2">{ Object.keys(val)[index] }:</span>
                           {
                             Object.values(val)[index].map((v, i) => {
-
-
                               return (
                                 <div className="form-check">
                                   <input

@@ -413,7 +413,7 @@ html {
     left: 20%;
 
     position: absolute;
-    bottom: 460px;
+    bottom: 55% !important;
     border-bottom: 3px solid rgba(255, 255, 255, 0.514);
     display: block;
     border-style: dashed;
@@ -1001,9 +1001,9 @@ footer .footer-button button svg {
     position: relative;
 }
 
-.categories .slick-track {
+/* .categories .slick-track {
     width: auto !important;
-}
+} */
 
 .categories .each-img h4 {
     font-weight: 600;

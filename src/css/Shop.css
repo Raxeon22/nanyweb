@@ -109,9 +109,9 @@
   text-transform: uppercase;
 }
 
-.new-arrivals .slick-track {
+/* .new-arrivals .slick-track {
   width: auto !important;
-}
+} */
 
 /* .new-arrivals .slick-prev:before {
   color: var(--main-color) !important;

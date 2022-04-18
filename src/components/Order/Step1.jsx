@@ -21,7 +21,8 @@ const Step1 = (props) => {
   console.log(total)
   product.map((val) => {
     return content.push({
-      product: val.name,
+      product: val._id,
+      name: val.name,
       quantity: val.quantity,
       color: props.location.state.color
         ? props.location.state.color

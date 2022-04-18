@@ -10,6 +10,8 @@ import { Spinner } from 'react-bootstrap'
 
 
 const Categories = () => {
+  const [category, setcategory] = useState(false);
+
   var settings = {
     dots: false,
     infinite: true,
@@ -17,7 +19,6 @@ const Categories = () => {
     slidesToShow: 4,
     slidesToScroll: 1,
     initialSlide: 0,
-    autoplay: true,
     autoplaySpeed: 2000,
     arrows: true,
     cssEase: "linear",
@@ -27,7 +28,6 @@ const Categories = () => {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
-          infinite: true,
         },
       },
       {
@@ -47,7 +47,6 @@ const Categories = () => {
       },
     ],
   };
-  const [category, setcategory] = useState(false);
 
 
   useEffect(() => {

@@ -9,14 +9,16 @@ import { Link } from "react-router-dom";
 import { Card, Row, Col, Spinner } from "react-bootstrap";
 
 const ProductSlider = (props) => {
+  const [product, setproduct] = useState(false);
+
   const { show } = props
   var settings = {
     dots: false,
-    infinite: true,
+    infinite: false,
     speed: 700,
     slidesToShow: show ? show : 4,
     slidesToScroll: 1,
-    initialSlide: 0,
+    initialSlide: 1,
     autoplay: false,
     autoplaySpeed: 2000,
     arrows: true,
@@ -27,7 +29,6 @@ const ProductSlider = (props) => {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
-          infinite: true,
         },
       },
       {
@@ -48,7 +49,6 @@ const ProductSlider = (props) => {
     ],
   };
 
-  const [product, setproduct] = useState(false);
 
   useEffect(() => {
     async function getproduct() {

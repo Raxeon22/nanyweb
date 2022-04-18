@@ -20,8 +20,7 @@ var settings = {
   infinite: false,
   slidesToShow: 3,
   slidesToScroll: 1,
-  initialSlide: 0,
-  autoplay: true,
+  initialSlide: 1,
   speed: 500,
   arrows: true,
   autoplaySpeed: 2000,
@@ -32,8 +31,6 @@ var settings = {
       settings: {
         slidesToShow: 3,
         slidesToScroll: 1,
-        infinite: true,
-        dots: true,
       },
     },
     {
